@@ -1,5 +1,7 @@
 # kubernetes-client
 
+[![Build Status](https://travis-ci.org/godaddy/kubernetes-client.svg?branch=master)](https://travis-ci.org/godaddy/kubernetes-client)
+
 Node.js client for the [Kubernetes API](http://kubernetes.io/).
 
 ## Installation
