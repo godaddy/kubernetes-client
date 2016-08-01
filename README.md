@@ -7,7 +7,7 @@ Node.js client for the [Kubernetes API](http://kubernetes.io/).
 Install via npm:
 
 ```console
-$ npm -i kubernetes-client
+$ npm i kubernetes-client --save
 ```
 
 ## Documentation
