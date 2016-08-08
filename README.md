@@ -37,7 +37,6 @@ const k8 = new K8Api({
   namespace: 'my-project' // Defaults to 'default'
 });
 
-
 function print(err, result) {
   console.log(JSON.stringify(err || result, null, 2));
 }
@@ -157,6 +156,63 @@ You can access logs in a similar fashion:
 const stream = k8.ns.po.log({ name: 'http-123', qs: { follow: true } });
 stream.on('data', chunk => {
   process.stdout.write(chunk.toString());
+});
+```
+
+### Authenticating
+
+kubernetes-client supports Kubernetes [apiserver
+authentication](http://kubernetes.io/docs/admin/authentication/).
+
+Basic authentication (with optional certificate authority):
+
+```js
+const k8 = new K8Api({
+  url: 'https://my-k8-api-server.com',
+  ca: fs.readFileSync('cluster-ca.pem'),
+  auth: {
+    user: 'user',
+    pass: 'pass'
+  }
+});
+```
+
+token authentication:
+
+```js
+const k8 = new K8Api({
+  url: 'https://my-k8-api-server.com',
+  auth: {
+    bearer: 'token'
+  }
+});
+```
+
+and client certificate authentication:
+
+```js
+const k8 = new K8Api({
+  url: 'https://my-k8-api-server.com',
+  ca: fs.readFileSync('cluster-ca.pem'),
+  cert: fs.readFileSync('my-user-cert.pem'),
+  key: fs.readFileSync('my-user-key.pem')
+});
+```
+
+### Passing options to `request`
+
+kubernetes-client uses
+[`request`](https://github.com/request/request). You can specify
+[`request`
+options](https://github.com/request/request#requestoptions-callback)
+for kubernetes-client to pass to `request`:
+
+```js
+const k8 = new K8Api({
+  url: 'https://my-k8-api-server.com',
+  request: {
+    timeout: 3000
+  }
 });
 ```
 
