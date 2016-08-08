@@ -20,6 +20,7 @@
   "engines": {
     "node" : ">=4.2.0"
   },
+  "files": ["lib"],
   "dependencies": {
     "async": "^2.0.0-rc.6",
     "request": "^2.72.0"
