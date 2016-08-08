@@ -164,11 +164,12 @@ stream.on('data', chunk => {
 kubernetes-client supports Kubernetes [apiserver
 authentication](http://kubernetes.io/docs/admin/authentication/).
 
-Basic authentication:
+Basic authentication (with optional certificate authority):
 
 ```js
 const k8 = new K8Api({
   url: 'https://my-k8-api-server.com',
+  ca: fs.readFileSync('cluster-ca.pem'),
   auth: {
     user: 'user',
     pass: 'pass'
