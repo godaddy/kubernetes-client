@@ -12,11 +12,6 @@ Install via npm:
 $ npm i kubernetes-client --save
 ```
 
-## Documentation
-
-* [Kubernetes Reference Documentation](http://kubernetes.io/docs/reference/)
-* [Kubernetes Swagger Spec](http://kubernetes.io/kubernetes/third_party/swagger-ui/)
-
 ## Examples
 
 kubernetes-client provides access to all the Kubernetes objects and
@@ -87,7 +82,7 @@ k8.ns('other-project').rc.get('http-rc', print);
 
 You can optionally specify query string object `qs` to GET
 endpoints. kubernetes-client passes `qs` directly to
-[`request`](https://www.npmjs.com/package/request#requestoptions-callback)
+[`request`](https://www.npmjs.com/package/request#requestoptions-callback).
 For example to filter based on [label
 selector](http://kubernetes.io/docs/user-guide/labels/):
 
@@ -215,6 +210,11 @@ const k8 = new K8Api({
   }
 });
 ```
+
+## More Documentation
+
+* [Kubernetes Reference Documentation](http://kubernetes.io/docs/reference/)
+* [Kubernetes Swagger Spec](http://kubernetes.io/kubernetes/third_party/swagger-ui/)
 
 ## License
 
