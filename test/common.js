@@ -37,7 +37,7 @@ if (testing('int')) {
     namespace: defaultName
   });
   api.wipe = function (cb) {
-    this.ns.delete({ name: defaultName, timeout: 10000 }, () => {
+    this.ns.delete({ name: defaultName, timeout: 30000 }, () => {
       this.ns.post({ body: {
         kind: 'Namespace',
         metadata: {
