@@ -11,7 +11,7 @@
     "jscs": "godaddy-js-style-jscs lib/ test/",
     "lint": "godaddy-js-style-lint lib/ test/",
     "test": "mocha",
-    "test-integration": "TESTING=int mocha -t 10000 test"
+    "test-integration": "TESTING=int mocha -t 30000 test"
   },
   "repository": "godaddy/kubernetes-client",
   "keywords": ["kubernetes", "kubectl", "containers"],
