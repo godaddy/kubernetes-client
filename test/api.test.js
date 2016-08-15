@@ -96,6 +96,25 @@ describe('lib.api', () => {
     });
   });
 
+  describe('.resourcequotas', () => {
+    beforeTesting('unit', () => {
+      nock(api.url)
+        .get('/api/v1/resourcequotas')
+        .reply(200, {
+          kind: 'ResourceQuotaList',
+          items: []
+        });
+    });
+
+    it('returns ResourceQuotaList', done => {
+      api.resourcequotas.get((err, results) => {
+        assume(err).is.falsy();
+        assume(results.kind).is.equal('ResourceQuotaList');
+        done();
+      });
+    });
+  });
+
   describe('.match', () => {
     beforeTesting('int', done => {
       api.wipe(err => {
