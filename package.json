@@ -1,6 +1,6 @@
 {
   "name": "kubernetes-client",
-  "version": "1.1.4",
+  "version": "2.0.0",
   "description": "Simplified Kubernetes API client.",
   "main": "lib/index.js",
   "scripts": {
