@@ -128,6 +128,12 @@ describe('objects', function () {
         done();
       });
     });
+    only('unit', 'throws Error if missing options', function () {
+      function testFn() {
+        rcs().po.get(() => { throw Error('Should not reach'); });
+      }
+      assume(testFn).throws();
+    });
   });
 
   describe('.ReplicationControllers.delete', function () {
