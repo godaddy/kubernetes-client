@@ -154,7 +154,6 @@ describe('lib.api', () => {
       });
     });
   });
-
   describe('.matchLabels', () => {
     beforeTesting('int', done => {
       api.wipe(err => {
@@ -189,5 +188,4 @@ describe('lib.api', () => {
       });
     });
   });
-
 });

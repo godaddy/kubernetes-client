@@ -2,7 +2,7 @@
 'use strict';
 
 const Core = require('../lib/core');
-const ApisExtension = require('../lib/apisExtension');
+const Extensions = require('../lib/extensions');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
 
@@ -26,7 +26,7 @@ function only(types, message, fn) {
 }
 
 let api;
-let apisExtension;
+let extensions;
 if (testing('int')) {
   if (!process.env.URL) {
     throw new RangeError(
@@ -39,7 +39,7 @@ if (testing('int')) {
     namespace: defaultName
   });
 
-  apisExtension = new ApisExtension({
+  extensions = new Extensions({
     url: process.env.URL,
     version: process.env.VERSION || 'v1beta1',
     namespace: defaultName
@@ -63,7 +63,8 @@ if (testing('int')) {
     version: process.env.VERSION || 'v1',
     namespace: defaultName
   });
-  apisExtension = new ApisExtension({
+
+  extensions = new Extensions({
     url: 'http://mock.kube.api',
     version: process.env.VERSION || 'v1beta1',
     namespace: defaultName
@@ -72,13 +73,10 @@ if (testing('int')) {
   api.wipe = () => {
     throw new Error("Don't call wipe during unit tests");
   }
-  apisExtension.wipe = () => {
-    throw new Error("Don't call wipre during unit tests");
-  }
 }
 
 module.exports.api = api;
-module.exports.apisExtension = apisExtension;
+module.exports.extensions = extensions;
 module.exports.defaultName = defaultName;
 module.exports.testing = testing;
 module.exports.beforeTesting = beforeTesting;
