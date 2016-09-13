@@ -5,6 +5,7 @@ const Core = require('../lib/core');
 const Extensions = require('../lib/extensions');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
+const defaultTimeout = process.env.TIMEOUT || 30000;
 
 function testing(type) {
   const t = process.env.TESTING || 'unit';
@@ -46,7 +47,7 @@ if (testing('int')) {
   });
 
   api.wipe = function (cb) {
-    this.ns.delete({ name: defaultName, timeout: 30000 }, () => {
+    this.ns.delete({ name: defaultName, timeout: defaultTimeout }, err => {
       this.ns.post({ body: {
         kind: 'Namespace',
         metadata: {

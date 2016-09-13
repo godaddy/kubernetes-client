@@ -33,7 +33,10 @@ describe('lib.api', () => {
   describe('.ns', () => {
 
     beforeTesting('integration', done => {
-      api.ns.delete({ name: defaultName, timeout: 10000 }, () => done());
+      api.ns.delete({
+        name: defaultName,
+        timeout: common.defaultTimeout
+      }, () => done());
     });
     beforeTesting('unit', () => {
       const mockNamespace = {
@@ -64,7 +67,10 @@ describe('lib.api', () => {
           }}, next);
         },
         next => api.ns.get(defaultName, next),
-        next => api.ns.delete({ name: defaultName, timeout: 10000 }, next)
+        next => api.ns.delete({
+          name: defaultName,
+          timeout: common.defaultTimeout
+        }, next)
       ], (err, results) => {
         assume(err).is.falsy();
         const namespace = results[1];
