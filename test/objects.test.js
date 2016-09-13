@@ -4,7 +4,7 @@ const assume = require('assume');
 const nock = require('nock');
 const ReplicationControllers = require('../lib/replicationcontrollers');
 const Pods = require('../lib/pods');
-const Api = require('../lib/api');
+const Core = require('../lib/core');
 
 const common = require('./common');
 const api = common.api;
@@ -48,14 +48,14 @@ describe('objects', function () {
 
   function rcs() {
     return new ReplicationControllers({
-      api: new Api({ url: _url }),
+      api: new Core({ url: _url }),
       parentPath: _ns
     });
   }
 
   function pods() {
     return new Pods({
-      api: new Api({ url: _url }),
+      api: new Core({ url: _url }),
       parentPath: _ns
     });
   }
