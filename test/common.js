@@ -1,7 +1,7 @@
 /* eslint no-process-env:0 */
 'use strict';
 
-const Api = require('../lib/api');
+const Api = require('../lib/core');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
 
