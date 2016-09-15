@@ -42,12 +42,7 @@ describe('lib.extensions', () => {
       }
     };
 
-    beforeTesting('int', done => {
-      api.wipe(err => {
-        assume(err).is.falsy();
-        done();
-      });
-    });
+    beforeTesting('int', api.wipe);
     beforeTesting('unit', () => {
       const mockDeployment = {
         kind: 'Deployment',
@@ -80,12 +75,7 @@ describe('lib.extensions', () => {
     });
 
     describe('lists', () => {
-      beforeTesting('int', done => {
-        api.wipe(err => {
-          assume(err).is.falsy();
-          done();
-        });
-      });
+      beforeTesting('int', api.wipe);
       beforeTesting('unit', () => {
         const mockDeploymentList = {
           kind: 'DeploymentList',
@@ -137,12 +127,7 @@ describe('lib.extensions', () => {
       }
     };
 
-    beforeTesting('int', done => {
-      api.wipe(err => {
-        assume(err).is.falsy();
-        done();
-      });
-    });
+    beforeTesting('int', api.wipe);
     beforeTesting('unit', () => {
       const mockDs = {
         kind: 'DaemonSet',
@@ -175,12 +160,7 @@ describe('lib.extensions', () => {
     });
 
     describe('lists', () => {
-      beforeTesting('int', done => {
-        api.wipe(err => {
-          assume(err).is.falsy();
-          done();
-        });
-      });
+      beforeTesting('int', api.wipe);
       beforeTesting('unit', () => {
         const mockDsList = {
           kind: 'DaemonSetList',

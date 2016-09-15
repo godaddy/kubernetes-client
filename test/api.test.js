@@ -1,4 +1,3 @@
-/*
 'use strict';
 
 const assume = require('assume');
@@ -196,4 +195,3 @@ describe('lib.api', () => {
     });
   });
 });
-*/
