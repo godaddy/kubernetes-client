@@ -32,18 +32,24 @@ const k8 = new K8Api.Core({
   namespace: 'my-project' // Defaults to 'default'
 });
 
-const k8Ext = new K8Api.ApisExtension({
-  url: 'http://my-k8-api-server.com',
-  version: 'v1beta1',  // Defaults to 'v1beta1'
-  namespace: 'my-project' // Defaults to 'default'
-});
-
 function print(err, result) {
   console.log(JSON.stringify(err || result, null, 2));
 }
 
 k8.namespaces.replicationcontrollers.get('http-rc', print);
-k8Ext.namespaces.deployments.get(print);
+```
+
+kubernetes-client supports the Extensions API also. For example, GET
+the `Deployment` named `http-deployment`:
+
+```js
+const k8Ext = new K8Api.Extensions({
+  url: 'http://my-k8-api-server.com',
+  version: 'v1beta1',  // Defaults to 'v1beta1'
+  namespace: 'my-project' // Defaults to 'default'
+});
+
+k8Ext.namespaces.deployments.get('http-deployment', print);
 ```
 
 ### Creating and updating

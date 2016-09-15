@@ -9,7 +9,6 @@ const extensions = common.extensions;
 const api = common.api;
 const defaultName = common.defaultName;
 const beforeTesting = common.beforeTesting;
-const only = common.only;
 const resourceName = 'test';
 
 describe('lib.extensions', () => {
@@ -23,13 +22,13 @@ describe('lib.extensions', () => {
       },
       spec: {
         selector: [
-          {app: 'test'}
+          { app: 'test' }
         ],
         template: {
           metadata: {
             labels: {
               app: 'test'
-            },
+            }
           },
           spec: {
             containers: [{
@@ -62,7 +61,7 @@ describe('lib.extensions', () => {
     it('POSTs, GETs, and DELETEs', done => {
       async.series([
         next => {
-          extensions.ns.deployments.post({ body: deploymentObj}, next);
+          extensions.ns.deployments.post({ body: deploymentObj }, next);
         },
         next => extensions.ns.deployments.get(resourceName, next),
         next => extensions.ns.deployments.delete(resourceName, next)
@@ -147,7 +146,7 @@ describe('lib.extensions', () => {
     it('POSTs, GETs, and DELETEs', done => {
       async.series([
         next => {
-          extensions.ns.ds.post({ body: daemonSetObj}, next);
+          extensions.ns.ds.post({ body: daemonSetObj }, next);
         },
         next => extensions.ns.ds.get(resourceName, next),
         next => extensions.ns.ds.delete(resourceName, next)
