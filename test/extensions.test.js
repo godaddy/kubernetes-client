@@ -1,4 +1,4 @@
-/*'use strict';
+'use strict';
 
 const assume = require('assume');
 const async = require('async');
@@ -9,12 +9,38 @@ const extensions = common.extensions;
 const api = common.api;
 const defaultName = common.defaultName;
 const beforeTesting = common.beforeTesting;
+const only = common.only;
 const resourceName = 'test';
 
 describe('lib.extensions', () => {
   describe('.deployments', () => {
     const path = `/apis/extensions/v1beta1/namespaces/${ defaultName }/deployments`;
     const resourcePath = `${ path }/${ resourceName }`;
+    const deploymentObj = {
+      kind: 'Deployment',
+      metadata: {
+        name: resourceName
+      },
+      spec: {
+        selector: [
+          {app: 'test'}
+        ],
+        template: {
+          metadata: {
+            labels: {
+              app: 'test'
+            },
+          },
+          spec: {
+            containers: [{
+              name: 'test',
+              imagePullPolicy: 'Never',
+              image: 'test.com:5000/test:v0'
+            }]
+          }
+        }
+      }
+    };
 
     beforeTesting('int', done => {
       api.wipe(err => {
@@ -41,15 +67,10 @@ describe('lib.extensions', () => {
     it('POSTs, GETs, and DELETEs', done => {
       async.series([
         next => {
-          extensions.ns.deployments.post({ body: {
-            kind: 'DaemonSet',
-            metadata: {
-              name: resourceName
-            }
-          }}, next);
+          extensions.ns.deployments.post({ body: deploymentObj}, next);
         },
         next => extensions.ns.deployments.get(resourceName, next),
-        next => extensions.ns.deployments.delete(resourceName, next),
+        next => extensions.ns.deployments.delete(resourceName, next)
       ], (err, results) => {
         assume(err).is.falsy();
         const deployments = results[0];
@@ -91,7 +112,37 @@ describe('lib.extensions', () => {
   describe('.ds', () => {
     const path = `/apis/extensions/v1beta1/namespaces/${ defaultName }/daemonsets`;
     const resourcePath = `${ path }/${ resourceName }`;
+    const daemonSetObj = {
+      kind: 'DaemonSet',
+      metadata: {
+        name: resourceName
+      },
+      spec: {
+        template: {
+          metadata: {
+            labels: {
+              app: 'test'
+            }
+          },
+          spec: {
+            containers: [
+              {
+                name: 'test',
+                imagePullPolicy: 'Never',
+                image: 'test.com:5000/test:v0'
+              }
+            ]
+          }
+        }
+      }
+    };
 
+    beforeTesting('int', done => {
+      api.wipe(err => {
+        assume(err).is.falsy();
+        done();
+      });
+    });
     beforeTesting('unit', () => {
       const mockDs = {
         kind: 'DaemonSet',
@@ -111,16 +162,10 @@ describe('lib.extensions', () => {
     it('POSTs, GETs, and DELETEs', done => {
       async.series([
         next => {
-          extensions.ns.ds.post({ body: {
-            kind: 'Deployment',
-            metadata: {
-              name: resourceName
-            }
-          }}, next);
+          extensions.ns.ds.post({ body: daemonSetObj}, next);
         },
         next => extensions.ns.ds.get(resourceName, next),
-        next => extensions.ns.ds.delete(resourceName, next),
-        next => extensions.ns.ds.get(next)
+        next => extensions.ns.ds.delete(resourceName, next)
       ], (err, results) => {
         assume(err).is.falsy();
         const ds = results[0];
@@ -130,6 +175,12 @@ describe('lib.extensions', () => {
     });
 
     describe('lists', () => {
+      beforeTesting('int', done => {
+        api.wipe(err => {
+          assume(err).is.falsy();
+          done();
+        });
+      });
       beforeTesting('unit', () => {
         const mockDsList = {
           kind: 'DaemonSetList',
@@ -154,4 +205,3 @@ describe('lib.extensions', () => {
     });
   });
 });
-*/
