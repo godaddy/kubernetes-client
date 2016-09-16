@@ -47,7 +47,7 @@ if (testing('int')) {
   });
 
   api.wipe = function (cb) {
-    this.ns.delete({ name: defaultName, timeout: defaultTimeout }, err => {
+    this.ns.delete({ name: defaultName, timeout: defaultTimeout }, () => {
       this.ns.post({ body: {
         kind: 'Namespace',
         metadata: {
@@ -57,7 +57,6 @@ if (testing('int')) {
     });
   }
   api.wipe = api.wipe.bind(api);
-
 } else {
   api = new Core({
     url: 'http://mock.kube.api',
