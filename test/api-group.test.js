@@ -29,7 +29,7 @@ function pod(name) {
   };
 }
 
-describe('lib.api', () => {
+describe('lib.api-group', () => {
   describe('.ns', () => {
 
     beforeTesting('integration', done => {
