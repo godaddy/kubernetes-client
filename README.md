@@ -39,7 +39,7 @@ function print(err, result) {
 k8.namespaces.replicationcontrollers.get('http-rc', print);
 ```
 
-kubernetes-client supports the Extensions API also. For example, GET
+kubernetes-client supports the Extensions API group. For example, GET
 the `Deployment` named `http-deployment`:
 
 ```js
@@ -69,6 +69,32 @@ k8.namespaces.replicationcontrollers.patch({
   name: 'http-rc',
   body: patch
 }, print);
+```
+
+### Using the correct API group and version
+
+kubernetes-client client includes functionality to help determine the
+correct Kubernetes API group and version to use based on manifests:
+
+```js
+const K8Api = require('kubernetes-client');
+const api = new K8Api.Api({
+  url: 'http://my-k8-api-server.com',
+});
+
+const manifest0 = {
+  kind: 'Deployment',
+  apiVersion: 'extensions/v1beta1'
+  ...
+};
+const manifest1 = {
+  kind: 'ReplicationController',
+  apiVersion: 'v1'
+  ...
+};
+
+api.group(manifest0).ns.kind(manifest0).post(manifest0, print);
+api.group(manifest1).ns.kind(manifest1).post(manifest1, print);
 ```
 
 ### Object name aliases
