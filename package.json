@@ -1,6 +1,6 @@
 {
   "name": "kubernetes-client",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Simplified Kubernetes API client.",
   "main": "lib/index.js",
   "scripts": {
@@ -14,13 +14,19 @@
     "test-integration": "TESTING=int mocha -t ${TIMEOUT:-30000} test"
   },
   "repository": "godaddy/kubernetes-client",
-  "keywords": ["kubernetes", "kubectl", "containers"],
+  "keywords": [
+    "kubernetes",
+    "kubectl",
+    "containers"
+  ],
   "author": "GoDaddy Operating Company, LLC",
   "license": "MIT",
   "engines": {
-    "node" : ">=4.2.0"
+    "node": ">=4.2.0"
   },
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "async": "^2.0.0-rc.6",
     "request": "^2.72.0"
