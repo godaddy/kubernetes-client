@@ -3,6 +3,7 @@
 
 const Core = require('../lib/core');
 const Extensions = require('../lib/extensions');
+const Api = require('../lib/api');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
 const defaultTimeout = process.env.TIMEOUT || 30000;
@@ -28,6 +29,7 @@ function only(types, message, fn) {
 
 let api;
 let extensions;
+let apiGroup;
 if (testing('int')) {
   if (!process.env.URL) {
     throw new RangeError(
@@ -43,6 +45,11 @@ if (testing('int')) {
   extensions = new Extensions({
     url: process.env.URL,
     version: process.env.VERSION || 'v1beta1',
+    namespace: defaultName
+  });
+
+  apiGroup = new Api({
+    url: process.env.URL,
     namespace: defaultName
   });
 
@@ -70,6 +77,11 @@ if (testing('int')) {
     namespace: defaultName
   });
 
+  apiGroup = new Api({
+    url: 'http://mock.kube.api',
+    namespace: defaultName
+  });
+
   api.wipe = () => {
     throw new Error("Don't call wipe during unit tests");
   }
@@ -77,6 +89,7 @@ if (testing('int')) {
 
 module.exports.api = api;
 module.exports.extensions = extensions;
+module.exports.apiGroup = apiGroup;
 module.exports.defaultName = defaultName;
 module.exports.testing = testing;
 module.exports.beforeTesting = beforeTesting;

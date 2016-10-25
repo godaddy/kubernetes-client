@@ -6,6 +6,7 @@ const nock = require('nock');
 
 const common = require('./common');
 const api = common.api;
+const apiGroup = common.apiGroup;
 const defaultName = common.defaultName;
 const beforeTesting = common.beforeTesting;
 
@@ -26,6 +27,13 @@ function pod(name) {
         imagePullPolicy: 'IfNotPresent'
       }]
     }
+  };
+}
+
+function ingress() {
+  return {
+    kind: 'Ingress',
+    apiVersion: 'extensions/v1beta1'
   };
 }
 
@@ -75,6 +83,23 @@ describe('lib.api-group', () => {
         assume(err).is.falsy();
         const namespace = results[1];
         assume(namespace.metadata.name).is.equal(defaultName);
+        done();
+      });
+    });
+  });
+
+  describe('.ingresses', () => {
+    beforeTesting('unit', () => {
+      nock(api.url)
+        .get(`/apis/extensions/v1beta1/namespaces/${ defaultName }/ingresses`)
+        .reply(200);
+    });
+
+    it('GETs', done => {
+      async.series([
+        next => { apiGroup.group(ingress()).ns.kind(ingress()).get(next); }
+      ], (err, results) => {
+        assume(err).is.falsy();
         done();
       });
     });
