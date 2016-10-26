@@ -80,6 +80,7 @@ correct Kubernetes API group and version to use based on manifests:
 const K8Api = require('kubernetes-client');
 const api = new K8Api.Api({
   url: 'http://my-k8-api-server.com',
+  namespace: 'my-project'
 });
 
 const manifest0 = {
