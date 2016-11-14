@@ -132,11 +132,11 @@ k8.ns.rc.get({ qs: { labelSelector: 'service=http' } }, print);
 
 ### Label selector filtering
 
-kubernetes-client has a shortcut, `matchLabel`, for filtering on label
+kubernetes-client has a shortcut, `matchLabels`, for filtering on label
 selector equality:
 
 ```js
-k8.ns.rc.matchLabel({ service: 'http' }).get(print);
+k8.ns.rc.matchLabels({ service: 'http' }).get(print);
 ```
 
 and a more general `match` method based on Kubernetes Match Expressions:
