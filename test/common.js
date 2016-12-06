@@ -13,8 +13,22 @@ function testing(type) {
   return t.substr(0, 3) === type.substr(0, 3);
 }
 
+/**
+ * Executes mocha's `before` hook if testing `type`.
+ * @param {string} type - Test type (e.g., 'int', or 'unit')
+ * @param {function} fn - Function to execute.
+ */
 function beforeTesting(type, fn) {
   if (testing(type)) { before(fn); }
+}
+
+/**
+ * Executes mocha's `beforeEach` hook if testing `type`.
+ * @param {string} type - Test type (e.g., 'int', or 'unit')
+ * @param {function} fn - Function to execute.
+ */
+function beforeTestingEach(type, fn) {
+  if (testing(type)) { beforeEach(fn); }
 }
 
 function only(types, message, fn) {
@@ -93,4 +107,5 @@ module.exports.apiGroup = apiGroup;
 module.exports.defaultName = defaultName;
 module.exports.testing = testing;
 module.exports.beforeTesting = beforeTesting;
+module.exports.beforeTestingEach = beforeTestingEach;
 module.exports.only = only;

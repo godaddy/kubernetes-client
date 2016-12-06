@@ -3,7 +3,6 @@
 const assume = require('assume');
 const nock = require('nock');
 const ReplicationControllers = require('../lib/replicationcontrollers');
-const Pods = require('../lib/pods');
 const Core = require('../lib/core');
 
 const common = require('./common');
@@ -48,13 +47,6 @@ describe('objects', function () {
 
   function rcs() {
     return new ReplicationControllers({
-      api: new Core({ url: _url }),
-      parentPath: _ns
-    });
-  }
-
-  function pods() {
-    return new Pods({
       api: new Core({ url: _url }),
       parentPath: _ns
     });
@@ -196,32 +188,6 @@ describe('objects', function () {
       api.ns.rc.put({ name: 'test-rc', body: testReplicationController }, (err, result) => {
         assume(err).is.falsy();
         assume(result.metadata.name).is.equal('test-rc');
-        done();
-      });
-    });
-  });
-
-  describe('.Pods.get', function () {
-    only('unit', 'returns pod', function (done) {
-      const scope = nock(_url).get(`${ _pods }/foo`).reply(200, {
-        kind: 'pod',
-        metadata: { name: 'foo' }
-      });
-      pods().get('foo', (err, pod) => {
-        assume(err).is.falsy();
-        assume(pod.kind).is.equal('pod');
-        assume(scope.isDone()).true();
-        done();
-      });
-    });
-  });
-
-  describe('.Pods.delete', function () {
-    only('unit', 'deletes pod', function (done) {
-      const scope = nock(_url).delete(`${ _pods }/foo`).reply(200, {});
-      pods().delete('foo', err => {
-        assume(err).is.falsy();
-        assume(scope.isDone()).true();
         done();
       });
     });
