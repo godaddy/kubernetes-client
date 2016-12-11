@@ -251,6 +251,26 @@ const k8 = new K8Api({
 });
 ```
 
+## Testing
+
+kubernetes-client includes unit tests and integration tests.
+[Minikube](https://github.com/kubernetes/minikube) is a tool that
+makes it easy to run integration tests locally.
+
+Run the unit tests:
+
+```console
+$ npm test
+```
+
+The integration tests use a running Kubernetes server. You specify the
+Kubernetes server context via the `CONTEXT` environment variable. For
+example, run the integration tests with the `minikube` context:
+
+```console
+$ CONTEXT=minikube npm run test-integration
+```
+
 ## More Documentation
 
 * [Kubernetes Reference Documentation](http://kubernetes.io/docs/reference/)

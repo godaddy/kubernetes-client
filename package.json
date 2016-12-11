@@ -35,6 +35,7 @@
     "assume": "^1.4.1",
     "godaddy-style": "^3.1.5",
     "istanbul": "^0.4.3",
+    "js-yaml": "^3.7.0",
     "jsdoc": "^3.4.0",
     "mocha": "^2.5.3",
     "nock": "^8.0.0"

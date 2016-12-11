@@ -1,6 +1,11 @@
 /* eslint no-process-env:0 */
 'use strict';
 
+const async = require('async');
+const fs = require('fs');
+const path = require('path');
+const yaml = require('js-yaml');
+
 const Core = require('../lib/core');
 const Extensions = require('../lib/extensions');
 const Api = require('../lib/api');
@@ -31,37 +36,77 @@ let api;
 let extensions;
 let apiGroup;
 if (testing('int')) {
-  if (!process.env.URL) {
+  let url;
+  let ca;
+  let cert;
+  let key;
+  if (process.env.CONTEXT) {
+    const configPath = path.join(
+      process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'],
+      '.kube',
+      'config');
+    const config = yaml.load(fs.readFileSync(configPath));
+    const context = config
+          .contexts.find(item => item.name === process.env.CONTEXT).context;
+    const cluster = config
+          .clusters.find(item => item.name === context.cluster).cluster;
+    const user = config
+          .users.find(item => item.name === context.user).user;
+    url = cluster.server;
+    ca = fs.readFileSync(cluster['certificate-authority']);
+    cert = fs.readFileSync(user['client-certificate']);
+    key = fs.readFileSync(user['client-key']);
+  }
+  url = process.env.URL || url;
+  if (!url) {
     throw new RangeError(
+      'Set process.env.CONTEXT to Kubernetes config context, OR, ' +
       'Set process.env.URL to K8 API URL (http://foo.com:8080)');
   }
 
   api = new Core({
-    url: process.env.URL,
+    url: url,
+    ca: ca,
+    cert: cert,
+    key: key,
     version: process.env.VERSION || 'v1',
     namespace: defaultName
   });
 
   extensions = new Extensions({
-    url: process.env.URL,
+    url: url,
+    ca: ca,
+    cert: cert,
+    key: key,
     version: process.env.VERSION || 'v1beta1',
     namespace: defaultName
   });
 
   apiGroup = new Api({
-    url: process.env.URL,
+    url: url,
+    ca: ca,
+    cert: cert,
+    key: key,
     namespace: defaultName
   });
 
   api.wipe = function (cb) {
-    this.ns.delete({ name: defaultName, timeout: defaultTimeout }, () => {
-      this.ns.post({ body: {
-        kind: 'Namespace',
-        metadata: {
-          name: defaultName
-        }
-      }}, cb);
-    });
+    const times = Math.ceil(defaultTimeout / 1000);
+    const interval = 1000;
+    async.retry({ times: times, interval: interval }, next => {
+      this.ns.delete({ name: defaultName }, () => {
+        this.ns.get({ name: defaultName }, err => {
+          if (!err) return next(new Error(`${ defaultName} still exists`));
+          if (err.code !== 404) return next(err);
+          this.ns.post({ body: {
+            kind: 'Namespace',
+            metadata: {
+              name: defaultName
+            }
+          }}, next);
+        });
+      });
+    }, cb);
   }
   api.wipe = api.wipe.bind(api);
 } else {
