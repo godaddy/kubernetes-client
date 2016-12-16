@@ -36,7 +36,7 @@ function print(err, result) {
   console.log(JSON.stringify(err || result, null, 2));
 }
 
-k8.namespaces.replicationcontrollers.get('http-rc', print);
+k8.namespaces.replicationcontrollers('http-rc').get(print);
 ```
 
 kubernetes-client supports the Extensions API group. For example, GET
@@ -49,7 +49,7 @@ const k8Ext = new K8Api.Extensions({
   namespace: 'my-project' // Defaults to 'default'
 });
 
-k8Ext.namespaces.deployments.get('http-deployment', print);
+k8Ext.namespaces.deployments('http-deployment').get(print);
 ```
 
 ### Creating and updating
@@ -65,8 +65,7 @@ or update the number of replicas:
 
 ```js
 const patch = { spec: { replicas: 10 } };
-k8.namespaces.replicationcontrollers.patch({
-  name: 'http-rc',
+k8.namespaces.replicationcontrollers('http-rc').patch({
   body: patch
 }, print);
 ```
@@ -107,7 +106,7 @@ resource name (*e.g.*, `namespace` for `namespaces`). We can shorten
 the example above:
 
 ```js
-k8.ns.rc.get('http-rc', print);
+k8.ns.rc('http-rc').get(print);
 ```
 
 ### Switching namespaces
@@ -115,7 +114,7 @@ k8.ns.rc.get('http-rc', print);
 You can call the `namespace` object to specify the namespace:
 
 ```js
-k8.ns('other-project').rc.get('http-rc', print);
+k8.ns('other-project').rc('http-rc').get(print);
 ```
 
 ### Query parameters
