@@ -5,9 +5,6 @@ const async = require('async');
 const nock = require('nock');
 
 const common = require('./common');
-const api = common.api;
-const apiGroup = common.apiGroup;
-const defaultName = common.defaultName;
 const beforeTesting = common.beforeTesting;
 
 function pod(name) {
@@ -40,49 +37,50 @@ function ingress() {
 describe('lib.api-group', () => {
   describe('.ns', () => {
 
+    let nameForTest;
     beforeTesting('integration', done => {
-      api.ns.delete({
-        name: defaultName,
-        timeout: common.defaultTimeout
-      }, () => done());
+      nameForTest = common.newName();
+      common.changeName(done);
     });
+
     beforeTesting('unit', () => {
+      nameForTest = common.newName();
       const mockNamespace = {
         kind: 'Namespace',
         metadata: {
-          name: defaultName
+          name: nameForTest
         }
       };
-      nock(api.url)
+      nock(common.api.url)
         .post('/api/v1/namespaces')
         .reply(201, mockNamespace)
-        .get(`/api/v1/namespaces/${ defaultName }`)
+        .get(`/api/v1/namespaces/${ nameForTest }`)
         .reply(200, mockNamespace)
-        .delete(`/api/v1/namespaces/${ defaultName }`)
+        .delete(`/api/v1/namespaces/${ nameForTest }`)
         .reply(200, mockNamespace)
-        .get(`/api/v1/namespaces/${ defaultName }`)
+        .get(`/api/v1/namespaces/${ nameForTest }`)
         .reply(404, { message: 'An error', code: 404 });
     });
 
     it('POSTs, GETs, and DELETEs', done => {
       async.series([
         next => {
-          api.ns.post({ body: {
+          common.api.ns.post({ body: {
             kind: 'Namespace',
             metadata: {
-              name: defaultName
+              name: nameForTest
             }
           }}, next);
         },
-        next => api.ns.get(defaultName, next),
-        next => api.ns.delete({
-          name: defaultName,
+        next => common.api.ns.get(nameForTest, next),
+        next => common.api.ns.delete({
+          name: nameForTest,
           timeout: common.defaultTimeout
         }, next)
       ], (err, results) => {
         assume(err).is.falsy();
         const namespace = results[1];
-        assume(namespace.metadata.name).is.equal(defaultName);
+        assume(namespace.metadata.name).is.equal(nameForTest);
         done();
       });
     });
@@ -90,15 +88,15 @@ describe('lib.api-group', () => {
 
   describe('.ingresses', () => {
     beforeTesting('unit', () => {
-      nock(api.url)
-        .get(`/apis/extensions/v1beta1/namespaces/${ defaultName }/ingresses`)
+      nock(common.api.url)
+        .get(`/apis/extensions/v1beta1/namespaces/${ common.currentName }/ingresses`)
         .reply(200);
     });
 
     it('GETs', done => {
       async.series([
-        next => { apiGroup.group(ingress()).ns.kind(ingress()).get(next); }
-      ], (err, results) => {
+        next => { common.apiGroup.group(ingress()).ns.kind(ingress()).get(next); }
+      ], err => {
         assume(err).is.falsy();
         done();
       });
@@ -107,7 +105,7 @@ describe('lib.api-group', () => {
 
   describe('.nodes', () => {
     beforeTesting('unit', () => {
-      nock(api.url)
+      nock(common.api.url)
         .get('/api/v1/nodes')
         .reply(200, {
           kind: 'NodeList',
@@ -118,7 +116,7 @@ describe('lib.api-group', () => {
     });
 
     it('returns some nodes', done => {
-      api.no.get((err, results) => {
+      common.api.no.get((err, results) => {
         assume(err).is.falsy();
         assume(results.kind).is.equal('NodeList');
         assume(results.items.length).is.above(0);
@@ -129,7 +127,7 @@ describe('lib.api-group', () => {
 
   describe('.resourcequotas', () => {
     beforeTesting('unit', () => {
-      nock(api.url)
+      nock(common.api.url)
         .get('/api/v1/resourcequotas')
         .reply(200, {
           kind: 'ResourceQuotaList',
@@ -138,7 +136,7 @@ describe('lib.api-group', () => {
     });
 
     it('returns ResourceQuotaList', done => {
-      api.resourcequotas.get((err, results) => {
+      common.api.resourcequotas.get((err, results) => {
         assume(err).is.falsy();
         assume(results.kind).is.equal('ResourceQuotaList');
         done();
@@ -148,17 +146,17 @@ describe('lib.api-group', () => {
 
   describe('.match', () => {
     beforeTesting('int', done => {
-      api.wipe(err => {
+      common.changeName(err => {
         assume(err).is.falsy();
         async.each([
           { body: pod('pod0') },
           { body: pod('pod1') }
-        ], api.ns.po.post.bind(api.ns.po), done);
+        ], common.api.ns.po.post.bind(common.api.ns.po), done);
       });
     });
     beforeTesting('unit', () => {
-      nock(api.url)
-        .get(`/api/v1/namespaces/${ defaultName }/pods`)
+      nock(common.api.url)
+        .get(`/api/v1/namespaces/${ common.currentName }/pods`)
         .query({ labelSelector: 'name in (pod0),service notin (service0)' })
         .reply(200, {
           kind: 'PodList',
@@ -169,7 +167,7 @@ describe('lib.api-group', () => {
     });
 
     it('GETs with labelSelector', done => {
-      api.ns.po.match([{
+      common.api.ns.po.match([{
         key: 'name',
         operator: 'In',
         values: ['pod0']
@@ -187,17 +185,17 @@ describe('lib.api-group', () => {
   });
   describe('.matchLabels', () => {
     beforeTesting('int', done => {
-      api.wipe(err => {
+      common.changeName(err => {
         assume(err).is.falsy();
         async.each([
           { body: pod('pod0') },
           { body: pod('pod1') }
-        ], api.ns.po.post.bind(api.ns.po), done);
+        ], common.api.ns.po.post.bind(common.api.ns.po), done);
       });
     });
     beforeTesting('unit', () => {
-      nock(api.url)
-        .get(`/api/v1/namespaces/${ defaultName }/pods`)
+      nock(common.api.url)
+        .get(`/api/v1/namespaces/${ common.currentName }/pods`)
         .query({ labelSelector: 'name in (pod0),service in (service1)' })
         .reply(200, {
           kind: 'PodList',
@@ -208,7 +206,7 @@ describe('lib.api-group', () => {
     });
 
     it('GETs with labelSelector', done => {
-      api.ns.po.matchLabels({
+      common.api.ns.po.matchLabels({
         name: 'pod0',
         service: 'service1'
       }).get((err, pods) => {
@@ -219,4 +217,6 @@ describe('lib.api-group', () => {
       });
     });
   });
+
+  common.afterTesting('int', common.cleanupName);
 });

@@ -4,9 +4,7 @@ const assume = require('assume');
 const nock = require('nock');
 
 const common = require('./common');
-const api = common.api;
 const only = common.only;
-const defaultName = common.defaultName;
 const beforeTesting = common.beforeTesting;
 const beforeTestingEach = common.beforeTestingEach;
 
@@ -28,10 +26,10 @@ const testPod = {
 describe('lib.pods', () => {
 
   describe('.post', () => {
-    beforeTesting('int', api.wipe);
+    beforeTesting('int', common.changeName);
     beforeTestingEach('unit', () => {
-      nock(api.url)
-        .post(`/api/v1/namespaces/${ defaultName }/pods`)
+      nock(common.api.url)
+        .post(`/api/v1/namespaces/${ common.currentName }/pods`)
         .reply(200, {
           kind: 'Pod',
           metadata: { name: 'test-pod' }
@@ -39,7 +37,7 @@ describe('lib.pods', () => {
     });
 
     it('succeeds creating a new pod', done => {
-      api.ns.pods.post({ body: testPod }, (err, pod) => {
+      common.api.ns.pods.post({ body: testPod }, (err, pod) => {
         assume(err).is.falsy();
         assume(pod.metadata.name).is.equal('test-pod');
         done();
@@ -49,28 +47,28 @@ describe('lib.pods', () => {
 
   describe('.get', () => {
     beforeTesting('int', done => {
-      api.wipe(err => {
+      common.changeName(err => {
         assume(err).is.falsy();
-        api.ns.pods.post({ body: testPod }, done);
+        common.api.ns.pods.post({ body: testPod }, done);
       });
     });
     beforeTestingEach('unit', () => {
-      nock(api.url)
-        .get(`/api/v1/namespaces/${ defaultName }/pods/test-pod`)
+      nock(common.api.url)
+        .get(`/api/v1/namespaces/${ common.currentName }/pods/test-pod`)
         .reply(200, {
           kind: 'Pod',
           metadata: { name: 'test-pod' }
         });
     });
     it('returns the Pod', done => {
-      api.ns.pods('test-pod').get((err, pod) => {
+      common.api.ns.pods('test-pod').get((err, pod) => {
         assume(err).is.falsy();
         assume(pod.kind).is.equal('Pod');
         done();
       });
     });
     only('unit', 'returns the Pod via the legacy method', done => {
-      api.ns.pods.get('test-pod', (err, pod) => {
+      common.api.ns.pods.get('test-pod', (err, pod) => {
         assume(err).is.falsy();
         assume(pod.kind).is.equal('Pod');
         done();
@@ -80,18 +78,18 @@ describe('lib.pods', () => {
 
   describe('.delete', () => {
     beforeTesting('int', done => {
-      api.wipe(err => {
+      common.changeName(err => {
         assume(err).is.falsy();
-        api.ns.pods.post({ body: testPod }, done);
+        common.api.ns.pods.post({ body: testPod }, done);
       });
     });
     beforeTestingEach('unit', () => {
-      nock(api.url)
-        .delete(`/api/v1/namespaces/${ defaultName }/pods/test-pod`)
+      nock(common.api.url)
+        .delete(`/api/v1/namespaces/${ common.currentName }/pods/test-pod`)
         .reply(200, { kind: 'Pod' });
     });
     it('deletes the Pod', done => {
-      api.ns.pods('test-pod').delete((err, pod) => {
+      common.api.ns.pods('test-pod').delete((err, pod) => {
         assume(err).is.falsy();
         assume(pod.kind).is.equal('Pod');
         done();
@@ -101,23 +99,25 @@ describe('lib.pods', () => {
 
   describe('.log', () => {
     beforeTestingEach('unit', () => {
-      nock(api.url)
-        .get(`/api/v1/namespaces/${ defaultName }/pods/test-pod/log`)
+      nock(common.api.url)
+        .get(`/api/v1/namespaces/${ common.currentName }/pods/test-pod/log`)
         .reply(200, 'some log contents');
     });
     only('unit', 'returns log contents', done => {
-      api.ns.pods('test-pod').log.get((err, contents) => {
+      common.api.ns.pods('test-pod').log.get((err, contents) => {
         assume(err).is.falsy();
         assume(contents).is.equal('some log contents');
         done();
       });
     });
     only('unit', 'returns log contents via legacy method', done => {
-      api.ns.pods.log('test-pod', (err, contents) => {
+      common.api.ns.pods.log('test-pod', (err, contents) => {
         assume(err).is.falsy();
         assume(contents).is.equal('some log contents');
         done();
       });
     });
   });
+
+  common.afterTesting('int', common.cleanupName);
 });
