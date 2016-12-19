@@ -52,6 +52,13 @@ const k8Ext = new K8Api.Extensions({
 k8Ext.namespaces.deployments('http-deployment').get(print);
 ```
 
+kubernetes-client provides a helper to get in-cluster config and accessing the API from a Pod:
+
+```js
+const K8Api = require('kubernetes-client');
+const k8 = new K8Api.Core(K8Api.config.getInCluster());
+```
+
 ### Creating and updating
 
 kubernetes-client objects expose `.post`, `.patch`, and `.put`
