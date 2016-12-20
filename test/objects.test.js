@@ -6,9 +6,7 @@ const ReplicationControllers = require('../lib/replicationcontrollers');
 const Core = require('../lib/core');
 
 const common = require('./common');
-const api = common.api;
 const only = common.only;
-const defaultName = common.defaultName;
 const beforeTesting = common.beforeTesting;
 
 const testReplicationController = {
@@ -156,15 +154,15 @@ describe('objects', function () {
   });
 
   describe('.ReplicationControllers.post', function () {
-    beforeTesting('int', api.wipe);
+    beforeTesting('int', common.changeName);
     beforeTesting('unit', () => {
-      nock(api.url)
-        .post(`/api/v1/namespaces/${ defaultName }/replicationcontrollers`)
+      nock(common.api.url)
+        .post(`/api/v1/namespaces/${ common.currentName }/replicationcontrollers`)
         .reply(200, testReplicationController);
     });
 
     it('creates a ReplicationController', function (done) {
-      api.ns.rc.post({ body: testReplicationController }, (err, result) => {
+      common.api.ns.rc.post({ body: testReplicationController }, (err, result) => {
         assume(err).is.falsy();
         assume(result.metadata.name).is.equal('test-rc');
         done();
@@ -174,18 +172,18 @@ describe('objects', function () {
 
   describe('.ReplicationControllers.put', function () {
     beforeTesting('int', done => {
-      api.wipe(err => {
+      common.changeName(err => {
         assume(err).is.falsy();
-        api.ns.rc.post({ body: testReplicationController }, done);
+        common.api.ns.rc.post({ body: testReplicationController }, done);
       });
     });
     beforeTesting('unit', () => {
-      nock(api.url)
-        .put(`/api/v1/namespaces/${ defaultName }/replicationcontrollers/test-rc`)
+      nock(common.api.url)
+        .put(`/api/v1/namespaces/${ common.currentName }/replicationcontrollers/test-rc`)
         .reply(200, testReplicationController);
     });
     it('PUTs the new manifest', function (done) {
-      api.ns.rc.put({ name: 'test-rc', body: testReplicationController }, (err, result) => {
+      common.api.ns.rc.put({ name: 'test-rc', body: testReplicationController }, (err, result) => {
         assume(err).is.falsy();
         assume(result.metadata.name).is.equal('test-rc');
         done();
@@ -193,4 +191,5 @@ describe('objects', function () {
     });
   });
 
+  common.afterTesting('int', common.cleanupName);
 });

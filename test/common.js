@@ -1,7 +1,8 @@
-/* eslint no-process-env:0 */
+/* eslint no-process-env:0 no-sync:0 */
 'use strict';
 
 const async = require('async');
+const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
@@ -28,6 +29,15 @@ function beforeTesting(type, fn) {
 }
 
 /**
+ * Executes mocha's `after` hook if testing `type`.
+ * @param {string} type - Test type (e.g., 'int', or 'unit')
+ * @param {function} fn - Function to execute.
+ */
+function afterTesting(type, fn) {
+  if (testing(type)) { after(fn); }
+}
+
+/**
  * Executes mocha's `beforeEach` hook if testing `type`.
  * @param {string} type - Test type (e.g., 'int', or 'unit')
  * @param {function} fn - Function to execute.
@@ -46,17 +56,19 @@ function only(types, message, fn) {
   it.skip(message, fn);
 }
 
-let api;
-let extensions;
-let apiGroup;
-if (testing('int')) {
+function newName() {
+  const buffer = crypto.randomBytes(16);
+  return `${ defaultName }-${ buffer.toString('hex') }`;
+}
+
+function changeNameInt(cb) {
   let url;
   let ca;
   let cert;
   let key;
   if (process.env.CONTEXT) {
     const configPath = path.join(
-      process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'],
+      process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME'],
       '.kube',
       'config');
     const config = yaml.load(fs.readFileSync(configPath));
@@ -78,79 +90,113 @@ if (testing('int')) {
       'Set process.env.URL to K8 API URL (http://foo.com:8080)');
   }
 
-  api = new Core({
+  if (module.exports.currentName) {
+    module.exports.api.ns.delete({ name: module.exports.currentName }, () => { });
+  }
+
+  const currentName = newName();
+  module.exports.currentName = currentName;
+
+  module.exports.api = new Core({
     url: url,
     ca: ca,
     cert: cert,
     key: key,
     version: process.env.VERSION || 'v1',
-    namespace: defaultName
+    namespace: currentName
   });
 
-  extensions = new Extensions({
+  module.exports.extensions = new Extensions({
     url: url,
     ca: ca,
     cert: cert,
     key: key,
     version: process.env.VERSION || 'v1beta1',
-    namespace: defaultName
+    namespace: currentName
   });
 
-  apiGroup = new Api({
+  module.exports.apiGroup = new Api({
     url: url,
     ca: ca,
     cert: cert,
     key: key,
-    namespace: defaultName
+    namespace: currentName
   });
 
-  api.wipe = function (cb) {
+  module.exports.api.ns.post({
+    body: {
+      kind: 'Namespace',
+      metadata: {
+        name: currentName
+      }
+    }
+  }, err => {
+    if (err) return cb(err);
     const times = Math.ceil(defaultTimeout / 1000);
     const interval = 1000;
     async.retry({ times: times, interval: interval }, next => {
-      this.ns.delete({ name: defaultName }, () => {
-        this.ns.get({ name: defaultName }, err => {
-          if (!err) return next(new Error(`${ defaultName} still exists`));
-          if (err.code !== 404) return next(err);
-          this.ns.post({ body: {
-            kind: 'Namespace',
-            metadata: {
-              name: defaultName
-            }
-          }}, next);
-        });
-      });
-    }, cb);
-  }
-  api.wipe = api.wipe.bind(api);
-} else {
-  api = new Core({
+      module.exports.api.ns.serviceaccounts.get('default', (saErr, sa) => {
+        if (saErr) return next(saErr);
+        if (!sa.secrets) {
+          return next(new Error('Waiting for servicesaccount secrets'));
+        }
+        cb();
+      })
+    });
+  });
+}
+
+function changeNameUnit() {
+  const currentName = newName();
+  module.exports.currentName = currentName;
+
+  module.exports.api = new Core({
     url: 'http://mock.kube.api',
     version: process.env.VERSION || 'v1',
-    namespace: defaultName
+    namespace: currentName
   });
 
-  extensions = new Extensions({
+  module.exports.extensions = new Extensions({
     url: 'http://mock.kube.api',
     version: process.env.VERSION || 'v1beta1',
-    namespace: defaultName
+    namespace: currentName
   });
 
-  apiGroup = new Api({
+  module.exports.apiGroup = new Api({
     url: 'http://mock.kube.api',
-    namespace: defaultName
+    namespace: currentName
   });
+}
 
-  api.wipe = () => {
-    throw new Error("Don't call wipe during unit tests");
+function changeName(cb) {
+  if (testing('int')) return changeNameInt(cb);
+
+  throw new Error('Do not call changeName during unit tests');
+}
+
+if (!testing('int')) {
+  changeNameUnit();
+}
+
+function cleanupName(cb) {
+  if (!testing('int')) {
+    throw new Error('Do not call cleanupName during unit tests');
+  }
+
+  if (module.exports.currentName) {
+    module.exports.api.ns.delete({ name: module.exports.currentName }, () => {
+      cb();
+    });
+  } else {
+    return cb();
   }
 }
 
-module.exports.api = api;
-module.exports.extensions = extensions;
-module.exports.apiGroup = apiGroup;
-module.exports.defaultName = defaultName;
+module.exports.changeName = changeName;
+module.exports.cleanupName = cleanupName;
+module.exports.newName = newName;
 module.exports.testing = testing;
+module.exports.afterTesting = afterTesting;
 module.exports.beforeTesting = beforeTesting;
 module.exports.beforeTestingEach = beforeTestingEach;
 module.exports.only = only;
