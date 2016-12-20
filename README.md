@@ -193,6 +193,12 @@ stream.on('data', chunk => {
 });
 ```
 
+**Note:** the kube-apiserver will close watch connections eventually
+according to the
+[`--min-request-timeout`](http://kubernetes.io/docs/admin/kube-apiserver/
+command line argument. kubernetes-client does not attempt to reconnect
+when the kube-apiserver closes a connection.
+
 ### Authenticating
 
 kubernetes-client supports Kubernetes [apiserver
