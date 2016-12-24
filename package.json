@@ -10,6 +10,7 @@
     "jsdoc": "jsdoc -d doc lib",
     "jscs": "godaddy-js-style-jscs lib/ test/",
     "lint": "godaddy-js-style-lint lib/ test/",
+    "release": "standard-version --tag-prefix=''",
     "test": "mocha",
     "test-integration": "TESTING=int mocha -t ${TIMEOUT:-30000} test"
   },
@@ -39,6 +40,7 @@
     "jsdoc": "^3.4.0",
     "mocha": "^2.5.3",
     "nock": "^8.0.0",
-    "sinon": "1.17.6"
+    "sinon": "1.17.6",
+    "standard-version": "^4.0.0"
   }
 }
