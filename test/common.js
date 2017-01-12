@@ -7,8 +7,6 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 
-const Core = require('../lib/core');
-const Extensions = require('../lib/extensions');
 const Api = require('../lib/api');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
@@ -61,6 +59,23 @@ function newName() {
   return `${ defaultName }-${ buffer.toString('hex') }`;
 }
 
+function injectApis(moduleExports, options, versionOverride) {
+  // APIs and their default version
+  const apis = {
+    'api': [ require('../lib/core'), 'v1' ],
+    'extensions': [ require('../lib/extensions'), 'v1beta1' ]
+  }
+  Object.keys(apis).forEach(apiName => {
+    const api = apis[apiName];
+    moduleExports[apiName] = new (Function.prototype.bind.call(api[0], null, Object.assign({}, options, {
+      version: versionOverride || api[1],
+    })));
+  });
+
+  // Add the apiGroup with the same options but no version
+  moduleExports.apiGroup = new Api(options);
+}
+
 function changeNameInt(cb) {
   let url;
   let ca;
@@ -97,31 +112,13 @@ function changeNameInt(cb) {
   const currentName = newName();
   module.exports.currentName = currentName;
 
-  module.exports.api = new Core({
-    url: url,
-    ca: ca,
-    cert: cert,
-    key: key,
-    version: process.env.VERSION || 'v1',
-    namespace: currentName
-  });
-
-  module.exports.extensions = new Extensions({
-    url: url,
-    ca: ca,
-    cert: cert,
-    key: key,
-    version: process.env.VERSION || 'v1beta1',
-    namespace: currentName
-  });
-
-  module.exports.apiGroup = new Api({
+  injectApis(module.exports, {
     url: url,
     ca: ca,
     cert: cert,
     key: key,
     namespace: currentName
-  });
+  }, process.env.VERSION);
 
   module.exports.api.ns.post({
     body: {
@@ -151,22 +148,10 @@ function changeNameUnit() {
   const currentName = newName();
   module.exports.currentName = currentName;
 
-  module.exports.api = new Core({
-    url: mockUrl,
-    version: process.env.VERSION || 'v1',
-    namespace: currentName
-  });
-
-  module.exports.extensions = new Extensions({
-    url: mockUrl,
-    version: process.env.VERSION || 'v1beta1',
-    namespace: currentName
-  });
-
-  module.exports.apiGroup = new Api({
-    url: mockUrl,
-    namespace: currentName
-  });
+  injectApis(module.exports, {
+      url: mockUrl,
+      namespace: currentName
+  }, process.env.VERSION);
 }
 
 function changeName(cb) {
