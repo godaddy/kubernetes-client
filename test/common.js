@@ -8,9 +8,12 @@ const path = require('path');
 const yaml = require('js-yaml');
 
 const Api = require('../lib/api');
+<<<<<<< 6a00a6e6f2e1957bd977ede72b9bfa9e1c3c1a33
 const Core = require('../lib/core');
 const Extensions = require('../lib/extensions');
 const ThirdPartyResources = require('../lib/third-party-resources');
+=======
+>>>>>>> Reduce duplication for injecting APIs into module.exports
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
 const defaultTimeout = process.env.TIMEOUT || 30000;
@@ -111,13 +114,17 @@ function changeNameInt(cb) {
   const currentName = newName();
   module.exports.currentName = currentName;
 
+<<<<<<< 6a00a6e6f2e1957bd977ede72b9bfa9e1c3c1a33
   injectApis({
+=======
+  injectApis(module.exports, {
+>>>>>>> Reduce duplication for injecting APIs into module.exports
     url: url,
     ca: ca,
     cert: cert,
     key: key,
     namespace: currentName
-  });
+  }, process.env.VERSION);
 
   module.exports.api.ns.post({
     body: {
@@ -148,10 +155,17 @@ function changeNameUnit() {
   module.exports.currentName = currentName;
   const url = 'http://mock.kube.api';
 
+<<<<<<< 6a00a6e6f2e1957bd977ede72b9bfa9e1c3c1a33
   injectApis({
     url: url,
     namespace: currentName
   });
+=======
+  injectApis(module.exports, {
+      url: mockUrl,
+      namespace: currentName
+  }, process.env.VERSION);
+>>>>>>> Reduce duplication for injecting APIs into module.exports
 }
 
 function changeName(cb) {
