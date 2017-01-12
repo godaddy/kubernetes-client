@@ -7,9 +7,9 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 
+const Api = require('../lib/api');
 const Core = require('../lib/core');
 const Extensions = require('../lib/extensions');
-const Api = require('../lib/api');
 const ThirdPartyResources = require('../lib/third-party-resources');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
@@ -62,6 +62,19 @@ function newName() {
   return `${ defaultName }-${ buffer.toString('hex') }`;
 }
 
+function injectApis(options) {
+  const apis = {
+    api: { cls: Core },
+    apiGroup: { cls: Api },
+    extensions: { cls: Extensions },
+    thirdPartyResources: { cls: ThirdPartyResources, options: { group: 'kubernetes-client.com' } }
+  };
+  Object.keys(apis).forEach(apiName => {
+    const api = apis[apiName];
+    module.exports[apiName] = new (api.cls)(Object.assign({}, options, api.options));
+  });
+}
+
 function changeNameInt(cb) {
   let url;
   let ca;
@@ -98,36 +111,11 @@ function changeNameInt(cb) {
   const currentName = newName();
   module.exports.currentName = currentName;
 
-  module.exports.api = new Core({
+  injectApis({
     url: url,
     ca: ca,
     cert: cert,
     key: key,
-    namespace: currentName
-  });
-
-  module.exports.extensions = new Extensions({
-    url: url,
-    ca: ca,
-    cert: cert,
-    key: key,
-    namespace: currentName
-  });
-
-  module.exports.apiGroup = new Api({
-    url: url,
-    ca: ca,
-    cert: cert,
-    key: key,
-    namespace: currentName
-  });
-
-  module.exports.thirdPartyResources = new ThirdPartyResources({
-    url: url,
-    ca: ca,
-    cert: cert,
-    key: key,
-    group: 'kubernetes-client.com',
     namespace: currentName
   });
 
@@ -159,26 +147,8 @@ function changeNameUnit() {
   module.exports.currentName = currentName;
   const url = 'http://mock.kube.api';
 
-  module.exports.api = new Core({
+  injectApis({
     url: url,
-    version: process.env.VERSION || 'v1',
-    namespace: currentName
-  });
-
-  module.exports.extensions = new Extensions({
-    url: url,
-    version: process.env.VERSION || 'v1beta1',
-    namespace: currentName
-  });
-
-  module.exports.apiGroup = new Api({
-    url: url,
-    namespace: currentName
-  });
-
-  module.exports.thirdPartyResources = new ThirdPartyResources({
-    url: url,
-    group: 'kubernetes-client.com',
     namespace: currentName
   });
 }
