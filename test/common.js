@@ -143,6 +143,7 @@ function changeNameInt(cb) {
 }
 
 function changeNameUnit() {
+  const mockUrl = 'http://mock.kube.api';
   const currentName = newName();
   module.exports.currentName = currentName;
   const url = 'http://mock.kube.api';
