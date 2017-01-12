@@ -161,11 +161,13 @@ function changeNameUnit() {
 
   module.exports.api = new Core({
     url: url,
+    version: process.env.VERSION || 'v1',
     namespace: currentName
   });
 
   module.exports.extensions = new Extensions({
     url: url,
+    version: process.env.VERSION || 'v1beta1',
     namespace: currentName
   });
 
