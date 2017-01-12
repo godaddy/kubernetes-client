@@ -147,23 +147,24 @@ function changeNameInt(cb) {
 }
 
 function changeNameUnit() {
+  const mockUrl = 'http://mock.kube.api';
   const currentName = newName();
   module.exports.currentName = currentName;
 
   module.exports.api = new Core({
-    url: 'http://mock.kube.api',
+    url: mockUrl,
     version: process.env.VERSION || 'v1',
     namespace: currentName
   });
 
   module.exports.extensions = new Extensions({
-    url: 'http://mock.kube.api',
+    url: mockUrl,
     version: process.env.VERSION || 'v1beta1',
     namespace: currentName
   });
 
   module.exports.apiGroup = new Api({
-    url: 'http://mock.kube.api',
+    url: mockUrl,
     namespace: currentName
   });
 }
