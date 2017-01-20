@@ -224,6 +224,19 @@ const k8 = new K8Api({
 });
 ```
 
+or without a certificate authority:
+
+```js
+const k8 = new K8Api({
+  url: 'https://my-k8-api-server.com',
+  insecureSkipTlsVerify: true,
+  auth: {
+    user: 'user',
+    pass: 'pass'
+  }
+});
+```
+
 token authentication:
 
 ```js
