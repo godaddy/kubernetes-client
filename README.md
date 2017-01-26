@@ -173,7 +173,7 @@ ReplicationController when it deletes the ReplicationController. You
 can preserve the Pods:
 
 ```js
-k8.ns.rc.delete({ rc: 'http-rc', preservePods: true });
+k8.ns.rc.delete({ name: 'http-rc', preservePods: true });
 ```
 
 ### Watching and streaming
