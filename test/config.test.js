@@ -1,4 +1,5 @@
 'use strict';
+/* eslint no-process-env: 0*/
 
 const assume = require('assume');
 const sinon = require('sinon');
