@@ -6,7 +6,7 @@
   "scripts": {
     "check-coverage": "istanbul check-coverage",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha && istanbul report cobertura",
-    "eslint": "godaddy-js-style-eslint lib/ test/",
+    "eslint": "godaddy-js-style-eslint -c .eslintrc lib/ test/",
     "jsdoc": "jsdoc -d doc lib",
     "jscs": "godaddy-js-style-jscs lib/ test/",
     "lint": "godaddy-js-style-lint lib/ test/",
