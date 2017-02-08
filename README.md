@@ -159,6 +159,40 @@ k8.ns.rc.match([{
 }]).get(print);
 ```
 
+### ThirdPartyResources
+
+You can extend the Kubernetes API using a
+[ThirdPartyResource](https://kubernetes.io/docs/user-guide/thirdpartyresources/)
+and kubernetes-client:
+
+```js
+const newResoure = {
+  apiVersion: 'extensions/v1beta1',
+  kind: 'ThirdPartyResource',
+  metadata: {
+    name: 'new-resource.kubernetes-client.io'
+  },
+  description: 'Example resource',
+  versions: [{
+    name: 'v1'
+  }]
+};
+
+k8Ext.thirdpartyresources.post({ body: newResource }, print);
+```
+
+and then extend an `ThirdPartyResource` API client with your new resources:
+
+```js
+const thirdPartyResources = new K8Api.ThirdPartyResources({
+  url: 'http://my-k8-api-server.com',
+  group: 'kubernetes-client.io'
+});
+thirdPartyResources.addResource('newresources');  // Notice pluralization!
+// Now access `newresources` as if they were a regular Kubernetes object
+thirdPartyResources.ns.newresources.get(print);
+```
+
 ### ReplicationController Pods
 
 kubernetes-client provides a shortcut for listing all Pods matching a
