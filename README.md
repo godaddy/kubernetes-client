@@ -186,10 +186,14 @@ and then extend an `ThirdPartyResource` API client with your new resources:
 ```js
 const thirdPartyResources = new K8Api.ThirdPartyResources({
   url: 'http://my-k8-api-server.com',
-  group: 'kubernetes-client.io'
+  group: 'kubernetes-client.io',
+  resources: ['customresources']  // Notice pluralization!
 });
+
+// Access `customresources` as if they were a regular Kubernetes object
+thirdPartyResources.ns.customresources.get(print);
 thirdPartyResources.addResource('newresources');  // Notice pluralization!
-// Now access `newresources` as if they were a regular Kubernetes object
+// Now access `newresources`
 thirdPartyResources.ns.newresources.get(print);
 ```
 
