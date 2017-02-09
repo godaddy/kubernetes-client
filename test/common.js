@@ -15,8 +15,6 @@ const ThirdPartyResources = require('../lib/third-party-resources');
 const defaultName = process.env.NAMESPACE || 'integration-tests';
 const defaultTimeout = process.env.TIMEOUT || 30000;
 
-module.exports.defaultTimeout = defaultTimeout;
-
 function testing(type) {
   const t = process.env.TESTING || 'unit';
   return t.substr(0, 3) === type.substr(0, 3);
@@ -213,9 +211,11 @@ function cleanupName(cb) {
 
 module.exports.changeName = changeName;
 module.exports.cleanupName = cleanupName;
+module.exports.defaultTimeout = defaultTimeout;
 module.exports.newName = newName;
 module.exports.testing = testing;
 module.exports.afterTesting = afterTesting;
 module.exports.beforeTesting = beforeTesting;
 module.exports.beforeTestingEach = beforeTestingEach;
 module.exports.only = only;
+module.exports.thirdPartyDomain = 'kubernetes-client.com';

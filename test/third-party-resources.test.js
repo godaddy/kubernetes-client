@@ -10,13 +10,11 @@ const afterTesting = common.afterTesting;
 const beforeTesting = common.beforeTesting;
 const only = common.only;
 
-const thirdPartyDomain = 'kubernetes-client.com';
-
 const newResource = {
   apiVersion: 'extensions/v1beta1',
   kind: 'ThirdPartyResource',
   metadata: {
-    name: `new-resource.${ thirdPartyDomain }`
+    name: `new-resource.${ common.thirdPartyDomain }`
   },
   description: 'Resource for testing',
   versions: [{
@@ -25,7 +23,7 @@ const newResource = {
 };
 
 const testManifest = {
-  apiVersion: `${ thirdPartyDomain }/v1`,
+  apiVersion: `${ common.thirdPartyDomain }/v1`,
   kind: 'NewResource',
   metadata: {
     name: 'test'
@@ -90,9 +88,9 @@ describe('lib.ThirdPartyResource', () => {
     describe('.post', () => {
       beforeTesting('unit', () => {
         nock(common.thirdPartyResources.url)
-          .post(`/apis/${ thirdPartyDomain }/v1/namespaces/${ common.currentName }/newresources`)
+          .post(`/apis/${ common.thirdPartyDomain }/v1/namespaces/${ common.currentName }/newresources`)
           .reply(200, {})
-          .get(`/apis/${ thirdPartyDomain }/v1/namespaces/${ common.currentName }/newresources/test`)
+          .get(`/apis/${ common.thirdPartyDomain }/v1/namespaces/${ common.currentName }/newresources/test`)
           .reply(200, { metadata: { name: 'test' } });
       });
 
