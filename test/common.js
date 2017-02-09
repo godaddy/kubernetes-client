@@ -10,6 +10,7 @@ const yaml = require('js-yaml');
 const Core = require('../lib/core');
 const Extensions = require('../lib/extensions');
 const Api = require('../lib/api');
+const ThirdPartyResources = require('../lib/third-party-resources');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
 const defaultTimeout = process.env.TIMEOUT || 30000;
@@ -123,6 +124,15 @@ function changeNameInt(cb) {
     namespace: currentName
   });
 
+  module.exports.thirdPartyResources = new ThirdPartyResources({
+    url: url,
+    ca: ca,
+    cert: cert,
+    key: key,
+    group: 'kubernetes-client.com',
+    namespace: currentName
+  });
+
   module.exports.api.ns.post({
     body: {
       kind: 'Namespace',
@@ -149,21 +159,28 @@ function changeNameInt(cb) {
 function changeNameUnit() {
   const currentName = newName();
   module.exports.currentName = currentName;
+  const url = 'http://mock.kube.api';
 
   module.exports.api = new Core({
-    url: 'http://mock.kube.api',
+    url: url,
     version: process.env.VERSION || 'v1',
     namespace: currentName
   });
 
   module.exports.extensions = new Extensions({
-    url: 'http://mock.kube.api',
+    url: url,
     version: process.env.VERSION || 'v1beta1',
     namespace: currentName
   });
 
   module.exports.apiGroup = new Api({
-    url: 'http://mock.kube.api',
+    url: url,
+    namespace: currentName
+  });
+
+  module.exports.thirdPartyResources = new ThirdPartyResources({
+    url: url,
+    group: 'kubernetes-client.com',
     namespace: currentName
   });
 }
@@ -194,9 +211,11 @@ function cleanupName(cb) {
 
 module.exports.changeName = changeName;
 module.exports.cleanupName = cleanupName;
+module.exports.defaultTimeout = defaultTimeout;
 module.exports.newName = newName;
 module.exports.testing = testing;
 module.exports.afterTesting = afterTesting;
 module.exports.beforeTesting = beforeTesting;
 module.exports.beforeTestingEach = beforeTestingEach;
 module.exports.only = only;
+module.exports.thirdPartyDomain = 'kubernetes-client.com';
