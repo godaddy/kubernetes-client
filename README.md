@@ -63,7 +63,7 @@ and a helper to get the current-context config from `~/.kube/config`:
 
 ```js
 const K8Api = require('kubernetes-client');
-const k8 = new K8Api.Core(K8Api.config.loadKubeconfig());
+const k8 = new K8Api.Core(K8Api.config.fromKubeconfig());
 ```
 
 ### Creating and updating
