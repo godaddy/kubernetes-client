@@ -59,6 +59,13 @@ const K8Api = require('kubernetes-client');
 const k8 = new K8Api.Core(K8Api.config.getInCluster());
 ```
 
+and a helper to get the current-context config from `~/.kube/config`:
+
+```js
+const K8Api = require('kubernetes-client');
+const k8 = new K8Api.Core(K8Api.config.loadKubeconfig());
+```
+
 ### Creating and updating
 
 kubernetes-client objects expose `.post`, `.patch`, and `.put`

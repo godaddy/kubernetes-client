@@ -50,4 +50,84 @@ describe('Config', () => {
       });
     });
   });
+
+  describe('.fromKubeconfig', () => {
+    it('handles username and password', () => {
+      const kubeconfig = {
+        apiVersion: 'v1',
+        kind: 'Config',
+        preferences: {},
+        'current-context': 'foo-context',
+        contexts: [
+          {
+            name: 'foo-context',
+            context: {
+              cluster: 'foo-cluster',
+              user: 'foo-user'
+            }
+          }
+        ],
+        clusters: [
+          {
+            name: 'foo-cluster',
+            cluster: {
+              server: 'https://192.168.42.121:8443'
+            }
+          }
+        ],
+        users: [
+          {
+            name: 'foo-user',
+            user: {
+              password: 'foo-password',
+              username: 'foo-user'
+            }
+          }
+        ]
+      };
+      const args = config.fromKubeconfig(kubeconfig);
+      assume(args.auth.user).equals('foo-user');
+      assume(args.auth.pass).equals('foo-password');
+    });
+
+    it('handles base64 encoded certs and keys', () => {
+      const kubeconfig = {
+        apiVersion: 'v1',
+        kind: 'Config',
+        preferences: {},
+        'current-context': 'foo-context',
+        contexts: [
+          {
+            name: 'foo-context',
+            context: {
+              cluster: 'foo-cluster',
+              user: 'foo-user'
+            }
+          }
+        ],
+        clusters: [
+          {
+            name: 'foo-cluster',
+            cluster: {
+              'certificate-authority-data': new Buffer('certificate-authority-data').toString('base64'),
+              server: 'https://192.168.42.121:8443'
+            }
+          }
+        ],
+        users: [
+          {
+            name: 'foo-user',
+            user: {
+              'client-certificate-data': new Buffer('client-certificate').toString('base64'),
+              'client-key-data': new Buffer('client-key').toString('base64')
+            }
+          }
+        ]
+      };
+      const args = config.fromKubeconfig(kubeconfig);
+      assume(args.ca).equals('certificate-authority-data');
+      assume(args.key).equals('client-key');
+      assume(args.cert).equals('client-certificate');
+    });
+  });
 });
