@@ -25,9 +25,9 @@ function. For example, to GET the `ReplicationController` named
 'http-rc' in the `Namespace` 'my-project':
 
 ```js
-const K8Api = require('kubernetes-client');
-const k8 = new K8Api.Core({
-  url: 'http://my-k8-api-server.com',
+const Api = require('kubernetes-client');
+const core = new Api.Core({
+  url: 'http://my-k8s-api-server.com',
   version: 'v1',  // Defaults to 'v1'
   namespace: 'my-project' // Defaults to 'default'
 });
@@ -36,34 +36,34 @@ function print(err, result) {
   console.log(JSON.stringify(err || result, null, 2));
 }
 
-k8.namespaces.replicationcontrollers('http-rc').get(print);
+core.namespaces.replicationcontrollers('http-rc').get(print);
 ```
 
 kubernetes-client supports the Extensions API group. For example, GET
 the `Deployment` named `http-deployment`:
 
 ```js
-const k8Ext = new K8Api.Extensions({
-  url: 'http://my-k8-api-server.com',
+const ext = new Api.Extensions({
+  url: 'http://my-k8s-api-server.com',
   version: 'v1beta1',  // Defaults to 'v1beta1'
   namespace: 'my-project' // Defaults to 'default'
 });
 
-k8Ext.namespaces.deployments('http-deployment').get(print);
+ext.namespaces.deployments('http-deployment').get(print);
 ```
 
 kubernetes-client provides a helper to get in-cluster config and accessing the API from a Pod:
 
 ```js
-const K8Api = require('kubernetes-client');
-const k8 = new K8Api.Core(K8Api.config.getInCluster());
+const Api = require('kubernetes-client');
+const core = new Api.Core(Api.config.getInCluster());
 ```
 
 and a helper to get the current-context config from `~/.kube/config`:
 
 ```js
-const K8Api = require('kubernetes-client');
-const k8 = new K8Api.Core(K8Api.config.fromKubeconfig());
+const Api = require('kubernetes-client');
+const core = new Api.Core(Api.config.fromKubeconfig());
 ```
 
 ### Creating and updating
@@ -73,13 +73,13 @@ methods. Create the ReplicationController from the example above:
 
 ```js
 const manifestObject = require('./rc.json');
-k8.namespaces.replicationcontrollers.post({ body: manifestObject }, print);
+core.namespaces.replicationcontrollers.post({ body: manifestObject }, print);
 ```
 or update the number of replicas:
 
 ```js
 const patch = { spec: { replicas: 10 } };
-k8.namespaces.replicationcontrollers('http-rc').patch({
+core.namespaces.replicationcontrollers('http-rc').patch({
   body: patch
 }, print);
 ```
@@ -90,9 +90,9 @@ kubernetes-client client includes functionality to help determine the
 correct Kubernetes API group and version to use based on manifests:
 
 ```js
-const K8Api = require('kubernetes-client');
-const api = new K8Api.Api({
-  url: 'http://my-k8-api-server.com',
+const Api = require('kubernetes-client');
+const api = new Api.Api({
+  url: 'http://my-k8s-api-server.com',
   namespace: 'my-project'
 });
 
@@ -120,7 +120,7 @@ resource name (*e.g.*, `namespace` for `namespaces`). We can shorten
 the example above:
 
 ```js
-k8.ns.rc('http-rc').get(print);
+core.ns.rc('http-rc').get(print);
 ```
 
 ### Switching namespaces
@@ -128,7 +128,7 @@ k8.ns.rc('http-rc').get(print);
 You can call the `namespace` object to specify the namespace:
 
 ```js
-k8.ns('other-project').rc('http-rc').get(print);
+core.ns('other-project').rc('http-rc').get(print);
 ```
 
 ### Query parameters
@@ -140,7 +140,7 @@ For example to filter based on [label
 selector](http://kubernetes.io/docs/user-guide/labels/):
 
 ```js
-k8.ns.rc.get({ qs: { labelSelector: 'service=http' } }, print);
+core.ns.rc.get({ qs: { labelSelector: 'service=http' } }, print);
 ```
 
 ### Label selector filtering
@@ -149,13 +149,13 @@ kubernetes-client has a shortcut, `matchLabels`, for filtering on label
 selector equality:
 
 ```js
-k8.ns.rc.matchLabels({ service: 'http' }).get(print);
+core.ns.rc.matchLabels({ service: 'http' }).get(print);
 ```
 
 and a more general `match` method based on Kubernetes Match Expressions:
 
 ```js
-k8.ns.rc.match([{
+core.ns.rc.match([{
   key: 'service',
   operator: 'In',
   values: ['http']
@@ -185,14 +185,14 @@ const newResoure = {
   }]
 };
 
-k8Ext.thirdpartyresources.post({ body: newResource }, print);
+ext.thirdpartyresources.post({ body: newResource }, print);
 ```
 
 and then extend an `ThirdPartyResource` API client with your new resources:
 
 ```js
-const thirdPartyResources = new K8Api.ThirdPartyResources({
-  url: 'http://my-k8-api-server.com',
+const thirdPartyResources = new Api.ThirdPartyResources({
+  url: 'http://my-k8s-api-server.com',
   group: 'kubernetes-client.io',
   resources: ['customresources']  // Notice pluralization!
 });
@@ -210,7 +210,7 @@ kubernetes-client provides a shortcut for listing all Pods matching a
 ReplicationController selector:
 
 ```js
-k8.ns.rc.po.get(print);
+core.ns.rc.po.get(print);
 ```
 
 kubernetes-client deletes all the Pods associated with a
@@ -218,7 +218,7 @@ ReplicationController when it deletes the ReplicationController. You
 can preserve the Pods:
 
 ```js
-k8.ns.rc.delete({ name: 'http-rc', preservePods: true });
+core.ns.rc.delete({ name: 'http-rc', preservePods: true });
 ```
 
 ### Watching and streaming
@@ -230,7 +230,7 @@ stream.  This is useful for watching:
 const JSONStream = require('json-stream');
 const jsonStream = new JSONStream();
 
-const stream = k8.ns.po.get({ qs: { watch: true } });
+const stream = api.ns.po.get({ qs: { watch: true } });
 stream.pipe(jsonStream);
 jsonStream.on('data', object => {
   console.log('Pod:', JSON.stringify(object, null, 2));
@@ -239,7 +239,7 @@ jsonStream.on('data', object => {
 
 You can access logs in a similar fashion:
 ```js
-const stream = k8.ns.po.log({ name: 'http-123', qs: { follow: true } });
+const stream = api.ns.po.log({ name: 'http-123', qs: { follow: true } });
 stream.on('data', chunk => {
   process.stdout.write(chunk.toString());
 });
@@ -259,8 +259,8 @@ authentication](http://kubernetes.io/docs/admin/authentication/).
 Basic authentication (with optional certificate authority):
 
 ```js
-const k8 = new K8Api({
-  url: 'https://my-k8-api-server.com',
+const core = new Api.Core({
+  url: 'https://my-k8s-api-server.com',
   ca: fs.readFileSync('cluster-ca.pem'),
   auth: {
     user: 'user',
@@ -272,8 +272,8 @@ const k8 = new K8Api({
 or without a certificate authority:
 
 ```js
-const k8 = new K8Api({
-  url: 'https://my-k8-api-server.com',
+const core = new Api.Core({
+  url: 'https://my-k8s-api-server.com',
   insecureSkipTlsVerify: true,
   auth: {
     user: 'user',
@@ -285,8 +285,8 @@ const k8 = new K8Api({
 token authentication:
 
 ```js
-const k8 = new K8Api({
-  url: 'https://my-k8-api-server.com',
+const core = new Api.Core({
+  url: 'https://my-k8s-api-server.com',
   auth: {
     bearer: 'token'
   }
@@ -296,8 +296,8 @@ const k8 = new K8Api({
 and client certificate authentication:
 
 ```js
-const k8 = new K8Api({
-  url: 'https://my-k8-api-server.com',
+const core = new Api.Core({
+  url: 'https://my-k8s-api-server.com',
   ca: fs.readFileSync('cluster-ca.pem'),
   cert: fs.readFileSync('my-user-cert.pem'),
   key: fs.readFileSync('my-user-key.pem')
@@ -313,8 +313,8 @@ options](https://github.com/request/request#requestoptions-callback)
 for kubernetes-client to pass to `request`:
 
 ```js
-const k8 = new K8Api({
-  url: 'https://my-k8-api-server.com',
+const core = new Api.Core({
+  url: 'https://my-k8s-api-server.com',
   request: {
     timeout: 3000
   }
