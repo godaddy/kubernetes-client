@@ -230,7 +230,7 @@ stream.  This is useful for watching:
 const JSONStream = require('json-stream');
 const jsonStream = new JSONStream();
 
-const stream = api.ns.po.get({ qs: { watch: true } });
+const stream = core.ns.po.get({ qs: { watch: true } });
 stream.pipe(jsonStream);
 jsonStream.on('data', object => {
   console.log('Pod:', JSON.stringify(object, null, 2));
@@ -239,7 +239,7 @@ jsonStream.on('data', object => {
 
 You can access logs in a similar fashion:
 ```js
-const stream = api.ns.po.log({ name: 'http-123', qs: { follow: true } });
+const stream = core.ns.po.log({ name: 'http-123', qs: { follow: true } });
 stream.on('data', chunk => {
   process.stdout.write(chunk.toString());
 });
