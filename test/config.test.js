@@ -129,5 +129,41 @@ describe('Config', () => {
       assume(args.key).equals('client-key');
       assume(args.cert).equals('client-certificate');
     });
+
+    it('handles token', () => {
+      const kubeconfig = {
+        apiVersion: 'v1',
+        kind: 'Config',
+        preferences: {},
+        'current-context': 'foo-context',
+        contexts: [
+          {
+            name: 'foo-context',
+            context: {
+              cluster: 'foo-cluster',
+              user: 'foo-user'
+            }
+          }
+        ],
+        clusters: [
+          {
+            name: 'foo-cluster',
+            cluster: {
+              server: 'https://192.168.42.121:8443'
+            }
+          }
+        ],
+        users: [
+          {
+            name: 'foo-user',
+            user: {
+              token: new Buffer('foo-token').toString('base64')
+            }
+          }
+        ]
+      };
+      const args = config.fromKubeconfig(kubeconfig);
+      assume(args.auth.bearer).equals('foo-token');
+    });
   });
 });
