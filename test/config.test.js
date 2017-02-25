@@ -31,7 +31,7 @@ describe('Config', () => {
 
       fsReadFileSync
         .withArgs('/var/run/secrets/kubernetes.io/serviceaccount/ca.crt')
-        .returns('my-cert')
+        .returns('my-ca')
 
       fsReadFileSync
         .withArgs('/var/run/secrets/kubernetes.io/serviceaccount/token')
@@ -44,7 +44,7 @@ describe('Config', () => {
       const configInCluster = config.getInCluster();
       assume(configInCluster).eqls({
         auth: { bearer: 'my-token' },
-        cert: 'my-cert',
+        ca: 'my-ca',
         namespace: 'my-namespace',
         url: 'https://myhost:443'
       });
