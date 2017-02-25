@@ -157,7 +157,7 @@ describe('Config', () => {
           {
             name: 'foo-user',
             user: {
-              token: new Buffer('foo-token').toString('base64')
+              token: 'foo-token'
             }
           }
         ]
@@ -206,7 +206,7 @@ describe('Config', () => {
           {
             name: 'foo-user',
             user: {
-              token: new Buffer('foo-token').toString('base64')
+              token: 'foo-token'
             }
           }
         ]
