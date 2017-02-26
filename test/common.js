@@ -8,8 +8,11 @@ const path = require('path');
 const yaml = require('js-yaml');
 
 const Api = require('../lib/api');
+const Apps = require('../lib/apps');
+const Batch = require('../lib/batch');
 const Core = require('../lib/core');
 const Extensions = require('../lib/extensions');
+const Rbac = require('../lib/rbac');
 const ThirdPartyResources = require('../lib/third-party-resources');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
@@ -66,7 +69,10 @@ function injectApis(options) {
   const apis = {
     api: { cls: Core },
     apiGroup: { cls: Api },
+    apps: { cls: Apps },
+    batch: { cls: Batch },
     extensions: { cls: Extensions },
+    rbac: { cls: Rbac },
     thirdPartyResources: { cls: ThirdPartyResources, options: { group: 'kubernetes-client.com' } }
   };
   Object.keys(apis).forEach(apiName => {
