@@ -23,6 +23,20 @@ const testPod = {
   }
 };
 
+const testPatch = {
+  metadata: {
+    name: 'test-pod'
+  },
+  spec: {
+    containers: [
+      {
+        image: 'still-does-not-matter:latest',
+        name: 'test'
+      }
+    ]
+  }
+};
+
 describe('lib.pods', () => {
 
   describe('.post', () => {
@@ -40,6 +54,32 @@ describe('lib.pods', () => {
       common.api.ns.pods.post({ body: testPod }, (err, pod) => {
         assume(err).is.falsy();
         assume(pod.metadata.name).is.equal('test-pod');
+        done();
+      });
+    });
+  });
+
+  describe('.patch', () => {
+    beforeTesting('int', done => {
+      common.changeName(err => {
+        assume(err).is.falsy();
+        common.api.ns.pods.post({ body: testPod }, (postErr, pod) => {
+          assume(postErr).is.falsy();
+          done();
+        });
+      });
+    });
+    beforeTestingEach('unit', () => {
+      nock(common.api.url)
+        .patch(`/api/v1/namespaces/${ common.currentName }/pods/test-pod`)
+        .reply(200, Object.assign({ kind: 'Pod' }, testPatch));
+    });
+
+    it('succeeds at updating a pod', done => {
+      common.api.ns.pods('test-pod').patch({ body: testPatch }, (err, pod) => {
+        assume(err).is.falsy();
+        assume(pod.metadata.name).is.equal('test-pod');
+        assume(pod.spec.containers[0].image).is.equal('still-does-not-matter:latest');
         done();
       });
     });

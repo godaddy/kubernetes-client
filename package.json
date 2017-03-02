@@ -31,7 +31,7 @@
   "dependencies": {
     "async": "^2.0.0-rc.6",
     "js-yaml": "^3.7.0",
-    "request": "^2.72.0"
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "assume": "^1.4.1",
