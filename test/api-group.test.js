@@ -7,26 +7,6 @@ const nock = require('nock');
 const common = require('./common');
 const beforeTesting = common.beforeTesting;
 
-function pod(name) {
-  return {
-    kind: 'Pod',
-    metadata: {
-      name: name,
-      labels: {
-        name: name,
-        service: 'service1'
-      }
-    },
-    spec: {
-      containers: [{
-        name: name,
-        image: 'doesnotmatter',
-        imagePullPolicy: 'IfNotPresent'
-      }]
-    }
-  };
-}
-
 function ingress() {
   return {
     kind: 'Ingress',
@@ -139,80 +119,6 @@ describe('lib.api-group', () => {
       common.api.resourcequotas.get((err, results) => {
         assume(err).is.falsy();
         assume(results.kind).is.equal('ResourceQuotaList');
-        done();
-      });
-    });
-  });
-
-  describe('.match', () => {
-    beforeTesting('int', done => {
-      common.changeName(err => {
-        assume(err).is.falsy();
-        async.each([
-          { body: pod('pod0') },
-          { body: pod('pod1') }
-        ], common.api.ns.po.post.bind(common.api.ns.po), done);
-      });
-    });
-    beforeTesting('unit', () => {
-      nock(common.api.url)
-        .get(`/api/v1/namespaces/${ common.currentName }/pods`)
-        .query({ labelSelector: 'name in (pod0),service notin (service0)' })
-        .reply(200, {
-          kind: 'PodList',
-          items: [{
-            kind: 'Pod'
-          }]
-        });
-    });
-
-    it('GETs with labelSelector', done => {
-      common.api.ns.po.match([{
-        key: 'name',
-        operator: 'In',
-        values: ['pod0']
-      }, {
-        key: 'service',
-        operator: 'NotIn',
-        values: ['service0']
-      }]).get((err, pods) => {
-        assume(err).is.falsy();
-        assume(pods.kind).is.equal('PodList');
-        assume(pods.items).has.length(1);
-        done();
-      });
-    });
-  });
-  describe('.matchLabels', () => {
-    beforeTesting('int', done => {
-      common.changeName(err => {
-        assume(err).is.falsy();
-        async.each([
-          { body: pod('pod0') },
-          { body: pod('pod1') }
-        ], common.api.ns.po.post.bind(common.api.ns.po), done);
-      });
-    });
-    beforeTesting('unit', () => {
-      nock(common.api.url)
-        .get(`/api/v1/namespaces/${ common.currentName }/pods`)
-        .query({ labelSelector: 'name in (pod0),service in (service1)' })
-        .reply(200, {
-          kind: 'PodList',
-          items: [{
-            kind: 'Pod'
-          }]
-        });
-    });
-
-    it('GETs with labelSelector', done => {
-      common.api.ns.po.matchLabels({
-        name: 'pod0',
-        service: 'service1'
-      }).get((err, pods) => {
-        assume(err).is.falsy();
-        assume(pods.kind).is.equal('PodList');
-        assume(pods.items).has.length(1);
         done();
       });
     });
