@@ -107,8 +107,8 @@ const manifest1 = {
   ...
 };
 
-api.group(manifest0).ns.kind(manifest0).post(manifest0, print);
-api.group(manifest1).ns.kind(manifest1).post(manifest1, print);
+api.group(manifest0).ns.kind(manifest0).post({ body: manifest0 }, print);
+api.group(manifest1).ns.kind(manifest1).post({ body: manifest1 }, print);
 ```
 
 ### Object name aliases
