@@ -1,3 +1,4 @@
+/* eslint max-nested-callbacks:0 */
 'use strict';
 
 const assume = require('assume');
@@ -63,7 +64,7 @@ describe('lib.pods', () => {
     beforeTesting('int', done => {
       common.changeName(err => {
         assume(err).is.falsy();
-        common.api.ns.pods.post({ body: testPod }, (postErr, pod) => {
+        common.api.ns.pods.post({ body: testPod }, postErr => {
           assume(postErr).is.falsy();
           done();
         });

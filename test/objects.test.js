@@ -38,7 +38,7 @@ const testReplicationController = {
 };
 
 describe('objects', function () {
-  const _url = 'http://mock.kube.api'
+  const _url = 'http://mock.kube.api';
   const _ns = '/api/v1/namespaces/default';
   const _rcs = `${ _ns }/replicationcontrollers`;
   const _pods = `${ _ns }/pods`;

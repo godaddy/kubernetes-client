@@ -82,7 +82,7 @@ describe('lib.ThirdPartyResource', () => {
           assume(results.kind).is.equal('NewResourceList');
           done();
         });
-      })
+      });
     });
 
     describe('.post', () => {

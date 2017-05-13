@@ -52,7 +52,7 @@ describe('lib.extensions', () => {
         .get(resourcePath)
         .reply(200, mockDeployment)
         .delete(resourcePath)
-        .reply(200, mockDeployment)
+        .reply(200, mockDeployment);
     });
 
     it('POSTs, GETs, and DELETEs', done => {
@@ -137,7 +137,7 @@ describe('lib.extensions', () => {
         .get(resourcePath)
         .reply(200, mockDs)
         .delete(resourcePath)
-        .reply(200, mockDs)
+        .reply(200, mockDs);
     });
 
     it('POSTs, GETs, and DELETEs', done => {

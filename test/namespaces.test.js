@@ -23,8 +23,7 @@ describe('lib.namespaces', () => {
       const parentPath = '/apis/foo.com/v1';
       const namespace = 'notdefault';
       const namespaces = new Namespaces({ api, parentPath, namespace });
-      namespaces
-        .addResource('balonies')
+      namespaces.addResource('balonies');
       const namespacesFoo = namespaces('foo');
       assume(namespacesFoo.balonies.constructor.name).is.equal('BaseObject');
     });

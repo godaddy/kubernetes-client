@@ -1,4 +1,4 @@
-/* eslint no-process-env:0 no-sync:0 */
+/* eslint no-process-env:0, no-sync:0, max-statements:0 */
 'use strict';
 
 const async = require('async');
@@ -143,7 +143,7 @@ function changeNameInt(cb) {
           return next(new Error('Waiting for servicesaccount secrets'));
         }
         cb();
-      })
+      });
     });
   });
 }
