@@ -1,3 +1,4 @@
+/* eslint max-nested-callbacks:0 */
 'use strict';
 
 const assume = require('assume');
@@ -40,7 +41,7 @@ const testPvc = {
     }
   },
   spec: {
-    accessModes: [ 'ReadWriteOnce' ],
+    accessModes: ['ReadWriteOnce'],
     resources: {
       requests: {
         storage: '1Mi'
@@ -146,7 +147,7 @@ describe('lib.base', () => {
           }]
         });
     });
-    
+
     it('GETs with labelSelector', done => {
       common.api.ns.pvc.matchLabels({
         app: 'test'

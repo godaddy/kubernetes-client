@@ -23,7 +23,7 @@ describe('lib.match-expressions', () => {
       assume(s).is.equal('name');
     });
     it('handles does not exist', () => {
-      const s = matchExpression.stringify({ key: 'name', operator: 'DoesNotExist' })
+      const s = matchExpression.stringify({ key: 'name', operator: 'DoesNotExist' });
       assume(s).is.equal('!name');
     });
   });
