@@ -1,5 +1,4 @@
 /* eslint max-nested-callbacks:0 */
-'use strict';
 
 const assume = require('assume');
 const async = require('async');
@@ -90,7 +89,7 @@ describe('lib.ThirdPartyResource', () => {
           .post(`/apis/${ common.thirdPartyDomain }/v1/namespaces/${ common.currentName }/newresources`)
           .reply(200, {})
           .get(`/apis/${ common.thirdPartyDomain }/v1/namespaces/${ common.currentName }/newresources/test`)
-          .reply(200, { metadata: { name: 'test' } });
+          .reply(200, { metadata: { name: 'test' }});
       });
 
       it('creates a resources', done => {
