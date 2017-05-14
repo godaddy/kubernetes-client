@@ -1,5 +1,3 @@
-'use strict';
-
 const assume = require('assume');
 
 const Namespaces = require('../lib/namespaces');

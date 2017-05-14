@@ -1,5 +1,3 @@
-'use strict';
-
 const assume = require('assume');
 
 const Api = require('../lib/api');

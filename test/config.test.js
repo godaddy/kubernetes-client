@@ -1,4 +1,3 @@
-'use strict';
 /* eslint no-process-env: 0*/
 
 const assume = require('assume');
@@ -54,11 +53,11 @@ describe('Config', () => {
   describe('.fromKubeconfig', () => {
     it('handles username and password', () => {
       const kubeconfig = {
-        apiVersion: 'v1',
-        kind: 'Config',
-        preferences: {},
+        'apiVersion': 'v1',
+        'kind': 'Config',
+        'preferences': {},
         'current-context': 'foo-context',
-        contexts: [
+        'contexts': [
           {
             name: 'foo-context',
             context: {
@@ -67,7 +66,7 @@ describe('Config', () => {
             }
           }
         ],
-        clusters: [
+        'clusters': [
           {
             name: 'foo-cluster',
             cluster: {
@@ -75,7 +74,7 @@ describe('Config', () => {
             }
           }
         ],
-        users: [
+        'users': [
           {
             name: 'foo-user',
             user: {
@@ -92,11 +91,11 @@ describe('Config', () => {
 
     it('handles base64 encoded certs and keys', () => {
       const kubeconfig = {
-        apiVersion: 'v1',
-        kind: 'Config',
-        preferences: {},
+        'apiVersion': 'v1',
+        'kind': 'Config',
+        'preferences': {},
         'current-context': 'foo-context',
-        contexts: [
+        'contexts': [
           {
             name: 'foo-context',
             context: {
@@ -105,16 +104,16 @@ describe('Config', () => {
             }
           }
         ],
-        clusters: [
+        'clusters': [
           {
             name: 'foo-cluster',
             cluster: {
               'certificate-authority-data': new Buffer('certificate-authority-data').toString('base64'),
-              server: 'https://192.168.42.121:8443'
+              'server': 'https://192.168.42.121:8443'
             }
           }
         ],
-        users: [
+        'users': [
           {
             name: 'foo-user',
             user: {
@@ -132,11 +131,11 @@ describe('Config', () => {
 
     it('handles token', () => {
       const kubeconfig = {
-        apiVersion: 'v1',
-        kind: 'Config',
-        preferences: {},
+        'apiVersion': 'v1',
+        'kind': 'Config',
+        'preferences': {},
         'current-context': 'foo-context',
-        contexts: [
+        'contexts': [
           {
             name: 'foo-context',
             context: {
@@ -145,7 +144,7 @@ describe('Config', () => {
             }
           }
         ],
-        clusters: [
+        'clusters': [
           {
             name: 'foo-cluster',
             cluster: {
@@ -153,7 +152,7 @@ describe('Config', () => {
             }
           }
         ],
-        users: [
+        'users': [
           {
             name: 'foo-user',
             user: {
@@ -168,11 +167,11 @@ describe('Config', () => {
 
     it('handles manually specified current-context', () => {
       const kubeconfig = {
-        apiVersion: 'v1',
-        kind: 'Config',
-        preferences: {},
+        'apiVersion': 'v1',
+        'kind': 'Config',
+        'preferences': {},
         'current-context': 'foo-context-1',
-        contexts: [
+        'contexts': [
           {
             name: 'foo-context-1',
             context: {
@@ -188,7 +187,7 @@ describe('Config', () => {
             }
           }
         ],
-        clusters: [
+        'clusters': [
           {
             name: 'foo-cluster-1',
             cluster: {
@@ -202,7 +201,7 @@ describe('Config', () => {
             }
           }
         ],
-        users: [
+        'users': [
           {
             name: 'foo-user',
             user: {

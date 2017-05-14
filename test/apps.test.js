@@ -1,5 +1,3 @@
-'use strict';
-
 const assume = require('assume');
 const async = require('async');
 const nock = require('nock');

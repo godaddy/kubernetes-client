@@ -1,5 +1,4 @@
 /* eslint no-process-env:0, no-sync:0, max-statements:0 */
-'use strict';
 
 const async = require('async');
 const crypto = require('crypto');
@@ -67,17 +66,19 @@ function newName() {
 
 function injectApis(options) {
   const apis = {
-    api: { cls: Core },
-    apiGroup: { cls: Api },
-    apps: { cls: Apps },
-    batch: { cls: Batch },
-    extensions: { cls: Extensions },
-    rbac: { cls: Rbac },
-    thirdPartyResources: { cls: ThirdPartyResources, options: { group: 'kubernetes-client.com' } }
+    api: { Constructor: Core },
+    apiGroup: { Constructor: Api },
+    apps: { Constructor: Apps },
+    batch: { Constructor: Batch },
+    extensions: { Constructor: Extensions },
+    rbac: { Constructor: Rbac },
+    thirdPartyResources: {
+      Constructor: ThirdPartyResources, options: { group: 'kubernetes-client.com' }
+    }
   };
   Object.keys(apis).forEach(apiName => {
     const api = apis[apiName];
-    module.exports[apiName] = new (api.cls)(Object.assign({}, options, api.options));
+    module.exports[apiName] = new (api.Constructor)(Object.assign({}, options, api.options));
   });
 }
 

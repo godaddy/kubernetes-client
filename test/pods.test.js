@@ -1,5 +1,4 @@
 /* eslint max-nested-callbacks:0 */
-'use strict';
 
 const assume = require('assume');
 const nock = require('nock');
