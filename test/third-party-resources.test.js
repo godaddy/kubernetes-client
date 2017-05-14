@@ -76,7 +76,6 @@ describe('lib.ThirdPartyResource', () => {
       });
 
       it('returns NewSourceList', done => {
-        common.thirdPartyResources.addResource('newresources');
         common.thirdPartyResources.newresources.get((err, results) => {
           assume(err).is.falsy();
           assume(results.kind).is.equal('NewResourceList');

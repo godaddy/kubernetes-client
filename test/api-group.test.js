@@ -66,6 +66,28 @@ describe('lib.api-group', () => {
     });
   });
 
+  describe('.addResource', () => {
+    afterEach(() => delete common.api.foo);
+
+    it('adds new group resources', () => {
+      common.api.addResource('foo');
+      assume(common.api.foo).is.truthy();
+    });
+    it('throws an error for missing .name', () => {
+      const fn = () => common.api.addResource({ Constructor: 'does not matter' });
+      assume(fn).throws();
+    });
+    it('throws an error for missing .Constructor', () => {
+      const fn = () => common.api.addResource({ name: 'does not matter' });
+      assume(fn).throws();
+    });
+    it('throws an error for same resource', () => {
+      const fn = () => common.api.addResource('foo');
+      fn();
+      assume(fn).throws();
+    });
+  });
+
   describe('.ingresses', () => {
     beforeTesting('unit', () => {
       nock(common.api.url)
