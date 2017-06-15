@@ -27,6 +27,7 @@
     "lib"
   ],
   "dependencies": {
+    "assign-deep": "^0.4.5",
     "async": "^2.0.0-rc.6",
     "js-yaml": "^3.7.0",
     "request": "^2.79.0"
