@@ -166,6 +166,46 @@ describe('Config', () => {
       assume(args.auth.bearer).equals('foo-token');
     });
 
+    it('handles auth-provider.config.access-token', () => {
+      const kubeconfig = {
+        'apiVersion': 'v1',
+        'kind': 'Config',
+        'preferences': {},
+        'current-context': 'foo-context',
+        'contexts': [
+          {
+            name: 'foo-context',
+            context: {
+              cluster: 'foo-cluster',
+              user: 'foo-user'
+            }
+          }
+        ],
+        'clusters': [
+          {
+            name: 'foo-cluster',
+            cluster: {
+              server: 'https://192.168.42.121:8443'
+            }
+          }
+        ],
+        'users': [
+          {
+            name: 'foo-user',
+            user: {
+              'auth-provider': {
+                config: {
+                  'access-token': 'foo-token'
+                }
+              }
+            }
+          }
+        ]
+      };
+      const args = config.fromKubeconfig(kubeconfig);
+      assume(args.auth.bearer).equals('foo-token');
+    });
+
     it('handles manually specified current-context', () => {
       const kubeconfig = {
         'apiVersion': 'v1',
