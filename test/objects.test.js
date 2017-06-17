@@ -130,7 +130,6 @@ describe('objects', function () {
     function nock200() {
       return nock(_url)
         .patch(`${ _rcs }/foo`)
-        .matchHeader('content-type', 'application/strategic-merge-patch+json')
         .reply(200, {})
         .delete(`${ _rcs }/foo`)
         .reply(200, {});
