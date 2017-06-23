@@ -162,6 +162,17 @@ describe('lib.pods', () => {
         done();
       });
     });
+    it('returns the Pod via a stream', done => {
+      const stream = common.api.ns.pods('test-pod').getStream();
+      const pieces = [];
+      stream.on('data', data => pieces.push(data.toString()));
+      stream.on('error', err => assume(err).is.falsy());
+      stream.on('end', () => {
+        const object = JSON.parse(pieces.join(''));
+        assume(object.kind).is.equal('Pod');
+        done();
+      });
+    });
     only('unit', 'returns the Pod via the legacy method', done => {
       common.api.ns.pods.get('test-pod', (err, pod) => {
         assume(err).is.falsy();
