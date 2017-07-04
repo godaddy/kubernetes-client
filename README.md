@@ -140,7 +140,7 @@ For example to filter based on [label
 selector](http://kubernetes.io/docs/user-guide/labels/):
 
 ```js
-core.ns.rc.get({ qs: { labelSelector: 'service=http' } }, print);
+core.ns.rc.get({ qs: { labelSelector: 'service=http,component=api' } }, print);
 ```
 
 ### Label selector filtering
