@@ -218,7 +218,7 @@ ReplicationController when it deletes the ReplicationController. You
 can preserve the Pods:
 
 ```js
-core.ns.rc.delete({ name: 'http-rc', preservePods: true });
+core.ns.rc.delete({ name: 'http-rc', preservePods: true }, print);
 ```
 
 ### Watching and streaming
