@@ -223,14 +223,13 @@ core.ns.rc.delete({ name: 'http-rc', preservePods: true }, print);
 
 ### Watching and streaming
 
-If you don't pass a callback to `get`, node-kubernetes returns a
-stream.  This is useful for watching:
+You can call `.getStream` to stream results. This is useful for watching:
 
 ```js
 const JSONStream = require('json-stream');
 const jsonStream = new JSONStream();
 
-const stream = core.ns.po.get({ qs: { watch: true } });
+const stream = core.ns.po.getStream({ qs: { watch: true } });
 stream.pipe(jsonStream);
 jsonStream.on('data', object => {
   console.log('Pod:', JSON.stringify(object, null, 2));
@@ -239,7 +238,7 @@ jsonStream.on('data', object => {
 
 You can access logs in a similar fashion:
 ```js
-const stream = core.ns.po.log({ name: 'http-123', qs: { follow: true } });
+const stream = core.ns.po('http-123').log.getStream({ qs: { follow: true } });
 stream.on('data', chunk => {
   process.stdout.write(chunk.toString());
 });
