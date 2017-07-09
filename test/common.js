@@ -11,6 +11,7 @@ const Api = require('../lib/api');
 const Apps = require('../lib/apps');
 const Batch = require('../lib/batch');
 const Core = require('../lib/core');
+const CorePromise = require('../lib/promise').Core;
 const Extensions = require('../lib/extensions');
 const Rbac = require('../lib/rbac');
 const ThirdPartyResources = require('../lib/third-party-resources');
@@ -71,6 +72,7 @@ function injectApis(options) {
     apiGroup: { Constructor: Api },
     apps: { Constructor: Apps },
     batch: { Constructor: Batch },
+    corePromise: { Constructor: CorePromise },
     extensions: { Constructor: Extensions },
     rbac: { Constructor: Rbac },
     thirdPartyResources: {

@@ -66,6 +66,39 @@ const Api = require('kubernetes-client');
 const core = new Api.Core(Api.config.fromKubeconfig());
 ```
 
+### **Experimental** support for promises and async/await
+
+kubernetes-client exposes **experimental** support for promises via
+the `kubernetes-client/promise` path. The API is the same, except for the
+functions that previously took a callback (*e.g.*, `.get`). Those functions now
+return a promise.
+
+```js
+// Notice the require path...
+const Api = require('kubernetes-client/promise');
+// ...but the same constructor arguments.
+const core = new Api.Core({
+  url: 'http://my-k8s-api-server.com',
+  version: 'v1',  // Defaults to 'v1'
+  namespace: 'my-project' // Defaults to 'default'
+});
+```
+
+and then:
+
+```js
+core.namespaces.replicationcontrollers('http-rc').get()
+  .then(result => JSON.stringify(result, null, 2))
+  .catch(err => throw err);
+```
+
+or with `async/await`:
+
+```js
+const result = await core.namespaces.replicationcontrollers('http-rc').get();
+console.log(JSON.stringify(result, null, 2));
+```
+
 ### Creating and updating
 
 kubernetes-client objects expose `.post`, `.patch`, and `.put`
