@@ -110,9 +110,9 @@ describe('objects', function () {
     only('unit', 'GETs PodList', function (done) {
       nock200();
       rcs().po.get({ name: 'foo' }, (err, results) => {
+        assume(err).is.falsy();
         const rc = results.rc;
         const podList = results.podList;
-        assume(err).is.falsy();
         assume(rc.kind).is.equal('replicationcontroller');
         assume(podList.kind).is.equal('podlist');
         done();
