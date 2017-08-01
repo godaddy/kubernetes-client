@@ -52,3 +52,8 @@ resources that require a namespace.
 [`deployments.js`](https://github.com/godaddy/kubernetes-client/blob/master/lib/deployments.js)
 for an example.
 1. Submit another PR with your specialized implementations.
+
+## Publishing a new release
+
+If you're a maintainer use `npm run release` to start the release
+process and follow the instructions printed to the console.
