@@ -6,6 +6,7 @@ const async = require('async');
 const nock = require('nock');
 
 const common = require('./common');
+const only = common.only;
 const beforeTesting = common.beforeTesting;
 
 function pod(name) {
@@ -88,6 +89,30 @@ describe('lib.base', () => {
           assume(err).is.falsy();
           assume(pods.kind).is.equal('PodList');
           assume(pods.items).has.length(1);
+          done();
+        });
+      });
+    });
+
+    describe('.delete', () => {
+      const podName = 'pod-name';
+      const query = { pretty: true };
+      const body = {
+        apiVersion: 'v1',
+        kind: 'Pod',
+        propagationPolicy: 'Foreground'
+      };
+      beforeTesting('unit', () => {
+        nock(common.api.url)
+          .delete(`/api/v1/namespaces/${ common.currentName }/pods/${ podName }`, body)
+          .query(query)
+          .reply(200, { kind: 'Pod' });
+      });
+
+      only('unit', 'should bypass query string and body from arguments into request', done => {
+        common.api.ns.po.delete({ name: podName, qs: query, body: body }, (err, result) => {
+          assume(err).is.falsy();
+          assume(result).is.eql({ kind: 'Pod' });
           done();
         });
       });
