@@ -93,6 +93,46 @@ describe('lib.base', () => {
       });
     });
 
+    describe('.delete', () => {
+      const podName = 'pod-name';
+      const query = { pretty: true };
+      const body = {
+        apiVersion: 'v1',
+        kind: 'DeleteOptions',
+        propagationPolicy: 'Foreground'
+      };
+      beforeTesting('unit', () => {
+        nock(common.api.url)
+          .delete(`/api/v1/namespaces/${ common.currentName }/pods/${ podName }`, body)
+          .query(query)
+          .reply(200, {
+            kind: 'Pod',
+            metadata: {
+              name: podName,
+              finalizers: ['foregroundDeletion']
+            },
+            spec: {
+
+            }
+          });
+      });
+      beforeTesting('int', done => {
+        common.api.ns.po.post({ body: pod(podName) }, done);
+      });
+
+      it('should bypass query string and body from arguments into request', done => {
+        common.api.ns.po.delete({ name: podName, qs: query, body: body }, (err, result) => {
+          assume(err).is.falsy();
+          assume(result.kind).is.eql('Pod');
+          assume(result.metadata).is.truthy();
+          assume(result.spec).is.truthy();
+          assume(result.metadata.name).is.eql(podName);
+          assume(result.metadata.finalizers).is.eql(['foregroundDeletion']);
+          done();
+        });
+      });
+    });
+
     describe('.po.matchLabels', () => {
       beforeTesting('int', done => {
         common.changeName(err => {
