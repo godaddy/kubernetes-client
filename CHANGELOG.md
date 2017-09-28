@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.16.0"></a>
+# [3.16.0](https://github.com/godaddy/kubernetes-client/compare/3.14.0...v3.16.0) (2017-09-28)
+
+
+### Features
+
+* **Promise API:** Experimental support for a promise-based API (#133) ([b5f5e10](https://github.com/godaddy/kubernetes-client/commit/b5f5e10))
+* **Send body in DELETE requests:** (#142) ([10e4018](https://github.com/godaddy/kubernetes-client/commit/10e4018))
+
+
+
 <a name="3.15.0"></a>
 # [3.15.0](https://github.com/godaddy/kubernetes-client/compare/3.14.0...v3.15.0) (2017-08-29)
 
