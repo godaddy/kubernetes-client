@@ -71,6 +71,7 @@ function injectApis(options) {
     apiGroup: { Constructor: Api },
     apps: { Constructor: Apps },
     batch: { Constructor: Batch },
+    core: { Constructor: Core },
     extensions: { Constructor: Extensions },
     rbac: { Constructor: Rbac },
     thirdPartyResources: {
@@ -80,6 +81,8 @@ function injectApis(options) {
   Object.keys(apis).forEach(apiName => {
     const api = apis[apiName];
     module.exports[apiName] = new (api.Constructor)(Object.assign({}, options, api.options));
+    module.exports[`${ apiName }Promise`] =
+      new (api.Constructor)(Object.assign({ promises: true }, options, api.options));
   });
 }
 
