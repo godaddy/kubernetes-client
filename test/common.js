@@ -8,12 +8,14 @@ const path = require('path');
 const yaml = require('js-yaml');
 
 const Api = require('../lib/api');
+const ApiExtensions = require('../lib/api-extensions');
 const Apps = require('../lib/apps');
 const Batch = require('../lib/batch');
 const Core = require('../lib/core');
 const Extensions = require('../lib/extensions');
 const Rbac = require('../lib/rbac');
 const ThirdPartyResources = require('../lib/third-party-resources');
+const CustomResourceDefinition = require('../lib/custom-resource-definition');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
 const defaultTimeout = process.env.TIMEOUT || 30000;
@@ -68,6 +70,7 @@ function newName() {
 function injectApis(options) {
   const apis = {
     api: { Constructor: Core },
+    apiExtensions: { Constructor: ApiExtensions },
     apiGroup: { Constructor: Api },
     apps: { Constructor: Apps },
     batch: { Constructor: Batch },
@@ -76,6 +79,9 @@ function injectApis(options) {
     rbac: { Constructor: Rbac },
     thirdPartyResources: {
       Constructor: ThirdPartyResources, options: { group: 'kubernetes-client.com' }
+    },
+    customResourceDefinition: {
+      Constructor: CustomResourceDefinition, options: { group: 'kubernetes-client.com' }
     }
   };
   Object.keys(apis).forEach(apiName => {
@@ -198,3 +204,4 @@ module.exports.beforeTesting = beforeTesting;
 module.exports.beforeTestingEach = beforeTestingEach;
 module.exports.only = only;
 module.exports.thirdPartyDomain = 'kubernetes-client.com';
+module.exports.customResourceDomain = 'kubernetes-client.com';
