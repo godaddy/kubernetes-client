@@ -1,0 +1,135 @@
+'use strict';
+
+const assume = require('assume');
+const async = require('async');
+const nock = require('nock');
+
+const common = require('./common');
+const beforeTesting = common.beforeTesting;
+const resourceName = 'test-name';
+
+describe('lib.autoscaling', () => {
+  describe('.autoscaling', () => {
+    const path = `/apis/autoscaling/v1/namespaces/${ common.currentName }/horizontalpodautoscalers`;
+    const resourcePath = `${ path }/${ resourceName }`;
+    const horizontalAutoscaleObj = {
+      apiVersion: 'autoscaling/v1',
+      kind: 'HorizontalPodAutoscaler',
+      metadata: {
+        name: 'test-name',
+        namespace: 'fa'
+      },
+      spec: {
+        targetCPUUtilizationPercentage: 65,
+        maxReplicas: 10,
+        minReplicas: 3,
+        scaleTargetRef: {
+          apiVersion: 'autoscaling/v1beta1',
+          kind: 'Deployment',
+          name: 'example-name',
+          subresource: 'scale'
+        }
+      },
+      status: {
+        currentReplicas: 0,
+        desiredReplicas: 0
+      }
+    };
+
+    beforeTesting('int', common.changeName);
+    beforeTesting('unit', () => {
+      const mockDs = {
+        apiVersion: 'autoscaling/v1',
+        kind: 'HorizontalPodAutoscaler',
+        metadata: {
+          name: 'test-name',
+          namespace: 'example-namepace'
+        },
+        spec: {
+          targetCPUUtilizationPercentage: 65,
+          maxReplicas: 10,
+          minReplicas: 3,
+          scaleTargetRef: {
+            apiVersion: 'autoscaling/v1beta1',
+            kind: 'Deployment',
+            name: 'example-name',
+            subresource: 'scale'
+          }
+        },
+        status: {
+          currentReplicas: 0,
+          desiredReplicas: 0
+        }
+      };
+      nock(common.autoscaling.url)
+                .post(path)
+                .reply(201, mockDs)
+                .get(resourcePath)
+                .reply(200, mockDs)
+                .delete(resourcePath)
+                .reply(200, mockDs);
+    });
+
+    it('POSTs, GETs, and DELETEs', done => {
+      async.series([
+        next => {
+          console.log('here', common.autoscaling.ns.ds);
+          common.autoscaling.ns.hpa.post({ body: horizontalAutoscaleObj }, next);
+        },
+        next => common.autoscaling.ns.hpa.get(resourceName, next),
+        next => common.autoscaling.ns.hpa.delete(resourceName, next)
+      ], (err, results) => {
+        assume(err).is.falsy();
+        const ds = results[0];
+        assume(ds.metadata.name).is.equal(resourceName);
+        done();
+      });
+    });
+
+    describe('lists', () => {
+      beforeTesting('int', common.changeName);
+      beforeTesting('unit', () => {
+        const mockDsList = {
+          apiVersion: 'autoscaling/v1',
+          kind: 'HorizontalPodAutoscaler',
+          metadata: {
+            name: 'test-name',
+            namespace: 'fa'
+          },
+          spec: {
+            targetCPUUtilizationPercentage: 65,
+            maxReplicas: 10,
+            minReplicas: 3,
+            scaleTargetRef: {
+              apiVersion: 'autoscaling/v1beta1',
+              kind: 'Deployment',
+              name: 'test-name',
+              subresource: 'scale'
+            }
+          },
+          status: {
+            currentReplicas: 0,
+            desiredReplicas: 0
+          }
+        };
+
+        nock(common.autoscaling.url)
+                    .get(path)
+                    .reply(200, mockDsList);
+      });
+
+      it('returns DaemonSetList', done => {
+        async.series([
+          next => common.autoscaling.ns.hpa.get(next)
+        ], (err, results) => {
+          assume(err).is.falsy();
+          const dsList = results[0];
+          assume(dsList.kind).is.equal('HorizontalPodAutoscaler');
+          done();
+        });
+      });
+    });
+  });
+
+  common.afterTesting('int', common.cleanupName);
+});

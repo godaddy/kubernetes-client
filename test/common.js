@@ -12,6 +12,7 @@ const Apps = require('../lib/apps');
 const Batch = require('../lib/batch');
 const Core = require('../lib/core');
 const Extensions = require('../lib/extensions');
+const Autoscaling = require('../lib/autoscaling');
 const Rbac = require('../lib/rbac');
 const ThirdPartyResources = require('../lib/third-party-resources');
 
@@ -73,6 +74,7 @@ function injectApis(options) {
     batch: { Constructor: Batch },
     core: { Constructor: Core },
     extensions: { Constructor: Extensions },
+    autoscaling: { Constructor: Autoscaling },
     rbac: { Constructor: Rbac },
     thirdPartyResources: {
       Constructor: ThirdPartyResources, options: { group: 'kubernetes-client.com' }
