@@ -39,12 +39,12 @@ describe('lib.autoscaling', () => {
     beforeTesting('int', common.changeName);
     beforeTesting('unit', () => {
       nock(common.autoscaling.url)
-                .post(path)
-                .reply(201, horizontalAutoscaleObj)
-                .get(resourcePath)
-                .reply(200, horizontalAutoscaleObj)
-                .delete(resourcePath)
-                .reply(200, horizontalAutoscaleObj);
+        .post(path)
+        .reply(201, horizontalAutoscaleObj)
+        .get(resourcePath)
+        .reply(200, horizontalAutoscaleObj)
+        .delete(resourcePath)
+        .reply(200, horizontalAutoscaleObj);
     });
 
     it('POSTs, GETs, and DELETEs', done => {
@@ -66,8 +66,8 @@ describe('lib.autoscaling', () => {
       beforeTesting('int', common.changeName);
       beforeTesting('unit', () => {
         nock(common.autoscaling.url)
-                    .get(path)
-                    .reply(200, horizontalAutoscaleObj);
+        .get(path)
+        .reply(200, horizontalAutoscaleObj);
       });
 
       it('returns HorizontalPodAutoscalerList', done => {
