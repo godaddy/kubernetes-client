@@ -17,7 +17,7 @@ describe('lib.autoscaling', () => {
       kind: 'HorizontalPodAutoscaler',
       metadata: {
         name: 'test-name',
-        namespace: 'fa'
+        namespace: 'test-namespace'
       },
       spec: {
         targetCPUUtilizationPercentage: 65,
@@ -38,42 +38,18 @@ describe('lib.autoscaling', () => {
 
     beforeTesting('int', common.changeName);
     beforeTesting('unit', () => {
-      const mockDs = {
-        apiVersion: 'autoscaling/v1',
-        kind: 'HorizontalPodAutoscaler',
-        metadata: {
-          name: 'test-name',
-          namespace: 'example-namepace'
-        },
-        spec: {
-          targetCPUUtilizationPercentage: 65,
-          maxReplicas: 10,
-          minReplicas: 3,
-          scaleTargetRef: {
-            apiVersion: 'autoscaling/v1beta1',
-            kind: 'Deployment',
-            name: 'example-name',
-            subresource: 'scale'
-          }
-        },
-        status: {
-          currentReplicas: 0,
-          desiredReplicas: 0
-        }
-      };
       nock(common.autoscaling.url)
                 .post(path)
-                .reply(201, mockDs)
+                .reply(201, horizontalAutoscaleObj)
                 .get(resourcePath)
-                .reply(200, mockDs)
+                .reply(200, horizontalAutoscaleObj)
                 .delete(resourcePath)
-                .reply(200, mockDs);
+                .reply(200, horizontalAutoscaleObj);
     });
 
     it('POSTs, GETs, and DELETEs', done => {
       async.series([
         next => {
-          console.log('here', common.autoscaling.ns.ds);
           common.autoscaling.ns.hpa.post({ body: horizontalAutoscaleObj }, next);
         },
         next => common.autoscaling.ns.hpa.get(resourceName, next),
@@ -89,36 +65,12 @@ describe('lib.autoscaling', () => {
     describe('lists', () => {
       beforeTesting('int', common.changeName);
       beforeTesting('unit', () => {
-        const mockDsList = {
-          apiVersion: 'autoscaling/v1',
-          kind: 'HorizontalPodAutoscaler',
-          metadata: {
-            name: 'test-name',
-            namespace: 'fa'
-          },
-          spec: {
-            targetCPUUtilizationPercentage: 65,
-            maxReplicas: 10,
-            minReplicas: 3,
-            scaleTargetRef: {
-              apiVersion: 'autoscaling/v1beta1',
-              kind: 'Deployment',
-              name: 'test-name',
-              subresource: 'scale'
-            }
-          },
-          status: {
-            currentReplicas: 0,
-            desiredReplicas: 0
-          }
-        };
-
         nock(common.autoscaling.url)
                     .get(path)
-                    .reply(200, mockDsList);
+                    .reply(200, horizontalAutoscaleObj);
       });
 
-      it('returns DaemonSetList', done => {
+      it('returns HorizontalPodAutoscalerList', done => {
         async.series([
           next => common.autoscaling.ns.hpa.get(next)
         ], (err, results) => {
