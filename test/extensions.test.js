@@ -83,12 +83,9 @@ describe('lib.extensions', () => {
       });
 
       it('returns DaemonSetList', done => {
-        async.series([
-          next => common.extensions.ns.ds.get(next)
-        ], (err, results) => {
+        common.extensions.ns.ds.get((err, result) => {
           assume(err).is.falsy();
-          const dsList = results[0];
-          assume(dsList.kind).is.equal('DaemonSetList');
+          assume(result.kind).is.equal('DaemonSetList');
           done();
         });
       });

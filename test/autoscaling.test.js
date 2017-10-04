@@ -71,12 +71,9 @@ describe('lib.autoscaling', () => {
       });
 
       it('returns HorizontalPodAutoscalerList', done => {
-        async.series([
-          next => common.autoscaling.ns.hpa.get(next)
-        ], (err, results) => {
+        common.autoscaling.ns.hpa.get((err, result) => {
           assume(err).is.falsy();
-          const dsList = results[0];
-          assume(dsList.kind).is.equal('HorizontalPodAutoscaler');
+          assume(result.kind).is.equal('HorizontalPodAutoscaler');
           done();
         });
       });
