@@ -16,8 +16,7 @@ describe('lib.autoscaling', () => {
       apiVersion: 'autoscaling/v1',
       kind: 'HorizontalPodAutoscaler',
       metadata: {
-        name: 'test-name',
-        namespace: 'test-namespace'
+        name: 'test-name'
       },
       spec: {
         targetCPUUtilizationPercentage: 65,
@@ -56,8 +55,8 @@ describe('lib.autoscaling', () => {
         next => common.autoscaling.ns.hpa.delete(resourceName, next)
       ], (err, results) => {
         assume(err).is.falsy();
-        const ds = results[0];
-        assume(ds.metadata.name).is.equal(resourceName);
+        const hpa = results[0];
+        assume(hpa.metadata.name).is.equal(resourceName);
         done();
       });
     });
