@@ -131,7 +131,7 @@ describe('Config', () => {
       assume(args.cert).equals('client-certificate');
     });
 
-    it('handles relative certs and keys', () => {
+    it('handles relative and absolute certs and keys', () => {
       const kubeconfig = {
         'apiVersion': 'v1',
         'kind': 'Config',
@@ -159,7 +159,7 @@ describe('Config', () => {
           {
             name: 'foo-user',
             user: {
-              'client-certificate': 'client.cert',
+              'client-certificate': '/absolute/path/client.cert',
               'client-key': 'client.key'
             }
           }
@@ -182,7 +182,7 @@ describe('Config', () => {
         .returns('client-key-data');
 
       fsReadFileSync
-        .withArgs(sinon.match('/client.cert'))
+        .withArgs('/absolute/path/client.cert')
         .returns('client-certificate-data');
 
       yamlSafeLoad
