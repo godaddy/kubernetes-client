@@ -160,7 +160,7 @@ describe('Config', () => {
             name: 'foo-user',
             user: {
               'client-certificate': '/absolute/path/client.cert',
-              'client-key': 'client.key'
+              'client-key': 'subdir/client.key'
             }
           }
         ]
@@ -174,11 +174,11 @@ describe('Config', () => {
         .returns('mock-config');
 
       fsReadFileSync
-        .withArgs(sinon.match('/ca.pem'))
+        .withArgs(sinon.match('/.kube/ca.pem'))
         .returns('certificate-authority-data');
 
       fsReadFileSync
-        .withArgs(sinon.match('/client.key'))
+        .withArgs(sinon.match('/.kube/subdir/client.key'))
         .returns('client-key-data');
 
       fsReadFileSync
