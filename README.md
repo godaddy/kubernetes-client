@@ -203,6 +203,12 @@ core.ns.rc.match([{
 }]).get(print);
 ```
 
+**Note:** The Kubernetes API supports label selector filtering [for GET
+methods
+only](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/). The
+Kubernetes API does not support label selector filtering for POST,
+PUT, PATCH, or DELETE.
+
 ### ThirdPartyResources
 
 You can extend the Kubernetes API using a
