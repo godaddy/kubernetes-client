@@ -41,7 +41,7 @@ const testManifest = {
 };
 
 function createNewResource(cb) {
-  common.customResourceDefinition.addResource('newresources');
+  common.customResourceDefinitions.addResource('newresources');
   common.apiExtensions.customresourcedefinition.delete(newResource.metadata.name, () => {
     common.apiExtensions.customresourcedefinition.post({ body: newResource }, postErr => {
       if (postErr) return cb(postErr);
@@ -51,7 +51,7 @@ function createNewResource(cb) {
       //
       const times = common.defaultTimeout / 1000;
       async.retry({ times: times, interval: 1000 }, next => {
-        common.customResourceDefinition.newresources.get(err => {
+        common.customResourceDefinitions.newresources.get(err => {
           if (err) return next(err);
           cb();
         });
@@ -63,9 +63,9 @@ function createNewResource(cb) {
 describe('lib.CustomResourceDefinition', () => {
   describe('.addResource', () => {
     only('unit', 'adds a BaseObject globally and to default namespace', () => {
-      common.customResourceDefinition.addResource('newresources');
-      assume(common.customResourceDefinition.newresources).is.truthy();
-      assume(common.customResourceDefinition.namespace.newresources).is.truthy();
+      common.customResourceDefinitions.addResource('newresources');
+      assume(common.customResourceDefinitions.newresources).is.truthy();
+      assume(common.customResourceDefinitions.namespace.newresources).is.truthy();
     });
   });
 
@@ -79,13 +79,13 @@ describe('lib.CustomResourceDefinition', () => {
 
     describe('.get', () => {
       beforeTesting('unit', () => {
-        nock(common.customResourceDefinition.url)
-          .get(`${ common.customResourceDefinition.path }/newresources`)
+        nock(common.customResourceDefinitions.url)
+          .get(`${ common.customResourceDefinitions.path }/newresources`)
           .reply(200, { kind: 'NewResourceList' });
       });
 
       it('returns NewSourceList', done => {
-        common.customResourceDefinition.newresources.get((err, results) => {
+        common.customResourceDefinitions.newresources.get((err, results) => {
           assume(err).is.falsy();
           assume(results.kind).is.equal('NewResourceList');
           done();
@@ -95,7 +95,7 @@ describe('lib.CustomResourceDefinition', () => {
 
     describe('.post', () => {
       beforeTesting('unit', () => {
-        nock(common.customResourceDefinition.url)
+        nock(common.customResourceDefinitions.url)
           .post(`/apis/${ common.customResourceDomain }/v1/namespaces/${ common.currentName }/newresources`)
           .reply(200, {})
           .get(`/apis/${ common.customResourceDomain }/v1/namespaces/${ common.currentName }/newresources/test`)
@@ -103,12 +103,12 @@ describe('lib.CustomResourceDefinition', () => {
       });
 
       it('creates a resources', done => {
-        common.customResourceDefinition
+        common.customResourceDefinitions
           .ns
           .newresources
           .post({ body: testManifest }, postErr => {
             assume(postErr).is.falsy();
-            common.customResourceDefinition
+            common.customResourceDefinitions
               .ns
               .newresources
               .get('test', (err, result) => {

@@ -80,7 +80,7 @@ function injectApis(options) {
     thirdPartyResources: {
       Constructor: ThirdPartyResources, options: { group: 'kubernetes-client.com' }
     },
-    customResourceDefinition: {
+    customResourceDefinitions: {
       Constructor: CustomResourceDefinition, options: { group: 'kubernetes-client.com' }
     }
   };
