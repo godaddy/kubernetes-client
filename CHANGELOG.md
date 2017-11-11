@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.16.1"></a>
+## [3.16.1](https://github.com/godaddy/kubernetes-client/compare/3.16.0...v3.16.1) (2017-11-08)
+
+
+### Bug Fixes
+
+* **kubeconfig:** accept relative and absolute paths (#155) ([3cbf9cf](https://github.com/godaddy/kubernetes-client/commit/3cbf9cf))
+
+
+
 <a name="3.16.0"></a>
 # [3.16.0](https://github.com/godaddy/kubernetes-client/compare/3.14.0...v3.16.0) (2017-09-28)
 
