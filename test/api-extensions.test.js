@@ -34,9 +34,9 @@ describe('lib.apiextensions', () => {
 
     beforeTesting('unit', () => {
       nock(common.apiExtensions.url)
-        .post(`${ common.apiExtensions.path }`)
+        .post(`${ common.apiExtensions.path }/customresourcedefinitions`)
         .reply(201, testApiExtensions)
-        .get(`${ common.apiExtensions.path }/${ testCustomResourceName }`)
+        .get(`${ common.apiExtensions.path }/customresourcedefinitions/${ testCustomResourceName }`)
         .reply(200, testApiExtensions);
     });
 
@@ -45,8 +45,8 @@ describe('lib.apiextensions', () => {
     // improvements to our integration test harness to make this work well.
     common.only('unit', 'can POST and GET', done => {
       async.series([
-        next => common.apiExtensions.post({ body: testApiExtensions }, next),
-        next => common.apiExtensions.get(testCustomResourceName, next)
+        next => common.apiExtensions.customresourcedefinitions.post({ body: testApiExtensions }, next),
+        next => common.apiExtensions.customresourcedefinitions.get(testCustomResourceName, next)
       ], (err, results) => {
         assume(err).is.falsy();
         const getResult = results[1];
