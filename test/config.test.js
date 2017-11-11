@@ -4,6 +4,7 @@
 const assume = require('assume');
 const sinon = require('sinon');
 const fs = require('fs');
+const yaml = require('js-yaml');
 
 const config = require('../lib/config');
 
@@ -128,6 +129,70 @@ describe('Config', () => {
       assume(args.ca).equals('certificate-authority-data');
       assume(args.key).equals('client-key');
       assume(args.cert).equals('client-certificate');
+    });
+
+    it('handles relative and absolute certs and keys', () => {
+      const kubeconfig = {
+        'apiVersion': 'v1',
+        'kind': 'Config',
+        'preferences': {},
+        'current-context': 'foo-context',
+        'contexts': [
+          {
+            name: 'foo-context',
+            context: {
+              cluster: 'foo-cluster',
+              user: 'foo-user'
+            }
+          }
+        ],
+        'clusters': [
+          {
+            name: 'foo-cluster',
+            cluster: {
+              'certificate-authority': 'ca.pem',
+              'server': 'https://192.168.42.121:8443'
+            }
+          }
+        ],
+        'users': [
+          {
+            name: 'foo-user',
+            user: {
+              'client-certificate': '/absolute/path/client.cert',
+              'client-key': 'subdir/client.key'
+            }
+          }
+        ]
+      };
+
+      const fsReadFileSync = sandbox.stub(fs, 'readFileSync');
+      const yamlSafeLoad = sandbox.stub(yaml, 'safeLoad');
+
+      fsReadFileSync
+        .withArgs(sinon.match(/config$/))
+        .returns('mock-config');
+
+      fsReadFileSync
+        .withArgs(sinon.match('/.kube/ca.pem'))
+        .returns('certificate-authority-data');
+
+      fsReadFileSync
+        .withArgs(sinon.match('/.kube/subdir/client.key'))
+        .returns('client-key-data');
+
+      fsReadFileSync
+        .withArgs('/absolute/path/client.cert')
+        .returns('client-certificate-data');
+
+      yamlSafeLoad
+        .withArgs('mock-config')
+        .returns(kubeconfig);
+
+      const args = config.fromKubeconfig();
+      assume(args.ca).equals('certificate-authority-data');
+      assume(args.key).equals('client-key-data');
+      assume(args.cert).equals('client-certificate-data');
     });
 
     it('handles token', () => {
