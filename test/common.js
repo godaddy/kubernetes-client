@@ -15,7 +15,7 @@ const Core = require('../lib/core');
 const Extensions = require('../lib/extensions');
 const Rbac = require('../lib/rbac');
 const ThirdPartyResources = require('../lib/third-party-resources');
-const CustomResourceDefinition = require('../lib/custom-resource-definition');
+const CustomResourceDefinitions = require('../lib/custom-resource-definitions');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
 const defaultTimeout = process.env.TIMEOUT || 30000;
@@ -81,7 +81,7 @@ function injectApis(options) {
       Constructor: ThirdPartyResources, options: { group: 'kubernetes-client.com' }
     },
     customResourceDefinitions: {
-      Constructor: CustomResourceDefinition, options: { group: 'kubernetes-client.com' }
+      Constructor: CustomResourceDefinitions, options: { group: 'kubernetes-client.com' }
     }
   };
   Object.keys(apis).forEach(apiName => {
