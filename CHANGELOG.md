@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.17.1"></a>
+## [3.17.1](https://github.com/godaddy/kubernetes-client/compare/3.17.0...v3.17.1) (2017-11-14)
+
+
+### Bug Fixes
+
+* **CRDs:** Fix a filename typo (#159) ([6f880fc](https://github.com/godaddy/kubernetes-client/commit/6f880fc)), closes [#159](https://github.com/godaddy/kubernetes-client/issues/159)
+
+
+
 <a name="3.17.0"></a>
 # [3.17.0](https://github.com/godaddy/kubernetes-client/compare/3.16.1...v3.17.0) (2017-11-14)
 
