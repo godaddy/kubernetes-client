@@ -14,15 +14,15 @@ const newResource = {
   apiVersion: 'apiextensions.k8s.io/v1beta1',
   kind: 'CustomResourceDefinition',
   metadata: {
-    name: `new-resource.${ common.customResourceDomain }`
+    name: `newresources.${ common.customResourceDomain }`
   },
   spec: {
     group: common.customResourceDomain,
     version: 'v1',
     scope: 'Namespaced',
     names: {
-      plural: 'new-resources',
-      singular: 'new-resource',
+      plural: 'newresources',
+      singular: 'newresource',
       kind: 'NewResource',
       shortNames: [
         'nr'
@@ -51,7 +51,7 @@ function createNewResource(cb) {
       //
       const times = common.defaultTimeout / 1000;
       async.retry({ times: times, interval: 1000 }, next => {
-        common.customResourceDefinitions.newresources.get(err => {
+        common.customResourceDefinitions.ns(common.currentName).newresources.get(err => {
           if (err) return next(err);
           cb();
         });
@@ -61,6 +61,9 @@ function createNewResource(cb) {
 }
 
 describe('lib.CustomResourceDefinition', () => {
+
+  beforeTesting('int', common.changeName);
+
   describe('.addResource', () => {
     only('unit', 'adds a BaseObject globally and to default namespace', () => {
       common.customResourceDefinitions.addResource('newresources');
