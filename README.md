@@ -366,6 +366,22 @@ const core = new Api.Core({
 });
 ```
 
+### **Experimental** support for Swagger-based API clients
+
+**This API is going to change.**
+
+kubernetes-client has support for generating API clients from
+Kubernetes Swagger documentation.
+
+```js
+const kubernetes = require('kubernetes-client');
+const spec = require('./swagger-1.8.json');
+const http = new kubernetes.Request(kubernetes.config.fromKubeconfig());
+const client = new kubernetes.SwaggerClient({ spec, http });
+
+console.log(await client.api.v1.namespaces.get());
+```
+
 ## Testing
 
 kubernetes-client includes unit tests and integration tests.
