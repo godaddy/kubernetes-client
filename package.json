@@ -27,9 +27,9 @@
     "lib"
   ],
   "dependencies": {
-    "assign-deep": "^0.4.5",
     "async": "^2.4.1",
     "js-yaml": "^3.7.0",
+    "lodash.merge": "^4.6.0",
     "request": "^2.79.0",
     "util.promisify": "^1.0.0"
   },
