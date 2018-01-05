@@ -20,14 +20,12 @@ describe('Config', () => {
   });
 
   describe('getInCluster', () => {
+    beforeEach(() => {
+      process.env.KUBERNETES_SERVICE_HOST = 'myhost';
+      process.env.KUBERNETES_SERVICE_PORT = 443;
+    });
+
     it('should return with in-cluster config', () => {
-      // You cannot stub undefined, so ensure KUBERNETES_SERVICE_HOST and KUBERNETES_SERVICE_PORT are defined
-      process.env.KUBERNETES_SERVICE_HOST = process.env.KUBERNETES_SERVICE_HOST || '';
-      process.env.KUBERNETES_SERVICE_PORT = process.env.KUBERNETES_SERVICE_PORT || '';
-
-      sandbox.stub(process.env, 'KUBERNETES_SERVICE_HOST', 'myhost');
-      sandbox.stub(process.env, 'KUBERNETES_SERVICE_PORT', 443);
-
       const fsReadFileSync = sandbox.stub(fs, 'readFileSync');
 
       fsReadFileSync
@@ -49,6 +47,11 @@ describe('Config', () => {
         namespace: 'my-namespace',
         url: 'https://myhost:443'
       });
+    });
+
+    afterEach(() => {
+      delete process.env.KUBERNETES_SERVICE_HOST;
+      delete process.env.KUBERNETES_SERVICE_PORT;
     });
   });
 
