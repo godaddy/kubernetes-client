@@ -8,3 +8,7 @@ matrix:
     - node_js: "6"
     - node_js: "5"
     - node_js: "4"
+before_install:
+ - npm install -g greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
