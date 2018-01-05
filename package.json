@@ -27,23 +27,23 @@
     "lib"
   ],
   "dependencies": {
-    "async": "^2.4.1",
-    "js-yaml": "^3.7.0",
+    "async": "^2.6.0",
+    "js-yaml": "^3.10.0",
     "lodash.merge": "^4.6.0",
-    "request": "^2.79.0",
+    "request": "^2.83.0",
     "util.promisify": "^1.0.0"
   },
   "devDependencies": {
-    "assume": "^1.4.1",
+    "assume": "^1.5.2",
     "eslint": "^3.19.0",
     "eslint-config-godaddy": "^1.1.0",
     "eslint-plugin-json": "^1.2.0",
-    "eslint-plugin-mocha": "^4.9.0",
+    "eslint-plugin-mocha": "^4.11.0",
     "istanbul": "^0.4.3",
-    "jsdoc": "^3.4.0",
+    "jsdoc": "^3.5.5",
     "mocha": "^2.5.3",
-    "nock": "^8.0.0",
+    "nock": "^8.2.2",
     "sinon": "1.17.6",
-    "standard-version": "^4.0.0"
+    "standard-version": "^4.3.0"
   }
 }
