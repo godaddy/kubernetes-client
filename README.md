@@ -1,8 +1,9 @@
 # kubernetes-client
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/godaddy/kubernetes-client.svg)](https://greenkeeper.io/)
+[![Build Status][build]](https://travis-ci.org/godaddy/kubernetes-client) [![Greenkeeper badge][greenkeeper]](https://greenkeeper.io/)
 
-[![Build Status](https://travis-ci.org/godaddy/kubernetes-client.svg?branch=master)](https://travis-ci.org/godaddy/kubernetes-client)
+[greenkeeper]: https://badges.greenkeeper.io/godaddy/kubernetes-client.svg
+[build]: https://travis-ci.org/godaddy/kubernetes-client.svg?branch=master
 
 Simplified [Kubernetes API](http://kubernetes.io/) client for Node.js.
 
