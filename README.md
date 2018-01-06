@@ -219,7 +219,7 @@ You can extend the Kubernetes API using a
 and kubernetes-client:
 
 ```js
-const newResoure = {
+const newResource = {
   apiVersion: 'extensions/v1beta1',
   kind: 'ThirdPartyResource',
   metadata: {
