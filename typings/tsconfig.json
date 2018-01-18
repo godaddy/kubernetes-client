@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "noEmit": true,
+    "types": [ "node" ]
+  },
+  "include": [
+    "*.ts"
+  ]
+}
