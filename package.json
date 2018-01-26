@@ -26,7 +26,8 @@
     "node": ">=4.2.0"
   },
   "files": [
-    "lib"
+    "lib",
+    "typings"
   ],
   "dependencies": {
     "async": "^2.6.0",
