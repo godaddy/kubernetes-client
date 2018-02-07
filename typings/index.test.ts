@@ -26,8 +26,19 @@ function print(err, result) {
   console.log(JSON.stringify(err || result, null, 2));
 }
 
+function printPromised(result) {
+  print(null, result);
+}
+
+function catchErr(err) {
+  print(err, null);
+}
+
 api.group(manifest0).ns.kind(manifest0).post({ body: manifest0 }, print);
 api.group(manifest1).ns.kind(manifest1).post({ body: manifest1 }, print);
+
+api.group(manifest0).ns.kind(manifest0).postPromise({ body: manifest0 }).then(printPromised).catch(catchErr);
+api.group(manifest1).ns.kind(manifest1).postPromise({ body: manifest1 }).then(printPromised).catch(catchErr);
 
 core = new Api.Core({
   url: 'http://my-k8s-api-server.com',
@@ -61,8 +72,11 @@ core.ns.rc.match([{
 const clusterConfig = Api.config.getInCluster();
 
 ext.namespaces.deployments('http-deployment').get(print);
+ext.namespaces.deployments('http-deployment').getPromise().then(printPromised).catch(catchErr);
 
 core.namespaces.replicationcontrollers('http-rc').get(print);
+core.namespaces.replicationcontrollers('http-rc').getPromise().then(printPromised).catch(catchErr);
+
 core.ns('custom-namespace').pods('pod-1').log.get((err, log) => {
   if (err) {
     throw err;
@@ -96,6 +110,7 @@ core.ns.rc('http-rc').get(print);
 core.ns.rc.get({ qs: { labelSelector: 'service=http' } }, print);
 core.ns.rc.matchLabels({ service: 'http' }).get(print);
 core.ns.rc.delete({ name: 'http-rc', preservePods: true }, print);
+core.ns.rc.deletePromise({ name: 'http-rc', preservePods: true }).then(printPromised).catch(catchErr);
 
 stream = core.ns.po('http-123').log.getStream({ qs: { follow: true } });
 stream.on('data', chunk => {
