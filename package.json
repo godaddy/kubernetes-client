@@ -37,7 +37,7 @@
     "util.promisify": "^1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^8.0.50",
+    "@types/node": "^9.4.2",
     "assume": "^1.5.2",
     "eslint": "^4.14.0",
     "eslint-config-godaddy": "^2.1.0",
@@ -45,9 +45,9 @@
     "eslint-plugin-mocha": "^4.11.0",
     "istanbul": "^0.4.3",
     "jsdoc": "^3.5.5",
-    "mocha": "^4.1.0",
+    "mocha": "^5.0.0",
     "nock": "^9.1.5",
-    "sinon": "4.1.3",
+    "sinon": "4.2.2",
     "standard-version": "^4.3.0",
     "typescript": "^2.6.1"
   }
