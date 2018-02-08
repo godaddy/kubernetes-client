@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.18.1"></a>
+## [3.18.1](https://github.com/godaddy/kubernetes-client/compare/3.18.0...3.18.1) (2018-01-26)
+
+
+### Bug Fixes
+
+* **typings:** Include typings with npm package. ([#179](https://github.com/godaddy/kubernetes-client/issues/179)) ([42f4735](https://github.com/godaddy/kubernetes-client/commit/42f4735))
+
+
+
+<a name="3.18.0"></a>
+# [3.18.0](https://github.com/godaddy/kubernetes-client/compare/3.17.2...3.18.0) (2018-01-18)
+
+
+### Bug Fixes
+
+* **docs:** typos in docs ([#171](https://github.com/godaddy/kubernetes-client/issues/171)) ([ef65951](https://github.com/godaddy/kubernetes-client/commit/ef65951))
+
+
+### Features
+
+* **TypeScript:** Initial cut at TypeScript support. ([#174](https://github.com/godaddy/kubernetes-client/issues/174)) ([d3ea455](https://github.com/godaddy/kubernetes-client/commit/d3ea455))
+
+
+
 <a name="3.17.2"></a>
 ## [3.17.2](https://github.com/godaddy/kubernetes-client/compare/3.17.1...3.17.2) (2018-01-05)
 

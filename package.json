@@ -1,6 +1,6 @@
 {
   "name": "kubernetes-client",
-  "version": "3.17.2",
+  "version": "3.18.1",
   "description": "Simplified Kubernetes API client.",
   "main": "lib/index.js",
   "types": "./typings/index.d.ts",
@@ -26,7 +26,8 @@
     "node": ">=4.2.0"
   },
   "files": [
-    "lib"
+    "lib",
+    "typings"
   ],
   "dependencies": {
     "async": "^2.6.0",
@@ -36,7 +37,7 @@
     "util.promisify": "^1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^8.0.50",
+    "@types/node": "^9.4.2",
     "assume": "^1.5.2",
     "eslint": "^4.14.0",
     "eslint-config-godaddy": "^2.1.0",
