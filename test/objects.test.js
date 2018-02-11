@@ -123,7 +123,7 @@ describe('objects', function () {
     });
 
     it('creates a ReplicationController', function (done) {
-      common.api.ns.rc.post({ body: testReplicationController }, (err, result) => {
+      common.api.ns(common.currentName).rc.post({ body: testReplicationController }, (err, result) => {
         assume(err).is.falsy();
         assume(result.metadata.name).is.equal('test-rc');
         done();
@@ -135,7 +135,7 @@ describe('objects', function () {
     beforeTesting('int', done => {
       common.changeName(err => {
         assume(err).is.falsy();
-        common.api.ns.rc.post({ body: testReplicationController }, done);
+        common.api.ns(common.currentName).rc.post({ body: testReplicationController }, done);
       });
     });
     beforeTesting('unit', () => {
@@ -144,7 +144,7 @@ describe('objects', function () {
         .reply(200, testReplicationController);
     });
     it('PUTs the new manifest', function (done) {
-      common.api.ns.rc.put({ name: 'test-rc', body: testReplicationController }, (err, result) => {
+      common.api.ns(common.currentName).rc.put({ name: 'test-rc', body: testReplicationController }, (err, result) => {
         assume(err).is.falsy();
         assume(result.metadata.name).is.equal('test-rc');
         done();

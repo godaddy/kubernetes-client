@@ -31,15 +31,14 @@ function. For example, to GET the `ReplicationController` named
 const Api = require('kubernetes-client');
 const core = new Api.Core({
   url: 'http://my-k8s-api-server.com',
-  version: 'v1',  // Defaults to 'v1'
-  namespace: 'my-project' // Defaults to 'default'
+  version: 'v1'  // Defaults to 'v1'
 });
 
 function print(err, result) {
   console.log(JSON.stringify(err || result, null, 2));
 }
 
-core.namespaces.replicationcontrollers('http-rc').get(print);
+core.namespaces('default').replicationcontrollers('http-rc').get(print);
 ```
 
 kubernetes-client supports the Extensions API group. For example, GET
@@ -48,11 +47,10 @@ the `Deployment` named `http-deployment`:
 ```js
 const ext = new Api.Extensions({
   url: 'http://my-k8s-api-server.com',
-  version: 'v1beta1',  // Defaults to 'v1beta1'
-  namespace: 'my-project' // Defaults to 'default'
+  version: 'v1beta1'  // Defaults to 'v1beta1'
 });
 
-ext.namespaces.deployments('http-deployment').get(print);
+ext.namespaces('default').deployments('http-deployment').get(print);
 ```
 
 kubernetes-client provides a helper to get in-cluster config and accessing the API from a Pod:
@@ -76,14 +74,14 @@ omit callbacks an HTTP method function (*e.g.*, `.get`), it will
 return a promise.
 
 ```js
-core.namespaces.replicationcontrollers('http-rc').get()
+core.namespaces('default').replicationcontrollers('http-rc').get()
   .then(result => print(null, result));
 ```
 
 or with `async/await`:
 
 ```js
-print(null, await core.namespaces.replicationcontrollers('http-rc').get());
+print(null, await core.namespaces('default').replicationcontrollers('http-rc').get());
 ```
 
 ### Creating and updating
@@ -93,13 +91,13 @@ methods. Create the ReplicationController from the example above:
 
 ```js
 const manifestObject = require('./rc.json');
-core.namespaces.replicationcontrollers.post({ body: manifestObject }, print);
+core.namespaces('default').replicationcontrollers.post({ body: manifestObject }, print);
 ```
 or update the number of replicas:
 
 ```js
 const patch = { spec: { replicas: 10 } };
-core.namespaces.replicationcontrollers('http-rc').patch({
+core.namespaces('default').replicationcontrollers('http-rc').patch({
   body: patch
 }, print);
 ```
@@ -111,10 +109,7 @@ correct Kubernetes API group and version to use based on manifests:
 
 ```js
 const Api = require('kubernetes-client');
-const api = new Api.Api({
-  url: 'http://my-k8s-api-server.com',
-  namespace: 'my-project'
-});
+const api = new Api.Api({ url: 'http://my-k8s-api-server.com' });
 
 const manifest0 = {
   kind: 'Deployment',
@@ -127,8 +122,8 @@ const manifest1 = {
   ...
 };
 
-api.group(manifest0).ns.kind(manifest0).post({ body: manifest0 }, print);
-api.group(manifest1).ns.kind(manifest1).post({ body: manifest1 }, print);
+api.group(manifest0).ns('default').kind(manifest0).post({ body: manifest0 }, print);
+api.group(manifest1).ns('default').kind(manifest1).post({ body: manifest1 }, print);
 ```
 
 ### Object name aliases
@@ -140,7 +135,7 @@ resource name (*e.g.*, `namespace` for `namespaces`). We can shorten
 the example above:
 
 ```js
-core.ns.rc('http-rc').get(print);
+core.ns('default').rc('http-rc').get(print);
 ```
 
 ### Switching namespaces
@@ -160,7 +155,7 @@ For example to filter based on [label
 selector](http://kubernetes.io/docs/user-guide/labels/):
 
 ```js
-core.ns.rc.get({ qs: { labelSelector: 'service=http,component=api' } }, print);
+core.ns('default').rc.get({ qs: { labelSelector: 'service=http,component=api' } }, print);
 ```
 
 ### Label selector filtering
@@ -169,13 +164,13 @@ kubernetes-client has a shortcut, `matchLabels`, for filtering on label
 selector equality:
 
 ```js
-core.ns.rc.matchLabels({ service: 'http' }).get(print);
+core.ns('default').rc.matchLabels({ service: 'http' }).get(print);
 ```
 
 and a more general `match` method based on Kubernetes Match Expressions:
 
 ```js
-core.ns.rc.match([{
+core.ns('default').rc.match([{
   key: 'service',
   operator: 'In',
   values: ['http']
@@ -224,10 +219,10 @@ const thirdPartyResources = new Api.ThirdPartyResources({
 });
 
 // Access `customresources` as if they were a regular Kubernetes object
-thirdPartyResources.ns.customresources.get(print);
+thirdPartyResources.ns('default').customresources.get(print);
 thirdPartyResources.addResource('newresources');  // Notice pluralization!
 // Now access `newresources`
-thirdPartyResources.ns.newresources.get(print);
+thirdPartyResources.ns('default').newresources.get(print);
 ```
 
 ### Watching and streaming
@@ -238,7 +233,7 @@ You can call `.getStream` to stream results. This is useful for watching:
 const JSONStream = require('json-stream');
 const jsonStream = new JSONStream();
 
-const stream = core.ns.po.getStream({ qs: { watch: true } });
+const stream = core.ns('default').po.getStream({ qs: { watch: true } });
 stream.pipe(jsonStream);
 jsonStream.on('data', object => {
   console.log('Pod:', JSON.stringify(object, null, 2));
@@ -247,7 +242,7 @@ jsonStream.on('data', object => {
 
 You can access logs in a similar fashion:
 ```js
-const stream = core.ns.po('http-123').log.getStream({ qs: { follow: true } });
+const stream = core.ns('default').po('http-123').log.getStream({ qs: { follow: true } });
 stream.on('data', chunk => {
   process.stdout.write(chunk.toString());
 });

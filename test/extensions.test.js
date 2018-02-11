@@ -57,10 +57,10 @@ describe('lib.extensions', () => {
     it('POSTs, GETs, and DELETEs', done => {
       async.series([
         next => {
-          common.extensions.ns.ds.post({ body: daemonSetObj }, next);
+          common.extensions.ns(common.currentName).ds.post({ body: daemonSetObj }, next);
         },
-        next => common.extensions.ns.ds.get(resourceName, next),
-        next => common.extensions.ns.ds.delete(resourceName, next)
+        next => common.extensions.ns(common.currentName).ds.get(resourceName, next),
+        next => common.extensions.ns(common.currentName).ds.delete(resourceName, next)
       ], (err, results) => {
         assume(err).is.falsy();
         const ds = results[0];
@@ -84,7 +84,7 @@ describe('lib.extensions', () => {
 
       it('returns DaemonSetList', done => {
         async.series([
-          next => common.extensions.ns.ds.get(next)
+          next => common.extensions.ns(common.currentName).ds.get(next)
         ], (err, results) => {
           assume(err).is.falsy();
           const dsList = results[0];

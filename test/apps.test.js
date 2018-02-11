@@ -75,8 +75,8 @@ describe('lib.apps', () => {
 
     it('can POST and GET', done => {
       async.series([
-        next => common.apps.ns.statefulsets.post({ body: testStatefulSet }, next),
-        next => common.apps.ns.statefulsets.get(testStatefuleSetName, next)
+        next => common.apps.ns(common.currentName).statefulsets.post({ body: testStatefulSet }, next),
+        next => common.apps.ns(common.currentName).statefulsets.get(testStatefuleSetName, next)
       ], (err, results) => {
         assume(err).is.falsy();
         const getResult = results[1];
@@ -100,8 +100,8 @@ describe('lib.apps', () => {
 
     it('can POST and GET', done => {
       async.series([
-        next => common.apps.ns.deployments.post({ body: testDeployment }, next),
-        next => common.apps.ns.deployments.get(testDeploymentName, next)
+        next => common.apps.ns(common.currentName).deployments.post({ body: testDeployment }, next),
+        next => common.apps.ns(common.currentName).deployments.get(testDeploymentName, next)
       ], (err, results) => {
         assume(err).is.falsy();
         const getResult = results[1];

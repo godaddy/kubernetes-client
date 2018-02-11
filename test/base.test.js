@@ -57,10 +57,11 @@ describe('lib.base', () => {
       beforeTesting('int', done => {
         common.changeName(err => {
           assume(err).is.falsy();
+          const po = common.api.ns(common.currentName).po;
           async.each([
             { body: pod('pod0') },
             { body: pod('pod1') }
-          ], common.api.ns.po.post.bind(common.api.ns.po), done);
+          ], po.post.bind(po), done);
         });
       });
       beforeTesting('unit', () => {
@@ -76,7 +77,7 @@ describe('lib.base', () => {
       });
 
       it('GETs with labelSelector', done => {
-        common.api.ns.po.match([{
+        common.api.ns(common.currentName).po.match([{
           key: 'name',
           operator: 'In',
           values: ['pod0']
@@ -117,11 +118,11 @@ describe('lib.base', () => {
           });
       });
       beforeTesting('int', done => {
-        common.api.ns.po.post({ body: pod(podName) }, done);
+        common.api.ns(common.currentName).po.post({ body: pod(podName) }, done);
       });
 
       it('should bypass query string and body from arguments into request', done => {
-        common.api.ns.po.delete({ name: podName, qs: query, body: body }, (err, result) => {
+        common.api.ns(common.currentName).po.delete({ name: podName, qs: query, body: body }, (err, result) => {
           assume(err).is.falsy();
           assume(result.kind).is.eql('Pod');
           assume(result.metadata).is.truthy();
@@ -137,10 +138,11 @@ describe('lib.base', () => {
       beforeTesting('int', done => {
         common.changeName(err => {
           assume(err).is.falsy();
+          const po = common.api.ns(common.currentName).po;
           async.each([
             { body: pod('pod0') },
             { body: pod('pod1') }
-          ], common.api.ns.po.post.bind(common.api.ns.po), done);
+          ], po.post.bind(po), done);
         });
       });
       beforeTesting('unit', () => {
@@ -156,7 +158,7 @@ describe('lib.base', () => {
       });
 
       it('GETs with labelSelector', done => {
-        common.api.ns.po.matchLabels({
+        common.api.ns(common.currentName).po.matchLabels({
           name: 'pod0',
           service: 'service1'
         }).get((err, pods) => {
@@ -173,7 +175,7 @@ describe('lib.base', () => {
     beforeTesting('int', done => {
       common.changeName(err => {
         assume(err).is.falsy();
-        common.api.ns.pvc.post({ body: testPvc }, done);
+        common.api.ns(common.currentName).pvc.post({ body: testPvc }, done);
       });
     });
     beforeTesting('unit', () => {
@@ -189,7 +191,7 @@ describe('lib.base', () => {
     });
 
     it('GETs with labelSelector', done => {
-      common.api.ns.pvc.matchLabels({
+      common.api.ns(common.currentName).pvc.matchLabels({
         app: 'test'
       }).get((err, pvcs) => {
         assume(err).is.falsy();
