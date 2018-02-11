@@ -146,7 +146,7 @@ function changeNameInt(cb) {
     const times = Math.ceil(defaultTimeout / 1000);
     const interval = 1000;
     async.retry({ times: times, interval: interval }, next => {
-      module.exports.api.ns.serviceaccounts.get('default', (saErr, sa) => {
+      module.exports.api.ns(currentName).serviceaccounts.get('default', (saErr, sa) => {
         if (saErr) return next(saErr);
         if (!sa.secrets) {
           return next(new Error('Waiting for servicesaccount secrets'));

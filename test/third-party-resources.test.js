@@ -56,7 +56,7 @@ describe('lib.ThirdPartyResource', () => {
     only('unit', 'adds a BaseObject globally and to default namespace', () => {
       common.thirdPartyResources.addResource('newresources');
       assume(common.thirdPartyResources.newresources).is.truthy();
-      assume(common.thirdPartyResources.namespace.newresources).is.truthy();
+      assume(common.thirdPartyResources.ns(common.currentName).newresources).is.truthy();
     });
   });
 
@@ -95,12 +95,12 @@ describe('lib.ThirdPartyResource', () => {
 
       it('creates a resources', done => {
         common.thirdPartyResources
-          .ns
+          .ns(common.currentName)
           .newresources
           .post({ body: testManifest }, postErr => {
             assume(postErr).is.falsy();
             common.thirdPartyResources
-              .ns
+              .ns(common.currentName)
               .newresources
               .get('test', (err, result) => {
                 assume(err).is.falsy();

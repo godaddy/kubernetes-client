@@ -58,7 +58,7 @@ describe('lib.pods', () => {
     });
 
     it('succeeds creating a new pod', done => {
-      common.api.ns.pods.post({ body: testPod }, (err, pod) => {
+      common.api.ns(common.currentName).pods.post({ body: testPod }, (err, pod) => {
         assume(err).is.falsy();
         assume(pod.metadata.name).is.equal('test-pod');
         done();
@@ -71,7 +71,7 @@ describe('lib.pods', () => {
       beforeTesting('int', done => {
         common.changeName(err => {
           assume(err).is.falsy();
-          common.api.ns.pods.post({ body: testPod }, postErr => {
+          common.api.ns(common.currentName).pods.post({ body: testPod }, postErr => {
             assume(postErr).is.falsy();
             done();
           });
@@ -84,7 +84,7 @@ describe('lib.pods', () => {
       });
 
       it('succeeds at updating a pod', done => {
-        common.api.ns.pods('test-pod').patch({ body: testStrategicMergePatch }, (err, pod) => {
+        common.api.ns(common.currentName).pods('test-pod').patch({ body: testStrategicMergePatch }, (err, pod) => {
           assume(err).is.falsy();
           assume(pod.metadata.name).is.equal('test-pod');
           assume(pod.spec.containers[0].image).is.equal('still-does-not-matter:latest');
@@ -97,7 +97,7 @@ describe('lib.pods', () => {
       beforeTesting('int', done => {
         common.changeName(err => {
           assume(err).is.falsy();
-          common.api.ns.pods.post({ body: testPod }, postErr => {
+          common.api.ns(common.currentName).pods.post({ body: testPod }, postErr => {
             assume(postErr).is.falsy();
             done();
           });
@@ -117,7 +117,7 @@ describe('lib.pods', () => {
       });
 
       it('succeeds at updating a pod', done => {
-        common.api.ns.pods('test-pod').patch({
+        common.api.ns(common.currentName).pods('test-pod').patch({
           body: testMergePatch,
           headers: { 'content-type': 'application/merge-patch+json' }
         }, (err, pod) => {
@@ -129,7 +129,7 @@ describe('lib.pods', () => {
       });
 
       only('int', 'fails at updating a pod if the patch is strategic', done => {
-        common.api.ns.pods('test-pod').patch({
+        common.api.ns(common.currentName).pods('test-pod').patch({
           body: testStrategicMergePatch,
           headers: { 'content-type': 'application/merge-patch+json' }
         }, err => {
@@ -144,7 +144,7 @@ describe('lib.pods', () => {
     beforeTesting('int', done => {
       common.changeName(err => {
         assume(err).is.falsy();
-        common.api.ns.pods.post({ body: testPod }, done);
+        common.api.ns(common.currentName).pods.post({ body: testPod }, done);
       });
     });
     beforeTestingEach('unit', () => {
@@ -156,14 +156,14 @@ describe('lib.pods', () => {
         });
     });
     it('returns the Pod', done => {
-      common.api.ns.pods('test-pod').get((err, pod) => {
+      common.api.ns(common.currentName).pods('test-pod').get((err, pod) => {
         assume(err).is.falsy();
         assume(pod.kind).is.equal('Pod');
         done();
       });
     });
     it('returns the Pod via a stream', done => {
-      const stream = common.api.ns.pods('test-pod').getStream();
+      const stream = common.api.ns(common.currentName).pods('test-pod').getStream();
       const pieces = [];
       stream.on('data', data => pieces.push(data.toString()));
       stream.on('error', err => assume(err).is.falsy());
@@ -174,7 +174,7 @@ describe('lib.pods', () => {
       });
     });
     only('unit', 'returns the Pod via the legacy method', done => {
-      common.api.ns.pods.get('test-pod', (err, pod) => {
+      common.api.ns(common.currentName).pods.get('test-pod', (err, pod) => {
         assume(err).is.falsy();
         assume(pod.kind).is.equal('Pod');
         done();
@@ -186,7 +186,7 @@ describe('lib.pods', () => {
     beforeTesting('int', done => {
       common.changeName(err => {
         assume(err).is.falsy();
-        common.api.ns.pods.post({ body: testPod }, done);
+        common.api.ns(common.currentName).pods.post({ body: testPod }, done);
       });
     });
     beforeTestingEach('unit', () => {
@@ -195,7 +195,7 @@ describe('lib.pods', () => {
         .reply(200, { kind: 'Pod' });
     });
     it('deletes the Pod', done => {
-      common.api.ns.pods('test-pod').delete((err, pod) => {
+      common.api.ns(common.currentName).pods('test-pod').delete((err, pod) => {
         assume(err).is.falsy();
         assume(pod.kind).is.equal('Pod');
         done();
@@ -210,14 +210,14 @@ describe('lib.pods', () => {
         .reply(200, 'some log contents');
     });
     only('unit', 'returns log contents', done => {
-      common.api.ns.pods('test-pod').log.get((err, contents) => {
+      common.api.ns(common.currentName).pods('test-pod').log.get((err, contents) => {
         assume(err).is.falsy();
         assume(contents).is.equal('some log contents');
         done();
       });
     });
     only('unit', 'returns log contents via legacy method', done => {
-      common.api.ns.pods.log('test-pod', (err, contents) => {
+      common.api.ns(common.currentName).pods.log('test-pod', (err, contents) => {
         assume(err).is.falsy();
         assume(contents).is.equal('some log contents');
         done();
