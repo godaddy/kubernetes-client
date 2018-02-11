@@ -41,7 +41,6 @@ describe('objects', function () {
   const _url = 'http://mock.kube.api';
   const _ns = '/api/v1/namespaces/default';
   const _rcs = `${ _ns }/replicationcontrollers`;
-  const _pods = `${ _ns }/pods`;
 
   function rcs() {
     return new ReplicationControllers({
@@ -86,43 +85,6 @@ describe('objects', function () {
         assume(err).is.truthy();
         done();
       });
-    });
-  });
-
-  describe('.ReplicationControllers.po.get', function () {
-    function nock200() {
-      return nock(_url)
-        .get(`${ _rcs }/foo`)
-        .reply(200, {
-          kind: 'replicationcontroller',
-          metadata: {},
-          spec: {
-            selector: {
-              name: 'foo'
-            }
-          }
-        })
-        .get(`${ _pods }?labelSelector=name%3Dfoo`)
-        .reply(200, {
-          kind: 'podlist'
-        });
-    }
-    only('unit', 'GETs PodList', function (done) {
-      nock200();
-      rcs().po.get({ name: 'foo' }, (err, results) => {
-        assume(err).is.falsy();
-        const rc = results.rc;
-        const podList = results.podList;
-        assume(rc.kind).is.equal('replicationcontroller');
-        assume(podList.kind).is.equal('podlist');
-        done();
-      });
-    });
-    only('unit', 'throws Error if missing options', function () {
-      function testFn() {
-        rcs().po.get(() => { throw Error('Should not reach'); });
-      }
-      assume(testFn).throws();
     });
   });
 
