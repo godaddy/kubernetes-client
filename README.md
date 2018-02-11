@@ -250,23 +250,6 @@ thirdPartyResources.addResource('newresources');  // Notice pluralization!
 thirdPartyResources.ns.newresources.get(print);
 ```
 
-### ReplicationController Pods
-
-kubernetes-client provides a shortcut for listing all Pods matching a
-ReplicationController selector:
-
-```js
-core.ns.rc.po.get(print);
-```
-
-kubernetes-client deletes all the Pods associated with a
-ReplicationController when it deletes the ReplicationController. You
-can preserve the Pods:
-
-```js
-core.ns.rc.delete({ name: 'http-rc', preservePods: true }, print);
-```
-
 ### Watching and streaming
 
 You can call `.getStream` to stream results. This is useful for watching:
