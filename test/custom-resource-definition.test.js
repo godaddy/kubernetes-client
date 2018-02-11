@@ -68,7 +68,7 @@ describe('lib.CustomResourceDefinition', () => {
     only('unit', 'adds a BaseObject globally and to default namespace', () => {
       common.customResourceDefinitions.addResource('newresources');
       assume(common.customResourceDefinitions.newresources).is.truthy();
-      assume(common.customResourceDefinitions.namespace.newresources).is.truthy();
+      assume(common.customResourceDefinitions.ns(common.currentName).newresources).is.truthy();
     });
   });
 
@@ -107,12 +107,12 @@ describe('lib.CustomResourceDefinition', () => {
 
       it('creates a resources', done => {
         common.customResourceDefinitions
-          .ns
+          .ns(common.currentName)
           .newresources
           .post({ body: testManifest }, postErr => {
             assume(postErr).is.falsy();
             common.customResourceDefinitions
-              .ns
+              .ns(common.currentName)
               .newresources
               .get('test', (err, result) => {
                 assume(err).is.falsy();

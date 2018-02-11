@@ -9,6 +9,7 @@ matrix:
     - node_js: "5"
     - node_js: "4"
 before_install:
- - npm install -g greenkeeper-lockfile@1
+- '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
+- npm install -g greenkeeper-lockfile@1
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload

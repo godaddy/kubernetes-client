@@ -37,8 +37,8 @@ describe('lib.rbac', () => {
     // improvements to our integration test harness to make this work well.
     common.only('unit', 'can POST and GET', done => {
       async.series([
-        next => common.rbac.ns.roles.post({ body: testRbac }, next),
-        next => common.rbac.ns.roles.get(testRbacName, next)
+        next => common.rbac.ns(common.currentName).roles.post({ body: testRbac }, next),
+        next => common.rbac.ns(common.currentName).roles.get(testRbacName, next)
       ], (err, results) => {
         assume(err).is.falsy();
         const getResult = results[1];

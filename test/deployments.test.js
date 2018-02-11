@@ -58,10 +58,10 @@ describe('lib.deployments', () => {
   it('POSTs, GETs, and DELETEs', done => {
     async.series([
       next => {
-        common.extensions.ns.deployments.post({ body: deploymentObj }, next);
+        common.extensions.ns(common.currentName).deployments.post({ body: deploymentObj }, next);
       },
-      next => common.extensions.ns.deployments.get(resourceName, next),
-      next => common.extensions.ns.deployments.delete(resourceName, next)
+      next => common.extensions.ns(common.currentName).deployments.get(resourceName, next),
+      next => common.extensions.ns(common.currentName).deployments.delete(resourceName, next)
     ], (err, results) => {
       assume(err).is.falsy();
       const deployments = results[0];
@@ -84,7 +84,7 @@ describe('lib.deployments', () => {
 
     it('returns DeploymentList', done => {
       async.series([
-        next => common.extensions.ns.deployments.get(next)
+        next => common.extensions.ns(common.currentName).deployments.get(next)
       ], (err, results) => {
         assume(err).is.falsy();
         const deploymentList = results[0];
@@ -111,7 +111,7 @@ describe('lib.deployments', () => {
     beforeTesting('int', done => {
       common.changeName(err => {
         assume(err).is.falsy();
-        common.extensions.ns.deployments.post({ body: deploymentObj }, postErr => {
+        common.extensions.ns(common.currentName).deployments.post({ body: deploymentObj }, postErr => {
           assume(postErr).is.falsy();
           done();
         });
@@ -119,7 +119,7 @@ describe('lib.deployments', () => {
     });
 
     it('returns Deployment with status', done => {
-      common.extensions.ns.deployments(resourceName).status.get((err, deployment) => {
+      common.extensions.ns(common.currentName).deployments(resourceName).status.get((err, deployment) => {
         assume(err).is.falsy();
         assume(deployment.kind).is.equal('Deployment');
         assume(deployment.status).is.a('object');

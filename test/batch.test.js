@@ -47,8 +47,8 @@ describe('lib.batch', () => {
 
     it('can POST and GET', done => {
       async.series([
-        next => common.batch.ns.jobs.post({ body: testJob }, next),
-        next => common.batch.ns.jobs.get(testJobName, next)
+        next => common.batch.ns(common.currentName).jobs.post({ body: testJob }, next),
+        next => common.batch.ns(common.currentName).jobs.get(testJobName, next)
       ], (err, results) => {
         assume(err).is.falsy();
         const getResult = results[1];

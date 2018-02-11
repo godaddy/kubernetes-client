@@ -41,7 +41,6 @@ describe('objects', function () {
   const _url = 'http://mock.kube.api';
   const _ns = '/api/v1/namespaces/default';
   const _rcs = `${ _ns }/replicationcontrollers`;
-  const _pods = `${ _ns }/pods`;
 
   function rcs() {
     return new ReplicationControllers({
@@ -89,43 +88,6 @@ describe('objects', function () {
     });
   });
 
-  describe('.ReplicationControllers.po.get', function () {
-    function nock200() {
-      return nock(_url)
-        .get(`${ _rcs }/foo`)
-        .reply(200, {
-          kind: 'replicationcontroller',
-          metadata: {},
-          spec: {
-            selector: {
-              name: 'foo'
-            }
-          }
-        })
-        .get(`${ _pods }?labelSelector=name%3Dfoo`)
-        .reply(200, {
-          kind: 'podlist'
-        });
-    }
-    only('unit', 'GETs PodList', function (done) {
-      nock200();
-      rcs().po.get({ name: 'foo' }, (err, results) => {
-        assume(err).is.falsy();
-        const rc = results.rc;
-        const podList = results.podList;
-        assume(rc.kind).is.equal('replicationcontroller');
-        assume(podList.kind).is.equal('podlist');
-        done();
-      });
-    });
-    only('unit', 'throws Error if missing options', function () {
-      function testFn() {
-        rcs().po.get(() => { throw Error('Should not reach'); });
-      }
-      assume(testFn).throws();
-    });
-  });
-
   describe('.ReplicationControllers.delete', function () {
     function nock200() {
       return nock(_url)
@@ -161,7 +123,7 @@ describe('objects', function () {
     });
 
     it('creates a ReplicationController', function (done) {
-      common.api.ns.rc.post({ body: testReplicationController }, (err, result) => {
+      common.api.ns(common.currentName).rc.post({ body: testReplicationController }, (err, result) => {
         assume(err).is.falsy();
         assume(result.metadata.name).is.equal('test-rc');
         done();
@@ -173,7 +135,7 @@ describe('objects', function () {
     beforeTesting('int', done => {
       common.changeName(err => {
         assume(err).is.falsy();
-        common.api.ns.rc.post({ body: testReplicationController }, done);
+        common.api.ns(common.currentName).rc.post({ body: testReplicationController }, done);
       });
     });
     beforeTesting('unit', () => {
@@ -182,7 +144,7 @@ describe('objects', function () {
         .reply(200, testReplicationController);
     });
     it('PUTs the new manifest', function (done) {
-      common.api.ns.rc.put({ name: 'test-rc', body: testReplicationController }, (err, result) => {
+      common.api.ns(common.currentName).rc.put({ name: 'test-rc', body: testReplicationController }, (err, result) => {
         assume(err).is.falsy();
         assume(result.metadata.name).is.equal('test-rc');
         done();

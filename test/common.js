@@ -87,8 +87,6 @@ function injectApis(options) {
   Object.keys(apis).forEach(apiName => {
     const api = apis[apiName];
     module.exports[apiName] = new (api.Constructor)(Object.assign({}, options, api.options));
-    module.exports[`${ apiName }Promise`] =
-      new (api.Constructor)(Object.assign({ promises: true }, options, api.options));
   });
 }
 
@@ -104,11 +102,11 @@ function changeNameInt(cb) {
       'config');
     const config = yaml.load(fs.readFileSync(configPath));
     const context = config
-          .contexts.find(item => item.name === process.env.CONTEXT).context;
+      .contexts.find(item => item.name === process.env.CONTEXT).context;
     const cluster = config
-          .clusters.find(item => item.name === context.cluster).cluster;
+      .clusters.find(item => item.name === context.cluster).cluster;
     const user = config
-          .users.find(item => item.name === context.user).user;
+      .users.find(item => item.name === context.user).user;
     url = cluster.server;
     ca = fs.readFileSync(cluster['certificate-authority']);
     cert = fs.readFileSync(user['client-certificate']);
@@ -148,7 +146,7 @@ function changeNameInt(cb) {
     const times = Math.ceil(defaultTimeout / 1000);
     const interval = 1000;
     async.retry({ times: times, interval: interval }, next => {
-      module.exports.api.ns.serviceaccounts.get('default', (saErr, sa) => {
+      module.exports.api.ns(currentName).serviceaccounts.get('default', (saErr, sa) => {
         if (saErr) return next(saErr);
         if (!sa.secrets) {
           return next(new Error('Waiting for servicesaccount secrets'));

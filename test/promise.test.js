@@ -19,7 +19,7 @@ describe('lib.promise', () => {
     });
 
     only('unit', '.get returns a Pod via a promise', done => {
-      const pods = common.corePromise.ns.po('test-pod').get();
+      const pods = common.core.ns(common.currentName).po('test-pod').get();
       pods.then(object => {
         assume(object.kind).is.equal('Pod');
         assume(object.metadata.name).is.equal('test-pod');
@@ -27,7 +27,7 @@ describe('lib.promise', () => {
       });
     });
     only('unit', '.getStream returns the Pod via a stream', done => {
-      const stream = common.corePromise.ns.po('test-pod').getStream();
+      const stream = common.core.ns(common.currentName).po('test-pod').getStream();
       const pieces = [];
       stream.on('data', data => pieces.push(data.toString()));
       stream.on('error', err => assume(err).is.falsy());

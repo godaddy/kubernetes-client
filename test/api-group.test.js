@@ -97,7 +97,7 @@ describe('lib.api-group', () => {
 
     it('GETs', done => {
       async.series([
-        next => { common.apiGroup.group(ingress()).ns.kind(ingress()).get(next); }
+        next => { common.apiGroup.group(ingress()).ns(common.currentName).kind(ingress()).get(next); }
       ], err => {
         assume(err).is.falsy();
         done();
