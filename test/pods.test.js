@@ -173,13 +173,6 @@ describe('lib.pods', () => {
         done();
       });
     });
-    only('unit', 'returns the Pod via the legacy method', done => {
-      common.api.ns(common.currentName).pods.get('test-pod', (err, pod) => {
-        assume(err).is.falsy();
-        assume(pod.kind).is.equal('Pod');
-        done();
-      });
-    });
   });
 
   describe('.delete', () => {
@@ -211,13 +204,6 @@ describe('lib.pods', () => {
     });
     only('unit', 'returns log contents', done => {
       common.api.ns(common.currentName).pods('test-pod').log.get((err, contents) => {
-        assume(err).is.falsy();
-        assume(contents).is.equal('some log contents');
-        done();
-      });
-    });
-    only('unit', 'returns log contents via legacy method', done => {
-      common.api.ns(common.currentName).pods.log('test-pod', (err, contents) => {
         assume(err).is.falsy();
         assume(contents).is.equal('some log contents');
         done();
