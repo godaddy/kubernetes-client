@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/godaddy/kubernetes-client/compare/3.18.1...4.0.0) (2018-02-13)
+
+
+### Bug Fixes
+
+* **greenkeeper:** updating package-lock.json requires npm@5 or later ([#191](https://github.com/godaddy/kubernetes-client/issues/191)) ([ae998bd](https://github.com/godaddy/kubernetes-client/commit/ae998bd))
+* **namespaces:** api.namespaces('foo') usage ([#190](https://github.com/godaddy/kubernetes-client/issues/190)) ([816b957](https://github.com/godaddy/kubernetes-client/commit/816b957)), closes [#187](https://github.com/godaddy/kubernetes-client/issues/187) [#169](https://github.com/godaddy/kubernetes-client/issues/169)
+
+
+### Chores
+
+* **pods.log:** remove the deprarecated `pods.log` function. ([#196](https://github.com/godaddy/kubernetes-client/issues/196)) ([29a7935](https://github.com/godaddy/kubernetes-client/commit/29a7935))
+* **ReplicationController:** remove replicationcontrollers.pods feature ([#192](https://github.com/godaddy/kubernetes-client/issues/192)) ([d728814](https://github.com/godaddy/kubernetes-client/commit/d728814))
+
+
+### Features
+
+* **promises:** if caller doesn't specify a callback, return a promise ([#193](https://github.com/godaddy/kubernetes-client/issues/193)) ([4a84e7f](https://github.com/godaddy/kubernetes-client/commit/4a84e7f)), closes [#189](https://github.com/godaddy/kubernetes-client/issues/189)
+* **Swagger:** experimental support for Swagger. ([#162](https://github.com/godaddy/kubernetes-client/issues/162)) ([f8f1d35](https://github.com/godaddy/kubernetes-client/commit/f8f1d35))
+
+
+### BREAKING CHANGES
+
+* **pods.log:** `pods.log` doesn't follow the kubernetes-client API
+conventions. Replace uses of `pods.log('foo')` with `pods('foo').log.get()`.
+* **namespaces:** Removes default namespace feature. With a default namespace,
+`api.namespaces.get` is potentially ambiguous: get the default namespaces or
+get all namespaces. Remove the default namespace to be consistent with other
+code.
+* **promises:** This removes the (deprecated) `request`-like behavior of
+returning a stream when the caller omits a callback. Use `.getStream` (instead
+of `.get` without a callback) to get a stream.
+* **ReplicationController:** The convenience function for selecting replicationcontroller
+pods doesn't follow the kubernetes-client API contract. We're removing it
+because it's cumbersome to support with recent changes (*e.g.*, support for
+promises and the swagger gen code).
+
+
+
 <a name="3.18.1"></a>
 ## [3.18.1](https://github.com/godaddy/kubernetes-client/compare/3.18.0...3.18.1) (2018-01-26)
 
