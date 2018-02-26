@@ -4,6 +4,7 @@ const assume = require('assume');
 const async = require('async');
 const nock = require('nock');
 
+const ApiGroup = require('../lib/api-group');
 const common = require('./common');
 const beforeTesting = common.beforeTesting;
 
@@ -15,6 +16,38 @@ function ingress() {
 }
 
 describe('lib.api-group', () => {
+  describe('.constructor', () => {
+    it('passes request options correctly', () => {
+      const apiGroup = new ApiGroup({
+        namespaceResources: [],
+        groupResources: [],
+        url: '127.0.0.1',
+        ca: 'testCA',
+        cert: 'testCert',
+        key: 'testKey',
+        insecureSkipTlsVerify: false,
+        request: {
+          timeout: 1000
+        },
+        auth: {
+          user: 'testUser',
+          pass: 'testPass'
+        }
+      });
+      assume(apiGroup).hasOwn('http');
+      assume(apiGroup.http).hasOwn('requestOptions');
+      assume(apiGroup.http.requestOptions).hasOwn('baseUrl', '127.0.0.1');
+      assume(apiGroup.http.requestOptions).hasOwn('ca', 'testCA');
+      assume(apiGroup.http.requestOptions).hasOwn('cert', 'testCert');
+      assume(apiGroup.http.requestOptions).hasOwn('key', 'testKey');
+      assume(apiGroup.http.requestOptions).hasOwn('strictSSL', true);
+      assume(apiGroup.http.requestOptions).hasOwn('timeout', 1000);
+      assume(apiGroup.http.requestOptions).hasOwn('auth');
+      assume(apiGroup.http.requestOptions.auth).hasOwn('user', 'testUser');
+      assume(apiGroup.http.requestOptions.auth).hasOwn('pass', 'testPass');
+    });
+  });
+
   describe('.ns', () => {
 
     let nameForTest;
