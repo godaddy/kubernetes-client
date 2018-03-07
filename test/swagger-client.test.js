@@ -47,6 +47,7 @@ describe('lib.swagger', () => {
       const client = new SwaggerClient({ spec });
       assume(client.foo).is.truthy();
       assume(client.foo.get).is.a('function');
+      assume(client.foo.getStream).is.a('function');
 
       assume(client.foo.bar).is.falsy();
       assume(client.foo).is.a('function');
