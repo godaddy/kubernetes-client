@@ -53,5 +53,21 @@ describe('lib.swagger', () => {
       assume(client.foo).is.a('function');
       assume(client.foo('zoo').bar).is.truthy();
     });
+
+    it('aliases resources', () => {
+      const spec = {
+        paths: {
+          '/foo/deployments': {
+            get: {
+              operationId: 'fooDeploymentsGet'
+            }
+          }
+        }
+      };
+      const client = new SwaggerClient({ spec });
+      assume(client.foo.deployments).is.truthy();
+      assume(client.foo.deployment).is.truthy();
+      assume(client.foo.deploy).is.truthy();
+    });
   });
 });
