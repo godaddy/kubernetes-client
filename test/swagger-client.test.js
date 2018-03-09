@@ -69,5 +69,26 @@ describe('lib.swagger', () => {
       assume(client.foo.deployment).is.truthy();
       assume(client.foo.deploy).is.truthy();
     });
+
+    it('adds functions for Namespaced CustomResourceDefinitions', () => {
+      const client = new SwaggerClient({ spec: { paths: {}}});
+      const crd = {
+        spec: {
+          group: 'stable.example.com',
+          version: 'v1',
+          names: {
+            plural: 'foos'
+          }
+        }
+      };
+      client.addCustomResourceDefinition(crd);
+      assume(client.apis['stable.example.com'].v1.namespaces('default').foos.get).is.a('function');
+      assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
+      assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').delete).is.a('function');
+      assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
+      assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').patch).is.a('function');
+      assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').post).is.a('function');
+      assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').put).is.a('function');
+    });
   });
 });
