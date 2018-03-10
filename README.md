@@ -7,338 +7,112 @@
 
 Simplified [Kubernetes API](http://kubernetes.io/) client for Node.js.
 
+*For the v4.X documentation, go [HERE](README-PRE-5.md).*
+
 ## Installation
 
 Install via npm:
 
-```console
-$ npm i kubernetes-client --save
+```
+npm i kubernetes-client --save
 ```
 
-## Examples
+## Initializing
 
-kubernetes-client provides access to all the Kubernetes objects and
-includes some niceties for writing simpler code.
-
-### Basics
-
-kubernetes-client maps the URI paths in the Kubernetes API to
-sequences of objects chained together via properties and ending in a
-function. For example, to GET the `ReplicationController` named
-'http-rc' in the `Namespace` 'my-project':
+kubernetes-client generates a Kubernetes API client at runtime based
+on a Swagger / OpenAPI specification. You can generate a client using
+specifications included with kubernetes-client:
 
 ```js
-const Api = require('kubernetes-client');
-const core = new Api.Core({
-  url: 'http://my-k8s-api-server.com',
-  version: 'v1'  // Defaults to 'v1'
-});
-
-function print(err, result) {
-  console.log(JSON.stringify(err || result, null, 2));
-}
-
-core.namespaces('default').replicationcontrollers('http-rc').get(print);
+const Client = require('kubernetes-client').Client
+const config = require('kubernetes-client').config;
+const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
 ```
 
-kubernetes-client supports the Extensions API group. For example, GET
-the `Deployment` named `http-deployment`:
+or from a file:
 
 ```js
-const ext = new Api.Extensions({
-  url: 'http://my-k8s-api-server.com',
-  version: 'v1beta1'  // Defaults to 'v1beta1'
-});
+const Client = require('kubernetes-client').Client
+const config = require('kubernetes-client').config;
+const spec = require('./swagger.json');
+const client = new Client({ config: config.fromKubeconfig(), spec});
 
-ext.namespaces('default').deployments('http-deployment').get(print);
 ```
 
-kubernetes-client provides a helper to get in-cluster config and accessing the API from a Pod:
+or from the `/swagger.json` endpoint on your kube-apiserver:
 
 ```js
-const Api = require('kubernetes-client');
-const core = new Api.Core(Api.config.getInCluster());
+const Client = require('kubernetes-client').Client
+const config = require('kubernetes-client').config;
+const client = new Client({ config: config.fromKubeconfig() });
+await client.loadSpec();
 ```
 
-and a helper to get the current-context config from `~/.kube/config`:
+## Basic usage
+
+kubernetes-client translates Path Item Objects \[[1]\] (*e.g*.,
+`/api/v1/namespaces`) to object chains ending in HTTP methods (*e.g.*,
+`api.v1.namespaces.get`).
+
+So, to fetch all Namesapces:
 
 ```js
-const Api = require('kubernetes-client');
-const core = new Api.Core(Api.config.fromKubeconfig());
+const namespaces = await client.api.v1.namespaces.get();
 ```
 
-### **Experimental** support for promises and async/await
+kubernetes-client translates Path Templating \[[2]\] (*e.g.*,
+`/apis/apps/v1/namespaces/{namespace}/deployments`) to function calls (*e.g.*,
+`apis.apps.v1.namespaces('default').deployments`).
 
-kubernetes-client has **experimental** support for promises. If you
-omit callbacks an HTTP method function (*e.g.*, `.get`), it will
-return a promise.
+So, to create a new Deployment in the default Namespace:
 
 ```js
-core.namespaces('default').replicationcontrollers('http-rc').get()
-  .then(result => print(null, result));
+const deploymentManifest = require('./nginx-deployment.json')
+const create = await client.apis.apps.v1.namespaces('default').deployments.post({ body: deploymentManifest });
 ```
 
-or with `async/await`:
+and then fetch your newly created Deployment:
 
 ```js
-print(null, await core.namespaces('default').replicationcontrollers('http-rc').get());
+const deployment = await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).get();
 ```
 
-### Creating and updating
-
-kubernetes-client objects expose `.post`, `.patch`, and `.put`
-methods. Create the ReplicationController from the example above:
+and finally, remove the Deployment:
 
 ```js
-const manifestObject = require('./rc.json');
-core.namespaces('default').replicationcontrollers.post({ body: manifestObject }, print);
-```
-or update the number of replicas:
-
-```js
-const patch = { spec: { replicas: 10 } };
-core.namespaces('default').replicationcontrollers('http-rc').patch({
-  body: patch
-}, print);
+await await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).delete();
 ```
 
-### Using the correct API group and version
+kubernetes-client supports `.delete`, `.get`, `.patch`, `.post`, and `.put`.
 
-kubernetes-client client includes functionality to help determine the
-correct Kubernetes API group and version to use based on manifests:
+## Documentation
 
-```js
-const Api = require('kubernetes-client');
-const api = new Api.Api({ url: 'http://my-k8s-api-server.com' });
+kubernetes-client generates documentation for the included
+specifications:
 
-const manifest0 = {
-  kind: 'Deployment',
-  apiVersion: 'extensions/v1beta1'
-  ...
-};
-const manifest1 = {
-  kind: 'ReplicationController',
-  apiVersion: 'v1'
-  ...
-};
+* [Kubernetes API v1.7](docs/1.7.md)
+* [Kubernetes API v1.8](docs/1.8.md)
+* [Kubernetes API v1.9](docs/1.9.md)
 
-api.group(manifest0).ns('default').kind(manifest0).post({ body: manifest0 }, print);
-api.group(manifest1).ns('default').kind(manifest1).post({ body: manifest1 }, print);
-```
+## More examples
 
-### Object name aliases
+[examples/](examples/) has snippets for using kubernetes-client:
 
-kubernetes-client supports the same aliases as
-[`kubectl`](http://kubernetes.io/docs/user-guide/kubectl-overview/)
-(*e.g.*, `ns` for `namespaces`) and the singular versions of the
-resource name (*e.g.*, `namespace` for `namespaces`). We can shorten
-the example above:
+* The basic usage example from above: [basic.js](./examples/basic.js)
+* Create a `client` from your kube-apiserver's swagger.json:
+  [client-from-apiserver-swagger.js](./examples/client-from-apiserver-swagger.js)
+* Create a `client` from one of the included Swagger specifications:
+  [sync-client-version.js](./examples/sync-client-version.js)
+* Using resource aliases supported by `kubectl` (*e.g.*, `.po` vs
+  `.pods`): [convenience-properties.js](./examples/convenience-properties.js)
+* Extend the Kubernetes API and a `client` with a
+  CustomerResourceDefinition: [using-crds.js](./examples/using-crds.js)
 
-```js
-core.ns('default').rc('http-rc').get(print);
-```
+## Contributing
 
-### Switching namespaces
-
-You can call the `namespace` object to specify the namespace:
-
-```js
-core.ns('other-project').rc('http-rc').get(print);
-```
-
-### Query parameters
-
-You can optionally specify query string object `qs` to GET
-endpoints. kubernetes-client passes `qs` directly to
-[`request`](https://www.npmjs.com/package/request#requestoptions-callback).
-For example to filter based on [label
-selector](http://kubernetes.io/docs/user-guide/labels/):
-
-```js
-core.ns('default').rc.get({ qs: { labelSelector: 'service=http,component=api' } }, print);
-```
-
-### Label selector filtering
-
-kubernetes-client has a shortcut, `matchLabels`, for filtering on label
-selector equality:
-
-```js
-core.ns('default').rc.matchLabels({ service: 'http' }).get(print);
-```
-
-and a more general `match` method based on Kubernetes Match Expressions:
-
-```js
-core.ns('default').rc.match([{
-  key: 'service',
-  operator: 'In',
-  values: ['http']
-}, {
-  key: 'deploy',
-  operator: 'NotIn',
-  values: ['production', 'staging']
-}]).get(print);
-```
-
-**Note:** The Kubernetes API supports label selector filtering [for GET
-methods
-only](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/). The
-Kubernetes API does not support label selector filtering for POST,
-PUT, PATCH, or DELETE.
-
-### ThirdPartyResources
-
-You can extend the Kubernetes API using a
-[ThirdPartyResource](https://kubernetes.io/docs/user-guide/thirdpartyresources/)
-and kubernetes-client:
-
-```js
-const newResource = {
-  apiVersion: 'extensions/v1beta1',
-  kind: 'ThirdPartyResource',
-  metadata: {
-    name: 'new-resource.kubernetes-client.io'
-  },
-  description: 'Example resource',
-  versions: [{
-    name: 'v1'
-  }]
-};
-
-ext.thirdpartyresources.post({ body: newResource }, print);
-```
-
-and then extend an `ThirdPartyResource` API client with your new resources:
-
-```js
-const thirdPartyResources = new Api.ThirdPartyResources({
-  url: 'http://my-k8s-api-server.com',
-  group: 'kubernetes-client.io',
-  resources: ['customresources']  // Notice pluralization!
-});
-
-// Access `customresources` as if they were a regular Kubernetes object
-thirdPartyResources.ns('default').customresources.get(print);
-thirdPartyResources.addResource('newresources');  // Notice pluralization!
-// Now access `newresources`
-thirdPartyResources.ns('default').newresources.get(print);
-```
-
-### Watching and streaming
-
-You can call `.getStream` to stream results. This is useful for watching:
-
-```js
-const JSONStream = require('json-stream');
-const jsonStream = new JSONStream();
-
-const stream = core.ns('default').po.getStream({ qs: { watch: true } });
-stream.pipe(jsonStream);
-jsonStream.on('data', object => {
-  console.log('Pod:', JSON.stringify(object, null, 2));
-});
-```
-
-You can access logs in a similar fashion:
-```js
-const stream = core.ns('default').po('http-123').log.getStream({ qs: { follow: true } });
-stream.on('data', chunk => {
-  process.stdout.write(chunk.toString());
-});
-```
-
-**Note:** the kube-apiserver will close watch connections eventually
-according to the
-[`--min-request-timeout`](http://kubernetes.io/docs/admin/kube-apiserver/
-command line argument. kubernetes-client does not attempt to reconnect
-when the kube-apiserver closes a connection.
-
-### Authenticating
-
-kubernetes-client supports Kubernetes [apiserver
-authentication](http://kubernetes.io/docs/admin/authentication/).
-
-Basic authentication (with optional certificate authority):
-
-```js
-const core = new Api.Core({
-  url: 'https://my-k8s-api-server.com',
-  ca: fs.readFileSync('cluster-ca.pem'),
-  auth: {
-    user: 'user',
-    pass: 'pass'
-  }
-});
-```
-
-or without a certificate authority:
-
-```js
-const core = new Api.Core({
-  url: 'https://my-k8s-api-server.com',
-  insecureSkipTlsVerify: true,
-  auth: {
-    user: 'user',
-    pass: 'pass'
-  }
-});
-```
-
-token authentication:
-
-```js
-const core = new Api.Core({
-  url: 'https://my-k8s-api-server.com',
-  auth: {
-    bearer: 'token'
-  }
-});
-```
-
-and client certificate authentication:
-
-```js
-const core = new Api.Core({
-  url: 'https://my-k8s-api-server.com',
-  ca: fs.readFileSync('cluster-ca.pem'),
-  cert: fs.readFileSync('my-user-cert.pem'),
-  key: fs.readFileSync('my-user-key.pem')
-});
-```
-
-### Passing options to `request`
-
-kubernetes-client uses
-[`request`](https://github.com/request/request). You can specify
-[`request`
-options](https://github.com/request/request#requestoptions-callback)
-for kubernetes-client to pass to `request`:
-
-```js
-const core = new Api.Core({
-  url: 'https://my-k8s-api-server.com',
-  request: {
-    timeout: 3000
-  }
-});
-```
-
-### **Experimental** support for Swagger-based API clients
-
-**This API is going to change.**
-
-kubernetes-client has support for generating API clients from
-Kubernetes Swagger documentation.
-
-```js
-const kubernetes = require('kubernetes-client');
-const spec = require('./swagger-1.8.json');
-const http = new kubernetes.Request(kubernetes.config.fromKubeconfig());
-const client = new kubernetes.SwaggerClient({ spec, http });
-
-console.log(await client.api.v1.namespaces.get());
-```
+See the kubernetes-client [Issues](./issues) if you're interested in
+helping out; and look over the [CONTRIBUTING.md](./CONTRIBUTING.md)
+before submitting new Issues and Pull Requests.
 
 ## Testing
 
@@ -368,3 +142,6 @@ $ CONTEXT=minikube npm run test-integration
 ## License
 
 [MIT](LICENSE)
+
+[1]: https://swagger.io/specification/#pathItemObject
+[2]: https://swagger.io/specification/#pathTemplating
