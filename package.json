@@ -7,8 +7,9 @@
   "scripts": {
     "check-coverage": "istanbul check-coverage",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha && istanbul report cobertura",
+    "docs": "for v in 1.7 1.8 1.9; do scripts/docs.js --spec lib/specs/swagger-$v.json.gz --output docs/$v.md; done",
     "jsdoc": "jsdoc -d doc lib",
-    "lint": "eslint-godaddy lib/ test/",
+    "lint": "eslint-godaddy lib/ test/ scripts/",
     "release": "standard-version --tag-prefix=''",
     "test": "npm run lint && mocha && npm run test-typings",
     "test-typings": "tsc --project ./typings",
@@ -49,6 +50,8 @@
     "nock": "^9.1.5",
     "sinon": "4.4.3",
     "standard-version": "^4.3.0",
-    "typescript": "^2.6.1"
+    "swagger-js-codegen": "^1.12.0",
+    "typescript": "^2.6.1",
+    "yargs": "^11.0.0"
   }
 }
