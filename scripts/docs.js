@@ -10,7 +10,7 @@ const zlib = require('zlib');
 const mustacheLambdas = {
   /**
    * Remove all non-alphanumeric characters from rendered text.
-   * @returns {funtion} function
+   * @returns {function} function
    */
   alphanumeric: function () {
     return function (text, render) {
@@ -20,17 +20,19 @@ const mustacheLambdas = {
 
   /**
    * Replace newline characters in rendered text with <br/>s.
-   * @returns {funtion} function
+   * @returns {function} function
    */
   markdownBreaks: function () {
     return function (text, render) {
-      return render(text).replace(/\n/g, '<br/>');
+      return render(text)
+        .replace(/\r\n/g, '<br/>');
+        .replace(/\n/g, '<br/>');
     };
   },
 
   /**
    * When in a method section, return the full kubernetes-client name.
-   * @returns {funtion} function
+   * @returns {function} function
    */
   jsName: function () {
     return function () {
