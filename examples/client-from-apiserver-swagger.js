@@ -9,7 +9,12 @@ const deploymentManifest = require('./nginx-deployment.json');
 
 async function main() {
   try {
-    const client = await new Client({ config: config.fromKubeconfig() });
+    const client = new Client({ config: config.fromKubeconfig() });
+    //
+    // Load the /swagger.json from the kube-apiserver specified in config.fromKubeconfig()
+    //
+    await client.loadSpec();
+
     const create = await client.apis.apps.v1.namespaces('default').deployments.post({ body: deploymentManifest });
     console.log('Result: ', create);
   } catch (err) {
