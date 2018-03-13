@@ -7,7 +7,7 @@
   "scripts": {
     "check-coverage": "istanbul check-coverage",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha && istanbul report cobertura",
-    "docs": "for v in 1.7 1.8 1.9; do scripts/docs.js --spec lib/specs/swagger-$v.json.gz --output docs/$v.md; done",
+    "docs": "scripts/docs.js --builtins",
     "jsdoc": "jsdoc -d doc lib",
     "lint": "eslint-godaddy lib/ test/ scripts/",
     "release": "standard-version --tag-prefix=''",

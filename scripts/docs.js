@@ -25,7 +25,7 @@ const mustacheLambdas = {
   markdownBreaks: function () {
     return function (text, render) {
       return render(text)
-        .replace(/\r\n/g, '<br/>');
+        .replace(/\r\n/g, '<br/>')
         .replace(/\n/g, '<br/>');
     };
   },
@@ -48,9 +48,9 @@ const mustacheLambdas = {
   }
 };
 
-function main(args) {
-  let raw = fs.readFileSync(args.spec);
-  if (args.spec.endsWith('.gz')) {
+function generate(input, output) {
+  let raw = fs.readFileSync(input);
+  if (input.endsWith('.gz')) {
     raw = zlib.gunzipSync(raw);
   }
   const spec = JSON.parse(raw);
@@ -77,10 +77,31 @@ function main(args) {
     }
   });
 
-  if (args.output) {
-    fs.writeFileSync(args.output, source);
+  if (output) {
+    fs.writeFileSync(output, source);
   } else {
     console.log(source);
+  }
+}
+
+function main(args) {
+  if (args.builtins) {
+    const specs = './lib/specs';
+    fs.readdirSync(specs).forEach(filename => {
+      const versionRegExp = /swagger-(.+)\.json.gz/;
+      const match = filename.match(versionRegExp);
+      if (!match) {
+        console.log(`Skipping ${ filename }`);
+        return;
+      }
+      const version = match[1];
+      const output = `./docs/${ version }.md`;
+      generate(path.join(specs, filename), output);
+    })
+  }
+
+  if (args.spec) {
+    generate(args.spec, args.output);
   }
 }
 
@@ -88,12 +109,14 @@ const argv = require('yargs')
   .usage('Usage: $0 [options]')
   .option('spec', {
     alias: 's',
-    describe: 'Swagger / OpenAPI specification',
-    demand: true
+    describe: 'Swagger / OpenAPI specification'
   })
   .option('output', {
     alias: 'o',
     describe: 'Markdown output file'
+  })
+  .option('builtins', {
+    describe: 'Generate Markdown for builtin specifications'
   })
   .strict()
   .help()
