@@ -1,7 +1,7 @@
 //
 // Use the shorter resource name aliases.
 //
-const Client = require('kubernetes-client').SyncClient
+const Client = require('kubernetes-client').Client
 const config = require('kubernetes-client').config;
 
 const deploymentManifest = require('./nginx-deployment.json');
