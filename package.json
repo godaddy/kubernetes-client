@@ -7,7 +7,7 @@
   "scripts": {
     "check-coverage": "istanbul check-coverage",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha && istanbul report cobertura",
-    "docs": "scripts/docs.js --builtins",
+    "docs": "node scripts/docs.js --builtins",
     "jsdoc": "jsdoc -d doc lib",
     "lint": "eslint-godaddy lib/ test/ scripts/",
     "release": "standard-version --tag-prefix=''",
