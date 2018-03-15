@@ -39,6 +39,62 @@ describe('lib.swagger-client', () => {
       });
     });
 
+    describe('.get', () => {
+      it('returns the result for 2XX', async () => {
+        nock(common.api.url)
+          .get('/magic')
+          .reply(200, {
+            message: 'ta dah'
+          });
+
+        const options = {
+          config: { url: common.api.url },
+          spec: {
+            paths: {
+              '/magic': {
+                get: {
+                  operationId: 'getMagic'
+                }
+              }
+            }
+          }
+        };
+        const client = new Client(options);
+        const res = await client.magic.get();
+        assume(res.statusCode).is.equal(200);
+        assume(res.body.message).is.equal('ta dah');
+      });
+
+      it('throws an error on non-2XX', async () => {
+        nock(common.api.url)
+          .get('/magic')
+          .reply(404, {
+            message: 'fail!'
+          });
+
+        const options = {
+          config: { url: common.api.url },
+          spec: {
+            paths: {
+              '/magic': {
+                get: {
+                  operationId: 'getMagic'
+                }
+              }
+            }
+          }
+        };
+        const client = new Client(options);
+        try {
+          await client.magic.get();
+          assume('Should not reach').is.falsy();
+        } catch (err) {
+          assume(err.statusCode).is.equal(404);
+          assume(err.message).is.equal('fail!');
+        }
+      });
+    });
+
     describe('.constructor', () => {
       it('creates a dynamically generated client synchronously based on version', () => {
         const options = { config: {}, version: '1.9' };
