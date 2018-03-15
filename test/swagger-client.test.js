@@ -40,7 +40,7 @@ describe('lib.swagger-client', () => {
     });
 
     describe('.get', () => {
-      it('returns the result for 2XX', async () => {
+      it('returns the result for 2XX', done => {
         nock(common.api.url)
           .get('/magic')
           .reply(200, {
@@ -60,12 +60,16 @@ describe('lib.swagger-client', () => {
           }
         };
         const client = new Client(options);
-        const res = await client.magic.get();
-        assume(res.statusCode).is.equal(200);
-        assume(res.body.message).is.equal('ta dah');
+        client.magic.get()
+          .then(res => {
+            assume(res.statusCode).is.equal(200);
+            assume(res.body.message).is.equal('ta dah');
+            done();
+          })
+          .catch(done);
       });
 
-      it('throws an error on non-2XX', async () => {
+      it('throws an error on non-2XX', done => {
         nock(common.api.url)
           .get('/magic')
           .reply(404, {
@@ -85,13 +89,15 @@ describe('lib.swagger-client', () => {
           }
         };
         const client = new Client(options);
-        try {
-          await client.magic.get();
-          assume('Should not reach').is.falsy();
-        } catch (err) {
-          assume(err.statusCode).is.equal(404);
-          assume(err.message).is.equal('fail!');
-        }
+        client.magic.get()
+          .then(() => {
+            assume('Should not reach').is.falsy();
+          })
+          .catch(err => {
+            assume(err.statusCode).is.equal(404);
+            assume(err.message).is.equal('fail!');
+            done();
+          });
       });
     });
 
