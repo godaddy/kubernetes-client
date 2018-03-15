@@ -203,12 +203,15 @@ describe('lib.swagger-client', () => {
         };
         client.addCustomResourceDefinition(crd);
         assume(client.apis['stable.example.com'].v1.namespaces('default').foos.get).is.a('function');
+        assume(client.apis['stable.example.com'].v1.namespaces('default').foos.post).is.a('function');
         assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
         assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').delete).is.a('function');
         assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
         assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').patch).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').post).is.a('function');
         assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').put).is.a('function');
+        assume(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
+        assume(client.apis['stable.example.com'].v1.namespaces('default').watch.foos.getStream).is.a('function');
+        assume(client.apis['stable.example.com'].v1.namespaces('default').watch.foos('blah').getStream).is.a('function');
       });
     });
   });
