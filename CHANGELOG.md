@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.1"></a>
+## [5.0.1](https://github.com/godaddy/kubernetes-client/compare/5.0.0...5.0.1) (2018-03-15)
+
+
+### Bug Fixes
+
+* **error handling:** replicate pre-5.0.0 error handling ([#232](https://github.com/godaddy/kubernetes-client/issues/232)) ([b5eb7e0](https://github.com/godaddy/kubernetes-client/commit/b5eb7e0))
+
+
+
 <a name="5.0.0"></a>
 # [5.0.0](https://github.com/godaddy/kubernetes-client/compare/4.0.1...5.0.0) (2018-03-15)
 
