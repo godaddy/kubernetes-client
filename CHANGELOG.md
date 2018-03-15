@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/godaddy/kubernetes-client/compare/4.0.1...5.0.0) (2018-03-15)
+
+
+### Bug Fixes
+
+* **examples/:** fix a bug in an example ([#221](https://github.com/godaddy/kubernetes-client/issues/221)) ([dc51f6d](https://github.com/godaddy/kubernetes-client/commit/dc51f6d))
+
+
+### Chores
+
+* **Node.js support:** Drop support for Node.js 4 and 5 ([#208](https://github.com/godaddy/kubernetes-client/issues/208)) ([e70f9cb](https://github.com/godaddy/kubernetes-client/commit/e70f9cb))
+
+
+### Documentation
+
+* **README.md:** Re-write README.md for the Swagger-based client ([#222](https://github.com/godaddy/kubernetes-client/issues/222)) ([42d5bc7](https://github.com/godaddy/kubernetes-client/commit/42d5bc7))
+
+
+### Features
+
+* **aliases:** add the nice-to-have aliases to the dynamic client code ([#209](https://github.com/godaddy/kubernetes-client/issues/209)) ([b1b355f](https://github.com/godaddy/kubernetes-client/commit/b1b355f))
+* **CRDs:** add basic CRD support to the dynamic client ([#214](https://github.com/godaddy/kubernetes-client/issues/214)) ([c2aec51](https://github.com/godaddy/kubernetes-client/commit/c2aec51))
+* **dynamic clients:** introduce more user-friendly Client classes ([#207](https://github.com/godaddy/kubernetes-client/issues/207)) ([162b33e](https://github.com/godaddy/kubernetes-client/commit/162b33e))
+* **getStream:** add support for getStream to swagger-based client code ([#206](https://github.com/godaddy/kubernetes-client/issues/206)) ([ccb2be0](https://github.com/godaddy/kubernetes-client/commit/ccb2be0))
+
+
+### BREAKING CHANGES
+
+* **README.md:** This commit effectively pivots the Swagger-based client to be
+the default, which isn't 100% compatible with the original kubernetes-client
+implementation.
+* **Node.js support:** EOL for 4 is end of April (https://github.com/nodejs/Release).
+We're dropping support a little early in order to leverage some 6+ features for
+upcoming improvements (e.g., https://github.com/godaddy/kubernetes-client/pull/207)
+
+
+
 <a name="4.0.1"></a>
 ## [4.0.1](https://github.com/godaddy/kubernetes-client/compare/4.0.0...4.0.1) (2018-03-07)
 
