@@ -97,7 +97,7 @@ function main(args) {
       const version = match[1];
       const output = `./docs/${ version }.md`;
       generate(path.join(specs, filename), output);
-    })
+    });
   }
 
   if (args.spec) {
