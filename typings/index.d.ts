@@ -59,12 +59,12 @@ declare namespace KubernetesClient {
 
   interface Configuration {
     fromKubeconfig(kubeconfig: any, currentContext?: string): ClientConfiguration;
-    loadKubeconfig(cfgPath?: string): any; 
+    loadKubeconfig(cfgPath?: string): any;
     getInCluster() : ClusterConfiguration;
   }
 
   class Api {
-    constructor(options?: ApiConstructorOptions);    
+    constructor(options?: ApiConstructorOptions);
     group(v: any | string): ApiGroup;
   }
 
@@ -90,23 +90,23 @@ declare namespace KubernetesClient {
   interface Resource extends ApiGroup {
     (resourceName: string) : Resource;
   }
-  
+
   interface NamespacesResource extends Resource {
     kind(k: { kind: string } | string): ApiGroup;
   }
 
   interface ApiGroup {
-    addResource(options: string | ResourceConstructor);
-    get(callback: (error: any, value: any) => void): any;
-    get(options: ApiRequestOptions, callback: (error: any, value: any) => void): any;
-    delete(callback: (error: any, value: any) => void);
-    delete(options: ApiRequestOptions, callback: (error: any, value: any) => void);
-    patch(callback: (error: any, value: any) => void);
-    patch(options: ApiRequestOptions, callback: (error: any, value: any) => void);
-    post(callback: (error: any, value: any) => void);
-    post(options: ApiRequestOptions, callback: (error: any, value: any) => void);
-    put(callback: (error: any, value: any) => void);
-    put(options: ApiRequestOptions, callback: (error: any, value: any) => void);
+    addResource(options: string | ResourceConstructor): any;
+    get(callback: (error: any, value: any) => void): void;
+    get(options: ApiRequestOptions, callback: (error: any, value: any) => void): void;
+    delete(callback: (error: any, value: any) => void): void;
+    delete(options: ApiRequestOptions, callback: (error: any, value: any) => void): void;
+    patch(callback: (error: any, value: any) => void): void;
+    patch(options: ApiRequestOptions, callback: (error: any, value: any) => void): void;
+    post(callback: (error: any, value: any) => void): void;
+    post(options: ApiRequestOptions, callback: (error: any, value: any) => void): void;
+    put(callback: (error: any, value: any) => void): void;
+    put(options: ApiRequestOptions, callback: (error: any, value: any) => void): void;
     match(expressions: Array<MatchExpression>): Resource;
     matchLabels(labels: any): Resource;
     getStream(options: ApiRequestOptions | string): NodeJS.ReadableStream;
