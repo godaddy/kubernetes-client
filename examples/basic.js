@@ -29,6 +29,37 @@ async function main() {
     console.log('Deployment: ', deployment);
 
     //
+    // Change the Deployment Replica count to 10
+    //
+
+    const replica = {
+      "spec": {
+        "replicas": 10
+      }
+    };
+
+    const replicaModify = await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).patch({ body: replica });
+    console.log('Replica Modification: ', replicaModify);
+
+    //
+    // Modify the image tag
+    //
+    const newImage = {
+      "spec": {
+        "template": {
+          "spec": {
+            "containers": [{
+              "name": "nginx",
+              "image": "nginx:1.8.1"
+            }]
+          }
+        }
+      }
+    };
+    const imageSet = await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).patch({ body: newImage });
+    console.log('New Image: ', imageSet);
+
+    //
     // Remove the Deployment we created.
     //
     const removed = await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).delete();
