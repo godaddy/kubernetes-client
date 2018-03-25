@@ -1,7 +1,8 @@
+/* eslint no-console:0 */
 //
 // Use the shorter resource name aliases.
 //
-const Client = require('kubernetes-client').Client
+const Client = require('kubernetes-client').Client;
 const config = require('kubernetes-client').config;
 
 const deploymentManifest = require('./nginx-deployment.json');

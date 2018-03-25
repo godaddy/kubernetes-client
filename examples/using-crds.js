@@ -1,3 +1,4 @@
+/* eslint no-console:0 */
 //
 // Use a Custom Resource Definition to extend the Kubernetes API and the client.
 //

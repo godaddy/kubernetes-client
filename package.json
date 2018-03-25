@@ -9,7 +9,7 @@
     "coverage": "istanbul cover ./node_modules/.bin/_mocha && istanbul report cobertura",
     "docs": "node scripts/docs.js --builtins",
     "jsdoc": "jsdoc -d doc lib",
-    "lint": "eslint-godaddy lib/ test/ scripts/",
+    "lint": "eslint-godaddy examples/ lib/ scripts/ test/",
     "release": "standard-version --tag-prefix=''",
     "test": "npm run lint && mocha && npm run test-typings",
     "test-typings": "tsc --project ./typings",
