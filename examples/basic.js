@@ -1,3 +1,4 @@
+/* eslint no-console:0 */
 //
 // Demonstrate some of the basics.
 //
@@ -33,8 +34,8 @@ async function main() {
     //
 
     const replica = {
-      "spec": {
-        "replicas": 10
+      spec: {
+        replicas: 10
       }
     };
 
@@ -45,12 +46,12 @@ async function main() {
     // Modify the image tag
     //
     const newImage = {
-      "spec": {
-        "template": {
-          "spec": {
-            "containers": [{
-              "name": "nginx",
-              "image": "nginx:1.8.1"
+      spec: {
+        template: {
+          spec: {
+            containers: [{
+              name: 'nginx',
+              image: 'nginx:1.8.1'
             }]
           }
         }

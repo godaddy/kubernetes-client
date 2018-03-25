@@ -1,8 +1,9 @@
+/* eslint no-console:0 */
 //
 // Create an API client based on the swagger.json from the current kubeconfig
 // cluster.
 //
-const Client = require('kubernetes-client').Client
+const Client = require('kubernetes-client').Client;
 const config = require('kubernetes-client').config;
 
 const deploymentManifest = require('./nginx-deployment.json');

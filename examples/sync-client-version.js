@@ -1,8 +1,9 @@
+/* eslint no-console:0 */
 //
 // Create an API client based on a specified API version. kubernetes-client uses
 // included swagger specification files.
 //
-const Client = require('kubernetes-client').Client
+const Client = require('kubernetes-client').Client;
 const config = require('kubernetes-client').config;
 
 const deploymentManifest = require('./nginx-deployment.json');
