@@ -107,8 +107,11 @@ specifications:
   `.pods`): [convenience-properties.js](./examples/convenience-properties.js)
 * Extend the Kubernetes API and a `client` with a
   CustomerResourceDefinition: [using-crds.js](./examples/using-crds.js)
+* An exended CustomResourceDefinition example that implements a
+  controller to "notify" on changes to Deployment objects:
+  [deployment-notifier.js](./examples/deployment-notifier.js)
 * A basic canary controller that removes Pods from a Service if they
-  log an error: [canary-controller.js](./examples/canary-controller.js).
+  log an error: [canary-controller.js](./examples/canary-controller.js)
 
 ## Contributing
 
