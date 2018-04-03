@@ -4,3 +4,4 @@ npm-debug.log
 
 # Assuming you don't want to check this in
 yarn.lock
+yarn-error.log

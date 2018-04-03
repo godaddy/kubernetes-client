@@ -271,7 +271,7 @@ describe('Config', () => {
         ]
       };
       const args = config.fromKubeconfig(kubeconfig);
-      assume(args.auth.bearer).equals('foo-token');
+      assume(args.auth.request.bearer).equals('foo-token');
     });
 
     it('handles manually specified current-context', () => {
