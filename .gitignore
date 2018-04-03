@@ -1,3 +1,6 @@
 node_modules/
 coverage/
 npm-debug.log
+
+# Assuming you don't want to check this in
+yarn.lock
