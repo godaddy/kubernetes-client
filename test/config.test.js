@@ -271,7 +271,88 @@ describe('Config', () => {
         ]
       };
       const args = config.fromKubeconfig(kubeconfig);
-      assume(args.auth.bearer).equals('foo-token');
+      assume(args.auth.request.bearer).equals('foo-token');
+    });
+
+    it('handles auth-provider.config.idp-issuer-url', () => {
+      const kubeconfig = {
+        'apiVersion': 'v1',
+        'kind': 'Config',
+        'preferences': {},
+        'current-context': 'foo-context',
+        'contexts': [
+          {
+            name: 'foo-context',
+            context: {
+              cluster: 'foo-cluster',
+              user: 'foo-user'
+            }
+          }
+        ],
+        'clusters': [
+          {
+            name: 'foo-cluster',
+            cluster: {
+              server: 'https://192.168.42.121:8443'
+            }
+          }
+        ],
+        'users': [
+          {
+            name: 'foo-user',
+            user: {
+              'auth-provider': {
+                config: {
+                  'idp-issuer-url': 'https://accounts.google.com'
+                }
+              }
+            }
+          }
+        ]
+      };
+      const args = config.fromKubeconfig(kubeconfig);
+      assume(args.auth.provider.type).equals('openid');
+    });
+
+    it('handles auth-provider.config.cmd-path', () => {
+      const kubeconfig = {
+        'apiVersion': 'v1',
+        'kind': 'Config',
+        'preferences': {},
+        'current-context': 'foo-context',
+        'contexts': [
+          {
+            name: 'foo-context',
+            context: {
+              cluster: 'foo-cluster',
+              user: 'foo-user'
+            }
+          }
+        ],
+        'clusters': [
+          {
+            name: 'foo-cluster',
+            cluster: {
+              server: 'https://192.168.42.121:8443'
+            }
+          }
+        ],
+        'users': [
+          {
+            name: 'foo-user',
+            user: {
+              'auth-provider': {
+                config: {
+                  'cmd-path': 'gcloud',
+                  'cmd-args': 'config config-helper --format=json'
+                }
+              }
+            }
+          }
+        ]
+      };
+      const args = config.fromKubeconfig(kubeconfig);
+      assume(args.auth.provider.type).equals('cmd');
     });
 
     it('handles manually specified current-context', () => {
