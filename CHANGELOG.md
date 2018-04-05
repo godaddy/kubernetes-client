@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.2.0"></a>
+# [5.2.0](https://github.com/godaddy/kubernetes-client/compare/5.1.0...5.2.0) (2018-04-05)
+
+
+### Features
+
+* **authentication:** Support OpenID and generic command-based authentication ([#247](https://github.com/godaddy/kubernetes-client/issues/247)) ([98fe599](https://github.com/godaddy/kubernetes-client/commit/98fe599))
+
+
+
 <a name="5.1.0"></a>
 # [5.1.0](https://github.com/godaddy/kubernetes-client/compare/5.0.1...5.1.0) (2018-03-16)
 
