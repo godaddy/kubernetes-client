@@ -10,14 +10,15 @@ const deploymentManifest = require('./nginx-deployment.json');
 async function cleanup(client) {
   try {
     await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).delete();
-  } catch (err) { }
+  } catch (err) {
+    console.warn(`Unable to delete deployment ${ deploymentManifest.metadata.name }.  Skipping.`);
+  }
 }
 
 async function triggerEvents(client) {
   //
   // Trigger some events
   //
-  await cleanup(client);
   for (let count = 0; count < 3; count++) {
     await new Promise(resolve => setTimeout(resolve, 1000));
     await client.apis.apps.v1.namespaces('default').deployments.post({ body: deploymentManifest });
@@ -29,6 +30,11 @@ async function triggerEvents(client) {
 async function main() {
   try {
     const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
+
+    //
+    // Clean up our cluster and get ready to trigger events.
+    //
+    await cleanup(client);
 
     //
     // Get a JSON stream for Deployment events
