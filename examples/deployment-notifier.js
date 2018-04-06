@@ -14,8 +14,8 @@
 // disconnections from watch endpoints. The kube-apiserver periodically
 // disconnects watch streams (according to --min-request-timeout).
 //
-const Client = require('../lib').Client;
-const config = require('../lib').config;
+const Client = require('kubernetes-client').Client;
+const config = require('kubernetes-client').config;
 const JSONStream = require('json-stream');
 
 const crd = require('./deploymentnotifier-crd.json');
