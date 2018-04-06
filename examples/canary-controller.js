@@ -10,8 +10,8 @@
 //   $ kubectl expose deployment coalmine --type=NodePort --selector='app=coalmine,state=stable'
 //   $ minikube service coalmine --url
 //
-const Client = require('../lib').Client;
-const config = require('../lib').config;
+const Client = require('kubernetes-client').Client;
+const config = require('kubernetes-client').config;
 const JSONStream = require('json-stream');
 
 const namespace = 'default';
