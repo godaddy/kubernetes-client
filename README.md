@@ -105,6 +105,8 @@ specifications:
   [sync-client-version.js](./examples/sync-client-version.js)
 * Using resource aliases supported by `kubectl` (*e.g.*, `.po` vs
   `.pods`): [convenience-properties.js](./examples/convenience-properties.js)
+* Use watch enpodints to get a JSON stream of Deployment events:
+  [watch.js](./examples/watch.js)
 * Extend the Kubernetes API and a `client` with a
   CustomerResourceDefinition: [using-crds.js](./examples/using-crds.js)
 * An exended CustomResourceDefinition example that implements a
