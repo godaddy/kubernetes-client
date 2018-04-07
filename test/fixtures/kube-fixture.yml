@@ -18,3 +18,4 @@ users:
   user:
     client-certificate-data: foo-cert-data
     client-key-data: foo-cert-key
+
