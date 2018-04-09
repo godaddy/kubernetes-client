@@ -403,5 +403,10 @@ describe('Config', () => {
       const args = config.fromKubeconfig(kubeconfig, 'foo-context-2');
       assume(args.url).equals('https://192.168.42.122:8443');
     });
+
+    it('load kubeconfig from provided path', () => {
+      const args = config.fromKubeconfig('./test/fixtures/kube-fixture.yml');
+      assume(args.url).equals('https://192.168.42.121:8443');
+    });
   });
 });
