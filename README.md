@@ -48,6 +48,22 @@ const client = new Client({ config: config.fromKubeconfig() });
 await client.loadSpec();
 ```
 
+or using basic auth:
+
+```js
+const Client = require('kubernetes-client').Client
+const client = new Client({
+  config: {
+    url: 'CLUSTER_URL',
+    auth: {
+      user: 'admin',
+      pass: 'YOUR_PASSWORD',
+    },
+    insecureSkipTlsVerify: true,
+  }
+})
+```
+
 ## Basic usage
 
 kubernetes-client translates Path Item Objects \[[1]\] (*e.g*.,
