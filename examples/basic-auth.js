@@ -20,18 +20,17 @@ async function main() {
 
     //
     // Fetch all the pods
-    const { body } = await client.api.v1.pods.get();
-    const pods = body.items;
-    pods.forEach(({ metadata }) => {
-      console.log(metadata);
+    const pods = await client.api.v1.pods.get();
+    pods.body.items.forEach((item) => {
+      console.log(item.metadata);
     });
 
     //
     // Fetch the Deployment from the kube-system namespace.
     //
     const deployment = await client.apis.apps.v1.namespaces('kube-system').deployments().get();
-    deployment.body.items.forEach(({ metadata }) => {
-      console.log(metadata);
+    deployment.body.items.forEach((item) => {
+      console.log(item.metadata);
     });
 
   } catch (err) {
