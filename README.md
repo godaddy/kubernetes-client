@@ -48,6 +48,22 @@ const client = new Client({ config: config.fromKubeconfig() });
 await client.loadSpec();
 ```
 
+or using basic auth:
+
+```js
+const Client = require('kubernetes-client').Client
+const client = new Client({
+  config: {
+    url: 'CLUSTER_URL',
+    auth: {
+      user: 'admin',
+      pass: 'YOUR_PASSWORD',
+    },
+    insecureSkipTlsVerify: true,
+  }
+})
+```
+
 ## Basic usage
 
 kubernetes-client translates Path Item Objects \[[1]\] (*e.g*.,
@@ -114,6 +130,9 @@ specifications:
   [deployment-notifier.js](./examples/deployment-notifier.js)
 * A basic canary controller that removes Pods from a Service if they
   log an error: [canary-controller.js](./examples/canary-controller.js)
+* Generate [badges](https://github.com/badges/shields) showing the
+  status of your Deployments. Illustrates using the in-cluster config:
+  [kubernetes-badges](https://github.com/silasbw/kubernetes-badges)
 
 ## Contributing
 
