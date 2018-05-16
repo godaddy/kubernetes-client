@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.3.0"></a>
+# [5.3.0](https://github.com/godaddy/kubernetes-client/compare/5.2.0...5.3.0) (2018-05-16)
+
+
+### Bug Fixes
+
+* **package:** update openid-client to version 2.0.0 ([#252](https://github.com/godaddy/kubernetes-client/issues/252)) ([877af3d](https://github.com/godaddy/kubernetes-client/commit/877af3d))
+* **typings:** address issue with typings support for promises ([#253](https://github.com/godaddy/kubernetes-client/issues/253)) ([4fc1eb0](https://github.com/godaddy/kubernetes-client/commit/4fc1eb0))
+
+
+### Features
+
+* **fromKubeconfig:** automatically call `loadKubeconfig` when `kubeconfig` a string ([#251](https://github.com/godaddy/kubernetes-client/issues/251)) ([2898b86](https://github.com/godaddy/kubernetes-client/commit/2898b86))
+
+
+
 <a name="5.2.0"></a>
 # [5.2.0](https://github.com/godaddy/kubernetes-client/compare/5.1.0...5.2.0) (2018-04-05)
 
