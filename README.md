@@ -130,6 +130,8 @@ specifications:
   [deployment-notifier.js](./examples/deployment-notifier.js)
 * A basic canary controller that removes Pods from a Service if they
   log an error: [canary-controller.js](./examples/canary-controller.js)
+* Create a `client` using basic-auth:
+  [basic-auth.js](./examples/basic-auth.js)
 * Generate [badges](https://github.com/badges/shields) showing the
   status of your Deployments. Illustrates using the in-cluster config:
   [kubernetes-badges](https://github.com/silasbw/kubernetes-badges)
