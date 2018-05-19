@@ -70,7 +70,7 @@ kubernetes-client translates Path Item Objects \[[1]\] (*e.g*.,
 `/api/v1/namespaces`) to object chains ending in HTTP methods (*e.g.*,
 `api.v1.namespaces.get`).
 
-So, to fetch all Namesapces:
+So, to fetch all Namespaces:
 
 ```js
 const namespaces = await client.api.v1.namespaces.get();
