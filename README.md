@@ -64,6 +64,14 @@ const client = new Client({
 })
 ```
 
+or from within a Pod:
+
+```js
+const Client = require('kubernetes-client').Client
+const config = require('kubernetes-client').config;
+const client = new Client({ config: config.getInCluster() });
+```
+
 ## Basic usage
 
 kubernetes-client translates Path Item Objects \[[1]\] (*e.g*.,
