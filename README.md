@@ -24,7 +24,7 @@ on a Swagger / OpenAPI specification. You can generate a client using
 specifications included with kubernetes-client:
 
 ```js
-const Client = require('kubernetes-client').Client
+const Client = require('kubernetes-client').Client;
 const config = require('kubernetes-client').config;
 const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
 ```
@@ -32,7 +32,7 @@ const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
 or from a file:
 
 ```js
-const Client = require('kubernetes-client').Client
+const Client = require('kubernetes-client').Client;
 const config = require('kubernetes-client').config;
 const spec = require('./swagger.json');
 const client = new Client({ config: config.fromKubeconfig(), spec});
@@ -42,7 +42,7 @@ const client = new Client({ config: config.fromKubeconfig(), spec});
 or from the `/swagger.json` endpoint on your kube-apiserver:
 
 ```js
-const Client = require('kubernetes-client').Client
+const Client = require('kubernetes-client').Client;
 const config = require('kubernetes-client').config;
 const client = new Client({ config: config.fromKubeconfig() });
 await client.loadSpec();
@@ -51,7 +51,7 @@ await client.loadSpec();
 or using basic auth:
 
 ```js
-const Client = require('kubernetes-client').Client
+const Client = require('kubernetes-client').Client;
 const client = new Client({
   config: {
     url: 'CLUSTER_URL',
@@ -62,6 +62,15 @@ const client = new Client({
     insecureSkipTlsVerify: true,
   }
 })
+```
+
+or from within a Pod:
+
+```js
+const Client = require('kubernetes-client').Client;
+const config = require('kubernetes-client').config;
+const client = new Client({ config: config.getInCluster() });
+await client.loadSpec();
 ```
 
 ## Basic usage
