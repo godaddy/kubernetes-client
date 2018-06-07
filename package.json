@@ -35,7 +35,7 @@
     "js-yaml": "^3.10.0",
     "lodash.merge": "^4.6.0",
     "openid-client": "^2.0.0",
-    "promy": "^0.1.0",
+    "promy": "^1.0.1",
     "request": "^2.83.0"
   },
   "devDependencies": {
