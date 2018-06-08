@@ -35,7 +35,7 @@
     "js-yaml": "^3.10.0",
     "lodash.merge": "^4.6.0",
     "openid-client": "^2.0.0",
-    "promy": "^0.1.0",
+    "promy": "^1.0.1",
     "request": "^2.83.0"
   },
   "devDependencies": {
@@ -49,7 +49,7 @@
     "jsdoc": "^3.5.5",
     "mocha": "^5.0.0",
     "nock": "^9.1.5",
-    "sinon": "5.0.2",
+    "sinon": "5.0.8",
     "standard-version": "^4.3.0",
     "swagger-js-codegen": "^1.12.0",
     "typescript": "^2.6.1",
