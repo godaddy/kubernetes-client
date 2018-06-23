@@ -24,7 +24,7 @@ on a Swagger / OpenAPI specification. You can generate a client using
 specifications included with kubernetes-client:
 
 ```js
-const Client = require('kubernetes-client').Client
+const Client = require('kubernetes-client').Client;
 const config = require('kubernetes-client').config;
 const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
 ```
@@ -32,7 +32,7 @@ const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
 or from a file:
 
 ```js
-const Client = require('kubernetes-client').Client
+const Client = require('kubernetes-client').Client;
 const config = require('kubernetes-client').config;
 const spec = require('./swagger.json');
 const client = new Client({ config: config.fromKubeconfig(), spec});
@@ -42,9 +42,34 @@ const client = new Client({ config: config.fromKubeconfig(), spec});
 or from the `/swagger.json` endpoint on your kube-apiserver:
 
 ```js
-const Client = require('kubernetes-client').Client
+const Client = require('kubernetes-client').Client;
 const config = require('kubernetes-client').config;
 const client = new Client({ config: config.fromKubeconfig() });
+await client.loadSpec();
+```
+
+or using basic auth:
+
+```js
+const Client = require('kubernetes-client').Client;
+const client = new Client({
+  config: {
+    url: 'CLUSTER_URL',
+    auth: {
+      user: 'admin',
+      pass: 'YOUR_PASSWORD',
+    },
+    insecureSkipTlsVerify: true,
+  }
+})
+```
+
+or from within a Pod:
+
+```js
+const Client = require('kubernetes-client').Client;
+const config = require('kubernetes-client').config;
+const client = new Client({ config: config.getInCluster() });
 await client.loadSpec();
 ```
 
@@ -54,7 +79,7 @@ kubernetes-client translates Path Item Objects \[[1]\] (*e.g*.,
 `/api/v1/namespaces`) to object chains ending in HTTP methods (*e.g.*,
 `api.v1.namespaces.get`).
 
-So, to fetch all Namesapces:
+So, to fetch all Namespaces:
 
 ```js
 const namespaces = await client.api.v1.namespaces.get();
@@ -114,6 +139,8 @@ specifications:
   [deployment-notifier.js](./examples/deployment-notifier.js)
 * A basic canary controller that removes Pods from a Service if they
   log an error: [canary-controller.js](./examples/canary-controller.js)
+* Create a `client` using basic-auth:
+  [basic-auth.js](./examples/basic-auth.js)
 * Generate [badges](https://github.com/badges/shields) showing the
   status of your Deployments. Illustrates using the in-cluster config:
   [kubernetes-badges](https://github.com/silasbw/kubernetes-badges)
