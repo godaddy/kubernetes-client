@@ -57,7 +57,7 @@ const client = new Client({
     url: 'CLUSTER_URL',
     auth: {
       user: 'admin',
-      pass: 'YOUR_PASSWORD',
+      pass: 'YOUR_PASSWORD',
     },
     insecureSkipTlsVerify: true,
   }
@@ -118,6 +118,7 @@ specifications:
 * [Kubernetes API v1.7](docs/1.7.md)
 * [Kubernetes API v1.8](docs/1.8.md)
 * [Kubernetes API v1.9](docs/1.9.md)
+* [Kubernetes API v1.10](docs/1.10.md)
 
 ## More examples
 
