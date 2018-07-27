@@ -146,6 +146,8 @@ specifications:
 * Generate [badges](https://github.com/badges/shields) showing the
   status of your Deployments. Illustrates using the in-cluster config:
   [kubernetes-badges](https://github.com/silasbw/kubernetes-badges)
+* Create a deployment, patch a change, and rollback to the original version:
+  [deployment-create-patch-rollback.js](./examples/deployment-create-patch-rollback.js)
 
 ## Contributing
 
