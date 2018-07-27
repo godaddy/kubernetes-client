@@ -32,6 +32,7 @@ async function main() {
     });
     console.log('Update: ', updateImage);
 
+    // Rollback to nginx:1.7.9
     const rollback = await client.apis.apps.v1beta1.namespaces('default').deployments('nginx-deployment').rollback.post({
       body: {
         kind: 'DeploymentRollback',
