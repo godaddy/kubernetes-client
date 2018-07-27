@@ -106,7 +106,7 @@ const deployment = await client.apis.apps.v1.namespaces('default').deployments(d
 and finally, remove the Deployment:
 
 ```js
-await await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).delete();
+await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).delete();
 ```
 
 kubernetes-client supports `.delete`, `.get`, `.patch`, `.post`, and `.put`.
