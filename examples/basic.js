@@ -7,6 +7,20 @@ const config = require('kubernetes-client').config;
 
 const deploymentManifest = require('./nginx-deployment.json');
 
+//
+// Use this pattern to simulate kubectl apply -f; create a Deployment or replace it if it already exists.
+//
+async function createOrReplaceDeploy() {
+  try {
+    const create = await client.apis.apps.v1.namespaces('default').deployments.post({ body: deploymentManifest });
+    console.log('Create:', create);
+  } catch (err) {
+    if (err.code !== 409) throw err;
+    const replace = await client.apis.apps.v1.namespaces('default').deployments('nginx-deployment').put({ body: deploymentManifest });
+    console.log('Replace:', replace);
+  }
+}
+
 async function main() {
   try {
     const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
@@ -18,10 +32,14 @@ async function main() {
     console.log('Namespaces: ', namespaces);
 
     //
-    // Create a new Deployment.
+    // Create a new Deployment
     //
-    const create = await client.apis.apps.v1.namespaces('default').deployments.post({ body: deploymentManifest });
-    console.log('Create: ', create);
+    await createOrReplaceDeploy();
+
+    //
+    // Replace the current Deployment
+    //
+    await createOrReplaceDeploy();
 
     //
     // Fetch the Deployment we just created.
@@ -32,7 +50,6 @@ async function main() {
     //
     // Change the Deployment Replica count to 10
     //
-
     const replica = {
       spec: {
         replicas: 10

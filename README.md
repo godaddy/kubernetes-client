@@ -97,6 +97,13 @@ const deploymentManifest = require('./nginx-deployment.json')
 const create = await client.apis.apps.v1.namespaces('default').deployments.post({ body: deploymentManifest });
 ```
 
+Or, to replace a Deployment of the same name:
+
+```js
+const deploymentManifest = require('./nginx-deployment.json')
+const replace = await client.apis.apps.v1.namespaces('default').deployments('nginx-deployment').put({ body: deploymentManifest });
+```
+
 and then fetch your newly created Deployment:
 
 ```js
@@ -131,7 +138,7 @@ specifications:
 * Create a `client` from one of the included Swagger specifications:
   [sync-client-version.js](./examples/sync-client-version.js)
 * Using resource aliases supported by `kubectl` (*e.g.*, `.po` vs
-  `.pods`): [convenience-properties.js](./examples/convenience-properties.js)
+  `.pods`): [convenience-properties.js](./examples/convenience-properties.s)
 * Use watch endpoints to get a JSON stream of Deployment events:
   [watch.js](./examples/watch.js)
 * Extend the Kubernetes API and a `client` with a
