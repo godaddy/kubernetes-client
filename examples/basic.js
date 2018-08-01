@@ -50,7 +50,7 @@ async function main() {
     //
     // Change the Deployment Replica count to 10
     //
-    
+
     const replica = {
       spec: {
         replicas: 10
