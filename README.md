@@ -133,6 +133,7 @@ specifications:
 [examples/](examples/) has snippets for using kubernetes-client:
 
 * The basic usage example from above: [basic.js](./examples/basic.js)
+* Use error handling to simulate `kubectl apply -f`: [apply-deploy.js](./examples/apply-deploy.js)
 * Create a `client` from your kube-apiserver's swagger.json:
   [client-from-apiserver-swagger.js](./examples/client-from-apiserver-swagger.js)
 * Create a `client` from one of the included Swagger specifications:
