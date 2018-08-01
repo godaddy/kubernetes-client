@@ -106,7 +106,7 @@ const deployment = await client.apis.apps.v1.namespaces('default').deployments(d
 and finally, remove the Deployment:
 
 ```js
-await await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).delete();
+await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).delete();
 ```
 
 kubernetes-client supports `.delete`, `.get`, `.patch`, `.post`, and `.put`.
@@ -132,11 +132,11 @@ specifications:
   [sync-client-version.js](./examples/sync-client-version.js)
 * Using resource aliases supported by `kubectl` (*e.g.*, `.po` vs
   `.pods`): [convenience-properties.js](./examples/convenience-properties.js)
-* Use watch enpodints to get a JSON stream of Deployment events:
+* Use watch endpoints to get a JSON stream of Deployment events:
   [watch.js](./examples/watch.js)
 * Extend the Kubernetes API and a `client` with a
   CustomerResourceDefinition: [using-crds.js](./examples/using-crds.js)
-* An exended CustomResourceDefinition example that implements a
+* An extended CustomResourceDefinition example that implements a
   controller to "notify" on changes to Deployment objects:
   [deployment-notifier.js](./examples/deployment-notifier.js)
 * A basic canary controller that removes Pods from a Service if they
