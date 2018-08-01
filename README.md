@@ -138,7 +138,7 @@ specifications:
 * Create a `client` from one of the included Swagger specifications:
   [sync-client-version.js](./examples/sync-client-version.js)
 * Using resource aliases supported by `kubectl` (*e.g.*, `.po` vs
-  `.pods`): [convenience-properties.js](./examples/convenience-properties.s)
+  `.pods`): [convenience-properties.js](./examples/convenience-properties.js)
 * Use watch endpoints to get a JSON stream of Deployment events:
   [watch.js](./examples/watch.js)
 * Extend the Kubernetes API and a `client` with a

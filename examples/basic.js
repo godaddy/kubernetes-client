@@ -32,12 +32,12 @@ async function main() {
     console.log('Namespaces: ', namespaces);
 
     //
-    // Create a new Deployment
+    // Create a new Deployment.
     //
     await createOrReplaceDeploy();
 
     //
-    // Replace the current Deployment
+    // Replace the current Deployment.
     //
     await createOrReplaceDeploy();
 
@@ -50,6 +50,7 @@ async function main() {
     //
     // Change the Deployment Replica count to 10
     //
+    
     const replica = {
       spec: {
         replicas: 10
