@@ -97,13 +97,6 @@ const deploymentManifest = require('./nginx-deployment.json')
 const create = await client.apis.apps.v1.namespaces('default').deployments.post({ body: deploymentManifest });
 ```
 
-Or, to replace a Deployment of the same name:
-
-```js
-const deploymentManifest = require('./nginx-deployment.json')
-const replace = await client.apis.apps.v1.namespaces('default').deployments('nginx-deployment').put({ body: deploymentManifest });
-```
-
 and then fetch your newly created Deployment:
 
 ```js
