@@ -194,6 +194,7 @@ describe('lib.swagger-client', () => {
         const client = new Client({ spec: { paths: {}}, http: {}});
         const crd = {
           spec: {
+            scope: 'Namespaced',
             group: 'stable.example.com',
             version: 'v1',
             names: {
@@ -212,6 +213,31 @@ describe('lib.swagger-client', () => {
         assume(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
         assume(client.apis['stable.example.com'].v1.namespaces('default').watch.foos.getStream).is.a('function');
         assume(client.apis['stable.example.com'].v1.namespaces('default').watch.foos('blah').getStream).is.a('function');
+      });
+
+      it('adds functions for Cluster CustomResourceDefinitions', () => {
+        const client = new Client({ spec: { paths: {}}, http: {}});
+        const crd = {
+          spec: {
+            scope: 'Cluster',
+            group: 'stable.example.com',
+            version: 'v1',
+            names: {
+              plural: 'foos'
+            }
+          }
+        };
+        client.addCustomResourceDefinition(crd);
+        assume(client.apis['stable.example.com'].v1.foos.get).is.a('function');
+        assume(client.apis['stable.example.com'].v1.foos.post).is.a('function');
+        assume(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
+        assume(client.apis['stable.example.com'].v1.foos('blah').delete).is.a('function');
+        assume(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
+        assume(client.apis['stable.example.com'].v1.foos('blah').patch).is.a('function');
+        assume(client.apis['stable.example.com'].v1.foos('blah').put).is.a('function');
+        assume(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
+        assume(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
+        assume(client.apis['stable.example.com'].v1.watch.foos('blah').getStream).is.a('function');
       });
     });
   });

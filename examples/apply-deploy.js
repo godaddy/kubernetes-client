@@ -8,7 +8,7 @@ const deploymentManifest = require('./nginx-deployment.json');
 
 async function applyDeploy() {
   const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
-  
+
   try {
     const create = await client.apis.apps.v1.namespaces('default').deployments.post({ body: deploymentManifest });
     console.log('Create:', create);
