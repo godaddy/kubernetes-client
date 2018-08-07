@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="5.4.0"></a>
+# [5.4.0](https://github.com/godaddy/kubernetes-client/compare/5.3.1...5.4.0) (2018-08-07)
+
+
+### Features
+
+* **CRDs:** add Cluster scope support ([#307](https://github.com/godaddy/kubernetes-client/issues/307)) ([cb9f7e4](https://github.com/godaddy/kubernetes-client/commit/cb9f7e4))
+
+
+
 <a name="5.3.1"></a>
 ## [5.3.1](https://github.com/godaddy/kubernetes-client/compare/5.3.0...5.3.1) (2018-06-27)
 
