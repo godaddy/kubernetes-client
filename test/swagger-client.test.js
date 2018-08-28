@@ -5,7 +5,7 @@ const assume = require('assume');
 const nock = require('nock');
 
 const common = require('./common');
-const Client = require('../lib/swagger-client');
+const Client = require('../lib/swagger-client').Client;
 
 const beforeTesting = common.beforeTesting;
 
