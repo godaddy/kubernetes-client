@@ -8,6 +8,7 @@
     "check-coverage": "istanbul check-coverage",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha && istanbul report cobertura",
     "docs": "node scripts/docs.js --builtins",
+    "typings": "node scripts/typings.js --spec lib/specs/swagger-1.10.json.gz --output typings/index.d.ts",
     "jsdoc": "jsdoc -d doc lib",
     "lint": "eslint-godaddy examples/ lib/ scripts/ test/",
     "release": "standard-version --tag-prefix=''",
