@@ -79,7 +79,7 @@ function main(args) {
   const spec = JSON.parse(raw);
   let clientSuffix = '';
   if (spec.info.version) {
-    clientSuffix = spec.info.version.replace(/v/, '').split('.').slice(0, 2).join('_')
+    clientSuffix = spec.info.version.replace(/v/, '').split('.').slice(0, 2).join('_');
   }
   const interfaces = [];
 
