@@ -8,8 +8,6 @@
 
 Simplified [Kubernetes API](http://kubernetes.io/) client for Node.js.
 
-*For the v4.X documentation, go [HERE](README-PRE-5.md).*
-
 ## Installation
 
 Install via npm:
