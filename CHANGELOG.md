@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.0.0"></a>
+# [6.0.0](https://github.com/godaddy/kubernetes-client/compare/5.4.0...6.0.0) (2018-08-28)
+
+
+### Bug Fixes
+
+* **aliases:** reduce the number of nonsense aliases ([#312](https://github.com/godaddy/kubernetes-client/issues/312)) ([f0cd4c7](https://github.com/godaddy/kubernetes-client/commit/f0cd4c7))
+* **package:** update fluent-openapi to version 0.1.1 ([#311](https://github.com/godaddy/kubernetes-client/issues/311)) ([50ac41f](https://github.com/godaddy/kubernetes-client/commit/50ac41f))
+
+
+### Chores
+
+* **4.X:** remove old API code ([#317](https://github.com/godaddy/kubernetes-client/issues/317)) ([6a3aa8b](https://github.com/godaddy/kubernetes-client/commit/6a3aa8b))
+
+
+### Features
+
+* **Client1_10:** add Client class for a specific API version ([#315](https://github.com/godaddy/kubernetes-client/issues/315)) ([3a2886c](https://github.com/godaddy/kubernetes-client/commit/3a2886c))
+* **typings:** script to generate declaration file for current API ([#313](https://github.com/godaddy/kubernetes-client/issues/313)) ([a8e399c](https://github.com/godaddy/kubernetes-client/commit/a8e399c))
+* **typings:** Update TypeScript declaration file for new API ([#316](https://github.com/godaddy/kubernetes-client/issues/316)) ([fe3a131](https://github.com/godaddy/kubernetes-client/commit/fe3a131))
+
+
+### BREAKING CHANGES
+
+* **4.X:** This removes the kubernetes-client 4.X API.
+* **typings:** This replaces the 4.X declaration file.
+
+Fixes https://github.com/godaddy/kubernetes-client/issues/249
+
+
+
 <a name="5.4.0"></a>
 # [5.4.0](https://github.com/godaddy/kubernetes-client/compare/5.3.1...5.4.0) (2018-08-07)
 
