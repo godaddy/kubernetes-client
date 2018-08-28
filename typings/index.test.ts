@@ -1,104 +1,116 @@
 import * as Api from 'kubernetes-client';
 
-const apiConfig = Api.config.fromKubeconfig(Api.config.loadKubeconfig('config'));
-let core = new Api.Core(apiConfig);
-let ext = new Api.Extensions(apiConfig);
-let api = new Api.Api({
-  url: 'http://my-k8s-api-server.com',
-  namespace: 'my-project'
-});
+const Client = Api.Client1_10;
+const config = Api.config;
 
-api = new Api.Api({
-  core: core
-});
-
-const manifest0 = {
-  kind: 'Deployment',
-  apiVersion: 'extensions/v1beta1'
+const deploymentManifest = {
+  metadata: {
+    name: 'foo'
+  }
 };
 
-const manifest1 = {
-  kind: 'ReplicationController',
-  apiVersion: 'v1'
-};
+async function main0() {
+  try {
+    const client = new Client({ config: config.fromKubeconfig(), version: '1.9' })
+    const namespaces = await client.api.v1.namespaces.get();
 
-function print(err, result) {
-  console.log(JSON.stringify(err || result, null, 2));
+    //
+    // Create a new Deployment.
+    //
+    const create = await client.apis.apps.v1.namespaces('default').deployments.post({ body: deploymentManifest });
+    console.log('Create: ', create);
+
+    //
+    // Fetch the Deployment we just created.
+    //
+    const deployment = await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).get();
+    console.log('Deployment: ', deployment);
+
+    //
+    // Change the Deployment Replica count to 10
+    //
+
+    const replica = {
+      spec: {
+        replicas: 10
+      }
+    };
+
+    const replicaModify = await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).patch({ body: replica });
+    console.log('Replica Modification: ', replicaModify);
+
+    //
+    // Modify the image tag
+    //
+    const newImage = {
+      spec: {
+        template: {
+          spec: {
+            containers: [{
+              name: 'nginx',
+              image: 'nginx:1.8.1'
+            }]
+          }
+        }
+      }
+    };
+    const imageSet = await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).patch({ body: newImage });
+    console.log('New Image: ', imageSet);
+
+    //
+    // Remove the Deployment we created.
+    //
+    const removed = await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).delete();
+    console.log('Removed: ', removed);
+  } catch (err) {
+    console.error('Error: ', err);
+  }
 }
 
-api.group(manifest0).ns.kind(manifest0).post({ body: manifest0 }, print);
-api.group(manifest1).ns.kind(manifest1).post({ body: manifest1 }, print);
+async function main1() {
+  try {
+    const client = new Client({
+      config: {
+        url: process.env.K8S_CLUSTER_HOST,
+        auth: {
+          user: process.env.K8S_USER,
+          pass: process.env.K8S_PASSWORD
+        },
+        insecureSkipTlsVerify: true
+      },
+      version: process.env.K8S_CLUSTER_VERSION
+    });
 
-core = new Api.Core({
-  url: 'http://my-k8s-api-server.com',
-  version: 'v1',
-  promises: true,
-  namespace: 'my-project'
-});
+    //
+    // Fetch all the pods
+    const pods = await client.api.v1.pods.get();
+    pods.body.items.forEach((item) => {
+      console.log(item.metadata);
+    });
 
-const rbac = new Api.Rbac();
-const extensions = new Api.Extensions();
-const batch = new Api.Batch();
-const apps = new Api.Apps();
-const apiExtensions = new Api.ApiExtensions();
+    //
+    // Fetch the Deployment from the kube-system namespace.
+    //
+    const deployment = await client.apis.apps.v1.namespaces('kube-system').deployments.get();
+    deployment.body.items.forEach((item) => {
+      console.log(item.metadata);
+    });
 
-ext = new Api.Extensions({
-  url: 'http://my-k8s-api-server.com',
-  version: 'v1beta1',  // Defaults to 'v1beta1'
-  namespace: 'my-project' // Defaults to 'default'
-});
-
-core.ns.rc.match([{
-  key: 'service',
-  operator: 'In',
-  values: ['http']
-}, {
-  key: 'deploy',
-  operator: 'NotIn',
-  values: ['production', 'staging']
-}]).get(print);
-
-const clusterConfig = Api.config.getInCluster();
-
-ext.namespaces.deployments('http-deployment').get(print);
-
-core.namespaces.replicationcontrollers('http-rc').get(print);
-core.ns('custom-namespace').pods('pod-1').log.get((err, log) => {
-  if (err) {
-    throw err;
+  } catch (err) {
+    console.error('Error: ', err);
   }
-  const logLines = log.split('\n');
-  for (const line of logLines) {
-    // ...
+}
+
+async function main2() {
+  try {
+    const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
+    const create = await client.apis.apps.v1.ns('default').deploy.post({ body: deploymentManifest });
+    console.log('Result: ', create);
+  } catch (err) {
+    console.error('Error: ', err);
   }
-});
+}
 
-core.ns('custom-namespace').pods.matchLabels(['label-1', 'label-2']).get((err, matchedPods) => {
-  if (err) throw err;
-  console.log(matchedPods.length);
-});
-
-ext.ns('some-ns').deploy('deployment').get((err, deploy) => {
-  if (err) throw err;
-  console.log(`Find Pods with labels ${ JSON.stringify(deploy.spec.selector.matchLabels) }`);
-});
-
-core.pods.get((err, podsInfo) => {
-  console.log(podsInfo);
-});
-
-core.pods('foo').get((err, podsInfo) => {
-  console.log(podsInfo);
-});
-
-let stream = core.pods.matchLabels(['foo']).getStream({ qs: { watch: true }});
-core.ns.rc('http-rc').get(print);
-core.ns.rc.get({ qs: { labelSelector: 'service=http' } }, print);
-core.ns.rc.matchLabels({ service: 'http' }).get(print);
-core.ns.rc.delete({ name: 'http-rc', preservePods: true }, print);
-
-stream = core.ns.po('http-123').log.getStream({ qs: { follow: true } });
-stream.on('data', chunk => {
-  process.stdout.write(chunk.toString());
-});
-
+main0();
+main1();
+main2();
