@@ -1,9 +1,9 @@
 'use strict';
 /* eslint no-process-env: 0*/
 
-const assume = require('assume');
-const sinon = require('sinon');
+const expect = require('chai').expect;
 const fs = require('fs');
+const sinon = require('sinon');
 const yaml = require('js-yaml');
 
 const config = require('../lib/config');
@@ -41,7 +41,7 @@ describe('Config', () => {
         .returns('my-namespace');
 
       const configInCluster = config.getInCluster();
-      assume(configInCluster).eqls({
+      expect(configInCluster).eqls({
         auth: { bearer: 'my-token' },
         ca: 'my-ca',
         namespace: 'my-namespace',
@@ -90,8 +90,8 @@ describe('Config', () => {
         ]
       };
       const args = config.fromKubeconfig(kubeconfig);
-      assume(args.auth.user).equals('foo-user');
-      assume(args.auth.pass).equals('foo-password');
+      expect(args.auth.user).equals('foo-user');
+      expect(args.auth.pass).equals('foo-password');
     });
 
     it('handles base64 encoded certs and keys', () => {
@@ -129,9 +129,9 @@ describe('Config', () => {
         ]
       };
       const args = config.fromKubeconfig(kubeconfig);
-      assume(args.ca).equals('certificate-authority-data');
-      assume(args.key).equals('client-key');
-      assume(args.cert).equals('client-certificate');
+      expect(args.ca).equals('certificate-authority-data');
+      expect(args.key).equals('client-key');
+      expect(args.cert).equals('client-certificate');
     });
 
     it('handles relative and absolute certs and keys', () => {
@@ -193,9 +193,9 @@ describe('Config', () => {
         .returns(kubeconfig);
 
       const args = config.fromKubeconfig();
-      assume(args.ca).equals('certificate-authority-data');
-      assume(args.key).equals('client-key-data');
-      assume(args.cert).equals('client-certificate-data');
+      expect(args.ca).equals('certificate-authority-data');
+      expect(args.key).equals('client-key-data');
+      expect(args.cert).equals('client-certificate-data');
     });
 
     it('handles token', () => {
@@ -231,7 +231,7 @@ describe('Config', () => {
         ]
       };
       const args = config.fromKubeconfig(kubeconfig);
-      assume(args.auth.bearer).equals('foo-token');
+      expect(args.auth.bearer).equals('foo-token');
     });
 
     it('handles auth-provider.config.access-token', () => {
@@ -271,7 +271,7 @@ describe('Config', () => {
         ]
       };
       const args = config.fromKubeconfig(kubeconfig);
-      assume(args.auth.request.bearer).equals('foo-token');
+      expect(args.auth.request.bearer).equals('foo-token');
     });
 
     it('handles auth-provider.config.idp-issuer-url', () => {
@@ -311,7 +311,7 @@ describe('Config', () => {
         ]
       };
       const args = config.fromKubeconfig(kubeconfig);
-      assume(args.auth.provider.type).equals('openid');
+      expect(args.auth.provider.type).equals('openid');
     });
 
     it('handles auth-provider.config.cmd-path', () => {
@@ -352,7 +352,7 @@ describe('Config', () => {
         ]
       };
       const args = config.fromKubeconfig(kubeconfig);
-      assume(args.auth.provider.type).equals('cmd');
+      expect(args.auth.provider.type).equals('cmd');
     });
 
     it('handles manually specified current-context', () => {
@@ -401,12 +401,12 @@ describe('Config', () => {
         ]
       };
       const args = config.fromKubeconfig(kubeconfig, 'foo-context-2');
-      assume(args.url).equals('https://192.168.42.122:8443');
+      expect(args.url).equals('https://192.168.42.122:8443');
     });
 
     it('load kubeconfig from provided path', () => {
       const args = config.fromKubeconfig('./test/fixtures/kube-fixture.yml');
-      assume(args.url).equals('https://192.168.42.121:8443');
+      expect(args.url).equals('https://192.168.42.121:8443');
     });
   });
 });

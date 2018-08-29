@@ -1,7 +1,7 @@
 /* eslint-disable max-nested-callbacks */
 'use strict';
 
-const assume = require('assume');
+const expect = require('chai').expect;
 const nock = require('nock');
 
 const common = require('./common');
@@ -32,7 +32,7 @@ describe('lib.swagger-client', () => {
         const client = new Client({ config });
         client.loadSpec()
           .then(() => {
-            assume(client.api.get).is.a('function');
+            expect(client.api.get).is.a('function');
             done();
           })
           .catch(err => done(err));
@@ -43,7 +43,7 @@ describe('lib.swagger-client', () => {
       it('creates a dynamically generated client synchronously based on version', () => {
         const options = { config: {}, version: '1.9' };
         const client = new Client(options);
-        assume(client.api.get).is.a('function');
+        expect(client.api.get).is.a('function');
       });
 
       it('aliases resources', () => {
@@ -57,9 +57,9 @@ describe('lib.swagger-client', () => {
           }
         };
         const client = new Client({ spec, http: {}});
-        assume(client.foo.deployments).is.truthy();
-        assume(client.foo.deployment).is.truthy();
-        assume(client.foo.deploy).is.truthy();
+        expect(client.foo.deployments).is.an('object');
+        expect(client.foo.deployment).is.an('object');
+        expect(client.foo.deploy).is.an('object');
       });
 
       it('adds functions for Namespaced CustomResourceDefinitions', () => {
@@ -75,16 +75,16 @@ describe('lib.swagger-client', () => {
           }
         };
         client.addCustomResourceDefinition(crd);
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos.get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos.post).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').delete).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').patch).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').put).is.a('function');
-        assume(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').watch.foos.getStream).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').watch.foos('blah').getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos.get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos.post).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').delete).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').patch).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').put).is.a('function');
+        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').watch.foos.getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').watch.foos('blah').getStream).is.a('function');
       });
 
       it('adds functions for Cluster CustomResourceDefinitions', () => {
@@ -100,16 +100,16 @@ describe('lib.swagger-client', () => {
           }
         };
         client.addCustomResourceDefinition(crd);
-        assume(client.apis['stable.example.com'].v1.foos.get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos.post).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos('blah').delete).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos('blah').patch).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos('blah').put).is.a('function');
-        assume(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
-        assume(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
-        assume(client.apis['stable.example.com'].v1.watch.foos('blah').getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos.get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos.post).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos('blah').delete).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos('blah').patch).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos('blah').put).is.a('function');
+        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.watch.foos('blah').getStream).is.a('function');
       });
     });
   });
