@@ -43,6 +43,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1NamespacesNameHorizontalpodautoscalersName {
     // Path templating
@@ -55,6 +56,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1NamespacesNameHorizontalpodautoscalers {
     // Path templating
@@ -65,6 +67,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1NamespacesName {
     // Path templating
@@ -73,12 +76,14 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV2beta1NamespacesNameHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV2beta1NamespacesNameHorizontalpodautoscalers
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1Namespaces {
     // Path templating
     (name: string): ApisAutoscalingV2beta1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1WatchNamespacesNameHorizontalpodautoscalersName {
     // Path templating
@@ -86,6 +91,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1WatchNamespacesNameHorizontalpodautoscalers {
     // Path templating
@@ -94,6 +100,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1WatchNamespacesName {
     // Path templating
@@ -102,12 +109,14 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV2beta1WatchNamespacesNameHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV2beta1WatchNamespacesNameHorizontalpodautoscalers
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1WatchNamespaces {
     // Path templating
     (name: string): ApisAutoscalingV2beta1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1WatchHorizontalpodautoscalers {
     // Path templating
@@ -115,6 +124,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1Watch {
     // Path templating
@@ -126,6 +136,7 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV2beta1WatchHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV2beta1WatchHorizontalpodautoscalers
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1Horizontalpodautoscalers {
     // Path templating
@@ -133,6 +144,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV2beta1 {
     // Path templating
@@ -147,6 +159,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1WatchNamespacesNameHorizontalpodautoscalersName {
     // Path templating
@@ -154,6 +167,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1WatchNamespacesNameHorizontalpodautoscalers {
     // Path templating
@@ -162,6 +176,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1WatchNamespacesName {
     // Path templating
@@ -170,12 +185,14 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV1WatchNamespacesNameHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV1WatchNamespacesNameHorizontalpodautoscalers
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1WatchNamespaces {
     // Path templating
     (name: string): ApisAutoscalingV1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1WatchHorizontalpodautoscalers {
     // Path templating
@@ -183,6 +200,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1Watch {
     // Path templating
@@ -194,6 +212,7 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV1WatchHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV1WatchHorizontalpodautoscalers
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1NamespacesNameHorizontalpodautoscalersNameStatus {
     // Path templating
@@ -203,6 +222,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1NamespacesNameHorizontalpodautoscalersName {
     // Path templating
@@ -215,6 +235,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1NamespacesNameHorizontalpodautoscalers {
     // Path templating
@@ -225,6 +246,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1NamespacesName {
     // Path templating
@@ -233,12 +255,14 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV1NamespacesNameHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV1NamespacesNameHorizontalpodautoscalers
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1Namespaces {
     // Path templating
     (name: string): ApisAutoscalingV1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1Horizontalpodautoscalers {
     // Path templating
@@ -246,6 +270,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscalingV1 {
     // Path templating
@@ -260,6 +285,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAutoscaling {
     // Path templating
@@ -269,6 +295,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespacesNameDaemonsetsName {
     // Path templating
@@ -276,6 +303,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespacesNameDaemonsets {
     // Path templating
@@ -284,6 +312,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespacesNameStatefulsetsName {
     // Path templating
@@ -291,6 +320,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespacesNameStatefulsets {
     // Path templating
@@ -299,6 +329,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespacesNameReplicasetsName {
     // Path templating
@@ -306,6 +337,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespacesNameReplicasets {
     // Path templating
@@ -314,6 +346,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespacesNameDeploymentsName {
     // Path templating
@@ -321,6 +354,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespacesNameDeployments {
     // Path templating
@@ -329,6 +363,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespacesNameControllerrevisionsName {
     // Path templating
@@ -336,6 +371,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespacesNameControllerrevisions {
     // Path templating
@@ -344,6 +380,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespacesName {
     // Path templating
@@ -362,12 +399,14 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta2WatchNamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1beta2WatchNamespacesNameControllerrevisions
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchNamespaces {
     // Path templating
     (name: string): ApisAppsV1beta2WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchStatefulsets {
     // Path templating
@@ -375,6 +414,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchReplicasets {
     // Path templating
@@ -382,6 +422,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchDeployments {
     // Path templating
@@ -389,6 +430,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchDaemonsets {
     // Path templating
@@ -396,6 +438,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2WatchControllerrevisions {
     // Path templating
@@ -403,6 +446,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2Watch {
     // Path templating
@@ -424,6 +468,7 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta2WatchControllerrevisions
     'controllerrevision': ApisAppsV1beta2WatchControllerrevisions
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameStatefulsetsNameStatus {
     // Path templating
@@ -433,6 +478,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameStatefulsetsNameScale {
     // Path templating
@@ -442,6 +488,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameStatefulsetsName {
     // Path templating
@@ -455,6 +502,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameStatefulsets {
     // Path templating
@@ -465,6 +513,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameReplicasetsNameStatus {
     // Path templating
@@ -474,6 +523,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameReplicasetsNameScale {
     // Path templating
@@ -483,6 +533,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameReplicasetsName {
     // Path templating
@@ -496,6 +547,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameReplicasets {
     // Path templating
@@ -506,6 +558,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameDeploymentsNameStatus {
     // Path templating
@@ -515,6 +568,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameDeploymentsNameScale {
     // Path templating
@@ -524,6 +578,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameDeploymentsName {
     // Path templating
@@ -537,6 +592,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameDeployments {
     // Path templating
@@ -547,6 +603,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameDaemonsetsNameStatus {
     // Path templating
@@ -556,6 +613,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameDaemonsetsName {
     // Path templating
@@ -568,6 +626,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameDaemonsets {
     // Path templating
@@ -578,6 +637,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameControllerrevisionsName {
     // Path templating
@@ -588,6 +648,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesNameControllerrevisions {
     // Path templating
@@ -598,6 +659,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2NamespacesName {
     // Path templating
@@ -616,12 +678,14 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta2NamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1beta2NamespacesNameControllerrevisions
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2Namespaces {
     // Path templating
     (name: string): ApisAppsV1beta2NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2Deployments {
     // Path templating
@@ -629,6 +693,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2Daemonsets {
     // Path templating
@@ -636,6 +701,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2Statefulsets {
     // Path templating
@@ -643,6 +709,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2Controllerrevisions {
     // Path templating
@@ -650,6 +717,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2Replicasets {
     // Path templating
@@ -657,6 +725,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta2 {
     // Path templating
@@ -681,6 +750,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1WatchNamespacesNameStatefulsetsName {
     // Path templating
@@ -688,6 +758,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1WatchNamespacesNameStatefulsets {
     // Path templating
@@ -696,6 +767,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1WatchNamespacesNameDeploymentsName {
     // Path templating
@@ -703,6 +775,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1WatchNamespacesNameDeployments {
     // Path templating
@@ -711,6 +784,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1WatchNamespacesNameControllerrevisionsName {
     // Path templating
@@ -718,6 +792,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1WatchNamespacesNameControllerrevisions {
     // Path templating
@@ -726,6 +801,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1WatchNamespacesName {
     // Path templating
@@ -738,12 +814,14 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta1WatchNamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1beta1WatchNamespacesNameControllerrevisions
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1WatchNamespaces {
     // Path templating
     (name: string): ApisAppsV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1WatchStatefulsets {
     // Path templating
@@ -751,6 +829,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1WatchDeployments {
     // Path templating
@@ -758,6 +837,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1WatchControllerrevisions {
     // Path templating
@@ -765,6 +845,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1Watch {
     // Path templating
@@ -780,6 +861,7 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta1WatchControllerrevisions
     'controllerrevision': ApisAppsV1beta1WatchControllerrevisions
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesNameStatefulsetsNameStatus {
     // Path templating
@@ -789,6 +871,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesNameStatefulsetsNameScale {
     // Path templating
@@ -798,6 +881,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesNameStatefulsetsName {
     // Path templating
@@ -811,6 +895,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesNameStatefulsets {
     // Path templating
@@ -821,6 +906,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesNameDeploymentsNameStatus {
     // Path templating
@@ -830,6 +916,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesNameDeploymentsNameScale {
     // Path templating
@@ -839,12 +926,14 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesNameDeploymentsNameRollback {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesNameDeploymentsName {
     // Path templating
@@ -859,6 +948,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesNameDeployments {
     // Path templating
@@ -869,6 +959,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesNameControllerrevisionsName {
     // Path templating
@@ -879,6 +970,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesNameControllerrevisions {
     // Path templating
@@ -889,6 +981,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1NamespacesName {
     // Path templating
@@ -901,12 +994,14 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta1NamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1beta1NamespacesNameControllerrevisions
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1Namespaces {
     // Path templating
     (name: string): ApisAppsV1beta1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1Statefulsets {
     // Path templating
@@ -914,6 +1009,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1Deployments {
     // Path templating
@@ -921,6 +1017,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1Controllerrevisions {
     // Path templating
@@ -928,6 +1025,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1beta1 {
     // Path templating
@@ -946,6 +1044,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespacesNameStatefulsetsName {
     // Path templating
@@ -953,6 +1052,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespacesNameStatefulsets {
     // Path templating
@@ -961,6 +1061,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespacesNameReplicasetsName {
     // Path templating
@@ -968,6 +1069,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespacesNameReplicasets {
     // Path templating
@@ -976,6 +1078,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespacesNameDeploymentsName {
     // Path templating
@@ -983,6 +1086,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespacesNameDeployments {
     // Path templating
@@ -991,6 +1095,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespacesNameDaemonsetsName {
     // Path templating
@@ -998,6 +1103,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespacesNameDaemonsets {
     // Path templating
@@ -1006,6 +1112,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespacesNameControllerrevisionsName {
     // Path templating
@@ -1013,6 +1120,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespacesNameControllerrevisions {
     // Path templating
@@ -1021,6 +1129,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespacesName {
     // Path templating
@@ -1039,12 +1148,14 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1WatchNamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1WatchNamespacesNameControllerrevisions
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchNamespaces {
     // Path templating
     (name: string): ApisAppsV1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchControllerrevisions {
     // Path templating
@@ -1052,6 +1163,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchDaemonsets {
     // Path templating
@@ -1059,6 +1171,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchDeployments {
     // Path templating
@@ -1066,6 +1179,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchStatefulsets {
     // Path templating
@@ -1073,6 +1187,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1WatchReplicasets {
     // Path templating
@@ -1080,6 +1195,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1Watch {
     // Path templating
@@ -1101,6 +1217,7 @@ declare namespace KubernetesClient {
     'rs': ApisAppsV1WatchReplicasets
     'replicaset': ApisAppsV1WatchReplicasets
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameDaemonsetsNameStatus {
     // Path templating
@@ -1110,6 +1227,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameDaemonsetsName {
     // Path templating
@@ -1122,6 +1240,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameDaemonsets {
     // Path templating
@@ -1132,6 +1251,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameDeploymentsNameScale {
     // Path templating
@@ -1141,6 +1261,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameDeploymentsNameStatus {
     // Path templating
@@ -1150,6 +1271,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameDeploymentsName {
     // Path templating
@@ -1163,6 +1285,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameDeployments {
     // Path templating
@@ -1173,6 +1296,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameStatefulsetsNameStatus {
     // Path templating
@@ -1182,6 +1306,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameStatefulsetsNameScale {
     // Path templating
@@ -1191,6 +1316,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameStatefulsetsName {
     // Path templating
@@ -1204,6 +1330,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameStatefulsets {
     // Path templating
@@ -1214,6 +1341,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameReplicasetsNameScale {
     // Path templating
@@ -1223,6 +1351,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameReplicasetsNameStatus {
     // Path templating
@@ -1232,6 +1361,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameReplicasetsName {
     // Path templating
@@ -1245,6 +1375,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameReplicasets {
     // Path templating
@@ -1255,6 +1386,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameControllerrevisionsName {
     // Path templating
@@ -1265,6 +1397,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesNameControllerrevisions {
     // Path templating
@@ -1275,6 +1408,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1NamespacesName {
     // Path templating
@@ -1293,12 +1427,14 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1NamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1NamespacesNameControllerrevisions
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1Namespaces {
     // Path templating
     (name: string): ApisAppsV1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1Deployments {
     // Path templating
@@ -1306,6 +1442,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1Replicasets {
     // Path templating
@@ -1313,6 +1450,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1Daemonsets {
     // Path templating
@@ -1320,6 +1458,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1Statefulsets {
     // Path templating
@@ -1327,6 +1466,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1Controllerrevisions {
     // Path templating
@@ -1334,6 +1474,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAppsV1 {
     // Path templating
@@ -1358,6 +1499,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApps {
     // Path templating
@@ -1368,6 +1510,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRolesName {
     // Path templating
@@ -1375,6 +1518,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRoles {
     // Path templating
@@ -1383,6 +1527,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRolebindingsName {
     // Path templating
@@ -1390,6 +1535,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRolebindings {
     // Path templating
@@ -1398,6 +1544,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesName {
     // Path templating
@@ -1407,12 +1554,14 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRolebindings
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespaces {
     // Path templating
     (name: string): ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchClusterrolesName {
     // Path templating
@@ -1420,6 +1569,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchClusterroles {
     // Path templating
@@ -1428,6 +1578,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchClusterrolebindingsName {
     // Path templating
@@ -1435,6 +1586,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchClusterrolebindings {
     // Path templating
@@ -1443,6 +1595,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchRoles {
     // Path templating
@@ -1450,6 +1603,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchRolebindings {
     // Path templating
@@ -1457,6 +1611,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Watch {
     // Path templating
@@ -1473,6 +1628,7 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1beta1WatchRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1beta1WatchRolebindings
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRolesName {
     // Path templating
@@ -1483,6 +1639,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRoles {
     // Path templating
@@ -1493,6 +1650,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRolebindingsName {
     // Path templating
@@ -1503,6 +1661,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRolebindings {
     // Path templating
@@ -1513,6 +1672,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1NamespacesName {
     // Path templating
@@ -1522,12 +1682,14 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRolebindings
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Namespaces {
     // Path templating
     (name: string): ApisRbac_authorization_k8s_ioV1beta1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1ClusterrolebindingsName {
     // Path templating
@@ -1538,6 +1700,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Clusterrolebindings {
     // Path templating
@@ -1548,6 +1711,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1ClusterrolesName {
     // Path templating
@@ -1558,6 +1722,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Clusterroles {
     // Path templating
@@ -1568,6 +1733,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Roles {
     // Path templating
@@ -1575,6 +1741,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Rolebindings {
     // Path templating
@@ -1582,6 +1749,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1beta1 {
     // Path templating
@@ -1601,6 +1769,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRolesName {
     // Path templating
@@ -1608,6 +1777,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRoles {
     // Path templating
@@ -1616,6 +1786,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRolebindingsName {
     // Path templating
@@ -1623,6 +1794,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRolebindings {
     // Path templating
@@ -1631,6 +1803,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesName {
     // Path templating
@@ -1640,12 +1813,14 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRolebindings
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespaces {
     // Path templating
     (name: string): ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchClusterrolesName {
     // Path templating
@@ -1653,6 +1828,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchClusterroles {
     // Path templating
@@ -1661,6 +1837,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchClusterrolebindingsName {
     // Path templating
@@ -1668,6 +1845,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchClusterrolebindings {
     // Path templating
@@ -1676,6 +1854,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchRolebindings {
     // Path templating
@@ -1683,6 +1862,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchRoles {
     // Path templating
@@ -1690,6 +1870,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Watch {
     // Path templating
@@ -1706,6 +1887,7 @@ declare namespace KubernetesClient {
     'roles': ApisRbac_authorization_k8s_ioV1alpha1WatchRoles
     'role': ApisRbac_authorization_k8s_ioV1alpha1WatchRoles
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRolesName {
     // Path templating
@@ -1716,6 +1898,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRoles {
     // Path templating
@@ -1726,6 +1909,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRolebindingsName {
     // Path templating
@@ -1736,6 +1920,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRolebindings {
     // Path templating
@@ -1746,6 +1931,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1NamespacesName {
     // Path templating
@@ -1755,12 +1941,14 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRolebindings
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Namespaces {
     // Path templating
     (name: string): ApisRbac_authorization_k8s_ioV1alpha1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1ClusterrolebindingsName {
     // Path templating
@@ -1771,6 +1959,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Clusterrolebindings {
     // Path templating
@@ -1781,6 +1970,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1ClusterrolesName {
     // Path templating
@@ -1791,6 +1981,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Clusterroles {
     // Path templating
@@ -1801,6 +1992,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Rolebindings {
     // Path templating
@@ -1808,6 +2000,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Roles {
     // Path templating
@@ -1815,6 +2008,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1 {
     // Path templating
@@ -1834,6 +2028,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRolesName {
     // Path templating
@@ -1841,6 +2036,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRoles {
     // Path templating
@@ -1849,6 +2045,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRolebindingsName {
     // Path templating
@@ -1856,6 +2053,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRolebindings {
     // Path templating
@@ -1864,6 +2062,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespacesName {
     // Path templating
@@ -1873,12 +2072,14 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRolebindings
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespaces {
     // Path templating
     (name: string): ApisRbac_authorization_k8s_ioV1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchClusterrolesName {
     // Path templating
@@ -1886,6 +2087,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchClusterroles {
     // Path templating
@@ -1894,6 +2096,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchClusterrolebindingsName {
     // Path templating
@@ -1901,6 +2104,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchClusterrolebindings {
     // Path templating
@@ -1909,6 +2113,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchRolebindings {
     // Path templating
@@ -1916,6 +2121,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1WatchRoles {
     // Path templating
@@ -1923,6 +2129,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1Watch {
     // Path templating
@@ -1939,6 +2146,7 @@ declare namespace KubernetesClient {
     'roles': ApisRbac_authorization_k8s_ioV1WatchRoles
     'role': ApisRbac_authorization_k8s_ioV1WatchRoles
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1NamespacesNameRolesName {
     // Path templating
@@ -1949,6 +2157,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1NamespacesNameRoles {
     // Path templating
@@ -1959,6 +2168,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1NamespacesNameRolebindingsName {
     // Path templating
@@ -1969,6 +2179,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1NamespacesNameRolebindings {
     // Path templating
@@ -1979,6 +2190,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1NamespacesName {
     // Path templating
@@ -1988,12 +2200,14 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1NamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1NamespacesNameRolebindings
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1Namespaces {
     // Path templating
     (name: string): ApisRbac_authorization_k8s_ioV1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1ClusterrolebindingsName {
     // Path templating
@@ -2004,6 +2218,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1Clusterrolebindings {
     // Path templating
@@ -2014,6 +2229,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1ClusterrolesName {
     // Path templating
@@ -2024,6 +2240,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1Clusterroles {
     // Path templating
@@ -2034,6 +2251,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1Rolebindings {
     // Path templating
@@ -2041,6 +2259,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1Roles {
     // Path templating
@@ -2048,6 +2267,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_ioV1 {
     // Path templating
@@ -2067,6 +2287,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisRbac_authorization_k8s_io {
     // Path templating
@@ -2077,6 +2298,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodsNameProxyName {
     // Path templating
@@ -2088,6 +2310,7 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodsNameProxy {
     // Path templating
@@ -2100,6 +2323,7 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodsNamePortforward {
     // Path templating
@@ -2108,6 +2332,7 @@ declare namespace KubernetesClient {
     get(options ?: any): any
     getStream(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodsNameStatus {
     // Path templating
@@ -2117,6 +2342,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodsNameAttach {
     // Path templating
@@ -2125,18 +2351,21 @@ declare namespace KubernetesClient {
     get(options ?: any): any
     getStream(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodsNameBinding {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodsNameEviction {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodsNameExec {
     // Path templating
@@ -2145,6 +2374,7 @@ declare namespace KubernetesClient {
     get(options ?: any): any
     getStream(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodsNameLog {
     // Path templating
@@ -2152,6 +2382,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodsName {
     // Path templating
@@ -2171,6 +2402,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePods {
     // Path templating
@@ -2181,6 +2413,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameServicesNameProxyName {
     // Path templating
@@ -2192,6 +2425,7 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameServicesNameProxy {
     // Path templating
@@ -2204,6 +2438,7 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameServicesNameStatus {
     // Path templating
@@ -2213,6 +2448,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameServicesName {
     // Path templating
@@ -2226,6 +2462,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameServices {
     // Path templating
@@ -2235,6 +2472,7 @@ declare namespace KubernetesClient {
     get(options ?: any): any
     getStream(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameReplicationcontrollersNameScale {
     // Path templating
@@ -2244,6 +2482,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameReplicationcontrollersNameStatus {
     // Path templating
@@ -2253,6 +2492,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameReplicationcontrollersName {
     // Path templating
@@ -2266,6 +2506,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameReplicationcontrollers {
     // Path templating
@@ -2276,6 +2517,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameResourcequotasNameStatus {
     // Path templating
@@ -2285,6 +2527,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameResourcequotasName {
     // Path templating
@@ -2297,6 +2540,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameResourcequotas {
     // Path templating
@@ -2307,6 +2551,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePersistentvolumeclaimsNameStatus {
     // Path templating
@@ -2316,6 +2561,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePersistentvolumeclaimsName {
     // Path templating
@@ -2328,6 +2574,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePersistentvolumeclaims {
     // Path templating
@@ -2338,6 +2585,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameConfigmapsName {
     // Path templating
@@ -2348,6 +2596,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameConfigmaps {
     // Path templating
@@ -2358,6 +2607,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameEndpointsName {
     // Path templating
@@ -2368,6 +2618,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameEndpoints {
     // Path templating
@@ -2378,6 +2629,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameEventsName {
     // Path templating
@@ -2388,6 +2640,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameEvents {
     // Path templating
@@ -2398,6 +2651,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameLimitrangesName {
     // Path templating
@@ -2408,6 +2662,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameLimitranges {
     // Path templating
@@ -2418,6 +2673,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodtemplatesName {
     // Path templating
@@ -2428,6 +2684,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNamePodtemplates {
     // Path templating
@@ -2438,6 +2695,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameSecretsName {
     // Path templating
@@ -2448,6 +2706,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameSecrets {
     // Path templating
@@ -2458,6 +2717,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameServiceaccountsName {
     // Path templating
@@ -2468,6 +2728,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameServiceaccounts {
     // Path templating
@@ -2478,6 +2739,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameStatus {
     // Path templating
@@ -2487,18 +2749,21 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameBindings {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesNameFinalize {
     // Path templating
     // Sub-paths
     // Calls
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NamespacesName {
     // Path templating
@@ -2547,6 +2812,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Namespaces {
     // Path templating
@@ -2556,6 +2822,7 @@ declare namespace KubernetesClient {
     get(options ?: any): any
     getStream(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameConfigmapsName {
     // Path templating
@@ -2563,6 +2830,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameConfigmaps {
     // Path templating
@@ -2571,6 +2839,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameEndpointsName {
     // Path templating
@@ -2578,6 +2847,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameEndpoints {
     // Path templating
@@ -2586,6 +2856,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameEventsName {
     // Path templating
@@ -2593,6 +2864,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameEvents {
     // Path templating
@@ -2601,6 +2873,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameLimitrangesName {
     // Path templating
@@ -2608,6 +2881,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameLimitranges {
     // Path templating
@@ -2616,6 +2890,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNamePersistentvolumeclaimsName {
     // Path templating
@@ -2623,6 +2898,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNamePersistentvolumeclaims {
     // Path templating
@@ -2631,6 +2907,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNamePodsName {
     // Path templating
@@ -2638,6 +2915,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNamePods {
     // Path templating
@@ -2646,6 +2924,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNamePodtemplatesName {
     // Path templating
@@ -2653,6 +2932,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNamePodtemplates {
     // Path templating
@@ -2661,6 +2941,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameReplicationcontrollersName {
     // Path templating
@@ -2668,6 +2949,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameReplicationcontrollers {
     // Path templating
@@ -2676,6 +2958,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameResourcequotasName {
     // Path templating
@@ -2683,6 +2966,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameResourcequotas {
     // Path templating
@@ -2691,6 +2975,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameSecretsName {
     // Path templating
@@ -2698,6 +2983,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameSecrets {
     // Path templating
@@ -2706,6 +2992,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameServiceaccountsName {
     // Path templating
@@ -2713,6 +3000,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameServiceaccounts {
     // Path templating
@@ -2721,6 +3009,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameServicesName {
     // Path templating
@@ -2728,6 +3017,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesNameServices {
     // Path templating
@@ -2736,6 +3026,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespacesName {
     // Path templating
@@ -2776,6 +3067,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNamespaces {
     // Path templating
@@ -2784,6 +3076,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchPersistentvolumesName {
     // Path templating
@@ -2791,6 +3084,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchPersistentvolumes {
     // Path templating
@@ -2799,6 +3093,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNodesName {
     // Path templating
@@ -2806,6 +3101,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchNodes {
     // Path templating
@@ -2814,6 +3110,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchPersistentvolumeclaims {
     // Path templating
@@ -2821,6 +3118,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchLimitranges {
     // Path templating
@@ -2828,6 +3126,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchEvents {
     // Path templating
@@ -2835,6 +3134,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchEndpoints {
     // Path templating
@@ -2842,6 +3142,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchConfigmaps {
     // Path templating
@@ -2849,6 +3150,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchReplicationcontrollers {
     // Path templating
@@ -2856,6 +3158,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchResourcequotas {
     // Path templating
@@ -2863,6 +3166,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchSecrets {
     // Path templating
@@ -2870,6 +3174,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchServiceaccounts {
     // Path templating
@@ -2877,6 +3182,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchServices {
     // Path templating
@@ -2884,6 +3190,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchPodtemplates {
     // Path templating
@@ -2891,6 +3198,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1WatchPods {
     // Path templating
@@ -2898,6 +3206,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Watch {
     // Path templating
@@ -2945,6 +3254,7 @@ declare namespace KubernetesClient {
     'po': ApiV1WatchPods
     'pod': ApiV1WatchPods
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NodesNameProxyName {
     // Path templating
@@ -2956,6 +3266,7 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NodesNameProxy {
     // Path templating
@@ -2968,6 +3279,7 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NodesNameStatus {
     // Path templating
@@ -2977,6 +3289,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1NodesName {
     // Path templating
@@ -2990,6 +3303,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Nodes {
     // Path templating
@@ -3000,6 +3314,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1PersistentvolumesNameStatus {
     // Path templating
@@ -3009,6 +3324,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1PersistentvolumesName {
     // Path templating
@@ -3021,6 +3337,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Persistentvolumes {
     // Path templating
@@ -3031,6 +3348,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1ComponentstatusesName {
     // Path templating
@@ -3038,6 +3356,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Componentstatuses {
     // Path templating
@@ -3046,6 +3365,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Secrets {
     // Path templating
@@ -3053,6 +3373,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Limitranges {
     // Path templating
@@ -3060,6 +3381,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Persistentvolumeclaims {
     // Path templating
@@ -3067,6 +3389,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Pods {
     // Path templating
@@ -3074,6 +3397,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Podtemplates {
     // Path templating
@@ -3081,6 +3405,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Replicationcontrollers {
     // Path templating
@@ -3088,6 +3413,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Resourcequotas {
     // Path templating
@@ -3095,6 +3421,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Events {
     // Path templating
@@ -3102,6 +3429,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Endpoints {
     // Path templating
@@ -3109,6 +3437,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Configmaps {
     // Path templating
@@ -3116,6 +3445,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Serviceaccounts {
     // Path templating
@@ -3123,6 +3453,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1Services {
     // Path templating
@@ -3130,6 +3461,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApiV1 {
     // Path templating
@@ -3183,6 +3515,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1WatchNamespacesNamePoddisruptionbudgetsName {
     // Path templating
@@ -3190,6 +3523,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1WatchNamespacesNamePoddisruptionbudgets {
     // Path templating
@@ -3198,6 +3532,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1WatchNamespacesName {
     // Path templating
@@ -3205,12 +3540,14 @@ declare namespace KubernetesClient {
     'poddisruptionbudgets': ApisPolicyV1beta1WatchNamespacesNamePoddisruptionbudgets
     'poddisruptionbudget': ApisPolicyV1beta1WatchNamespacesNamePoddisruptionbudgets
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1WatchNamespaces {
     // Path templating
     (name: string): ApisPolicyV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1WatchPodsecuritypoliciesName {
     // Path templating
@@ -3218,6 +3555,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1WatchPodsecuritypolicies {
     // Path templating
@@ -3226,6 +3564,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1WatchPoddisruptionbudgets {
     // Path templating
@@ -3233,6 +3572,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1Watch {
     // Path templating
@@ -3245,6 +3585,7 @@ declare namespace KubernetesClient {
     'poddisruptionbudgets': ApisPolicyV1beta1WatchPoddisruptionbudgets
     'poddisruptionbudget': ApisPolicyV1beta1WatchPoddisruptionbudgets
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1NamespacesNamePoddisruptionbudgetsNameStatus {
     // Path templating
@@ -3254,6 +3595,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1NamespacesNamePoddisruptionbudgetsName {
     // Path templating
@@ -3266,6 +3608,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1NamespacesNamePoddisruptionbudgets {
     // Path templating
@@ -3276,6 +3619,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1NamespacesName {
     // Path templating
@@ -3283,12 +3627,14 @@ declare namespace KubernetesClient {
     'poddisruptionbudgets': ApisPolicyV1beta1NamespacesNamePoddisruptionbudgets
     'poddisruptionbudget': ApisPolicyV1beta1NamespacesNamePoddisruptionbudgets
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1Namespaces {
     // Path templating
     (name: string): ApisPolicyV1beta1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1PodsecuritypoliciesName {
     // Path templating
@@ -3299,6 +3645,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1Podsecuritypolicies {
     // Path templating
@@ -3309,6 +3656,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1Poddisruptionbudgets {
     // Path templating
@@ -3316,6 +3664,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicyV1beta1 {
     // Path templating
@@ -3331,6 +3680,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisPolicy {
     // Path templating
@@ -3339,6 +3689,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1WatchNamespacesNameNetworkpoliciesName {
     // Path templating
@@ -3346,6 +3697,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1WatchNamespacesNameNetworkpolicies {
     // Path templating
@@ -3354,6 +3706,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1WatchNamespacesName {
     // Path templating
@@ -3361,12 +3714,14 @@ declare namespace KubernetesClient {
     'networkpolicies': ApisNetworking_k8s_ioV1WatchNamespacesNameNetworkpolicies
     'networkpolicie': ApisNetworking_k8s_ioV1WatchNamespacesNameNetworkpolicies
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1WatchNamespaces {
     // Path templating
     (name: string): ApisNetworking_k8s_ioV1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1WatchNetworkpolicies {
     // Path templating
@@ -3374,6 +3729,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1Watch {
     // Path templating
@@ -3384,6 +3740,7 @@ declare namespace KubernetesClient {
     'networkpolicies': ApisNetworking_k8s_ioV1WatchNetworkpolicies
     'networkpolicie': ApisNetworking_k8s_ioV1WatchNetworkpolicies
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1NamespacesNameNetworkpoliciesName {
     // Path templating
@@ -3394,6 +3751,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1NamespacesNameNetworkpolicies {
     // Path templating
@@ -3404,6 +3762,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1NamespacesName {
     // Path templating
@@ -3411,12 +3770,14 @@ declare namespace KubernetesClient {
     'networkpolicies': ApisNetworking_k8s_ioV1NamespacesNameNetworkpolicies
     'networkpolicie': ApisNetworking_k8s_ioV1NamespacesNameNetworkpolicies
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1Namespaces {
     // Path templating
     (name: string): ApisNetworking_k8s_ioV1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1Networkpolicies {
     // Path templating
@@ -3424,6 +3785,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_ioV1 {
     // Path templating
@@ -3437,6 +3799,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisNetworking_k8s_io {
     // Path templating
@@ -3445,6 +3808,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameReplicasetsName {
     // Path templating
@@ -3452,6 +3816,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameReplicasets {
     // Path templating
@@ -3460,6 +3825,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameNetworkpoliciesName {
     // Path templating
@@ -3467,6 +3833,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameNetworkpolicies {
     // Path templating
@@ -3475,6 +3842,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameIngressesName {
     // Path templating
@@ -3482,6 +3850,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameIngresses {
     // Path templating
@@ -3490,6 +3859,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameDeploymentsName {
     // Path templating
@@ -3497,6 +3867,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameDeployments {
     // Path templating
@@ -3505,6 +3876,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameDaemonsetsName {
     // Path templating
@@ -3512,6 +3884,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameDaemonsets {
     // Path templating
@@ -3520,6 +3893,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespacesName {
     // Path templating
@@ -3539,12 +3913,14 @@ declare namespace KubernetesClient {
     'ds': ApisExtensionsV1beta1WatchNamespacesNameDaemonsets
     'daemonset': ApisExtensionsV1beta1WatchNamespacesNameDaemonsets
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNamespaces {
     // Path templating
     (name: string): ApisExtensionsV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchPodsecuritypoliciesName {
     // Path templating
@@ -3552,6 +3928,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchPodsecuritypolicies {
     // Path templating
@@ -3560,6 +3937,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchDaemonsets {
     // Path templating
@@ -3567,6 +3945,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchDeployments {
     // Path templating
@@ -3574,6 +3953,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchIngresses {
     // Path templating
@@ -3581,6 +3961,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchNetworkpolicies {
     // Path templating
@@ -3588,6 +3969,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1WatchReplicasets {
     // Path templating
@@ -3595,6 +3977,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1Watch {
     // Path templating
@@ -3619,6 +4002,7 @@ declare namespace KubernetesClient {
     'rs': ApisExtensionsV1beta1WatchReplicasets
     'replicaset': ApisExtensionsV1beta1WatchReplicasets
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicationcontrollersNameScale {
     // Path templating
@@ -3628,18 +4012,21 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicationcontrollersName {
     // Path templating
     // Sub-paths
     'scale': ApisExtensionsV1beta1NamespacesNameReplicationcontrollersNameScale
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicationcontrollers {
     // Path templating
     (name: string): ApisExtensionsV1beta1NamespacesNameReplicationcontrollersName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicasetsNameStatus {
     // Path templating
@@ -3649,6 +4036,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicasetsNameScale {
     // Path templating
@@ -3658,6 +4046,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicasetsName {
     // Path templating
@@ -3671,6 +4060,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicasets {
     // Path templating
@@ -3681,6 +4071,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameIngressesNameStatus {
     // Path templating
@@ -3690,6 +4081,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameIngressesName {
     // Path templating
@@ -3702,6 +4094,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameIngresses {
     // Path templating
@@ -3712,6 +4105,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameDeploymentsNameStatus {
     // Path templating
@@ -3721,6 +4115,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameDeploymentsNameScale {
     // Path templating
@@ -3730,12 +4125,14 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameDeploymentsNameRollback {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameDeploymentsName {
     // Path templating
@@ -3750,6 +4147,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameDeployments {
     // Path templating
@@ -3760,6 +4158,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameDaemonsetsNameStatus {
     // Path templating
@@ -3769,6 +4168,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameDaemonsetsName {
     // Path templating
@@ -3781,6 +4181,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameDaemonsets {
     // Path templating
@@ -3791,6 +4192,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameNetworkpoliciesName {
     // Path templating
@@ -3801,6 +4203,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesNameNetworkpolicies {
     // Path templating
@@ -3811,6 +4214,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1NamespacesName {
     // Path templating
@@ -3833,12 +4237,14 @@ declare namespace KubernetesClient {
     'networkpolicies': ApisExtensionsV1beta1NamespacesNameNetworkpolicies
     'networkpolicie': ApisExtensionsV1beta1NamespacesNameNetworkpolicies
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1Namespaces {
     // Path templating
     (name: string): ApisExtensionsV1beta1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1PodsecuritypoliciesName {
     // Path templating
@@ -3849,6 +4255,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1Podsecuritypolicies {
     // Path templating
@@ -3859,6 +4266,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1Ingresses {
     // Path templating
@@ -3866,6 +4274,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1Daemonsets {
     // Path templating
@@ -3873,6 +4282,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1Deployments {
     // Path templating
@@ -3880,6 +4290,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1Networkpolicies {
     // Path templating
@@ -3887,6 +4298,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1Replicasets {
     // Path templating
@@ -3894,6 +4306,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensionsV1beta1 {
     // Path templating
@@ -3921,6 +4334,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisExtensions {
     // Path templating
@@ -3929,6 +4343,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1WatchNamespacesNameEventsName {
     // Path templating
@@ -3936,6 +4351,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1WatchNamespacesNameEvents {
     // Path templating
@@ -3944,6 +4360,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1WatchNamespacesName {
     // Path templating
@@ -3952,12 +4369,14 @@ declare namespace KubernetesClient {
     'ev': ApisEvents_k8s_ioV1beta1WatchNamespacesNameEvents
     'event': ApisEvents_k8s_ioV1beta1WatchNamespacesNameEvents
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1WatchNamespaces {
     // Path templating
     (name: string): ApisEvents_k8s_ioV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1WatchEvents {
     // Path templating
@@ -3965,6 +4384,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1Watch {
     // Path templating
@@ -3976,6 +4396,7 @@ declare namespace KubernetesClient {
     'ev': ApisEvents_k8s_ioV1beta1WatchEvents
     'event': ApisEvents_k8s_ioV1beta1WatchEvents
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1NamespacesNameEventsName {
     // Path templating
@@ -3986,6 +4407,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1NamespacesNameEvents {
     // Path templating
@@ -3996,6 +4418,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1NamespacesName {
     // Path templating
@@ -4004,12 +4427,14 @@ declare namespace KubernetesClient {
     'ev': ApisEvents_k8s_ioV1beta1NamespacesNameEvents
     'event': ApisEvents_k8s_ioV1beta1NamespacesNameEvents
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1Namespaces {
     // Path templating
     (name: string): ApisEvents_k8s_ioV1beta1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1Events {
     // Path templating
@@ -4017,6 +4442,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_ioV1beta1 {
     // Path templating
@@ -4031,6 +4457,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisEvents_k8s_io {
     // Path templating
@@ -4039,6 +4466,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1WatchNamespacesNameCronjobsName {
     // Path templating
@@ -4046,6 +4474,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1WatchNamespacesNameCronjobs {
     // Path templating
@@ -4054,6 +4483,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1WatchNamespacesName {
     // Path templating
@@ -4061,12 +4491,14 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV2alpha1WatchNamespacesNameCronjobs
     'cronjob': ApisBatchV2alpha1WatchNamespacesNameCronjobs
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1WatchNamespaces {
     // Path templating
     (name: string): ApisBatchV2alpha1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1WatchCronjobs {
     // Path templating
@@ -4074,6 +4506,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1Watch {
     // Path templating
@@ -4084,6 +4517,7 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV2alpha1WatchCronjobs
     'cronjob': ApisBatchV2alpha1WatchCronjobs
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1NamespacesNameCronjobsNameStatus {
     // Path templating
@@ -4093,6 +4527,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1NamespacesNameCronjobsName {
     // Path templating
@@ -4105,6 +4540,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1NamespacesNameCronjobs {
     // Path templating
@@ -4115,6 +4551,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1NamespacesName {
     // Path templating
@@ -4122,12 +4559,14 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV2alpha1NamespacesNameCronjobs
     'cronjob': ApisBatchV2alpha1NamespacesNameCronjobs
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1Namespaces {
     // Path templating
     (name: string): ApisBatchV2alpha1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1Cronjobs {
     // Path templating
@@ -4135,6 +4574,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV2alpha1 {
     // Path templating
@@ -4148,6 +4588,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1WatchNamespacesNameCronjobsName {
     // Path templating
@@ -4155,6 +4596,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1WatchNamespacesNameCronjobs {
     // Path templating
@@ -4163,6 +4605,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1WatchNamespacesName {
     // Path templating
@@ -4170,12 +4613,14 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV1beta1WatchNamespacesNameCronjobs
     'cronjob': ApisBatchV1beta1WatchNamespacesNameCronjobs
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1WatchNamespaces {
     // Path templating
     (name: string): ApisBatchV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1WatchCronjobs {
     // Path templating
@@ -4183,6 +4628,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1Watch {
     // Path templating
@@ -4193,6 +4639,7 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV1beta1WatchCronjobs
     'cronjob': ApisBatchV1beta1WatchCronjobs
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1NamespacesNameCronjobsNameStatus {
     // Path templating
@@ -4202,6 +4649,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1NamespacesNameCronjobsName {
     // Path templating
@@ -4214,6 +4662,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1NamespacesNameCronjobs {
     // Path templating
@@ -4224,6 +4673,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1NamespacesName {
     // Path templating
@@ -4231,12 +4681,14 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV1beta1NamespacesNameCronjobs
     'cronjob': ApisBatchV1beta1NamespacesNameCronjobs
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1Namespaces {
     // Path templating
     (name: string): ApisBatchV1beta1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1Cronjobs {
     // Path templating
@@ -4244,6 +4696,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1beta1 {
     // Path templating
@@ -4257,6 +4710,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1WatchNamespacesNameJobsName {
     // Path templating
@@ -4264,6 +4718,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1WatchNamespacesNameJobs {
     // Path templating
@@ -4272,6 +4727,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1WatchNamespacesName {
     // Path templating
@@ -4279,12 +4735,14 @@ declare namespace KubernetesClient {
     'jobs': ApisBatchV1WatchNamespacesNameJobs
     'job': ApisBatchV1WatchNamespacesNameJobs
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1WatchNamespaces {
     // Path templating
     (name: string): ApisBatchV1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1WatchJobs {
     // Path templating
@@ -4292,6 +4750,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1Watch {
     // Path templating
@@ -4302,6 +4761,7 @@ declare namespace KubernetesClient {
     'jobs': ApisBatchV1WatchJobs
     'job': ApisBatchV1WatchJobs
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1NamespacesNameJobsNameStatus {
     // Path templating
@@ -4311,6 +4771,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1NamespacesNameJobsName {
     // Path templating
@@ -4323,6 +4784,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1NamespacesNameJobs {
     // Path templating
@@ -4333,6 +4795,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1NamespacesName {
     // Path templating
@@ -4340,12 +4803,14 @@ declare namespace KubernetesClient {
     'jobs': ApisBatchV1NamespacesNameJobs
     'job': ApisBatchV1NamespacesNameJobs
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1Namespaces {
     // Path templating
     (name: string): ApisBatchV1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1Jobs {
     // Path templating
@@ -4353,6 +4818,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatchV1 {
     // Path templating
@@ -4366,6 +4832,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisBatch {
     // Path templating
@@ -4376,6 +4843,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1WatchNamespacesNamePodpresetsName {
     // Path templating
@@ -4383,6 +4851,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1WatchNamespacesNamePodpresets {
     // Path templating
@@ -4391,6 +4860,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1WatchNamespacesName {
     // Path templating
@@ -4398,12 +4868,14 @@ declare namespace KubernetesClient {
     'podpresets': ApisSettings_k8s_ioV1alpha1WatchNamespacesNamePodpresets
     'podpreset': ApisSettings_k8s_ioV1alpha1WatchNamespacesNamePodpresets
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1WatchNamespaces {
     // Path templating
     (name: string): ApisSettings_k8s_ioV1alpha1WatchNamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1WatchPodpresets {
     // Path templating
@@ -4411,6 +4883,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1Watch {
     // Path templating
@@ -4421,6 +4894,7 @@ declare namespace KubernetesClient {
     'podpresets': ApisSettings_k8s_ioV1alpha1WatchPodpresets
     'podpreset': ApisSettings_k8s_ioV1alpha1WatchPodpresets
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1NamespacesNamePodpresetsName {
     // Path templating
@@ -4431,6 +4905,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1NamespacesNamePodpresets {
     // Path templating
@@ -4441,6 +4916,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1NamespacesName {
     // Path templating
@@ -4448,12 +4924,14 @@ declare namespace KubernetesClient {
     'podpresets': ApisSettings_k8s_ioV1alpha1NamespacesNamePodpresets
     'podpreset': ApisSettings_k8s_ioV1alpha1NamespacesNamePodpresets
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1Namespaces {
     // Path templating
     (name: string): ApisSettings_k8s_ioV1alpha1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1Podpresets {
     // Path templating
@@ -4461,6 +4939,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_ioV1alpha1 {
     // Path templating
@@ -4474,6 +4953,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisSettings_k8s_io {
     // Path templating
@@ -4482,6 +4962,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1beta1WatchVolumeattachmentsName {
     // Path templating
@@ -4489,6 +4970,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1beta1WatchVolumeattachments {
     // Path templating
@@ -4497,6 +4979,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1beta1WatchStorageclassesName {
     // Path templating
@@ -4504,6 +4987,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1beta1WatchStorageclasses {
     // Path templating
@@ -4512,6 +4996,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1beta1Watch {
     // Path templating
@@ -4521,6 +5006,7 @@ declare namespace KubernetesClient {
     'storageclasses': ApisStorage_k8s_ioV1beta1WatchStorageclasses
     'storageclasse': ApisStorage_k8s_ioV1beta1WatchStorageclasses
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1beta1VolumeattachmentsName {
     // Path templating
@@ -4531,6 +5017,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1beta1Volumeattachments {
     // Path templating
@@ -4541,6 +5028,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1beta1StorageclassesName {
     // Path templating
@@ -4551,6 +5039,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1beta1Storageclasses {
     // Path templating
@@ -4561,6 +5050,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1beta1 {
     // Path templating
@@ -4573,6 +5063,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1alpha1WatchVolumeattachmentsName {
     // Path templating
@@ -4580,6 +5071,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1alpha1WatchVolumeattachments {
     // Path templating
@@ -4588,6 +5080,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1alpha1Watch {
     // Path templating
@@ -4595,6 +5088,7 @@ declare namespace KubernetesClient {
     'volumeattachments': ApisStorage_k8s_ioV1alpha1WatchVolumeattachments
     'volumeattachment': ApisStorage_k8s_ioV1alpha1WatchVolumeattachments
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1alpha1VolumeattachmentsName {
     // Path templating
@@ -4605,6 +5099,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1alpha1Volumeattachments {
     // Path templating
@@ -4615,6 +5110,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1alpha1 {
     // Path templating
@@ -4625,6 +5121,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1WatchStorageclassesName {
     // Path templating
@@ -4632,6 +5129,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1WatchStorageclasses {
     // Path templating
@@ -4640,6 +5138,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1Watch {
     // Path templating
@@ -4647,6 +5146,7 @@ declare namespace KubernetesClient {
     'storageclasses': ApisStorage_k8s_ioV1WatchStorageclasses
     'storageclasse': ApisStorage_k8s_ioV1WatchStorageclasses
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1StorageclassesName {
     // Path templating
@@ -4657,6 +5157,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1Storageclasses {
     // Path templating
@@ -4667,6 +5168,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_ioV1 {
     // Path templating
@@ -4677,6 +5179,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisStorage_k8s_io {
     // Path templating
@@ -4687,6 +5190,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisScheduling_k8s_ioV1alpha1WatchPriorityclassesName {
     // Path templating
@@ -4694,6 +5198,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisScheduling_k8s_ioV1alpha1WatchPriorityclasses {
     // Path templating
@@ -4702,6 +5207,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisScheduling_k8s_ioV1alpha1Watch {
     // Path templating
@@ -4709,6 +5215,7 @@ declare namespace KubernetesClient {
     'priorityclasses': ApisScheduling_k8s_ioV1alpha1WatchPriorityclasses
     'priorityclasse': ApisScheduling_k8s_ioV1alpha1WatchPriorityclasses
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisScheduling_k8s_ioV1alpha1PriorityclassesName {
     // Path templating
@@ -4719,6 +5226,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisScheduling_k8s_ioV1alpha1Priorityclasses {
     // Path templating
@@ -4729,6 +5237,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisScheduling_k8s_ioV1alpha1 {
     // Path templating
@@ -4739,6 +5248,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisScheduling_k8s_io {
     // Path templating
@@ -4747,6 +5257,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1beta1WatchApiservicesName {
     // Path templating
@@ -4754,6 +5265,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1beta1WatchApiservices {
     // Path templating
@@ -4762,6 +5274,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1beta1Watch {
     // Path templating
@@ -4769,12 +5282,14 @@ declare namespace KubernetesClient {
     'apiservices': ApisApiregistration_k8s_ioV1beta1WatchApiservices
     'apiservice': ApisApiregistration_k8s_ioV1beta1WatchApiservices
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1beta1ApiservicesNameStatus {
     // Path templating
     // Sub-paths
     // Calls
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1beta1ApiservicesName {
     // Path templating
@@ -4787,6 +5302,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1beta1Apiservices {
     // Path templating
@@ -4797,6 +5313,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1beta1 {
     // Path templating
@@ -4807,6 +5324,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1WatchApiservicesName {
     // Path templating
@@ -4814,6 +5332,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1WatchApiservices {
     // Path templating
@@ -4822,6 +5341,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1Watch {
     // Path templating
@@ -4829,12 +5349,14 @@ declare namespace KubernetesClient {
     'apiservices': ApisApiregistration_k8s_ioV1WatchApiservices
     'apiservice': ApisApiregistration_k8s_ioV1WatchApiservices
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1ApiservicesNameStatus {
     // Path templating
     // Sub-paths
     // Calls
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1ApiservicesName {
     // Path templating
@@ -4847,6 +5369,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1Apiservices {
     // Path templating
@@ -4857,6 +5380,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_ioV1 {
     // Path templating
@@ -4867,6 +5391,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiregistration_k8s_io {
     // Path templating
@@ -4876,6 +5401,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiextensions_k8s_ioV1beta1WatchCustomresourcedefinitionsName {
     // Path templating
@@ -4883,6 +5409,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiextensions_k8s_ioV1beta1WatchCustomresourcedefinitions {
     // Path templating
@@ -4891,6 +5418,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiextensions_k8s_ioV1beta1Watch {
     // Path templating
@@ -4899,12 +5427,14 @@ declare namespace KubernetesClient {
     'crd': ApisApiextensions_k8s_ioV1beta1WatchCustomresourcedefinitions
     'customresourcedefinition': ApisApiextensions_k8s_ioV1beta1WatchCustomresourcedefinitions
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisApiextensions_k8s_ioV1beta1CustomresourcedefinitionsNameStatus {
     // Path templating
     // Sub-paths
     // Calls
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiextensions_k8s_ioV1beta1CustomresourcedefinitionsName {
     // Path templating
@@ -4917,6 +5447,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiextensions_k8s_ioV1beta1Customresourcedefinitions {
     // Path templating
@@ -4927,6 +5458,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiextensions_k8s_ioV1beta1 {
     // Path templating
@@ -4938,6 +5470,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisApiextensions_k8s_io {
     // Path templating
@@ -4946,6 +5479,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1WatchValidatingwebhookconfigurationsName {
     // Path templating
@@ -4953,6 +5487,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1WatchValidatingwebhookconfigurations {
     // Path templating
@@ -4961,6 +5496,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1WatchMutatingwebhookconfigurationsName {
     // Path templating
@@ -4968,6 +5504,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1WatchMutatingwebhookconfigurations {
     // Path templating
@@ -4976,6 +5513,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1Watch {
     // Path templating
@@ -4985,6 +5523,7 @@ declare namespace KubernetesClient {
     'mutatingwebhookconfigurations': ApisAdmissionregistration_k8s_ioV1beta1WatchMutatingwebhookconfigurations
     'mutatingwebhookconfiguration': ApisAdmissionregistration_k8s_ioV1beta1WatchMutatingwebhookconfigurations
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1MutatingwebhookconfigurationsName {
     // Path templating
@@ -4995,6 +5534,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1Mutatingwebhookconfigurations {
     // Path templating
@@ -5005,6 +5545,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1ValidatingwebhookconfigurationsName {
     // Path templating
@@ -5015,6 +5556,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1Validatingwebhookconfigurations {
     // Path templating
@@ -5025,6 +5567,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1 {
     // Path templating
@@ -5037,6 +5580,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1WatchInitializerconfigurationsName {
     // Path templating
@@ -5044,6 +5588,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1WatchInitializerconfigurations {
     // Path templating
@@ -5052,6 +5597,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1Watch {
     // Path templating
@@ -5059,6 +5605,7 @@ declare namespace KubernetesClient {
     'initializerconfigurations': ApisAdmissionregistration_k8s_ioV1alpha1WatchInitializerconfigurations
     'initializerconfiguration': ApisAdmissionregistration_k8s_ioV1alpha1WatchInitializerconfigurations
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1InitializerconfigurationsName {
     // Path templating
@@ -5069,6 +5616,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1Initializerconfigurations {
     // Path templating
@@ -5079,6 +5627,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1 {
     // Path templating
@@ -5089,6 +5638,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAdmissionregistration_k8s_io {
     // Path templating
@@ -5098,6 +5648,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisCertificates_k8s_ioV1beta1WatchCertificatesigningrequestsName {
     // Path templating
@@ -5105,6 +5656,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisCertificates_k8s_ioV1beta1WatchCertificatesigningrequests {
     // Path templating
@@ -5113,6 +5665,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisCertificates_k8s_ioV1beta1Watch {
     // Path templating
@@ -5120,18 +5673,21 @@ declare namespace KubernetesClient {
     'certificatesigningrequests': ApisCertificates_k8s_ioV1beta1WatchCertificatesigningrequests
     'certificatesigningrequest': ApisCertificates_k8s_ioV1beta1WatchCertificatesigningrequests
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisCertificates_k8s_ioV1beta1CertificatesigningrequestsNameStatus {
     // Path templating
     // Sub-paths
     // Calls
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisCertificates_k8s_ioV1beta1CertificatesigningrequestsNameApproval {
     // Path templating
     // Sub-paths
     // Calls
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisCertificates_k8s_ioV1beta1CertificatesigningrequestsName {
     // Path templating
@@ -5145,6 +5701,7 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisCertificates_k8s_ioV1beta1Certificatesigningrequests {
     // Path templating
@@ -5155,6 +5712,7 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisCertificates_k8s_ioV1beta1 {
     // Path templating
@@ -5165,6 +5723,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisCertificates_k8s_io {
     // Path templating
@@ -5173,12 +5732,14 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1beta1NamespacesNameLocalsubjectaccessreviews {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1beta1NamespacesName {
     // Path templating
@@ -5186,30 +5747,35 @@ declare namespace KubernetesClient {
     'localsubjectaccessreviews': ApisAuthorization_k8s_ioV1beta1NamespacesNameLocalsubjectaccessreviews
     'localsubjectaccessreview': ApisAuthorization_k8s_ioV1beta1NamespacesNameLocalsubjectaccessreviews
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1beta1Namespaces {
     // Path templating
     (name: string): ApisAuthorization_k8s_ioV1beta1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1beta1Selfsubjectaccessreviews {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1beta1Selfsubjectrulesreviews {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1beta1Subjectaccessreviews {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1beta1 {
     // Path templating
@@ -5226,12 +5792,14 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1NamespacesNameLocalsubjectaccessreviews {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1NamespacesName {
     // Path templating
@@ -5239,30 +5807,35 @@ declare namespace KubernetesClient {
     'localsubjectaccessreviews': ApisAuthorization_k8s_ioV1NamespacesNameLocalsubjectaccessreviews
     'localsubjectaccessreview': ApisAuthorization_k8s_ioV1NamespacesNameLocalsubjectaccessreviews
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1Namespaces {
     // Path templating
     (name: string): ApisAuthorization_k8s_ioV1NamespacesName
     // Sub-paths
     // Calls
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1Subjectaccessreviews {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1Selfsubjectaccessreviews {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1Selfsubjectrulesreviews {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_ioV1 {
     // Path templating
@@ -5279,6 +5852,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthorization_k8s_io {
     // Path templating
@@ -5288,12 +5862,14 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthentication_k8s_ioV1beta1Tokenreviews {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthentication_k8s_ioV1beta1 {
     // Path templating
@@ -5303,12 +5879,14 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthentication_k8s_ioV1Tokenreviews {
     // Path templating
     // Sub-paths
     // Calls
     post(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthentication_k8s_ioV1 {
     // Path templating
@@ -5318,6 +5896,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface ApisAuthentication_k8s_io {
     // Path templating
@@ -5327,6 +5906,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface Apis {
     // Path templating
@@ -5354,6 +5934,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface LogsName {
     // Path templating
@@ -5361,6 +5942,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface Logs {
     // Path templating
@@ -5369,6 +5951,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface Version {
     // Path templating
@@ -5376,6 +5959,7 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
+    loadSpec(): Promise<Api>
   }
   interface Api {
     // Path templating
@@ -5386,6 +5970,7 @@ declare namespace KubernetesClient {
     'log': Logs
     'version': Version
     // Calls
+    loadSpec(): Promise<Api>
   }
 
   interface ApiClient {
