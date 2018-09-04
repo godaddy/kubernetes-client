@@ -111,6 +111,12 @@ async function main2() {
   }
 }
 
+async function main3() {
+  const client = new Client({ config: config.fromKubeconfig() });
+  await client.loadSpec();
+}
+
 main0();
 main1();
 main2();
+main3();
