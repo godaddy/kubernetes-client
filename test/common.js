@@ -1,21 +1,10 @@
 /* eslint no-process-env:0, no-sync:0, max-statements:0 */
 'use strict';
 
-const async = require('async');
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
-
-const Api = require('../lib/api');
-const ApiExtensions = require('../lib/api-extensions');
-const Apps = require('../lib/apps');
-const Batch = require('../lib/batch');
-const Core = require('../lib/core');
-const Extensions = require('../lib/extensions');
-const Rbac = require('../lib/rbac');
-const ThirdPartyResources = require('../lib/third-party-resources');
-const CustomResourceDefinitions = require('../lib/custom-resource-definitions');
 
 const defaultName = process.env.NAMESPACE || 'integration-tests';
 const defaultTimeout = process.env.TIMEOUT || 30000;
@@ -68,26 +57,9 @@ function newName() {
 }
 
 function injectApis(options) {
-  const apis = {
-    api: { Constructor: Core },
-    apiExtensions: { Constructor: ApiExtensions },
-    apiGroup: { Constructor: Api },
-    apps: { Constructor: Apps },
-    batch: { Constructor: Batch },
-    core: { Constructor: Core },
-    extensions: { Constructor: Extensions },
-    rbac: { Constructor: Rbac },
-    thirdPartyResources: {
-      Constructor: ThirdPartyResources, options: { group: 'kubernetes-client.com' }
-    },
-    customResourceDefinitions: {
-      Constructor: CustomResourceDefinitions, options: { group: 'kubernetes-client.com' }
-    }
+  module.exports.api = {
+    url: options.url
   };
-  Object.keys(apis).forEach(apiName => {
-    const api = apis[apiName];
-    module.exports[apiName] = new (api.Constructor)(Object.assign({}, options, api.options));
-  });
 }
 
 function changeNameInt(cb) {
@@ -143,17 +115,8 @@ function changeNameInt(cb) {
     }
   }, err => {
     if (err) return cb(err);
-    const times = Math.ceil(defaultTimeout / 1000);
-    const interval = 1000;
-    async.retry({ times: times, interval: interval }, next => {
-      module.exports.api.ns(currentName).serviceaccounts.get('default', (saErr, sa) => {
-        if (saErr) return next(saErr);
-        if (!sa.secrets) {
-          return next(new Error('Waiting for servicesaccount secrets'));
-        }
-        cb();
-      });
-    });
+    // TODO(sbw): We need to delay until we're sure namespace is ready for action.
+    cb();
   });
 }
 

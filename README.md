@@ -8,8 +8,6 @@
 
 Simplified [Kubernetes API](http://kubernetes.io/) client for Node.js.
 
-*For the v4.X documentation, go [HERE](README-PRE-5.md).*
-
 ## Installation
 
 Install via npm:
@@ -120,6 +118,19 @@ specifications:
 * [Kubernetes API v1.8](docs/1.8.md)
 * [Kubernetes API v1.9](docs/1.9.md)
 * [Kubernetes API v1.10](docs/1.10.md)
+
+## TypeScript
+
+kubernetes-client includes a typings declartion file for Kubernetes
+API 1.10 and a complimentry `Client1_10` class:
+
+```typescript
+import * as Api from 'kubernetes-client';
+
+const Client = Api.Client1_10;
+const config = Api.config;
+const client = new Client({ config: config.fromKubeconfig() });
+```
 
 ## More examples
 

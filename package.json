@@ -1,6 +1,6 @@
 {
   "name": "kubernetes-client",
-  "version": "5.4.0",
+  "version": "6.0.1",
   "description": "Simplified Kubernetes API client.",
   "main": "lib/index.js",
   "types": "./typings/index.d.ts",
@@ -8,6 +8,7 @@
     "check-coverage": "istanbul check-coverage",
     "coverage": "istanbul cover ./node_modules/.bin/_mocha && istanbul report cobertura",
     "docs": "node scripts/docs.js --builtins",
+    "typings": "node scripts/typings.js --spec lib/specs/swagger-1.10.json.gz --output typings/index.d.ts",
     "jsdoc": "jsdoc -d doc lib",
     "lint": "eslint-godaddy examples/ lib/ scripts/ test/",
     "release": "standard-version --tag-prefix=''",
@@ -31,16 +32,14 @@
     "typings"
   ],
   "dependencies": {
-    "async": "^2.6.0",
+    "fluent-openapi": "0.1.1",
     "js-yaml": "^3.10.0",
-    "lodash.merge": "^4.6.0",
     "openid-client": "^2.0.0",
-    "promy": "^1.0.1",
     "request": "^2.83.0"
   },
   "devDependencies": {
     "@types/node": "^10.3.5",
-    "assume": "^2.0.1",
+    "chai": "^4.1.2",
     "eslint": "^5.0.0",
     "eslint-config-godaddy": "^2.1.0",
     "eslint-plugin-json": "^1.2.0",

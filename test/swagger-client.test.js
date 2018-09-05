@@ -1,11 +1,11 @@
 /* eslint-disable max-nested-callbacks */
 'use strict';
 
-const assume = require('assume');
+const expect = require('chai').expect;
 const nock = require('nock');
 
 const common = require('./common');
-const Client = require('../lib/swagger-client');
+const Client = require('../lib/swagger-client').Client;
 
 const beforeTesting = common.beforeTesting;
 
@@ -32,72 +32,10 @@ describe('lib.swagger-client', () => {
         const client = new Client({ config });
         client.loadSpec()
           .then(() => {
-            assume(client.api.get).is.a('function');
+            expect(client.api.get).is.a('function');
             done();
           })
           .catch(err => done(err));
-      });
-    });
-
-    describe('.get', () => {
-      it('returns the result for 2XX', done => {
-        nock(common.api.url)
-          .get('/magic')
-          .reply(200, {
-            message: 'ta dah'
-          });
-
-        const options = {
-          config: { url: common.api.url },
-          spec: {
-            paths: {
-              '/magic': {
-                get: {
-                  operationId: 'getMagic'
-                }
-              }
-            }
-          }
-        };
-        const client = new Client(options);
-        client.magic.get()
-          .then(res => {
-            assume(res.statusCode).is.equal(200);
-            assume(res.body.message).is.equal('ta dah');
-            done();
-          })
-          .catch(done);
-      });
-
-      it('throws an error on non-2XX', done => {
-        nock(common.api.url)
-          .get('/magic')
-          .reply(404, {
-            message: 'fail!'
-          });
-
-        const options = {
-          config: { url: common.api.url },
-          spec: {
-            paths: {
-              '/magic': {
-                get: {
-                  operationId: 'getMagic'
-                }
-              }
-            }
-          }
-        };
-        const client = new Client(options);
-        client.magic.get()
-          .then(() => {
-            assume('Should not reach').is.falsy();
-          })
-          .catch(err => {
-            assume(err.statusCode).is.equal(404);
-            assume(err.message).is.equal('fail!');
-            done();
-          });
       });
     });
 
@@ -105,73 +43,7 @@ describe('lib.swagger-client', () => {
       it('creates a dynamically generated client synchronously based on version', () => {
         const options = { config: {}, version: '1.9' };
         const client = new Client(options);
-        assume(client.api.get).is.a('function');
-      });
-
-      it('creates a dynamically generated client synchronously from swagger spec', () => {
-        const options = {
-          config: {},
-          spec: {
-            paths: {
-              '/api/': {
-                get: {
-                  operationId: 'getCoreAPIVersions'
-                }
-              }
-            }
-          }
-        };
-        const client = new Client(options);
-        assume(client.api.get).is.a('function');
-      });
-
-      it('expands Paths Object', () => {
-        const spec = {
-          paths: {
-            '/foo/bar/': { },
-            'baz/zab': { }
-          }
-        };
-        const client = new Client({ spec, http: {}});
-        assume(client.foo).is.truthy();
-        assume(client.foo.bar).is.truthy();
-        assume(client.baz).is.truthy();
-        assume(client.baz.zab).is.truthy();
-      });
-
-      it('adds operations defined by a Path Item Object', () => {
-        const spec = {
-          paths: {
-            '/foo/bar/': {
-              get: {
-                operationId: 'fooBarGet'
-              }
-            }
-          }
-        };
-        const client = new Client({ spec, http: {}});
-        assume(client.foo.bar.get).is.a('function');
-      });
-
-      it('represents Path Templating with functions', () => {
-        const spec = {
-          paths: {
-            '/foo/{name}/bar': { },
-            '/foo': {
-              get: {
-                operationId: 'fooGet'
-              }
-            }
-          }
-        };
-        const client = new Client({ spec, http: {}});
-        assume(client.foo).is.truthy();
-        assume(client.foo.get).is.a('function');
-        assume(client.foo.getStream).is.a('function');
-
-        assume(client.foo.bar).is.falsy();
-        assume(client.foo).is.a('function');
-        assume(client.foo('zoo').bar).is.truthy();
+        expect(client.api.get).is.a('function');
       });
 
       it('aliases resources', () => {
@@ -185,9 +57,9 @@ describe('lib.swagger-client', () => {
           }
         };
         const client = new Client({ spec, http: {}});
-        assume(client.foo.deployments).is.truthy();
-        assume(client.foo.deployment).is.truthy();
-        assume(client.foo.deploy).is.truthy();
+        expect(client.foo.deployments).is.an('object');
+        expect(client.foo.deployment).is.an('object');
+        expect(client.foo.deploy).is.an('object');
       });
 
       it('adds functions for Namespaced CustomResourceDefinitions', () => {
@@ -203,16 +75,16 @@ describe('lib.swagger-client', () => {
           }
         };
         client.addCustomResourceDefinition(crd);
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos.get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos.post).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').delete).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').patch).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').put).is.a('function');
-        assume(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').watch.foos.getStream).is.a('function');
-        assume(client.apis['stable.example.com'].v1.namespaces('default').watch.foos('blah').getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos.get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos.post).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').delete).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').patch).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').put).is.a('function');
+        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').watch.foos.getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.namespaces('default').watch.foos('blah').getStream).is.a('function');
       });
 
       it('adds functions for Cluster CustomResourceDefinitions', () => {
@@ -228,16 +100,16 @@ describe('lib.swagger-client', () => {
           }
         };
         client.addCustomResourceDefinition(crd);
-        assume(client.apis['stable.example.com'].v1.foos.get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos.post).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos('blah').delete).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos('blah').patch).is.a('function');
-        assume(client.apis['stable.example.com'].v1.foos('blah').put).is.a('function');
-        assume(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
-        assume(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
-        assume(client.apis['stable.example.com'].v1.watch.foos('blah').getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos.get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos.post).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos('blah').delete).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos('blah').patch).is.a('function');
+        expect(client.apis['stable.example.com'].v1.foos('blah').put).is.a('function');
+        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
+        expect(client.apis['stable.example.com'].v1.watch.foos('blah').getStream).is.a('function');
       });
     });
   });
