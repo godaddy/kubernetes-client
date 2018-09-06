@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/godaddy/kubernetes-client/compare/6.0.1...6.1.0) (2018-09-06)
+
+
+### Bug Fixes
+
+* **auth:** unhandled promise rejection caused by failed auth refresh ([#325](https://github.com/godaddy/kubernetes-client/issues/325)) ([2e3ae71](https://github.com/godaddy/kubernetes-client/commit/2e3ae71))
+
+
+### Features
+
+* **kube-config:** add support for KUBECONFIG env var ([#322](https://github.com/godaddy/kubernetes-client/issues/322)) ([c6810de](https://github.com/godaddy/kubernetes-client/commit/c6810de))
+
+
+
 <a name="6.0.1"></a>
 ## [6.0.1](https://github.com/godaddy/kubernetes-client/compare/6.0.0...6.0.1) (2018-09-04)
 
