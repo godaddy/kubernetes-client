@@ -55,6 +55,30 @@ describe('Config', () => {
     });
   });
 
+  describe('.loadKubeconfig', () => {
+    const cfgPaths = [
+      './test/fixtures/kube-fixture.yml',
+      './test/fixtures/kube-fixture-two.yml'
+    ];
+
+    it('supports multiple config files', () => {
+      const args = config.loadKubeconfig(cfgPaths);
+      expect(args.contexts[0].name).equals('foo-context-1');
+      expect(args.contexts[1].name).equals('foo-ramp-up');
+    });
+
+    it('supports multiple config files in KUBECONFIG', () => {
+      const delimiter = process.platform === 'win32' ? ';' : ':';
+      process.env.KUBECONFIG = cfgPaths.join(delimiter);
+
+      const args = config.loadKubeconfig();
+      expect(args.contexts[0].name).equals('foo-context-1');
+      expect(args.contexts[1].name).equals('foo-ramp-up');
+
+      delete process.env.KUBECONFIG;
+    });
+  });
+
   describe('.fromKubeconfig', () => {
     it('handles username and password', () => {
       const kubeconfig = {
@@ -406,6 +430,15 @@ describe('Config', () => {
 
     it('load kubeconfig from provided path', () => {
       const args = config.fromKubeconfig('./test/fixtures/kube-fixture.yml');
+      expect(args.url).equals('https://192.168.42.121:8443');
+    });
+
+    it('load kubeconfig from provided array of paths', () => {
+      const cfgPaths = [
+        './test/fixtures/kube-fixture.yml',
+        './test/fixtures/kube-fixture-two.yml'
+      ];
+      const args = config.fromKubeconfig(cfgPaths);
       expect(args.url).equals('https://192.168.42.121:8443');
     });
   });
