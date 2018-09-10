@@ -56,22 +56,25 @@ describe('Config', () => {
   });
 
   describe('.loadKubeconfig', () => {
-    beforeEach(() => {
-      const cfgPaths = [
-        './test/fixtures/kube-fixture.yml',
-        './test/fixtures/kube-fixture-two.yml'
-      ];
-      const delimiter = process.platform === 'win32' ? ';' : ':';
-      process.env.KUBECONFIG = cfgPaths.join(delimiter);
-    });
+    const cfgPaths = [
+      './test/fixtures/kube-fixture.yml',
+      './test/fixtures/kube-fixture-two.yml'
+    ];
 
-    it('supports multiple config files in KUBECONFIG', () => {
-      const args = config.loadKubeconfig();
+    it('supports multiple config files', () => {
+      const args = config.loadKubeconfig(cfgPaths);
       expect(args.contexts[0].name).equals('foo-context-1');
       expect(args.contexts[1].name).equals('foo-ramp-up');
     });
 
-    afterEach(() => {
+    it('supports multiple config files in KUBECONFIG', () => {
+      const delimiter = process.platform === 'win32' ? ';' : ':';
+      process.env.KUBECONFIG = cfgPaths.join(delimiter);
+
+      const args = config.loadKubeconfig();
+      expect(args.contexts[0].name).equals('foo-context-1');
+      expect(args.contexts[1].name).equals('foo-ramp-up');
+
       delete process.env.KUBECONFIG;
     });
   });
