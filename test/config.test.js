@@ -55,6 +55,27 @@ describe('Config', () => {
     });
   });
 
+  describe('.loadKubeconfig', () => {
+    beforeEach(() => {
+      const cfgPaths = [
+        './test/fixtures/kube-fixture.yml',
+        './test/fixtures/kube-fixture-two.yml'
+      ];
+      const delimiter = process.platform === 'win32' ? ';' : ':';
+      process.env.KUBECONFIG = cfgPaths.join(delimiter);
+    });
+
+    it('supports multiple config files in KUBECONFIG', () => {
+      const args = config.loadKubeconfig();
+      expect(args.contexts[0].name).equals('foo-context-1');
+      expect(args.contexts[1].name).equals('foo-ramp-up');
+    });
+
+    afterEach(() => {
+      delete process.env.KUBECONFIG;
+    });
+  });
+
   describe('.fromKubeconfig', () => {
     it('handles username and password', () => {
       const kubeconfig = {
