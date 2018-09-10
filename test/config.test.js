@@ -432,5 +432,14 @@ describe('Config', () => {
       const args = config.fromKubeconfig('./test/fixtures/kube-fixture.yml');
       expect(args.url).equals('https://192.168.42.121:8443');
     });
+
+    it('load kubeconfig from provided array of paths', () => {
+      const cfgPaths = [
+        './test/fixtures/kube-fixture.yml',
+        './test/fixtures/kube-fixture-two.yml'
+      ];
+      const args = config.fromKubeconfig(cfgPaths);
+      expect(args.url).equals('https://192.168.42.121:8443');
+    });
   });
 });
