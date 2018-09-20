@@ -1,6 +1,6 @@
 /* eslint no-console:0 */
 //
-// Create an API client for an AWS EKS cluster
+// Create an API client for an AWS EKS cluster using IAM authentication
 // Note: In order for this to work, you must set the environment
 // variable AWS_PROFILE
 //
