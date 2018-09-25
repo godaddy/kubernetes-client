@@ -18,6 +18,9 @@ async function main() {
             config: {
               'cmd-path': 'aws-iam-authenticator',
               'cmd-args': 'token -i ' + process.env.K8S_AUTH_TOKEN,
+              'cmd-env': {
+                AWS_PROFILE: process.env.AWS_PROFILE
+              },
               'token-key': 'status.token'
             }
           }
