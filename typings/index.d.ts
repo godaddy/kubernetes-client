@@ -5971,6 +5971,7 @@ declare namespace KubernetesClient {
     'version': Version
     // Calls
     loadSpec(): Promise<Api>
+    addCustomResourceDefinition(schema: object): void;
   }
 
   interface ApiClient {
