@@ -379,6 +379,56 @@ describe('Config', () => {
       expect(args.auth.provider.type).equals('cmd');
     });
 
+    it('handles user.exec', () => {
+      const command = 'foo-command';
+      const cmdArgs = ['arg1', 'arg2'];
+      const envKey = 'foo-env-key';
+      const envValue = 'foo-env-value';
+      const kubeconfig = {
+        'apiVersion': 'v1',
+        'kind': 'Config',
+        'preferences': {},
+        'current-context': 'foo-context',
+        'contexts': [
+          {
+            name: 'foo-context',
+            context: {
+              cluster: 'foo-cluster',
+              user: 'foo-user'
+            }
+          }
+        ],
+        'clusters': [
+          {
+            name: 'foo-cluster',
+            cluster: {
+              server: 'https://192.168.42.121:8443'
+            }
+          }
+        ],
+        'users': [
+          {
+            name: 'foo-user',
+            user: {
+              exec: {
+                command,
+                args: cmdArgs,
+                env: [{
+                  name: envKey,
+                  value: envValue
+                }]
+              }
+            }
+          }
+        ]
+      };
+      const args = config.fromKubeconfig(kubeconfig);
+      expect(args.auth.provider.type).equals('cmd');
+      expect(args.auth.provider.config['cmd-args']).equals(cmdArgs.join(' '));
+      expect(args.auth.provider.config['cmd-path']).equals(command);
+      expect(args.auth.provider.config['cmd-env']).deep.equals({ [envKey]: envValue });
+    });
+
     it('handles manually specified current-context', () => {
       const kubeconfig = {
         'apiVersion': 'v1',
