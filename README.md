@@ -155,6 +155,8 @@ const client = new Client({ config: config.fromKubeconfig() });
   log an error: [canary-controller.js](./examples/canary-controller.js)
 * Create a `client` using basic-auth:
   [basic-auth.js](./examples/basic-auth.js)
+* Create a `client` using IAM authenticator and cmd auth:
+  [iam-auth.js](./examples/iam-auth.js)
 * Generate [badges](https://github.com/badges/shields) showing the
   status of your Deployments. Illustrates using the in-cluster config:
   [kubernetes-badges](https://github.com/silasbw/kubernetes-badges)
