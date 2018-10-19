@@ -37,7 +37,7 @@
     "js-yaml": "^3.10.0",
     "openid-client": "^2.0.0",
     "qs": "^6.5.2",
-    "request": "^2.83.0",
+    "request": "^2.88.0",
     "ws": "^6.0.0"
   },
   "devDependencies": {
