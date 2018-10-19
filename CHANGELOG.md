@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.3.0"></a>
+# [6.3.0](https://github.com/godaddy/kubernetes-client/compare/6.2.0...6.3.0) (2018-10-19)
+
+
+### Bug Fixes
+
+* **auth:** update auth settings after refreshing ([#338](https://github.com/godaddy/kubernetes-client/issues/338)) ([e8d914b](https://github.com/godaddy/kubernetes-client/commit/e8d914b))
+
+
+### Features
+
+* **timeout:** plumb a timeout option for HTTP requests ([#339](https://github.com/godaddy/kubernetes-client/issues/339)) ([6a9f06d](https://github.com/godaddy/kubernetes-client/commit/6a9f06d))
+
+
+
 <a name="6.2.0"></a>
 # [6.2.0](https://github.com/godaddy/kubernetes-client/compare/6.1.0...6.2.0) (2018-10-19)
 
