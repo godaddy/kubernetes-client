@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/godaddy/kubernetes-client/compare/6.1.0...6.2.0) (2018-10-19)
+
+
+### Features
+
+* **addCustomResourceDefinition:** add support for /status and /scale CRD endpoints ([#335](https://github.com/godaddy/kubernetes-client/issues/335)) ([0511bb4](https://github.com/godaddy/kubernetes-client/commit/0511bb4))
+* **auth:** support auth through iam-authenticator, add example ([#332](https://github.com/godaddy/kubernetes-client/issues/332)) ([c06e7cf](https://github.com/godaddy/kubernetes-client/commit/c06e7cf)), closes [#306](https://github.com/godaddy/kubernetes-client/issues/306)
+* **config:** read exec arguments from kubeconfig ([#333](https://github.com/godaddy/kubernetes-client/issues/333)) ([58541c7](https://github.com/godaddy/kubernetes-client/commit/58541c7))
+* **config:** support multiple config files in KUBECONFIG ([#326](https://github.com/godaddy/kubernetes-client/issues/326)) ([d76a84f](https://github.com/godaddy/kubernetes-client/commit/d76a84f))
+* **pod-exec:** add initial support for command execution ([#329](https://github.com/godaddy/kubernetes-client/issues/329)) ([ed47d43](https://github.com/godaddy/kubernetes-client/commit/ed47d43))
+
+
+
 <a name="6.1.0"></a>
 # [6.1.0](https://github.com/godaddy/kubernetes-client/compare/6.0.1...6.1.0) (2018-09-06)
 

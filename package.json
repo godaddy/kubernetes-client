@@ -1,6 +1,6 @@
 {
   "name": "kubernetes-client",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "description": "Simplified Kubernetes API client.",
   "main": "lib/index.js",
   "types": "./typings/index.d.ts",
@@ -35,9 +35,9 @@
     "deepmerge": "^2.1.1",
     "fluent-openapi": "0.1.1",
     "js-yaml": "^3.10.0",
-    "openid-client": "^2.0.0",
+    "openid-client": "^2.4.4",
     "qs": "^6.5.2",
-    "request": "^2.83.0",
+    "request": "^2.88.0",
     "ws": "^6.0.0"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "mocha": "^5.0.0",
     "nock": "^10.0.0",
     "sinon": "6.0.1",
-    "standard-version": "^4.3.0",
+    "standard-version": "^4.4.0",
     "swagger-js-codegen": "^1.12.0",
     "typescript": "^2.6.1",
     "yargs": "^12.0.1"
