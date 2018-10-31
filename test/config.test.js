@@ -429,6 +429,48 @@ describe('Config', () => {
       expect(args.auth.provider.config['cmd-env']).deep.equals({ [envKey]: envValue });
     });
 
+    it('handles user.exec without optional env and args', () => {
+      const command = 'foo-command';
+      const kubeconfig = {
+        'apiVersion': 'v1',
+        'kind': 'Config',
+        'preferences': {},
+        'current-context': 'foo-context',
+        'contexts': [
+          {
+            name: 'foo-context',
+            context: {
+              cluster: 'foo-cluster',
+              user: 'foo-user'
+            }
+          }
+        ],
+        'clusters': [
+          {
+            name: 'foo-cluster',
+            cluster: {
+              server: 'https://192.168.42.121:8443'
+            }
+          }
+        ],
+        'users': [
+          {
+            name: 'foo-user',
+            user: {
+              exec: {
+                command
+              }
+            }
+          }
+        ]
+      };
+      const args = config.fromKubeconfig(kubeconfig);
+      expect(args.auth.provider.type).equals('cmd');
+      expect(args.auth.provider.config['cmd-args']).equals('');
+      expect(args.auth.provider.config['cmd-path']).equals(command);
+      expect(args.auth.provider.config['cmd-env']).deep.equals({});
+    });
+
     it('handles manually specified current-context', () => {
       const kubeconfig = {
         'apiVersion': 'v1',
