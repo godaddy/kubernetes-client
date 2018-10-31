@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.3.1"></a>
+## [6.3.1](https://github.com/godaddy/kubernetes-client/compare/6.3.0...6.3.1) (2018-10-31)
+
+
+### Bug Fixes
+
+* **kubeconfig:** handle optional kubeconfig user exec properties ([#351](https://github.com/godaddy/kubernetes-client/issues/351)) ([a854fef](https://github.com/godaddy/kubernetes-client/commit/a854fef))
+* **querystring:**  indices must be disabled ([#344](https://github.com/godaddy/kubernetes-client/issues/344)) ([c6bb0a1](https://github.com/godaddy/kubernetes-client/commit/c6bb0a1))
+
+
+
 <a name="6.3.0"></a>
 # [6.3.0](https://github.com/godaddy/kubernetes-client/compare/6.2.0...6.3.0) (2018-10-19)
 
