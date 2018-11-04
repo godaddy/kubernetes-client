@@ -15,7 +15,7 @@ describe('lib.swagger-client', () => {
     describe('.loadSpec', () => {
       beforeTesting('unit', () => {
         nock(common.api.url)
-          .get('/swagger.json')
+          .get('/openapi/v2')
           .reply(200, {
             paths: {
               '/api/': {
