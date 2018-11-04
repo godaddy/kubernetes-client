@@ -20,7 +20,44 @@ npm i kubernetes-client --save
 
 kubernetes-client generates a Kubernetes API client at runtime based
 on a Swagger / OpenAPI specification. You can generate a client using
-specifications included with kubernetes-client:
+the cluster's kubeconfig file and that cluster's API specification.
+
+To create the config required to make a client, you can either:
+
+let kubernetes-client load the file automatically through the `KUBECONFIG`
+env
+
+```js
+const K8sConfig = require('kubernetes-client').config;
+const config = K8sConfig.fromKubeconfig();
+```
+
+provide your own path to a file:
+
+```js
+const K8sConfig = require('kubernetes-client').config;
+const path = '~/some/path';
+const config = K8sConfig.fromKubeconfig(path);
+```
+
+provide a kubeconfig object from memory:
+
+```js
+const K8sConfig = require('kubernetes-client').config;
+// Should match the kubeconfig file format exactly
+const kubeconfig = {
+	apiVersion: 'v1',
+	clusters: [],
+	contexts: [],
+	'current-context': '',
+	kind: 'Config',
+	users: []
+};
+const config = K8sConfig.fromKubeconfig(kubeconfig);
+```
+
+Once you've built a config object, you can combine it with an API
+spec to build the client, using specifications included with kubernetes-client:
 
 ```js
 const Client = require('kubernetes-client').Client;
