@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.4.0"></a>
+# [6.4.0](https://github.com/godaddy/kubernetes-client/compare/6.3.0...6.4.0) (2018-11-12)
+
+
+### Bug Fixes
+
+* **kubeconfig:** handle optional kubeconfig user exec properties ([#351](https://github.com/godaddy/kubernetes-client/issues/351)) ([a854fef](https://github.com/godaddy/kubernetes-client/commit/a854fef))
+* **querystring:**  indices must be disabled ([#344](https://github.com/godaddy/kubernetes-client/issues/344)) ([c6bb0a1](https://github.com/godaddy/kubernetes-client/commit/c6bb0a1))
+
+
+### Features
+
+* **loadSpec:** change the endpoint called by loadSpec ([#356](https://github.com/godaddy/kubernetes-client/issues/356)) ([8a5f5cb](https://github.com/godaddy/kubernetes-client/commit/8a5f5cb))
+
+
+
 <a name="6.3.2"></a>
 ## [6.3.2](https://github.com/godaddy/kubernetes-client/compare/6.3.1...6.3.2) (2018-10-31)
 
