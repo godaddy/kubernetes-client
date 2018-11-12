@@ -13,29 +13,120 @@ describe('lib.swagger-client', () => {
   describe('.Client', () => {
 
     describe('.loadSpec', () => {
-      beforeTesting('unit', () => {
-        nock(common.api.url)
-          .get('/swagger.json')
-          .reply(200, {
-            paths: {
-              '/api/': {
-                get: {
-                  operationId: 'getCoreAPIVersions'
+      describe('on a cluster with the /openapi/v2 route', () => {
+        beforeTesting('unit', () => {
+          nock(common.api.url)
+            .get('/openapi/v2')
+            .reply(200, {
+              paths: {
+                '/api/': {
+                  get: {
+                    operationId: 'getCoreAPIVersions'
+                  }
                 }
               }
-            }
-          });
+            });
+        });
+
+        it('creates a dynamically generated client', done => {
+          const config = { url: common.api.url };
+          const client = new Client({ config });
+          client.loadSpec()
+            .then(() => {
+              expect(client.api.get).is.a('function');
+              done();
+            })
+            .catch(err => done(err));
+        });
       });
 
-      it('creates a dynamically generated client', done => {
-        const config = { url: common.api.url };
-        const client = new Client({ config });
-        client.loadSpec()
-          .then(() => {
-            expect(client.api.get).is.a('function');
-            done();
-          })
-          .catch(err => done(err));
+      describe('on a cluster without the /openapi/v2 route but with the /swagger.json route', () => {
+        beforeTesting('unit', () => {
+          nock(common.api.url)
+            .get('/openapi/v2')
+            .reply(404, 'Not Found');
+
+          nock(common.api.url)
+            .get('/swagger.json')
+            .reply(200, {
+              paths: {
+                '/api/': {
+                  get: {
+                    operationId: 'getCoreAPIVersions'
+                  }
+                }
+              }
+            });
+        });
+
+        it('creates a dynamically generated client', (done) => {
+          const config = { url: common.api.url };
+          const client = new Client({ config });
+          client.loadSpec()
+            .then(() => {
+              expect(client.api.get).is.a('function');
+              done();
+            })
+            .catch(err => done(err));
+        });
+      });
+
+      describe('on a cluster without the /openapi/v2 route and a non-200 status code on /swagger.json', () => {
+        beforeTesting('unit', () => {
+          nock(common.api.url)
+            .get('/openapi/v2')
+            .reply(404, 'Not Found');
+
+          nock(common.api.url)
+            .get('/swagger.json')
+            .reply(500, {
+              paths: {
+                '/api/': {
+                  get: {
+                    operationId: 'getCoreAPIVersions'
+                  }
+                }
+              }
+            });
+        });
+
+        it('returns an error message with the status code', (done) => {
+          const config = { url: common.api.url };
+          const client = new Client({ config });
+          client.loadSpec()
+            .then(() => {
+              const err = new Error('This test should have caused an error');
+              done(err);
+            })
+            .catch(err => {
+              expect(err.message).to.equal('Failed to get /swagger.json: 500');
+
+              done();
+            });
+        });
+      });
+
+      describe('on a cluster returning a non-200, non-404 status code on the /openapi/v2 route', () => {
+        beforeTesting('unit', () => {
+          nock(common.api.url)
+            .get('/openapi/v2')
+            .reply(500, 'Internal Error');
+        });
+
+        it('returns an error message with the status code', (done) => {
+          const config = { url: common.api.url };
+          const client = new Client({ config });
+          client.loadSpec()
+            .then(() => {
+              const err = new Error('This test should have caused an error');
+              done(err);
+            })
+            .catch(err => {
+              expect(err.message).to.equal('Failed to get /openapi/v2: 500');
+
+              done();
+            });
+        });
       });
     });
 
