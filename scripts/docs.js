@@ -1,11 +1,11 @@
 #!/usr/bin/env node
-'use strict';
+'use strict'
 /* eslint-disable no-sync, no-console */
 
-const CodeGen = require('swagger-js-codegen').CodeGen;
-const fs = require('fs');
-const path = require('path');
-const zlib = require('zlib');
+const CodeGen = require('swagger-js-codegen').CodeGen
+const fs = require('fs')
+const path = require('path')
+const zlib = require('zlib')
 
 const mustacheLambdas = {
   /**
@@ -14,8 +14,8 @@ const mustacheLambdas = {
    */
   alphanumeric: function () {
     return function (text, render) {
-      return render(text).replace(/\W/g, '');
-    };
+      return render(text).replace(/\W/g, '')
+    }
   },
 
   /**
@@ -26,8 +26,8 @@ const mustacheLambdas = {
     return function (text, render) {
       return render(text)
         .replace(/\r\n/g, '<br/>')
-        .replace(/\n/g, '<br/>');
-    };
+        .replace(/\n/g, '<br/>')
+    }
   },
 
   /**
@@ -36,28 +36,28 @@ const mustacheLambdas = {
    */
   jsName: function () {
     return function () {
-      const leadingAndTrailingSlashes = /(^\/)|(\/$)/g;
+      const leadingAndTrailingSlashes = /(^\/)|(\/$)/g
       const jsName = this.path
         .replace(leadingAndTrailingSlashes, '')
-        .replace(/\/{/g, '(')   // replace /{ with (
-        .replace(/}\//g, ').')  // replace }/ with ).
-        .replace(/}/g, ')')     // replace } with )
-        .replace(/\//g, '.');   // replace / with .
-      return `${ jsName }.${ this.method.toLowerCase() }`;
-    };
+        .replace(/\/{/g, '(') // replace /{ with (
+        .replace(/}\//g, ').') // replace }/ with ).
+        .replace(/}/g, ')') // replace } with )
+        .replace(/\//g, '.') // replace / with .
+      return `${jsName}.${this.method.toLowerCase()}`
+    }
   }
-};
+}
 
-function generate(input, output) {
-  let raw = fs.readFileSync(input);
+function generate (input, output) {
+  let raw = fs.readFileSync(input)
   if (input.endsWith('.gz')) {
-    raw = zlib.gunzipSync(raw);
+    raw = zlib.gunzipSync(raw)
   }
-  const spec = JSON.parse(raw);
+  const spec = JSON.parse(raw)
 
   const mustache = Object.assign({
     info: spec.info
-  }, mustacheLambdas);
+  }, mustacheLambdas)
 
   //
   // https://github.com/wcandillon/swagger-js-codegen
@@ -75,33 +75,33 @@ function generate(input, output) {
       method: fs.readFileSync(path.join(__dirname, 'templates/markdown-method.mustache'), 'utf8'),
       type: fs.readFileSync(path.join(__dirname, 'templates/markdown-type.mustache'), 'utf8')
     }
-  });
+  })
 
   if (output) {
-    fs.writeFileSync(output, source);
+    fs.writeFileSync(output, source)
   } else {
-    console.log(source);
+    console.log(source)
   }
 }
 
-function main(args) {
+function main (args) {
   if (args.builtins) {
-    const specs = './lib/specs';
+    const specs = './lib/specs'
     fs.readdirSync(specs).forEach(filename => {
-      const versionRegExp = /swagger-(.+)\.json.gz/;
-      const match = filename.match(versionRegExp);
+      const versionRegExp = /swagger-(.+)\.json.gz/
+      const match = filename.match(versionRegExp)
       if (!match) {
-        console.log(`Skipping ${ filename }`);
-        return;
+        console.log(`Skipping ${filename}`)
+        return
       }
-      const version = match[1];
-      const output = `./docs/${ version }.md`;
-      generate(path.join(specs, filename), output);
-    });
+      const version = match[1]
+      const output = `./docs/${version}.md`
+      generate(path.join(specs, filename), output)
+    })
   }
 
   if (args.spec) {
-    generate(args.spec, args.output);
+    generate(args.spec, args.output)
   }
 }
 
@@ -120,6 +120,6 @@ const argv = require('yargs')
   })
   .strict()
   .help()
-  .argv;
+  .argv
 
-main(argv);
+main(argv)

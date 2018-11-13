@@ -28,22 +28,22 @@ let kubernetes-client load the file automatically through the `KUBECONFIG`
 env
 
 ```js
-const K8sConfig = require('kubernetes-client').config;
-const config = K8sConfig.fromKubeconfig();
+const K8sConfig = require('kubernetes-client').config
+const config = K8sConfig.fromKubeconfig()
 ```
 
 provide your own path to a file:
 
 ```js
-const K8sConfig = require('kubernetes-client').config;
-const path = '~/some/path';
-const config = K8sConfig.fromKubeconfig(path);
+const K8sConfig = require('kubernetes-client').config
+const path = '~/some/path'
+const config = K8sConfig.fromKubeconfig(path)
 ```
 
 provide a kubeconfig object from memory:
 
 ```js
-const K8sConfig = require('kubernetes-client').config;
+const K8sConfig = require('kubernetes-client').config
 // Should match the kubeconfig file format exactly
 const kubeconfig = {
 	apiVersion: 'v1',
@@ -52,42 +52,42 @@ const kubeconfig = {
 	'current-context': '',
 	kind: 'Config',
 	users: []
-};
-const config = K8sConfig.fromKubeconfig(kubeconfig);
+}
+const config = K8sConfig.fromKubeconfig(kubeconfig)
 ```
 
 Once you've built a config object, you can combine it with an API
 spec to build the client, using specifications included with kubernetes-client:
 
 ```js
-const Client = require('kubernetes-client').Client;
-const config = require('kubernetes-client').config;
-const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
+const Client = require('kubernetes-client').Client
+const config = require('kubernetes-client').config
+const client = new Client({ config: config.fromKubeconfig(), version: '1.9' })
 ```
 
 or from a file:
 
 ```js
-const Client = require('kubernetes-client').Client;
-const config = require('kubernetes-client').config;
-const spec = require('./swagger.json');
-const client = new Client({ config: config.fromKubeconfig(), spec});
+const Client = require('kubernetes-client').Client
+const config = require('kubernetes-client').config
+const spec = require('./swagger.json')
+const client = new Client({ config: config.fromKubeconfig(), spec})
 
 ```
 
 or from the `/swagger.json` endpoint on your kube-apiserver:
 
 ```js
-const Client = require('kubernetes-client').Client;
-const config = require('kubernetes-client').config;
-const client = new Client({ config: config.fromKubeconfig() });
-await client.loadSpec();
+const Client = require('kubernetes-client').Client
+const config = require('kubernetes-client').config
+const client = new Client({ config: config.fromKubeconfig() })
+await client.loadSpec()
 ```
 
 or using basic auth:
 
 ```js
-const Client = require('kubernetes-client').Client;
+const Client = require('kubernetes-client').Client
 const client = new Client({
   config: {
     url: 'CLUSTER_URL',
@@ -103,10 +103,10 @@ const client = new Client({
 or from within a Pod:
 
 ```js
-const Client = require('kubernetes-client').Client;
-const config = require('kubernetes-client').config;
-const client = new Client({ config: config.getInCluster() });
-await client.loadSpec();
+const Client = require('kubernetes-client').Client
+const config = require('kubernetes-client').config
+const client = new Client({ config: config.getInCluster() })
+await client.loadSpec()
 ```
 
 ## Basic usage
@@ -118,7 +118,7 @@ kubernetes-client translates Path Item Objects \[[1]\] (*e.g*.,
 So, to fetch all Namespaces:
 
 ```js
-const namespaces = await client.api.v1.namespaces.get();
+const namespaces = await client.api.v1.namespaces.get()
 ```
 
 kubernetes-client translates Path Templating \[[2]\] (*e.g.*,
@@ -129,19 +129,19 @@ So, to create a new Deployment in the default Namespace:
 
 ```js
 const deploymentManifest = require('./nginx-deployment.json')
-const create = await client.apis.apps.v1.namespaces('default').deployments.post({ body: deploymentManifest });
+const create = await client.apis.apps.v1.namespaces('default').deployments.post({ body: deploymentManifest })
 ```
 
 and then fetch your newly created Deployment:
 
 ```js
-const deployment = await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).get();
+const deployment = await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).get()
 ```
 
 and finally, remove the Deployment:
 
 ```js
-await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).delete();
+await client.apis.apps.v1.namespaces('default').deployments(deploymentManifest.metadata.name).delete()
 ```
 
 kubernetes-client supports `.delete`, `.get`, `.patch`, `.post`, and `.put`.
