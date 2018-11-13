@@ -1,83 +1,84 @@
-'use strict';
-/* eslint no-process-env: 0*/
+/* eslint no-process-env: 0 */
+/* eslint-env mocha */
+'use strict'
 
-const expect = require('chai').expect;
-const fs = require('fs');
-const sinon = require('sinon');
-const yaml = require('js-yaml');
+const expect = require('chai').expect
+const fs = require('fs')
+const sinon = require('sinon')
+const yaml = require('js-yaml')
 
-const config = require('../lib/config');
+const config = require('../lib/config')
 
 describe('Config', () => {
-  let sandbox;
+  let sandbox
 
   beforeEach(() => {
-    sandbox = sinon.sandbox.create();
-  });
+    sandbox = sinon.sandbox.create()
+  })
 
   afterEach(() => {
-    sandbox.restore();
-  });
+    sandbox.restore()
+  })
 
   describe('getInCluster', () => {
     beforeEach(() => {
-      process.env.KUBERNETES_SERVICE_HOST = 'myhost';
-      process.env.KUBERNETES_SERVICE_PORT = 443;
-    });
+      process.env.KUBERNETES_SERVICE_HOST = 'myhost'
+      process.env.KUBERNETES_SERVICE_PORT = 443
+    })
 
     it('should return with in-cluster config', () => {
-      const fsReadFileSync = sandbox.stub(fs, 'readFileSync');
+      const fsReadFileSync = sandbox.stub(fs, 'readFileSync')
 
       fsReadFileSync
         .withArgs('/var/run/secrets/kubernetes.io/serviceaccount/ca.crt')
-        .returns('my-ca');
+        .returns('my-ca')
 
       fsReadFileSync
         .withArgs('/var/run/secrets/kubernetes.io/serviceaccount/token')
-        .returns('my-token');
+        .returns('my-token')
 
       fsReadFileSync
         .withArgs('/var/run/secrets/kubernetes.io/serviceaccount/namespace')
-        .returns('my-namespace');
+        .returns('my-namespace')
 
-      const configInCluster = config.getInCluster();
+      const configInCluster = config.getInCluster()
       expect(configInCluster).eqls({
         auth: { bearer: 'my-token' },
         ca: 'my-ca',
         namespace: 'my-namespace',
         url: 'https://myhost:443'
-      });
-    });
+      })
+    })
 
     afterEach(() => {
-      delete process.env.KUBERNETES_SERVICE_HOST;
-      delete process.env.KUBERNETES_SERVICE_PORT;
-    });
-  });
+      delete process.env.KUBERNETES_SERVICE_HOST
+      delete process.env.KUBERNETES_SERVICE_PORT
+    })
+  })
 
   describe('.loadKubeconfig', () => {
     const cfgPaths = [
       './test/fixtures/kube-fixture.yml',
       './test/fixtures/kube-fixture-two.yml'
-    ];
+    ]
 
     it('supports multiple config files', () => {
-      const args = config.loadKubeconfig(cfgPaths);
-      expect(args.contexts[0].name).equals('foo-context-1');
-      expect(args.contexts[1].name).equals('foo-ramp-up');
-    });
+      const args = config.loadKubeconfig(cfgPaths)
+      expect(args.contexts[0].name).equals('foo-context-1')
+      expect(args.contexts[1].name).equals('foo-ramp-up')
+    })
 
     it('supports multiple config files in KUBECONFIG', () => {
-      const delimiter = process.platform === 'win32' ? ';' : ':';
-      process.env.KUBECONFIG = cfgPaths.join(delimiter);
+      const delimiter = process.platform === 'win32' ? ';' : ':'
+      process.env.KUBECONFIG = cfgPaths.join(delimiter)
 
-      const args = config.loadKubeconfig();
-      expect(args.contexts[0].name).equals('foo-context-1');
-      expect(args.contexts[1].name).equals('foo-ramp-up');
+      const args = config.loadKubeconfig()
+      expect(args.contexts[0].name).equals('foo-context-1')
+      expect(args.contexts[1].name).equals('foo-ramp-up')
 
-      delete process.env.KUBECONFIG;
-    });
-  });
+      delete process.env.KUBECONFIG
+    })
+  })
 
   describe('.fromKubeconfig', () => {
     it('handles username and password', () => {
@@ -112,11 +113,11 @@ describe('Config', () => {
             }
           }
         ]
-      };
-      const args = config.fromKubeconfig(kubeconfig);
-      expect(args.auth.user).equals('foo-user');
-      expect(args.auth.pass).equals('foo-password');
-    });
+      }
+      const args = config.fromKubeconfig(kubeconfig)
+      expect(args.auth.user).equals('foo-user')
+      expect(args.auth.pass).equals('foo-password')
+    })
 
     it('handles base64 encoded certs and keys', () => {
       const kubeconfig = {
@@ -137,7 +138,7 @@ describe('Config', () => {
           {
             name: 'foo-cluster',
             cluster: {
-              'certificate-authority-data': new Buffer('certificate-authority-data').toString('base64'),
+              'certificate-authority-data': Buffer.from('certificate-authority-data').toString('base64'),
               'server': 'https://192.168.42.121:8443'
             }
           }
@@ -146,17 +147,17 @@ describe('Config', () => {
           {
             name: 'foo-user',
             user: {
-              'client-certificate-data': new Buffer('client-certificate').toString('base64'),
-              'client-key-data': new Buffer('client-key').toString('base64')
+              'client-certificate-data': Buffer.from('client-certificate').toString('base64'),
+              'client-key-data': Buffer.from('client-key').toString('base64')
             }
           }
         ]
-      };
-      const args = config.fromKubeconfig(kubeconfig);
-      expect(args.ca).equals('certificate-authority-data');
-      expect(args.key).equals('client-key');
-      expect(args.cert).equals('client-certificate');
-    });
+      }
+      const args = config.fromKubeconfig(kubeconfig)
+      expect(args.ca).equals('certificate-authority-data')
+      expect(args.key).equals('client-key')
+      expect(args.cert).equals('client-certificate')
+    })
 
     it('handles relative and absolute certs and keys', () => {
       const kubeconfig = {
@@ -191,36 +192,36 @@ describe('Config', () => {
             }
           }
         ]
-      };
+      }
 
-      const fsReadFileSync = sandbox.stub(fs, 'readFileSync');
-      const yamlSafeLoad = sandbox.stub(yaml, 'safeLoad');
+      const fsReadFileSync = sandbox.stub(fs, 'readFileSync')
+      const yamlSafeLoad = sandbox.stub(yaml, 'safeLoad')
 
       fsReadFileSync
         .withArgs(sinon.match(/config$/))
-        .returns('mock-config');
+        .returns('mock-config')
 
       fsReadFileSync
         .withArgs(sinon.match('/.kube/ca.pem'))
-        .returns('certificate-authority-data');
+        .returns('certificate-authority-data')
 
       fsReadFileSync
         .withArgs(sinon.match('/.kube/subdir/client.key'))
-        .returns('client-key-data');
+        .returns('client-key-data')
 
       fsReadFileSync
         .withArgs('/absolute/path/client.cert')
-        .returns('client-certificate-data');
+        .returns('client-certificate-data')
 
       yamlSafeLoad
         .withArgs('mock-config')
-        .returns(kubeconfig);
+        .returns(kubeconfig)
 
-      const args = config.fromKubeconfig();
-      expect(args.ca).equals('certificate-authority-data');
-      expect(args.key).equals('client-key-data');
-      expect(args.cert).equals('client-certificate-data');
-    });
+      const args = config.fromKubeconfig()
+      expect(args.ca).equals('certificate-authority-data')
+      expect(args.key).equals('client-key-data')
+      expect(args.cert).equals('client-certificate-data')
+    })
 
     it('handles token', () => {
       const kubeconfig = {
@@ -253,10 +254,10 @@ describe('Config', () => {
             }
           }
         ]
-      };
-      const args = config.fromKubeconfig(kubeconfig);
-      expect(args.auth.bearer).equals('foo-token');
-    });
+      }
+      const args = config.fromKubeconfig(kubeconfig)
+      expect(args.auth.bearer).equals('foo-token')
+    })
 
     it('handles auth-provider.config.access-token', () => {
       const kubeconfig = {
@@ -293,10 +294,10 @@ describe('Config', () => {
             }
           }
         ]
-      };
-      const args = config.fromKubeconfig(kubeconfig);
-      expect(args.auth.request.bearer).equals('foo-token');
-    });
+      }
+      const args = config.fromKubeconfig(kubeconfig)
+      expect(args.auth.request.bearer).equals('foo-token')
+    })
 
     it('handles auth-provider.config.idp-issuer-url', () => {
       const kubeconfig = {
@@ -333,10 +334,10 @@ describe('Config', () => {
             }
           }
         ]
-      };
-      const args = config.fromKubeconfig(kubeconfig);
-      expect(args.auth.provider.type).equals('openid');
-    });
+      }
+      const args = config.fromKubeconfig(kubeconfig)
+      expect(args.auth.provider.type).equals('openid')
+    })
 
     it('handles auth-provider.config.cmd-path', () => {
       const kubeconfig = {
@@ -374,16 +375,16 @@ describe('Config', () => {
             }
           }
         ]
-      };
-      const args = config.fromKubeconfig(kubeconfig);
-      expect(args.auth.provider.type).equals('cmd');
-    });
+      }
+      const args = config.fromKubeconfig(kubeconfig)
+      expect(args.auth.provider.type).equals('cmd')
+    })
 
     it('handles user.exec', () => {
-      const command = 'foo-command';
-      const cmdArgs = ['arg1', 'arg2'];
-      const envKey = 'foo-env-key';
-      const envValue = 'foo-env-value';
+      const command = 'foo-command'
+      const cmdArgs = ['arg1', 'arg2']
+      const envKey = 'foo-env-key'
+      const envValue = 'foo-env-value'
       const kubeconfig = {
         'apiVersion': 'v1',
         'kind': 'Config',
@@ -421,16 +422,16 @@ describe('Config', () => {
             }
           }
         ]
-      };
-      const args = config.fromKubeconfig(kubeconfig);
-      expect(args.auth.provider.type).equals('cmd');
-      expect(args.auth.provider.config['cmd-args']).equals(cmdArgs.join(' '));
-      expect(args.auth.provider.config['cmd-path']).equals(command);
-      expect(args.auth.provider.config['cmd-env']).deep.equals({ [envKey]: envValue });
-    });
+      }
+      const args = config.fromKubeconfig(kubeconfig)
+      expect(args.auth.provider.type).equals('cmd')
+      expect(args.auth.provider.config['cmd-args']).equals(cmdArgs.join(' '))
+      expect(args.auth.provider.config['cmd-path']).equals(command)
+      expect(args.auth.provider.config['cmd-env']).deep.equals({ [envKey]: envValue })
+    })
 
     it('handles user.exec without optional env and args', () => {
-      const command = 'foo-command';
+      const command = 'foo-command'
       const kubeconfig = {
         'apiVersion': 'v1',
         'kind': 'Config',
@@ -463,13 +464,13 @@ describe('Config', () => {
             }
           }
         ]
-      };
-      const args = config.fromKubeconfig(kubeconfig);
-      expect(args.auth.provider.type).equals('cmd');
-      expect(args.auth.provider.config['cmd-args']).equals('');
-      expect(args.auth.provider.config['cmd-path']).equals(command);
-      expect(args.auth.provider.config['cmd-env']).deep.equals({});
-    });
+      }
+      const args = config.fromKubeconfig(kubeconfig)
+      expect(args.auth.provider.type).equals('cmd')
+      expect(args.auth.provider.config['cmd-args']).equals('')
+      expect(args.auth.provider.config['cmd-path']).equals(command)
+      expect(args.auth.provider.config['cmd-env']).deep.equals({})
+    })
 
     it('handles manually specified current-context', () => {
       const kubeconfig = {
@@ -515,23 +516,23 @@ describe('Config', () => {
             }
           }
         ]
-      };
-      const args = config.fromKubeconfig(kubeconfig, 'foo-context-2');
-      expect(args.url).equals('https://192.168.42.122:8443');
-    });
+      }
+      const args = config.fromKubeconfig(kubeconfig, 'foo-context-2')
+      expect(args.url).equals('https://192.168.42.122:8443')
+    })
 
     it('load kubeconfig from provided path', () => {
-      const args = config.fromKubeconfig('./test/fixtures/kube-fixture.yml');
-      expect(args.url).equals('https://192.168.42.121:8443');
-    });
+      const args = config.fromKubeconfig('./test/fixtures/kube-fixture.yml')
+      expect(args.url).equals('https://192.168.42.121:8443')
+    })
 
     it('load kubeconfig from provided array of paths', () => {
       const cfgPaths = [
         './test/fixtures/kube-fixture.yml',
         './test/fixtures/kube-fixture-two.yml'
-      ];
-      const args = config.fromKubeconfig(cfgPaths);
-      expect(args.url).equals('https://192.168.42.121:8443');
-    });
-  });
-});
+      ]
+      const args = config.fromKubeconfig(cfgPaths)
+      expect(args.url).equals('https://192.168.42.121:8443')
+    })
+  })
+})

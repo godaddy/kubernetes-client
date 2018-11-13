@@ -1,17 +1,17 @@
 /* eslint-disable max-nested-callbacks */
-'use strict';
+/* eslint-env mocha */
+'use strict'
 
-const expect = require('chai').expect;
-const nock = require('nock');
+const expect = require('chai').expect
+const nock = require('nock')
 
-const common = require('./common');
-const Client = require('../lib/swagger-client').Client;
+const common = require('./common')
+const Client = require('../lib/swagger-client').Client
 
-const beforeTesting = common.beforeTesting;
+const beforeTesting = common.beforeTesting
 
 describe('lib.swagger-client', () => {
   describe('.Client', () => {
-
     describe('.loadSpec', () => {
       describe('on a cluster with the /openapi/v2 route', () => {
         beforeTesting('unit', () => {
@@ -25,26 +25,26 @@ describe('lib.swagger-client', () => {
                   }
                 }
               }
-            });
-        });
+            })
+        })
 
         it('creates a dynamically generated client', done => {
-          const config = { url: common.api.url };
-          const client = new Client({ config });
+          const config = { url: common.api.url }
+          const client = new Client({ config })
           client.loadSpec()
             .then(() => {
-              expect(client.api.get).is.a('function');
-              done();
+              expect(client.api.get).is.a('function')
+              done()
             })
-            .catch(err => done(err));
-        });
-      });
+            .catch(err => done(err))
+        })
+      })
 
       describe('on a cluster without the /openapi/v2 route but with the /swagger.json route', () => {
         beforeTesting('unit', () => {
           nock(common.api.url)
             .get('/openapi/v2')
-            .reply(404, 'Not Found');
+            .reply(404, 'Not Found')
 
           nock(common.api.url)
             .get('/swagger.json')
@@ -56,26 +56,26 @@ describe('lib.swagger-client', () => {
                   }
                 }
               }
-            });
-        });
+            })
+        })
 
         it('creates a dynamically generated client', (done) => {
-          const config = { url: common.api.url };
-          const client = new Client({ config });
+          const config = { url: common.api.url }
+          const client = new Client({ config })
           client.loadSpec()
             .then(() => {
-              expect(client.api.get).is.a('function');
-              done();
+              expect(client.api.get).is.a('function')
+              done()
             })
-            .catch(err => done(err));
-        });
-      });
+            .catch(err => done(err))
+        })
+      })
 
       describe('on a cluster without the /openapi/v2 route and a non-200 status code on /swagger.json', () => {
         beforeTesting('unit', () => {
           nock(common.api.url)
             .get('/openapi/v2')
-            .reply(404, 'Not Found');
+            .reply(404, 'Not Found')
 
           nock(common.api.url)
             .get('/swagger.json')
@@ -87,55 +87,55 @@ describe('lib.swagger-client', () => {
                   }
                 }
               }
-            });
-        });
+            })
+        })
 
         it('returns an error message with the status code', (done) => {
-          const config = { url: common.api.url };
-          const client = new Client({ config });
+          const config = { url: common.api.url }
+          const client = new Client({ config })
           client.loadSpec()
             .then(() => {
-              const err = new Error('This test should have caused an error');
-              done(err);
+              const err = new Error('This test should have caused an error')
+              done(err)
             })
             .catch(err => {
-              expect(err.message).to.equal('Failed to get /swagger.json: 500');
+              expect(err.message).to.equal('Failed to get /swagger.json: 500')
 
-              done();
-            });
-        });
-      });
+              done()
+            })
+        })
+      })
 
       describe('on a cluster returning a non-200, non-404 status code on the /openapi/v2 route', () => {
         beforeTesting('unit', () => {
           nock(common.api.url)
             .get('/openapi/v2')
-            .reply(500, 'Internal Error');
-        });
+            .reply(500, 'Internal Error')
+        })
 
         it('returns an error message with the status code', (done) => {
-          const config = { url: common.api.url };
-          const client = new Client({ config });
+          const config = { url: common.api.url }
+          const client = new Client({ config })
           client.loadSpec()
             .then(() => {
-              const err = new Error('This test should have caused an error');
-              done(err);
+              const err = new Error('This test should have caused an error')
+              done(err)
             })
             .catch(err => {
-              expect(err.message).to.equal('Failed to get /openapi/v2: 500');
+              expect(err.message).to.equal('Failed to get /openapi/v2: 500')
 
-              done();
-            });
-        });
-      });
-    });
+              done()
+            })
+        })
+      })
+    })
 
     describe('.constructor', () => {
       it('creates a dynamically generated client synchronously based on version', () => {
-        const options = { config: {}, version: '1.9' };
-        const client = new Client(options);
-        expect(client.api.get).is.a('function');
-      });
+        const options = { config: {}, version: '1.9' }
+        const client = new Client(options)
+        expect(client.api.get).is.a('function')
+      })
 
       it('aliases resources', () => {
         const spec = {
@@ -146,15 +146,15 @@ describe('lib.swagger-client', () => {
               }
             }
           }
-        };
-        const client = new Client({ spec, http: {}});
-        expect(client.foo.deployments).is.an('object');
-        expect(client.foo.deployment).is.an('object');
-        expect(client.foo.deploy).is.an('object');
-      });
+        }
+        const client = new Client({ spec, http: {} })
+        expect(client.foo.deployments).is.an('object')
+        expect(client.foo.deployment).is.an('object')
+        expect(client.foo.deploy).is.an('object')
+      })
 
       it('adds functions for Namespaced CustomResourceDefinitions', () => {
-        const client = new Client({ spec: { paths: {}}, http: {}});
+        const client = new Client({ spec: { paths: {} }, http: {} })
         const crd = {
           spec: {
             scope: 'Namespaced',
@@ -164,22 +164,22 @@ describe('lib.swagger-client', () => {
               plural: 'foos'
             }
           }
-        };
-        client.addCustomResourceDefinition(crd);
-        expect(client.apis['stable.example.com'].v1.namespaces('default').foos.get).is.a('function');
-        expect(client.apis['stable.example.com'].v1.namespaces('default').foos.post).is.a('function');
-        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
-        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').delete).is.a('function');
-        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function');
-        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').patch).is.a('function');
-        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').put).is.a('function');
-        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
-        expect(client.apis['stable.example.com'].v1.namespaces('default').watch.foos.getStream).is.a('function');
-        expect(client.apis['stable.example.com'].v1.namespaces('default').watch.foos('blah').getStream).is.a('function');
-      });
+        }
+        client.addCustomResourceDefinition(crd)
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos.get).is.a('function')
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos.post).is.a('function')
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function')
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').delete).is.a('function')
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function')
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').patch).is.a('function')
+        expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').put).is.a('function')
+        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function')
+        expect(client.apis['stable.example.com'].v1.namespaces('default').watch.foos.getStream).is.a('function')
+        expect(client.apis['stable.example.com'].v1.namespaces('default').watch.foos('blah').getStream).is.a('function')
+      })
 
       it('adds functions for Cluster CustomResourceDefinitions', () => {
-        const client = new Client({ spec: { paths: {}}, http: {}});
+        const client = new Client({ spec: { paths: {} }, http: {} })
         const crd = {
           spec: {
             scope: 'Cluster',
@@ -189,19 +189,19 @@ describe('lib.swagger-client', () => {
               plural: 'foos'
             }
           }
-        };
-        client.addCustomResourceDefinition(crd);
-        expect(client.apis['stable.example.com'].v1.foos.get).is.a('function');
-        expect(client.apis['stable.example.com'].v1.foos.post).is.a('function');
-        expect(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
-        expect(client.apis['stable.example.com'].v1.foos('blah').delete).is.a('function');
-        expect(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function');
-        expect(client.apis['stable.example.com'].v1.foos('blah').patch).is.a('function');
-        expect(client.apis['stable.example.com'].v1.foos('blah').put).is.a('function');
-        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
-        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function');
-        expect(client.apis['stable.example.com'].v1.watch.foos('blah').getStream).is.a('function');
-      });
-    });
-  });
-});
+        }
+        client.addCustomResourceDefinition(crd)
+        expect(client.apis['stable.example.com'].v1.foos.get).is.a('function')
+        expect(client.apis['stable.example.com'].v1.foos.post).is.a('function')
+        expect(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function')
+        expect(client.apis['stable.example.com'].v1.foos('blah').delete).is.a('function')
+        expect(client.apis['stable.example.com'].v1.foos('blah').get).is.a('function')
+        expect(client.apis['stable.example.com'].v1.foos('blah').patch).is.a('function')
+        expect(client.apis['stable.example.com'].v1.foos('blah').put).is.a('function')
+        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function')
+        expect(client.apis['stable.example.com'].v1.watch.foos.getStream).is.a('function')
+        expect(client.apis['stable.example.com'].v1.watch.foos('blah').getStream).is.a('function')
+      })
+    })
+  })
+})

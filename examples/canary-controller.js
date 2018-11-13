@@ -10,25 +10,25 @@
 //   $ kubectl expose deployment coalmine --type=NodePort --selector='app=coalmine,state=stable'
 //   $ minikube service coalmine --url
 //
-const Client = require('kubernetes-client').Client;
-const config = require('kubernetes-client').config;
-const JSONStream = require('json-stream');
+const Client = require('kubernetes-client').Client
+const config = require('kubernetes-client').config
+const JSONStream = require('json-stream')
 
-const namespace = 'default';
-const deployment = 'coalmine';
+const namespace = 'default'
+const deployment = 'coalmine'
 
-const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
+const client = new Client({ config: config.fromKubeconfig(), version: '1.9' })
 
-function watchPod(pod) {
-  const podClient = client.api.v1.namespaces(namespace).pods(pod);
-  const stream = podClient.log.getStream({ qs: { follow: true }});
-  const jsonStream = new JSONStream();
-  stream.pipe(jsonStream);
+function watchPod (pod) {
+  const podClient = client.api.v1.namespaces(namespace).pods(pod)
+  const stream = podClient.log.getStream({ qs: { follow: true } })
+  const jsonStream = new JSONStream()
+  stream.pipe(jsonStream)
 
   jsonStream.on('data', async object => {
-    console.log('Log event:', JSON.stringify(object, null, 2));
+    console.log('Log event:', JSON.stringify(object, null, 2))
     if (object.level === 'error') {
-      console.warn(`Error in ${ pod }`);
+      console.warn(`Error in ${pod}`)
       await podClient.patch({
         body: {
           metadata: {
@@ -37,33 +37,33 @@ function watchPod(pod) {
             }
           }
         }
-      });
-      stream.abort();
+      })
+      stream.abort()
     }
-  });
+  })
 
   //
   // Watch logs for 60 seconds.
   //
-  const timeout = setTimeout(() => stream.abort(), 60 * 1000);
-  jsonStream.on('end', () => clearTimeout(timeout));
+  const timeout = setTimeout(() => stream.abort(), 60 * 1000)
+  jsonStream.on('end', () => clearTimeout(timeout))
 }
 
-async function main() {
+async function main () {
   try {
     //
     // Get the Pod names associated with the Deployment.
     //
-    const manifest = await client.apis.apps.v1.namespaces(namespace).deployments(deployment).get();
-    const matchLabels = manifest.body.spec.selector.matchLabels;
+    const manifest = await client.apis.apps.v1.namespaces(namespace).deployments(deployment).get()
+    const matchLabels = manifest.body.spec.selector.matchLabels
     const matchQuery = Object.keys(matchLabels)
-      .map(label => `${ label }=${ matchLabels[label] }`)
-      .join(',');
-    const pods = await client.api.v1.namespaces(namespace).pods.get({ qs: { labelSelector: matchQuery }});
-    pods.body.items.map(podManifest => podManifest.metadata.name).forEach(watchPod);
+      .map(label => `${label}=${matchLabels[label]}`)
+      .join(',')
+    const pods = await client.api.v1.namespaces(namespace).pods.get({ qs: { labelSelector: matchQuery } })
+    pods.body.items.map(podManifest => podManifest.metadata.name).forEach(watchPod)
   } catch (err) {
-    console.error('Error: ', err);
+    console.error('Error: ', err)
   }
 }
 
-main();
+main()

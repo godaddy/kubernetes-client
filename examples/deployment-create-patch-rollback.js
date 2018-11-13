@@ -2,18 +2,18 @@
 //
 // Create a deployment, patch it, and roll back to the original.
 //
-const Client = require('kubernetes-client').Client;
-const config = require('kubernetes-client').config;
+const Client = require('kubernetes-client').Client
+const config = require('kubernetes-client').config
 
-const deploymentManifest = require('./nginx-deployment.json');
+const deploymentManifest = require('./nginx-deployment.json')
 
-async function main() {
+async function main () {
   try {
-    const client = new Client({ config: config.fromKubeconfig(), version: '1.10' });
+    const client = new Client({ config: config.fromKubeconfig(), version: '1.10' })
 
     // Create a deployment
-    const create = await client.apis.apps.v1.ns('default').deploy.post({ body: deploymentManifest });
-    console.log('Create: ', create);
+    const create = await client.apis.apps.v1.ns('default').deploy.post({ body: deploymentManifest })
+    console.log('Create: ', create)
 
     // Update the deployment
     // Change the image from nginx:1.7.9 to nginx:1.9.1
@@ -30,8 +30,8 @@ async function main() {
           }
         }
       }
-    });
-    console.log('Update: ', updateImage);
+    })
+    console.log('Update: ', updateImage)
 
     // Rollback to nginx:1.7.9
     const rollback = await client.apis.apps.v1beta1.namespaces('default').deployments('nginx-deployment').rollback.post({
@@ -40,11 +40,11 @@ async function main() {
         apiVersion: 'apps/v1beta1',
         name: 'nginx-deployment'
       }
-    });
-    console.log('Rollback: ', rollback);
+    })
+    console.log('Rollback: ', rollback)
   } catch (err) {
-    console.error('Error: ', err);
+    console.error('Error: ', err)
   }
 }
 
-main();
+main()
