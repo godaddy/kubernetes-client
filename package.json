@@ -1,6 +1,6 @@
 {
-  "name": "kubernetes-client",
-  "version": "6.4.0",
+  "name": "@nicolaischmid/kubernetes-client",
+  "version": "6.5.0",
   "description": "Simplified Kubernetes API client.",
   "main": "lib/index.js",
   "types": "./typings/index.d.ts",

@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.0"></a>
+# [6.5.0](https://github.com/godaddy/kubernetes-client/compare/6.4.0...6.5.0) (2018-11-21)
+
+
+### Features
+
+* **config:** add pathPrefix parameter to getInClusterMethod ([89a659d](https://github.com/godaddy/kubernetes-client/commit/89a659d))
+
+
+
 <a name="6.4.0"></a>
 # [6.4.0](https://github.com/godaddy/kubernetes-client/compare/6.3.0...6.4.0) (2018-11-12)
 
