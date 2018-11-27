@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.4.1"></a>
+## [6.4.1](https://github.com/godaddy/kubernetes-client/compare/6.4.0...6.4.1) (2018-11-27)
+
+
+### Bug Fixes
+
+* **swagger:** Fallback to old swagger.json endpoint ([#364](https://github.com/godaddy/kubernetes-client/issues/364)) ([42f3e5d](https://github.com/godaddy/kubernetes-client/commit/42f3e5d))
+
+
+
 <a name="6.4.0"></a>
 # [6.4.0](https://github.com/godaddy/kubernetes-client/compare/6.3.0...6.4.0) (2018-11-12)
 
