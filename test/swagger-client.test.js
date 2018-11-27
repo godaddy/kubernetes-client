@@ -111,6 +111,18 @@ describe('lib.swagger-client', () => {
           nock(common.api.url)
             .get('/openapi/v2')
             .reply(500, 'Internal Error')
+
+          nock(common.api.url)
+            .get('/swagger.json')
+            .reply(500, {
+              paths: {
+                '/api/': {
+                  get: {
+                    operationId: 'getCoreAPIVersions'
+                  }
+                }
+              }
+            })
         })
 
         it('returns an error message with the status code', (done) => {
@@ -123,7 +135,6 @@ describe('lib.swagger-client', () => {
             })
             .catch(err => {
               expect(err.message).to.equal('Failed to get /openapi/v2: 500')
-
               done()
             })
         })
