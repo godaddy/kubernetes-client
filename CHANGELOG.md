@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.0"></a>
+# [6.5.0](https://github.com/godaddy/kubernetes-client/compare/6.4.1...6.5.0) (2018-12-05)
+
+
+### Features
+
+* **CRDs:** cluster-level GET for Namespaced CRDs ([#366](https://github.com/godaddy/kubernetes-client/issues/366)) ([9adcc04](https://github.com/godaddy/kubernetes-client/commit/9adcc04))
+
+
+
 <a name="6.4.1"></a>
 ## [6.4.1](https://github.com/godaddy/kubernetes-client/compare/6.4.0...6.4.1) (2018-11-27)
 
