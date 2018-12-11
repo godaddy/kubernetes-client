@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.1"></a>
+## [6.5.1](https://github.com/godaddy/kubernetes-client/compare/6.5.0...6.5.1) (2018-12-11)
+
+
+### Bug Fixes
+
+* **node6:** remove spread for node6+ support ([#368](https://github.com/godaddy/kubernetes-client/issues/368)) ([2e161aa](https://github.com/godaddy/kubernetes-client/commit/2e161aa))
+
+
+
 <a name="6.5.0"></a>
 # [6.5.0](https://github.com/godaddy/kubernetes-client/compare/6.4.1...6.5.0) (2018-12-05)
 
