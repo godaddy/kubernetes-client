@@ -177,6 +177,7 @@ describe('lib.swagger-client', () => {
           }
         }
         client.addCustomResourceDefinition(crd)
+        expect(client.apis['stable.example.com'].v1.foos.get).is.a('function')
         expect(client.apis['stable.example.com'].v1.namespaces('default').foos.get).is.a('function')
         expect(client.apis['stable.example.com'].v1.namespaces('default').foos.post).is.a('function')
         expect(client.apis['stable.example.com'].v1.namespaces('default').foos('blah').get).is.a('function')
