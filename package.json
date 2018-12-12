@@ -33,7 +33,7 @@
   ],
   "dependencies": {
     "deepmerge": "^2.1.1",
-    "fluent-openapi": "^1.0.0",
+    "fluent-openapi": "^2.0.0",
     "js-yaml": "^3.10.0",
     "openid-client": "^2.4.4",
     "qs": "^6.5.2",
