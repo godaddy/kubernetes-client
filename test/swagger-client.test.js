@@ -99,8 +99,7 @@ describe('lib.swagger-client', () => {
               done(err)
             })
             .catch(err => {
-              expect(err.message).to.equal('Failed to get /swagger.json: 500')
-
+              expect(err).to.be.an('Error')
               done()
             })
         })
@@ -134,7 +133,7 @@ describe('lib.swagger-client', () => {
               done(err)
             })
             .catch(err => {
-              expect(err.message).to.equal('Failed to get /openapi/v2: 500')
+              expect(err).to.be.an('Error')
               done()
             })
         })
