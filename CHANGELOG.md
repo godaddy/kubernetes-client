@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.6.1"></a>
+## [6.6.1](https://github.com/godaddy/kubernetes-client/compare/6.6.0...6.6.1) (2018-12-24)
+
+
+### Bug Fixes
+
+* **request:** handle 200 responses with an empty body ([#381](https://github.com/godaddy/kubernetes-client/issues/381)) ([5672a3c](https://github.com/godaddy/kubernetes-client/commit/5672a3c))
+
+
+
 <a name="6.6.0"></a>
 # [6.6.0](https://github.com/godaddy/kubernetes-client/compare/6.3.2...6.6.0) (2018-12-24)
 
