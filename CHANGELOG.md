@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.6.0"></a>
+# [6.6.0](https://github.com/godaddy/kubernetes-client/compare/6.3.2...6.6.0) (2018-12-24)
+
+
+### Bug Fixes
+
+* **auth:** remove authentication from /openapi/v2 call ([#372](https://github.com/godaddy/kubernetes-client/issues/372)) ([ef1467a](https://github.com/godaddy/kubernetes-client/commit/ef1467a))
+* **node6:** remove spread for node6+ support ([#368](https://github.com/godaddy/kubernetes-client/issues/368)) ([2e161aa](https://github.com/godaddy/kubernetes-client/commit/2e161aa))
+* **swagger:** Fallback to old swagger.json endpoint ([#364](https://github.com/godaddy/kubernetes-client/issues/364)) ([42f3e5d](https://github.com/godaddy/kubernetes-client/commit/42f3e5d))
+
+
+### Features
+
+* **CRDs:** cluster-level GET for Namespaced CRDs ([#366](https://github.com/godaddy/kubernetes-client/issues/366)) ([9adcc04](https://github.com/godaddy/kubernetes-client/commit/9adcc04))
+* **loadSpec:** change the endpoint called by loadSpec ([#356](https://github.com/godaddy/kubernetes-client/issues/356)) ([8a5f5cb](https://github.com/godaddy/kubernetes-client/commit/8a5f5cb))
+
+
+
 <a name="6.5.1"></a>
 ## [6.5.1](https://github.com/godaddy/kubernetes-client/compare/6.5.0...6.5.1) (2018-12-11)
 
