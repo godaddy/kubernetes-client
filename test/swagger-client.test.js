@@ -157,14 +157,14 @@ describe('lib.swagger-client', () => {
             }
           }
         }
-        const client = new Client({ spec, http: {} })
+        const client = new Client({ spec, backend: {} })
         expect(client.foo.deployments).is.an('object')
         expect(client.foo.deployment).is.an('object')
         expect(client.foo.deploy).is.an('object')
       })
 
       it('adds functions for Namespaced CustomResourceDefinitions', () => {
-        const client = new Client({ spec: { paths: {} }, http: {} })
+        const client = new Client({ spec: { paths: {} }, backend: {} })
         const crd = {
           spec: {
             scope: 'Namespaced',
@@ -190,7 +190,7 @@ describe('lib.swagger-client', () => {
       })
 
       it('adds functions for Cluster CustomResourceDefinitions', () => {
-        const client = new Client({ spec: { paths: {} }, http: {} })
+        const client = new Client({ spec: { paths: {} }, backend: {} })
         const crd = {
           spec: {
             scope: 'Cluster',
