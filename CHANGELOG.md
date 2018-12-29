@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.7.0"></a>
+# [6.7.0](https://github.com/godaddy/kubernetes-client/compare/6.6.2...6.7.0) (2018-12-29)
+
+
+### Features
+
+* **inCluster:** set serviceaccount root for `inCluster` ([#383](https://github.com/godaddy/kubernetes-client/issues/383)) ([623453d](https://github.com/godaddy/kubernetes-client/commit/623453d))
+
+
+
 <a name="6.6.2"></a>
 ## [6.6.2](https://github.com/godaddy/kubernetes-client/compare/6.6.1...6.6.2) (2018-12-29)
 
