@@ -10,8 +10,8 @@ const zlib = require('zlib')
 const Client = require('..').Client
 
 /**
- * Get the typescript interface name for a fluent-openapi component.
- * @param {object} component - fluent-openapi Component.
+ * Get the typescript interface name for a swagger-fluent component.
+ * @param {object} component - swagger-fluent Component.
  * @returns {string} TypeScript interface name
  */
 function interfaceName (component) {
