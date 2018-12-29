@@ -1,6 +1,6 @@
 {
   "name": "kubernetes-client",
-  "version": "6.6.1",
+  "version": "6.6.2",
   "description": "Simplified Kubernetes API client.",
   "main": "lib/index.js",
   "types": "./typings/index.d.ts",
@@ -33,7 +33,7 @@
   ],
   "dependencies": {
     "deepmerge": "^3.0.0",
-    "fluent-openapi": "^3.0.0",
+    "swagger-fluent": "^3.1.1",
     "js-yaml": "^3.10.0",
     "openid-client": "^2.4.4",
     "qs": "^6.5.2",
