@@ -65,7 +65,7 @@ const config = require('kubernetes-client').config
 const client = new Client({ config: config.fromKubeconfig(), version: '1.9' })
 ```
 
-or from a file:
+or from a local OpenAPI/Swagger specification:
 
 ```js
 const Client = require('kubernetes-client').Client
@@ -100,7 +100,7 @@ const client = new Client({
 })
 ```
 
-or from within a Pod:
+or from within a Pod using `getInCluster`:
 
 ```js
 const Client = require('kubernetes-client').Client
@@ -108,6 +108,13 @@ const config = require('kubernetes-client').config
 const client = new Client({ config: config.getInCluster() })
 await client.loadSpec()
 ```
+
+kubernetes-client supports reading the [service account
+credentials](https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster/#accessing-the-api-from-a-pod)
+from different locations by setting the
+`KUBERNETES_CLIENT_SERVICEACCOUNT_ROOT` environment variable. This is
+useful, for example, when running
+[Telepresence](https://www.telepresence.io/howto/volumes).
 
 ## Basic usage
 
