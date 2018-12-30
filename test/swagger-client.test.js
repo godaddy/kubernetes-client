@@ -5,17 +5,16 @@
 const expect = require('chai').expect
 const nock = require('nock')
 
-const common = require('./common')
 const Client = require('../lib/swagger-client').Client
 
-const beforeTesting = common.beforeTesting
+const url = 'http://mock.kube.api'
 
 describe('lib.swagger-client', () => {
   describe('.Client', () => {
     describe('.loadSpec', () => {
       describe('on a cluster with the /openapi/v2 route', () => {
-        beforeTesting('unit', () => {
-          nock(common.api.url)
+        before(() => {
+          nock(url)
             .get('/openapi/v2')
             .reply(200, {
               paths: {
@@ -29,7 +28,7 @@ describe('lib.swagger-client', () => {
         })
 
         it('creates a dynamically generated client', done => {
-          const config = { url: common.api.url }
+          const config = { url }
           const client = new Client({ config })
           client.loadSpec()
             .then(() => {
@@ -41,12 +40,12 @@ describe('lib.swagger-client', () => {
       })
 
       describe('on a cluster without the /openapi/v2 route but with the /swagger.json route', () => {
-        beforeTesting('unit', () => {
-          nock(common.api.url)
+        before(() => {
+          nock(url)
             .get('/openapi/v2')
             .reply(404, 'Not Found')
 
-          nock(common.api.url)
+          nock(url)
             .get('/swagger.json')
             .reply(200, {
               paths: {
@@ -60,7 +59,7 @@ describe('lib.swagger-client', () => {
         })
 
         it('creates a dynamically generated client', (done) => {
-          const config = { url: common.api.url }
+          const config = { url }
           const client = new Client({ config })
           client.loadSpec()
             .then(() => {
@@ -72,12 +71,12 @@ describe('lib.swagger-client', () => {
       })
 
       describe('on a cluster without the /openapi/v2 route and a non-200 status code on /swagger.json', () => {
-        beforeTesting('unit', () => {
-          nock(common.api.url)
+        before(() => {
+          nock(url)
             .get('/openapi/v2')
             .reply(404, 'Not Found')
 
-          nock(common.api.url)
+          nock(url)
             .get('/swagger.json')
             .reply(500, {
               paths: {
@@ -91,7 +90,7 @@ describe('lib.swagger-client', () => {
         })
 
         it('returns an error message with the status code', (done) => {
-          const config = { url: common.api.url }
+          const config = { url }
           const client = new Client({ config })
           client.loadSpec()
             .then(() => {
@@ -106,12 +105,12 @@ describe('lib.swagger-client', () => {
       })
 
       describe('on a cluster returning a non-200, non-404 status code on the /openapi/v2 route', () => {
-        beforeTesting('unit', () => {
-          nock(common.api.url)
+        before(() => {
+          nock(url)
             .get('/openapi/v2')
             .reply(500, 'Internal Error')
 
-          nock(common.api.url)
+          nock(url)
             .get('/swagger.json')
             .reply(500, {
               paths: {
@@ -125,7 +124,7 @@ describe('lib.swagger-client', () => {
         })
 
         it('returns an error message with the status code', (done) => {
-          const config = { url: common.api.url }
+          const config = { url }
           const client = new Client({ config })
           client.loadSpec()
             .then(() => {
