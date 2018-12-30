@@ -9,12 +9,10 @@
     "coverage": "istanbul cover ./node_modules/.bin/_mocha && istanbul report cobertura",
     "docs": "node scripts/docs.js --builtins",
     "typings": "node scripts/typings.js --spec lib/specs/swagger-1.10.json.gz --output typings/index.d.ts",
-    "jsdoc": "jsdoc -d doc lib",
     "lint": "standard --fix",
     "release": "standard-version --tag-prefix=''",
-    "test": "standard && mocha && npm run test-typings",
-    "test-typings": "tsc --project ./typings",
-    "test-integration": "TESTING=int mocha -t ${TIMEOUT:-30000} test"
+    "test": "standard && mocha 'lib/**/*.test.js' && npm run test-typings",
+    "test-typings": "tsc --project ./typings"
   },
   "repository": "godaddy/kubernetes-client",
   "keywords": [
