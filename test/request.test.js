@@ -4,10 +4,9 @@
 const { expect } = require('chai')
 const nock = require('nock')
 
-const common = require('./common')
 const Request = require('../lib/request')
 
-const url = common.api.url
+const url = 'http://mock.kube.api'
 
 describe('lib.request', () => {
   describe('Request', () => {
