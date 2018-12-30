@@ -13,7 +13,7 @@ describe('lib.swagger-client', () => {
   describe('.Client', () => {
     describe('.loadSpec', () => {
       describe('on a cluster with the /openapi/v2 route', () => {
-        before('unit', () => {
+        before(() => {
           nock(url)
             .get('/openapi/v2')
             .reply(200, {
@@ -40,7 +40,7 @@ describe('lib.swagger-client', () => {
       })
 
       describe('on a cluster without the /openapi/v2 route but with the /swagger.json route', () => {
-        before('unit', () => {
+        before(() => {
           nock(url)
             .get('/openapi/v2')
             .reply(404, 'Not Found')
@@ -71,7 +71,7 @@ describe('lib.swagger-client', () => {
       })
 
       describe('on a cluster without the /openapi/v2 route and a non-200 status code on /swagger.json', () => {
-        before('unit', () => {
+        before(() => {
           nock(url)
             .get('/openapi/v2')
             .reply(404, 'Not Found')
@@ -105,7 +105,7 @@ describe('lib.swagger-client', () => {
       })
 
       describe('on a cluster returning a non-200, non-404 status code on the /openapi/v2 route', () => {
-        before('unit', () => {
+        before(() => {
           nock(url)
             .get('/openapi/v2')
             .reply(500, 'Internal Error')
