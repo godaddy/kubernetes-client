@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.7.1"></a>
+## [6.7.1](https://github.com/godaddy/kubernetes-client/compare/6.7.0...6.7.1) (2019-01-04)
+
+
+### Bug Fixes
+
+* **aliasing:** don't alias apis (to api) ([#393](https://github.com/godaddy/kubernetes-client/issues/393)) ([515a6e3](https://github.com/godaddy/kubernetes-client/commit/515a6e3))
+
+
+
 <a name="6.7.0"></a>
 # [6.7.0](https://github.com/godaddy/kubernetes-client/compare/6.6.2...6.7.0) (2018-12-29)
 
