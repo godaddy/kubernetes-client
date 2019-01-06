@@ -30,9 +30,11 @@
     "typings"
   ],
   "dependencies": {
+    "@kubernetes/client-node": "^0.8.2",
     "deepmerge": "^3.2.0",
     "js-yaml": "^3.13.1",
     "openid-client": "^3.1.0",
+    "pascalcase": "^0.1.1",
     "qs": "^6.7.0",
     "request": "^2.88.0",
     "swagger-fluent": "^3.1.3",
