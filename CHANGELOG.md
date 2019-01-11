@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.8.0"></a>
+# [6.8.0](https://github.com/godaddy/kubernetes-client/compare/6.5.1...6.8.0) (2019-01-11)
+
+
+### Bug Fixes
+
+* **aliasing:** don't alias apis (to api) ([#393](https://github.com/godaddy/kubernetes-client/issues/393)) ([515a6e3](https://github.com/godaddy/kubernetes-client/commit/515a6e3))
+* **auth:** remove authentication from /openapi/v2 call ([#372](https://github.com/godaddy/kubernetes-client/issues/372)) ([ef1467a](https://github.com/godaddy/kubernetes-client/commit/ef1467a))
+* **request:** handle 200 responses with an empty body ([#381](https://github.com/godaddy/kubernetes-client/issues/381)) ([5672a3c](https://github.com/godaddy/kubernetes-client/commit/5672a3c))
+* **require:** update auth-provider path ([#397](https://github.com/godaddy/kubernetes-client/issues/397)) ([67d114a](https://github.com/godaddy/kubernetes-client/commit/67d114a))
+
+
+### Features
+
+* **inCluster:** set serviceaccount root for `inCluster` ([#383](https://github.com/godaddy/kubernetes-client/issues/383)) ([623453d](https://github.com/godaddy/kubernetes-client/commit/623453d))
+
+
+
 <a name="6.7.1"></a>
 ## [6.7.1](https://github.com/godaddy/kubernetes-client/compare/6.7.0...6.7.1) (2019-01-04)
 
