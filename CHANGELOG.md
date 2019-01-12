@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.8.1"></a>
+## [6.8.1](https://github.com/godaddy/kubernetes-client/compare/6.7.1...6.8.1) (2019-01-12)
+
+
+### Bug Fixes
+
+* **loadSpec:** remove noAuth ([#396](https://github.com/godaddy/kubernetes-client/issues/396)) ([4944fba](https://github.com/godaddy/kubernetes-client/commit/4944fba))
+* **require:** update auth-provider path ([#397](https://github.com/godaddy/kubernetes-client/issues/397)) ([67d114a](https://github.com/godaddy/kubernetes-client/commit/67d114a))
+
+
+
 <a name="6.8.0"></a>
 # [6.8.0](https://github.com/godaddy/kubernetes-client/compare/6.5.1...6.8.0) (2019-01-11)
 
