@@ -11,7 +11,8 @@
     "typings": "node scripts/typings.js --spec lib/specs/swagger-1.10.json.gz --output typings/index.d.ts",
     "lint": "standard --fix",
     "release": "standard-version --tag-prefix=''",
-    "test": "standard && mocha 'lib/**/*.test.js' && npm run test-typings",
+    "test": "standard && mocha 'lib/**/*.test.js' && npm run test-typings && npm run test-generated",
+    "test-generated": "scripts/test-generated.sh",
     "test-typings": "tsc --project ./typings"
   },
   "repository": "godaddy/kubernetes-client",
