@@ -17,7 +17,7 @@ const Client = require('..').Client
 function interfaceName (component) {
   // Root doesn't have splits
   if (component.splits.length === 0) {
-    return 'Api'
+    return 'ApiRoot'
   }
 
   //
@@ -38,7 +38,7 @@ function walk (component, interfaces) {
       properties.push({ name: child, type })
     })
   }
-  if (component.parameter) {
+  if (component.template) {
     const type = walk(component('name'), interfaces)
     callable = { name: 'name', type }
   }
