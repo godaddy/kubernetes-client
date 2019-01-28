@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.8.3"></a>
+## [6.8.3](https://github.com/godaddy/kubernetes-client/compare/6.8.2...6.8.3) (2019-01-28)
+
+
+### Bug Fixes
+
+* **exec:** correctly join URL components ([#402](https://github.com/godaddy/kubernetes-client/issues/402)) ([a557d97](https://github.com/godaddy/kubernetes-client/commit/a557d97))
+
+
+
 <a name="6.8.2"></a>
 ## [6.8.2](https://github.com/godaddy/kubernetes-client/compare/6.8.1...6.8.2) (2019-01-28)
 
