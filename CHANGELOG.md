@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.8.2"></a>
+## [6.8.2](https://github.com/godaddy/kubernetes-client/compare/6.8.1...6.8.2) (2019-01-28)
+
+
+### Bug Fixes
+
+* **typings:** remove `.loadSpec()` from declarations ([#406](https://github.com/godaddy/kubernetes-client/issues/406)) ([b17a0a9](https://github.com/godaddy/kubernetes-client/commit/b17a0a9))
+
+
+
 <a name="6.8.1"></a>
 ## [6.8.1](https://github.com/godaddy/kubernetes-client/compare/6.7.1...6.8.1) (2019-01-12)
 
