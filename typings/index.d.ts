@@ -43,7 +43,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1NamespacesNameHorizontalpodautoscalersName {
@@ -56,7 +55,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1NamespacesNameHorizontalpodautoscalers {
@@ -68,7 +66,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1NamespacesName {
@@ -78,7 +75,6 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV2beta1NamespacesNameHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV2beta1NamespacesNameHorizontalpodautoscalers
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1Namespaces {
@@ -86,7 +82,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAutoscalingV2beta1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1WatchNamespacesNameHorizontalpodautoscalersName {
@@ -95,7 +90,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1WatchNamespacesNameHorizontalpodautoscalers {
@@ -105,7 +99,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1WatchNamespacesName {
@@ -115,7 +108,6 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV2beta1WatchNamespacesNameHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV2beta1WatchNamespacesNameHorizontalpodautoscalers
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1WatchNamespaces {
@@ -123,7 +115,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAutoscalingV2beta1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1WatchHorizontalpodautoscalers {
@@ -132,7 +123,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1Watch {
@@ -145,7 +135,6 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV2beta1WatchHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV2beta1WatchHorizontalpodautoscalers
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1Horizontalpodautoscalers {
@@ -154,7 +143,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV2beta1 {
@@ -170,7 +158,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1WatchNamespacesNameHorizontalpodautoscalersName {
@@ -179,7 +166,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1WatchNamespacesNameHorizontalpodautoscalers {
@@ -189,7 +175,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1WatchNamespacesName {
@@ -199,7 +184,6 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV1WatchNamespacesNameHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV1WatchNamespacesNameHorizontalpodautoscalers
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1WatchNamespaces {
@@ -207,7 +191,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAutoscalingV1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1WatchHorizontalpodautoscalers {
@@ -216,7 +199,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1Watch {
@@ -229,7 +211,6 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV1WatchHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV1WatchHorizontalpodautoscalers
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1NamespacesNameHorizontalpodautoscalersNameStatus {
@@ -240,7 +221,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1NamespacesNameHorizontalpodautoscalersName {
@@ -253,7 +233,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1NamespacesNameHorizontalpodautoscalers {
@@ -265,7 +244,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1NamespacesName {
@@ -275,7 +253,6 @@ declare namespace KubernetesClient {
     'hpa': ApisAutoscalingV1NamespacesNameHorizontalpodautoscalers
     'horizontalpodautoscaler': ApisAutoscalingV1NamespacesNameHorizontalpodautoscalers
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1Namespaces {
@@ -283,7 +260,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAutoscalingV1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1Horizontalpodautoscalers {
@@ -292,7 +268,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscalingV1 {
@@ -308,7 +283,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAutoscaling {
@@ -319,7 +293,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespacesNameDaemonsetsName {
@@ -328,7 +301,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespacesNameDaemonsets {
@@ -338,7 +310,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespacesNameStatefulsetsName {
@@ -347,7 +318,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespacesNameStatefulsets {
@@ -357,7 +327,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespacesNameReplicasetsName {
@@ -366,7 +335,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespacesNameReplicasets {
@@ -376,7 +344,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespacesNameDeploymentsName {
@@ -385,7 +352,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespacesNameDeployments {
@@ -395,7 +361,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespacesNameControllerrevisionsName {
@@ -404,7 +369,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespacesNameControllerrevisions {
@@ -414,7 +378,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespacesName {
@@ -434,7 +397,6 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta2WatchNamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1beta2WatchNamespacesNameControllerrevisions
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchNamespaces {
@@ -442,7 +404,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAppsV1beta2WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchStatefulsets {
@@ -451,7 +412,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchReplicasets {
@@ -460,7 +420,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchDeployments {
@@ -469,7 +428,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchDaemonsets {
@@ -478,7 +436,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2WatchControllerrevisions {
@@ -487,7 +444,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2Watch {
@@ -510,7 +466,6 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta2WatchControllerrevisions
     'controllerrevision': ApisAppsV1beta2WatchControllerrevisions
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameStatefulsetsNameStatus {
@@ -521,7 +476,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameStatefulsetsNameScale {
@@ -532,7 +486,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameStatefulsetsName {
@@ -546,7 +499,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameStatefulsets {
@@ -558,7 +510,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameReplicasetsNameStatus {
@@ -569,7 +520,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameReplicasetsNameScale {
@@ -580,7 +530,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameReplicasetsName {
@@ -594,7 +543,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameReplicasets {
@@ -606,7 +554,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameDeploymentsNameStatus {
@@ -617,7 +564,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameDeploymentsNameScale {
@@ -628,7 +574,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameDeploymentsName {
@@ -642,7 +587,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameDeployments {
@@ -654,7 +598,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameDaemonsetsNameStatus {
@@ -665,7 +608,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameDaemonsetsName {
@@ -678,7 +620,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameDaemonsets {
@@ -690,7 +631,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameControllerrevisionsName {
@@ -702,7 +642,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesNameControllerrevisions {
@@ -714,7 +653,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2NamespacesName {
@@ -734,7 +672,6 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta2NamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1beta2NamespacesNameControllerrevisions
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2Namespaces {
@@ -742,7 +679,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAppsV1beta2NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2Deployments {
@@ -751,7 +687,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2Daemonsets {
@@ -760,7 +695,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2Statefulsets {
@@ -769,7 +703,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2Controllerrevisions {
@@ -778,7 +711,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2Replicasets {
@@ -787,7 +719,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta2 {
@@ -813,7 +744,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1WatchNamespacesNameStatefulsetsName {
@@ -822,7 +752,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1WatchNamespacesNameStatefulsets {
@@ -832,7 +761,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1WatchNamespacesNameDeploymentsName {
@@ -841,7 +769,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1WatchNamespacesNameDeployments {
@@ -851,7 +778,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1WatchNamespacesNameControllerrevisionsName {
@@ -860,7 +786,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1WatchNamespacesNameControllerrevisions {
@@ -870,7 +795,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1WatchNamespacesName {
@@ -884,7 +808,6 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta1WatchNamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1beta1WatchNamespacesNameControllerrevisions
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1WatchNamespaces {
@@ -892,7 +815,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAppsV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1WatchStatefulsets {
@@ -901,7 +823,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1WatchDeployments {
@@ -910,7 +831,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1WatchControllerrevisions {
@@ -919,7 +839,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1Watch {
@@ -936,7 +855,6 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta1WatchControllerrevisions
     'controllerrevision': ApisAppsV1beta1WatchControllerrevisions
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesNameStatefulsetsNameStatus {
@@ -947,7 +865,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesNameStatefulsetsNameScale {
@@ -958,7 +875,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesNameStatefulsetsName {
@@ -972,7 +888,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesNameStatefulsets {
@@ -984,7 +899,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesNameDeploymentsNameStatus {
@@ -995,7 +909,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesNameDeploymentsNameScale {
@@ -1006,7 +919,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesNameDeploymentsNameRollback {
@@ -1014,7 +926,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesNameDeploymentsName {
@@ -1029,7 +940,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesNameDeployments {
@@ -1041,7 +951,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesNameControllerrevisionsName {
@@ -1053,7 +962,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesNameControllerrevisions {
@@ -1065,7 +973,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1NamespacesName {
@@ -1079,7 +986,6 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1beta1NamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1beta1NamespacesNameControllerrevisions
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1Namespaces {
@@ -1087,7 +993,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAppsV1beta1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1Statefulsets {
@@ -1096,7 +1001,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1Deployments {
@@ -1105,7 +1009,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1Controllerrevisions {
@@ -1114,7 +1017,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1beta1 {
@@ -1134,7 +1036,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespacesNameStatefulsetsName {
@@ -1143,7 +1044,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespacesNameStatefulsets {
@@ -1153,7 +1053,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespacesNameReplicasetsName {
@@ -1162,7 +1061,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespacesNameReplicasets {
@@ -1172,7 +1070,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespacesNameDeploymentsName {
@@ -1181,7 +1078,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespacesNameDeployments {
@@ -1191,7 +1087,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespacesNameDaemonsetsName {
@@ -1200,7 +1095,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespacesNameDaemonsets {
@@ -1210,7 +1104,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespacesNameControllerrevisionsName {
@@ -1219,7 +1112,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespacesNameControllerrevisions {
@@ -1229,7 +1121,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespacesName {
@@ -1249,7 +1140,6 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1WatchNamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1WatchNamespacesNameControllerrevisions
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchNamespaces {
@@ -1257,7 +1147,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAppsV1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchControllerrevisions {
@@ -1266,7 +1155,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchDaemonsets {
@@ -1275,7 +1163,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchDeployments {
@@ -1284,7 +1171,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchStatefulsets {
@@ -1293,7 +1179,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1WatchReplicasets {
@@ -1302,7 +1187,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1Watch {
@@ -1325,7 +1209,6 @@ declare namespace KubernetesClient {
     'rs': ApisAppsV1WatchReplicasets
     'replicaset': ApisAppsV1WatchReplicasets
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameDaemonsetsNameStatus {
@@ -1336,7 +1219,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameDaemonsetsName {
@@ -1349,7 +1231,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameDaemonsets {
@@ -1361,7 +1242,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameDeploymentsNameScale {
@@ -1372,7 +1252,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameDeploymentsNameStatus {
@@ -1383,7 +1262,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameDeploymentsName {
@@ -1397,7 +1275,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameDeployments {
@@ -1409,7 +1286,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameStatefulsetsNameStatus {
@@ -1420,7 +1296,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameStatefulsetsNameScale {
@@ -1431,7 +1306,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameStatefulsetsName {
@@ -1445,7 +1319,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameStatefulsets {
@@ -1457,7 +1330,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameReplicasetsNameScale {
@@ -1468,7 +1340,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameReplicasetsNameStatus {
@@ -1479,7 +1350,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameReplicasetsName {
@@ -1493,7 +1363,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameReplicasets {
@@ -1505,7 +1374,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameControllerrevisionsName {
@@ -1517,7 +1385,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesNameControllerrevisions {
@@ -1529,7 +1396,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1NamespacesName {
@@ -1549,7 +1415,6 @@ declare namespace KubernetesClient {
     'controllerrevisions': ApisAppsV1NamespacesNameControllerrevisions
     'controllerrevision': ApisAppsV1NamespacesNameControllerrevisions
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1Namespaces {
@@ -1557,7 +1422,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAppsV1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1Deployments {
@@ -1566,7 +1430,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1Replicasets {
@@ -1575,7 +1438,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1Daemonsets {
@@ -1584,7 +1446,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1Statefulsets {
@@ -1593,7 +1454,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1Controllerrevisions {
@@ -1602,7 +1462,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAppsV1 {
@@ -1628,7 +1487,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApps {
@@ -1640,7 +1498,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRolesName {
@@ -1649,7 +1506,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRoles {
@@ -1659,7 +1515,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRolebindingsName {
@@ -1668,7 +1523,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRolebindings {
@@ -1678,7 +1532,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesName {
@@ -1689,7 +1542,6 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesNameRolebindings
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchNamespaces {
@@ -1697,7 +1549,6 @@ declare namespace KubernetesClient {
     (name: string): ApisRbac_authorization_k8s_ioV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchClusterrolesName {
@@ -1706,7 +1557,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchClusterroles {
@@ -1716,7 +1566,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchClusterrolebindingsName {
@@ -1725,7 +1574,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchClusterrolebindings {
@@ -1735,7 +1583,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchRoles {
@@ -1744,7 +1591,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1WatchRolebindings {
@@ -1753,7 +1599,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Watch {
@@ -1771,7 +1616,6 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1beta1WatchRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1beta1WatchRolebindings
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRolesName {
@@ -1783,7 +1627,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRoles {
@@ -1795,7 +1638,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRolebindingsName {
@@ -1807,7 +1649,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRolebindings {
@@ -1819,7 +1660,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1NamespacesName {
@@ -1830,7 +1670,6 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1beta1NamespacesNameRolebindings
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Namespaces {
@@ -1838,7 +1677,6 @@ declare namespace KubernetesClient {
     (name: string): ApisRbac_authorization_k8s_ioV1beta1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1ClusterrolebindingsName {
@@ -1850,7 +1688,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Clusterrolebindings {
@@ -1862,7 +1699,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1ClusterrolesName {
@@ -1874,7 +1710,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Clusterroles {
@@ -1886,7 +1721,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Roles {
@@ -1895,7 +1729,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1Rolebindings {
@@ -1904,7 +1737,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1beta1 {
@@ -1925,7 +1757,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRolesName {
@@ -1934,7 +1765,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRoles {
@@ -1944,7 +1774,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRolebindingsName {
@@ -1953,7 +1782,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRolebindings {
@@ -1963,7 +1791,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesName {
@@ -1974,7 +1801,6 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesNameRolebindings
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchNamespaces {
@@ -1982,7 +1808,6 @@ declare namespace KubernetesClient {
     (name: string): ApisRbac_authorization_k8s_ioV1alpha1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchClusterrolesName {
@@ -1991,7 +1816,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchClusterroles {
@@ -2001,7 +1825,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchClusterrolebindingsName {
@@ -2010,7 +1833,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchClusterrolebindings {
@@ -2020,7 +1842,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchRolebindings {
@@ -2029,7 +1850,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1WatchRoles {
@@ -2038,7 +1858,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Watch {
@@ -2056,7 +1875,6 @@ declare namespace KubernetesClient {
     'roles': ApisRbac_authorization_k8s_ioV1alpha1WatchRoles
     'role': ApisRbac_authorization_k8s_ioV1alpha1WatchRoles
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRolesName {
@@ -2068,7 +1886,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRoles {
@@ -2080,7 +1897,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRolebindingsName {
@@ -2092,7 +1908,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRolebindings {
@@ -2104,7 +1919,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1NamespacesName {
@@ -2115,7 +1929,6 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1alpha1NamespacesNameRolebindings
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Namespaces {
@@ -2123,7 +1936,6 @@ declare namespace KubernetesClient {
     (name: string): ApisRbac_authorization_k8s_ioV1alpha1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1ClusterrolebindingsName {
@@ -2135,7 +1947,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Clusterrolebindings {
@@ -2147,7 +1958,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1ClusterrolesName {
@@ -2159,7 +1969,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Clusterroles {
@@ -2171,7 +1980,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Rolebindings {
@@ -2180,7 +1988,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1Roles {
@@ -2189,7 +1996,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1alpha1 {
@@ -2210,7 +2016,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRolesName {
@@ -2219,7 +2024,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRoles {
@@ -2229,7 +2033,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRolebindingsName {
@@ -2238,7 +2041,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRolebindings {
@@ -2248,7 +2050,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespacesName {
@@ -2259,7 +2060,6 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1WatchNamespacesNameRolebindings
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchNamespaces {
@@ -2267,7 +2067,6 @@ declare namespace KubernetesClient {
     (name: string): ApisRbac_authorization_k8s_ioV1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchClusterrolesName {
@@ -2276,7 +2075,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchClusterroles {
@@ -2286,7 +2084,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchClusterrolebindingsName {
@@ -2295,7 +2092,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchClusterrolebindings {
@@ -2305,7 +2101,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchRolebindings {
@@ -2314,7 +2109,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1WatchRoles {
@@ -2323,7 +2117,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1Watch {
@@ -2341,7 +2134,6 @@ declare namespace KubernetesClient {
     'roles': ApisRbac_authorization_k8s_ioV1WatchRoles
     'role': ApisRbac_authorization_k8s_ioV1WatchRoles
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1NamespacesNameRolesName {
@@ -2353,7 +2145,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1NamespacesNameRoles {
@@ -2365,7 +2156,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1NamespacesNameRolebindingsName {
@@ -2377,7 +2167,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1NamespacesNameRolebindings {
@@ -2389,7 +2178,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1NamespacesName {
@@ -2400,7 +2188,6 @@ declare namespace KubernetesClient {
     'rolebindings': ApisRbac_authorization_k8s_ioV1NamespacesNameRolebindings
     'rolebinding': ApisRbac_authorization_k8s_ioV1NamespacesNameRolebindings
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1Namespaces {
@@ -2408,7 +2195,6 @@ declare namespace KubernetesClient {
     (name: string): ApisRbac_authorization_k8s_ioV1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1ClusterrolebindingsName {
@@ -2420,7 +2206,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1Clusterrolebindings {
@@ -2432,7 +2217,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1ClusterrolesName {
@@ -2444,7 +2228,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1Clusterroles {
@@ -2456,7 +2239,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1Rolebindings {
@@ -2465,7 +2247,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1Roles {
@@ -2474,7 +2255,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_ioV1 {
@@ -2495,7 +2275,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisRbac_authorization_k8s_io {
@@ -2507,7 +2286,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1WatchNamespacesNamePoddisruptionbudgetsName {
@@ -2516,7 +2294,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1WatchNamespacesNamePoddisruptionbudgets {
@@ -2526,7 +2303,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1WatchNamespacesName {
@@ -2535,7 +2311,6 @@ declare namespace KubernetesClient {
     'poddisruptionbudgets': ApisPolicyV1beta1WatchNamespacesNamePoddisruptionbudgets
     'poddisruptionbudget': ApisPolicyV1beta1WatchNamespacesNamePoddisruptionbudgets
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1WatchNamespaces {
@@ -2543,7 +2318,6 @@ declare namespace KubernetesClient {
     (name: string): ApisPolicyV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1WatchPodsecuritypoliciesName {
@@ -2552,7 +2326,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1WatchPodsecuritypolicies {
@@ -2562,7 +2335,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1WatchPoddisruptionbudgets {
@@ -2571,7 +2343,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1Watch {
@@ -2585,7 +2356,6 @@ declare namespace KubernetesClient {
     'poddisruptionbudgets': ApisPolicyV1beta1WatchPoddisruptionbudgets
     'poddisruptionbudget': ApisPolicyV1beta1WatchPoddisruptionbudgets
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1NamespacesNamePoddisruptionbudgetsNameStatus {
@@ -2596,7 +2366,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1NamespacesNamePoddisruptionbudgetsName {
@@ -2609,7 +2378,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1NamespacesNamePoddisruptionbudgets {
@@ -2621,7 +2389,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1NamespacesName {
@@ -2630,7 +2397,6 @@ declare namespace KubernetesClient {
     'poddisruptionbudgets': ApisPolicyV1beta1NamespacesNamePoddisruptionbudgets
     'poddisruptionbudget': ApisPolicyV1beta1NamespacesNamePoddisruptionbudgets
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1Namespaces {
@@ -2638,7 +2404,6 @@ declare namespace KubernetesClient {
     (name: string): ApisPolicyV1beta1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1PodsecuritypoliciesName {
@@ -2650,7 +2415,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1Podsecuritypolicies {
@@ -2662,7 +2426,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1Poddisruptionbudgets {
@@ -2671,7 +2434,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicyV1beta1 {
@@ -2688,7 +2450,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisPolicy {
@@ -2698,7 +2459,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1WatchNamespacesNameNetworkpoliciesName {
@@ -2707,7 +2467,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1WatchNamespacesNameNetworkpolicies {
@@ -2717,7 +2476,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1WatchNamespacesName {
@@ -2726,7 +2484,6 @@ declare namespace KubernetesClient {
     'networkpolicies': ApisNetworking_k8s_ioV1WatchNamespacesNameNetworkpolicies
     'networkpolicie': ApisNetworking_k8s_ioV1WatchNamespacesNameNetworkpolicies
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1WatchNamespaces {
@@ -2734,7 +2491,6 @@ declare namespace KubernetesClient {
     (name: string): ApisNetworking_k8s_ioV1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1WatchNetworkpolicies {
@@ -2743,7 +2499,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1Watch {
@@ -2755,7 +2510,6 @@ declare namespace KubernetesClient {
     'networkpolicies': ApisNetworking_k8s_ioV1WatchNetworkpolicies
     'networkpolicie': ApisNetworking_k8s_ioV1WatchNetworkpolicies
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1NamespacesNameNetworkpoliciesName {
@@ -2767,7 +2521,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1NamespacesNameNetworkpolicies {
@@ -2779,7 +2532,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1NamespacesName {
@@ -2788,7 +2540,6 @@ declare namespace KubernetesClient {
     'networkpolicies': ApisNetworking_k8s_ioV1NamespacesNameNetworkpolicies
     'networkpolicie': ApisNetworking_k8s_ioV1NamespacesNameNetworkpolicies
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1Namespaces {
@@ -2796,7 +2547,6 @@ declare namespace KubernetesClient {
     (name: string): ApisNetworking_k8s_ioV1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1Networkpolicies {
@@ -2805,7 +2555,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_ioV1 {
@@ -2820,7 +2569,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisNetworking_k8s_io {
@@ -2830,7 +2578,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameReplicasetsName {
@@ -2839,7 +2586,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameReplicasets {
@@ -2849,7 +2595,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameNetworkpoliciesName {
@@ -2858,7 +2603,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameNetworkpolicies {
@@ -2868,7 +2612,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameIngressesName {
@@ -2877,7 +2620,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameIngresses {
@@ -2887,7 +2629,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameDeploymentsName {
@@ -2896,7 +2637,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameDeployments {
@@ -2906,7 +2646,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameDaemonsetsName {
@@ -2915,7 +2654,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespacesNameDaemonsets {
@@ -2925,7 +2663,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespacesName {
@@ -2946,7 +2683,6 @@ declare namespace KubernetesClient {
     'ds': ApisExtensionsV1beta1WatchNamespacesNameDaemonsets
     'daemonset': ApisExtensionsV1beta1WatchNamespacesNameDaemonsets
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNamespaces {
@@ -2954,7 +2690,6 @@ declare namespace KubernetesClient {
     (name: string): ApisExtensionsV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchPodsecuritypoliciesName {
@@ -2963,7 +2698,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchPodsecuritypolicies {
@@ -2973,7 +2707,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchDaemonsets {
@@ -2982,7 +2715,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchDeployments {
@@ -2991,7 +2723,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchIngresses {
@@ -3000,7 +2731,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchNetworkpolicies {
@@ -3009,7 +2739,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1WatchReplicasets {
@@ -3018,7 +2747,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1Watch {
@@ -3044,7 +2772,6 @@ declare namespace KubernetesClient {
     'rs': ApisExtensionsV1beta1WatchReplicasets
     'replicaset': ApisExtensionsV1beta1WatchReplicasets
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicationcontrollersNameScale {
@@ -3055,7 +2782,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicationcontrollersName {
@@ -3063,7 +2789,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     'scale': ApisExtensionsV1beta1NamespacesNameReplicationcontrollersNameScale
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicationcontrollers {
@@ -3071,7 +2796,6 @@ declare namespace KubernetesClient {
     (name: string): ApisExtensionsV1beta1NamespacesNameReplicationcontrollersName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicasetsNameStatus {
@@ -3082,7 +2806,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicasetsNameScale {
@@ -3093,7 +2816,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicasetsName {
@@ -3107,7 +2829,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameReplicasets {
@@ -3119,7 +2840,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameIngressesNameStatus {
@@ -3130,7 +2850,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameIngressesName {
@@ -3143,7 +2862,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameIngresses {
@@ -3155,7 +2873,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameDeploymentsNameStatus {
@@ -3166,7 +2883,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameDeploymentsNameScale {
@@ -3177,7 +2893,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameDeploymentsNameRollback {
@@ -3185,7 +2900,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameDeploymentsName {
@@ -3200,7 +2914,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameDeployments {
@@ -3212,7 +2925,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameDaemonsetsNameStatus {
@@ -3223,7 +2935,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameDaemonsetsName {
@@ -3236,7 +2947,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameDaemonsets {
@@ -3248,7 +2958,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameNetworkpoliciesName {
@@ -3260,7 +2969,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesNameNetworkpolicies {
@@ -3272,7 +2980,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1NamespacesName {
@@ -3296,7 +3003,6 @@ declare namespace KubernetesClient {
     'networkpolicies': ApisExtensionsV1beta1NamespacesNameNetworkpolicies
     'networkpolicie': ApisExtensionsV1beta1NamespacesNameNetworkpolicies
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1Namespaces {
@@ -3304,7 +3010,6 @@ declare namespace KubernetesClient {
     (name: string): ApisExtensionsV1beta1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1PodsecuritypoliciesName {
@@ -3316,7 +3021,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1Podsecuritypolicies {
@@ -3328,7 +3032,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1Ingresses {
@@ -3337,7 +3040,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1Daemonsets {
@@ -3346,7 +3048,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1Deployments {
@@ -3355,7 +3056,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1Networkpolicies {
@@ -3364,7 +3064,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1Replicasets {
@@ -3373,7 +3072,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensionsV1beta1 {
@@ -3402,7 +3100,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisExtensions {
@@ -3412,7 +3109,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1WatchNamespacesNameEventsName {
@@ -3421,7 +3117,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1WatchNamespacesNameEvents {
@@ -3431,7 +3126,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1WatchNamespacesName {
@@ -3441,7 +3135,6 @@ declare namespace KubernetesClient {
     'ev': ApisEvents_k8s_ioV1beta1WatchNamespacesNameEvents
     'event': ApisEvents_k8s_ioV1beta1WatchNamespacesNameEvents
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1WatchNamespaces {
@@ -3449,7 +3142,6 @@ declare namespace KubernetesClient {
     (name: string): ApisEvents_k8s_ioV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1WatchEvents {
@@ -3458,7 +3150,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1Watch {
@@ -3471,7 +3162,6 @@ declare namespace KubernetesClient {
     'ev': ApisEvents_k8s_ioV1beta1WatchEvents
     'event': ApisEvents_k8s_ioV1beta1WatchEvents
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1NamespacesNameEventsName {
@@ -3483,7 +3173,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1NamespacesNameEvents {
@@ -3495,7 +3184,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1NamespacesName {
@@ -3505,7 +3193,6 @@ declare namespace KubernetesClient {
     'ev': ApisEvents_k8s_ioV1beta1NamespacesNameEvents
     'event': ApisEvents_k8s_ioV1beta1NamespacesNameEvents
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1Namespaces {
@@ -3513,7 +3200,6 @@ declare namespace KubernetesClient {
     (name: string): ApisEvents_k8s_ioV1beta1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1Events {
@@ -3522,7 +3208,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_ioV1beta1 {
@@ -3538,7 +3223,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisEvents_k8s_io {
@@ -3548,7 +3232,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1WatchNamespacesNameCronjobsName {
@@ -3557,7 +3240,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1WatchNamespacesNameCronjobs {
@@ -3567,7 +3249,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1WatchNamespacesName {
@@ -3576,7 +3257,6 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV2alpha1WatchNamespacesNameCronjobs
     'cronjob': ApisBatchV2alpha1WatchNamespacesNameCronjobs
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1WatchNamespaces {
@@ -3584,7 +3264,6 @@ declare namespace KubernetesClient {
     (name: string): ApisBatchV2alpha1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1WatchCronjobs {
@@ -3593,7 +3272,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1Watch {
@@ -3605,7 +3283,6 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV2alpha1WatchCronjobs
     'cronjob': ApisBatchV2alpha1WatchCronjobs
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1NamespacesNameCronjobsNameStatus {
@@ -3616,7 +3293,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1NamespacesNameCronjobsName {
@@ -3629,7 +3305,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1NamespacesNameCronjobs {
@@ -3641,7 +3316,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1NamespacesName {
@@ -3650,7 +3324,6 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV2alpha1NamespacesNameCronjobs
     'cronjob': ApisBatchV2alpha1NamespacesNameCronjobs
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1Namespaces {
@@ -3658,7 +3331,6 @@ declare namespace KubernetesClient {
     (name: string): ApisBatchV2alpha1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1Cronjobs {
@@ -3667,7 +3339,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV2alpha1 {
@@ -3682,7 +3353,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1WatchNamespacesNameCronjobsName {
@@ -3691,7 +3361,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1WatchNamespacesNameCronjobs {
@@ -3701,7 +3370,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1WatchNamespacesName {
@@ -3710,7 +3378,6 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV1beta1WatchNamespacesNameCronjobs
     'cronjob': ApisBatchV1beta1WatchNamespacesNameCronjobs
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1WatchNamespaces {
@@ -3718,7 +3385,6 @@ declare namespace KubernetesClient {
     (name: string): ApisBatchV1beta1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1WatchCronjobs {
@@ -3727,7 +3393,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1Watch {
@@ -3739,7 +3404,6 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV1beta1WatchCronjobs
     'cronjob': ApisBatchV1beta1WatchCronjobs
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1NamespacesNameCronjobsNameStatus {
@@ -3750,7 +3414,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1NamespacesNameCronjobsName {
@@ -3763,7 +3426,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1NamespacesNameCronjobs {
@@ -3775,7 +3437,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1NamespacesName {
@@ -3784,7 +3445,6 @@ declare namespace KubernetesClient {
     'cronjobs': ApisBatchV1beta1NamespacesNameCronjobs
     'cronjob': ApisBatchV1beta1NamespacesNameCronjobs
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1Namespaces {
@@ -3792,7 +3452,6 @@ declare namespace KubernetesClient {
     (name: string): ApisBatchV1beta1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1Cronjobs {
@@ -3801,7 +3460,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1beta1 {
@@ -3816,7 +3474,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1WatchNamespacesNameJobsName {
@@ -3825,7 +3482,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1WatchNamespacesNameJobs {
@@ -3835,7 +3491,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1WatchNamespacesName {
@@ -3844,7 +3499,6 @@ declare namespace KubernetesClient {
     'jobs': ApisBatchV1WatchNamespacesNameJobs
     'job': ApisBatchV1WatchNamespacesNameJobs
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1WatchNamespaces {
@@ -3852,7 +3506,6 @@ declare namespace KubernetesClient {
     (name: string): ApisBatchV1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1WatchJobs {
@@ -3861,7 +3514,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1Watch {
@@ -3873,7 +3525,6 @@ declare namespace KubernetesClient {
     'jobs': ApisBatchV1WatchJobs
     'job': ApisBatchV1WatchJobs
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1NamespacesNameJobsNameStatus {
@@ -3884,7 +3535,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1NamespacesNameJobsName {
@@ -3897,7 +3547,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1NamespacesNameJobs {
@@ -3909,7 +3558,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1NamespacesName {
@@ -3918,7 +3566,6 @@ declare namespace KubernetesClient {
     'jobs': ApisBatchV1NamespacesNameJobs
     'job': ApisBatchV1NamespacesNameJobs
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1Namespaces {
@@ -3926,7 +3573,6 @@ declare namespace KubernetesClient {
     (name: string): ApisBatchV1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1Jobs {
@@ -3935,7 +3581,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatchV1 {
@@ -3950,7 +3595,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisBatch {
@@ -3962,7 +3606,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1WatchNamespacesNamePodpresetsName {
@@ -3971,7 +3614,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1WatchNamespacesNamePodpresets {
@@ -3981,7 +3623,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1WatchNamespacesName {
@@ -3990,7 +3631,6 @@ declare namespace KubernetesClient {
     'podpresets': ApisSettings_k8s_ioV1alpha1WatchNamespacesNamePodpresets
     'podpreset': ApisSettings_k8s_ioV1alpha1WatchNamespacesNamePodpresets
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1WatchNamespaces {
@@ -3998,7 +3638,6 @@ declare namespace KubernetesClient {
     (name: string): ApisSettings_k8s_ioV1alpha1WatchNamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1WatchPodpresets {
@@ -4007,7 +3646,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1Watch {
@@ -4019,7 +3657,6 @@ declare namespace KubernetesClient {
     'podpresets': ApisSettings_k8s_ioV1alpha1WatchPodpresets
     'podpreset': ApisSettings_k8s_ioV1alpha1WatchPodpresets
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1NamespacesNamePodpresetsName {
@@ -4031,7 +3668,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1NamespacesNamePodpresets {
@@ -4043,7 +3679,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1NamespacesName {
@@ -4052,7 +3687,6 @@ declare namespace KubernetesClient {
     'podpresets': ApisSettings_k8s_ioV1alpha1NamespacesNamePodpresets
     'podpreset': ApisSettings_k8s_ioV1alpha1NamespacesNamePodpresets
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1Namespaces {
@@ -4060,7 +3694,6 @@ declare namespace KubernetesClient {
     (name: string): ApisSettings_k8s_ioV1alpha1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1Podpresets {
@@ -4069,7 +3702,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_ioV1alpha1 {
@@ -4084,7 +3716,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisSettings_k8s_io {
@@ -4094,7 +3725,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1beta1WatchVolumeattachmentsName {
@@ -4103,7 +3733,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1beta1WatchVolumeattachments {
@@ -4113,7 +3742,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1beta1WatchStorageclassesName {
@@ -4122,7 +3750,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1beta1WatchStorageclasses {
@@ -4132,7 +3759,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1beta1Watch {
@@ -4143,7 +3769,6 @@ declare namespace KubernetesClient {
     'storageclasses': ApisStorage_k8s_ioV1beta1WatchStorageclasses
     'storageclasse': ApisStorage_k8s_ioV1beta1WatchStorageclasses
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1beta1VolumeattachmentsName {
@@ -4155,7 +3780,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1beta1Volumeattachments {
@@ -4167,7 +3791,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1beta1StorageclassesName {
@@ -4179,7 +3802,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1beta1Storageclasses {
@@ -4191,7 +3813,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1beta1 {
@@ -4205,7 +3826,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1alpha1WatchVolumeattachmentsName {
@@ -4214,7 +3834,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1alpha1WatchVolumeattachments {
@@ -4224,7 +3843,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1alpha1Watch {
@@ -4233,7 +3851,6 @@ declare namespace KubernetesClient {
     'volumeattachments': ApisStorage_k8s_ioV1alpha1WatchVolumeattachments
     'volumeattachment': ApisStorage_k8s_ioV1alpha1WatchVolumeattachments
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1alpha1VolumeattachmentsName {
@@ -4245,7 +3862,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1alpha1Volumeattachments {
@@ -4257,7 +3873,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1alpha1 {
@@ -4269,7 +3884,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1WatchStorageclassesName {
@@ -4278,7 +3892,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1WatchStorageclasses {
@@ -4288,7 +3901,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1Watch {
@@ -4297,7 +3909,6 @@ declare namespace KubernetesClient {
     'storageclasses': ApisStorage_k8s_ioV1WatchStorageclasses
     'storageclasse': ApisStorage_k8s_ioV1WatchStorageclasses
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1StorageclassesName {
@@ -4309,7 +3920,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1Storageclasses {
@@ -4321,7 +3931,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_ioV1 {
@@ -4333,7 +3942,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisStorage_k8s_io {
@@ -4345,7 +3953,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisScheduling_k8s_ioV1alpha1WatchPriorityclassesName {
@@ -4354,7 +3961,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisScheduling_k8s_ioV1alpha1WatchPriorityclasses {
@@ -4364,7 +3970,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisScheduling_k8s_ioV1alpha1Watch {
@@ -4373,7 +3978,6 @@ declare namespace KubernetesClient {
     'priorityclasses': ApisScheduling_k8s_ioV1alpha1WatchPriorityclasses
     'priorityclasse': ApisScheduling_k8s_ioV1alpha1WatchPriorityclasses
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisScheduling_k8s_ioV1alpha1PriorityclassesName {
@@ -4385,7 +3989,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisScheduling_k8s_ioV1alpha1Priorityclasses {
@@ -4397,7 +4000,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisScheduling_k8s_ioV1alpha1 {
@@ -4409,7 +4011,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisScheduling_k8s_io {
@@ -4419,7 +4020,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1beta1WatchApiservicesName {
@@ -4428,7 +4028,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1beta1WatchApiservices {
@@ -4438,7 +4037,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1beta1Watch {
@@ -4447,7 +4045,6 @@ declare namespace KubernetesClient {
     'apiservices': ApisApiregistration_k8s_ioV1beta1WatchApiservices
     'apiservice': ApisApiregistration_k8s_ioV1beta1WatchApiservices
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1beta1ApiservicesNameStatus {
@@ -4455,7 +4052,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1beta1ApiservicesName {
@@ -4468,7 +4064,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1beta1Apiservices {
@@ -4480,7 +4075,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1beta1 {
@@ -4492,7 +4086,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1WatchApiservicesName {
@@ -4501,7 +4094,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1WatchApiservices {
@@ -4511,7 +4103,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1Watch {
@@ -4520,7 +4111,6 @@ declare namespace KubernetesClient {
     'apiservices': ApisApiregistration_k8s_ioV1WatchApiservices
     'apiservice': ApisApiregistration_k8s_ioV1WatchApiservices
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1ApiservicesNameStatus {
@@ -4528,7 +4118,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1ApiservicesName {
@@ -4541,7 +4130,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1Apiservices {
@@ -4553,7 +4141,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_ioV1 {
@@ -4565,7 +4152,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiregistration_k8s_io {
@@ -4576,7 +4162,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiextensions_k8s_ioV1beta1WatchCustomresourcedefinitionsName {
@@ -4585,7 +4170,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiextensions_k8s_ioV1beta1WatchCustomresourcedefinitions {
@@ -4595,7 +4179,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiextensions_k8s_ioV1beta1Watch {
@@ -4605,7 +4188,6 @@ declare namespace KubernetesClient {
     'crd': ApisApiextensions_k8s_ioV1beta1WatchCustomresourcedefinitions
     'customresourcedefinition': ApisApiextensions_k8s_ioV1beta1WatchCustomresourcedefinitions
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiextensions_k8s_ioV1beta1CustomresourcedefinitionsNameStatus {
@@ -4613,7 +4195,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiextensions_k8s_ioV1beta1CustomresourcedefinitionsName {
@@ -4626,7 +4207,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiextensions_k8s_ioV1beta1Customresourcedefinitions {
@@ -4638,7 +4218,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiextensions_k8s_ioV1beta1 {
@@ -4651,7 +4230,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisApiextensions_k8s_io {
@@ -4661,7 +4239,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1WatchValidatingwebhookconfigurationsName {
@@ -4670,7 +4247,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1WatchValidatingwebhookconfigurations {
@@ -4680,7 +4256,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1WatchMutatingwebhookconfigurationsName {
@@ -4689,7 +4264,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1WatchMutatingwebhookconfigurations {
@@ -4699,7 +4273,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1Watch {
@@ -4710,7 +4283,6 @@ declare namespace KubernetesClient {
     'mutatingwebhookconfigurations': ApisAdmissionregistration_k8s_ioV1beta1WatchMutatingwebhookconfigurations
     'mutatingwebhookconfiguration': ApisAdmissionregistration_k8s_ioV1beta1WatchMutatingwebhookconfigurations
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1MutatingwebhookconfigurationsName {
@@ -4722,7 +4294,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1Mutatingwebhookconfigurations {
@@ -4734,7 +4305,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1ValidatingwebhookconfigurationsName {
@@ -4746,7 +4316,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1Validatingwebhookconfigurations {
@@ -4758,7 +4327,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1beta1 {
@@ -4772,7 +4340,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1WatchInitializerconfigurationsName {
@@ -4781,7 +4348,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1WatchInitializerconfigurations {
@@ -4791,7 +4357,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1Watch {
@@ -4800,7 +4365,6 @@ declare namespace KubernetesClient {
     'initializerconfigurations': ApisAdmissionregistration_k8s_ioV1alpha1WatchInitializerconfigurations
     'initializerconfiguration': ApisAdmissionregistration_k8s_ioV1alpha1WatchInitializerconfigurations
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1InitializerconfigurationsName {
@@ -4812,7 +4376,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1Initializerconfigurations {
@@ -4824,7 +4387,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_ioV1alpha1 {
@@ -4836,7 +4398,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAdmissionregistration_k8s_io {
@@ -4847,7 +4408,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisCertificates_k8s_ioV1beta1WatchCertificatesigningrequestsName {
@@ -4856,7 +4416,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisCertificates_k8s_ioV1beta1WatchCertificatesigningrequests {
@@ -4866,7 +4425,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisCertificates_k8s_ioV1beta1Watch {
@@ -4875,7 +4433,6 @@ declare namespace KubernetesClient {
     'certificatesigningrequests': ApisCertificates_k8s_ioV1beta1WatchCertificatesigningrequests
     'certificatesigningrequest': ApisCertificates_k8s_ioV1beta1WatchCertificatesigningrequests
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisCertificates_k8s_ioV1beta1CertificatesigningrequestsNameStatus {
@@ -4883,7 +4440,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisCertificates_k8s_ioV1beta1CertificatesigningrequestsNameApproval {
@@ -4891,7 +4447,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisCertificates_k8s_ioV1beta1CertificatesigningrequestsName {
@@ -4905,7 +4460,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisCertificates_k8s_ioV1beta1Certificatesigningrequests {
@@ -4917,7 +4471,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisCertificates_k8s_ioV1beta1 {
@@ -4929,7 +4482,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisCertificates_k8s_io {
@@ -4939,7 +4491,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1beta1NamespacesNameLocalsubjectaccessreviews {
@@ -4947,7 +4498,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1beta1NamespacesName {
@@ -4956,7 +4506,6 @@ declare namespace KubernetesClient {
     'localsubjectaccessreviews': ApisAuthorization_k8s_ioV1beta1NamespacesNameLocalsubjectaccessreviews
     'localsubjectaccessreview': ApisAuthorization_k8s_ioV1beta1NamespacesNameLocalsubjectaccessreviews
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1beta1Namespaces {
@@ -4964,7 +4513,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAuthorization_k8s_ioV1beta1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1beta1Selfsubjectaccessreviews {
@@ -4972,7 +4520,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1beta1Selfsubjectrulesreviews {
@@ -4980,7 +4527,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1beta1Subjectaccessreviews {
@@ -4988,7 +4534,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1beta1 {
@@ -5006,7 +4551,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1NamespacesNameLocalsubjectaccessreviews {
@@ -5014,7 +4558,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1NamespacesName {
@@ -5023,7 +4566,6 @@ declare namespace KubernetesClient {
     'localsubjectaccessreviews': ApisAuthorization_k8s_ioV1NamespacesNameLocalsubjectaccessreviews
     'localsubjectaccessreview': ApisAuthorization_k8s_ioV1NamespacesNameLocalsubjectaccessreviews
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1Namespaces {
@@ -5031,7 +4573,6 @@ declare namespace KubernetesClient {
     (name: string): ApisAuthorization_k8s_ioV1NamespacesName
     // Sub-paths
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1Subjectaccessreviews {
@@ -5039,7 +4580,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1Selfsubjectaccessreviews {
@@ -5047,7 +4587,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1Selfsubjectrulesreviews {
@@ -5055,7 +4594,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_ioV1 {
@@ -5073,7 +4611,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthorization_k8s_io {
@@ -5084,7 +4621,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthentication_k8s_ioV1beta1Tokenreviews {
@@ -5092,7 +4628,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthentication_k8s_ioV1beta1 {
@@ -5103,7 +4638,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthentication_k8s_ioV1Tokenreviews {
@@ -5111,7 +4645,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthentication_k8s_ioV1 {
@@ -5122,7 +4655,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApisAuthentication_k8s_io {
@@ -5133,7 +4665,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface Apis {
@@ -5161,7 +4692,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodsNameProxyName {
@@ -5174,7 +4704,6 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodsNameProxy {
@@ -5188,7 +4717,6 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodsNamePortforward {
@@ -5198,7 +4726,6 @@ declare namespace KubernetesClient {
     get(options ?: any): any
     getStream(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodsNameStatus {
@@ -5209,7 +4736,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodsNameAttach {
@@ -5219,7 +4745,6 @@ declare namespace KubernetesClient {
     get(options ?: any): any
     getStream(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodsNameBinding {
@@ -5227,7 +4752,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodsNameEviction {
@@ -5235,7 +4759,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodsNameExec {
@@ -5245,7 +4768,6 @@ declare namespace KubernetesClient {
     get(options ?: any): any
     getStream(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodsNameLog {
@@ -5254,7 +4776,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodsName {
@@ -5274,7 +4795,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePods {
@@ -5286,7 +4806,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameServicesNameProxyName {
@@ -5299,7 +4818,6 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameServicesNameProxy {
@@ -5313,7 +4831,6 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameServicesNameStatus {
@@ -5324,7 +4841,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameServicesName {
@@ -5338,7 +4854,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameServices {
@@ -5349,7 +4864,6 @@ declare namespace KubernetesClient {
     get(options ?: any): any
     getStream(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameReplicationcontrollersNameScale {
@@ -5360,7 +4874,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameReplicationcontrollersNameStatus {
@@ -5371,7 +4884,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameReplicationcontrollersName {
@@ -5385,7 +4897,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameReplicationcontrollers {
@@ -5397,7 +4908,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameResourcequotasNameStatus {
@@ -5408,7 +4918,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameResourcequotasName {
@@ -5421,7 +4930,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameResourcequotas {
@@ -5433,7 +4941,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePersistentvolumeclaimsNameStatus {
@@ -5444,7 +4951,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePersistentvolumeclaimsName {
@@ -5457,7 +4963,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePersistentvolumeclaims {
@@ -5469,7 +4974,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameConfigmapsName {
@@ -5481,7 +4985,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameConfigmaps {
@@ -5493,7 +4996,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameEndpointsName {
@@ -5505,7 +5007,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameEndpoints {
@@ -5517,7 +5018,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameEventsName {
@@ -5529,7 +5029,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameEvents {
@@ -5541,7 +5040,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameLimitrangesName {
@@ -5553,7 +5051,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameLimitranges {
@@ -5565,7 +5062,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodtemplatesName {
@@ -5577,7 +5073,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNamePodtemplates {
@@ -5589,7 +5084,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameSecretsName {
@@ -5601,7 +5095,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameSecrets {
@@ -5613,7 +5106,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameServiceaccountsName {
@@ -5625,7 +5117,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameServiceaccounts {
@@ -5637,7 +5128,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameStatus {
@@ -5648,7 +5138,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameBindings {
@@ -5656,7 +5145,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesNameFinalize {
@@ -5664,7 +5152,6 @@ declare namespace KubernetesClient {
     // Sub-paths
     // Calls
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NamespacesName {
@@ -5713,7 +5200,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Namespaces {
@@ -5724,7 +5210,6 @@ declare namespace KubernetesClient {
     get(options ?: any): any
     getStream(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameConfigmapsName {
@@ -5733,7 +5218,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameConfigmaps {
@@ -5743,7 +5227,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameEndpointsName {
@@ -5752,7 +5235,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameEndpoints {
@@ -5762,7 +5244,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameEventsName {
@@ -5771,7 +5252,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameEvents {
@@ -5781,7 +5261,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameLimitrangesName {
@@ -5790,7 +5269,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameLimitranges {
@@ -5800,7 +5278,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNamePersistentvolumeclaimsName {
@@ -5809,7 +5286,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNamePersistentvolumeclaims {
@@ -5819,7 +5295,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNamePodsName {
@@ -5828,7 +5303,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNamePods {
@@ -5838,7 +5312,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNamePodtemplatesName {
@@ -5847,7 +5320,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNamePodtemplates {
@@ -5857,7 +5329,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameReplicationcontrollersName {
@@ -5866,7 +5337,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameReplicationcontrollers {
@@ -5876,7 +5346,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameResourcequotasName {
@@ -5885,7 +5354,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameResourcequotas {
@@ -5895,7 +5363,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameSecretsName {
@@ -5904,7 +5371,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameSecrets {
@@ -5914,7 +5380,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameServiceaccountsName {
@@ -5923,7 +5388,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameServiceaccounts {
@@ -5933,7 +5397,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameServicesName {
@@ -5942,7 +5405,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesNameServices {
@@ -5952,7 +5414,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespacesName {
@@ -5994,7 +5455,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNamespaces {
@@ -6004,7 +5464,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchPersistentvolumesName {
@@ -6013,7 +5472,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchPersistentvolumes {
@@ -6023,7 +5481,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNodesName {
@@ -6032,7 +5489,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchNodes {
@@ -6042,7 +5498,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchPersistentvolumeclaims {
@@ -6051,7 +5506,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchLimitranges {
@@ -6060,7 +5514,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchEvents {
@@ -6069,7 +5522,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchEndpoints {
@@ -6078,7 +5530,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchConfigmaps {
@@ -6087,7 +5538,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchReplicationcontrollers {
@@ -6096,7 +5546,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchResourcequotas {
@@ -6105,7 +5554,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchSecrets {
@@ -6114,7 +5562,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchServiceaccounts {
@@ -6123,7 +5570,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchServices {
@@ -6132,7 +5578,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchPodtemplates {
@@ -6141,7 +5586,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1WatchPods {
@@ -6150,7 +5594,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Watch {
@@ -6199,7 +5642,6 @@ declare namespace KubernetesClient {
     'po': ApiV1WatchPods
     'pod': ApiV1WatchPods
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NodesNameProxyName {
@@ -6212,7 +5654,6 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NodesNameProxy {
@@ -6226,7 +5667,6 @@ declare namespace KubernetesClient {
     patch(options ?: any): any
     post(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NodesNameStatus {
@@ -6237,7 +5677,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1NodesName {
@@ -6251,7 +5690,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Nodes {
@@ -6263,7 +5701,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1PersistentvolumesNameStatus {
@@ -6274,7 +5711,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1PersistentvolumesName {
@@ -6287,7 +5723,6 @@ declare namespace KubernetesClient {
     delete(options ?: any): any
     patch(options ?: any): any
     put(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Persistentvolumes {
@@ -6299,7 +5734,6 @@ declare namespace KubernetesClient {
     getStream(options ?: any): any
     delete(options ?: any): any
     post(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1ComponentstatusesName {
@@ -6308,7 +5742,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Componentstatuses {
@@ -6318,7 +5751,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Secrets {
@@ -6327,7 +5759,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Limitranges {
@@ -6336,7 +5767,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Persistentvolumeclaims {
@@ -6345,7 +5775,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Pods {
@@ -6354,7 +5783,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Podtemplates {
@@ -6363,7 +5791,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Replicationcontrollers {
@@ -6372,7 +5799,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Resourcequotas {
@@ -6381,7 +5807,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Events {
@@ -6390,7 +5815,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Endpoints {
@@ -6399,7 +5823,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Configmaps {
@@ -6408,7 +5831,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Serviceaccounts {
@@ -6417,7 +5839,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1Services {
@@ -6426,7 +5847,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiV1 {
@@ -6481,7 +5901,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface Api {
@@ -6491,7 +5910,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface LogsName {
@@ -6500,7 +5918,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface Logs {
@@ -6510,7 +5927,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface Version {
@@ -6519,7 +5935,6 @@ declare namespace KubernetesClient {
     // Calls
     get(options ?: any): any
     getStream(options ?: any): any
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
   interface ApiRoot {
@@ -6531,7 +5946,6 @@ declare namespace KubernetesClient {
     'log': Logs
     'version': Version
     // Calls
-    loadSpec(): Promise<Api>
     addCustomResourceDefinition(schema: object): void
   }
 
