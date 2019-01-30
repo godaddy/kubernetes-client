@@ -56,6 +56,13 @@ const kubeconfig = {
 const config = K8sConfig.fromKubeconfig(kubeconfig)
 ```
 
+and you can also specify the kubeconfig context by passing it as the
+second argument to `fromKubeconfig()`:
+
+```
+const config = K8sConfig.fromKubeconfig(null, 'dev')
+```
+
 Once you've built a config object, you can combine it with an API
 spec to build the client, using specifications included with kubernetes-client:
 
