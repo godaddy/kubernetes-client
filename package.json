@@ -41,7 +41,7 @@
     "ws": "^6.0.0"
   },
   "devDependencies": {
-    "@types/node": "^10.3.5",
+    "@types/node": "^11.9.0",
     "chai": "^4.1.2",
     "istanbul": "^0.4.3",
     "jsdoc": "^3.5.5",
