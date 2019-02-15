@@ -49,7 +49,7 @@
     "nock": "^10.0.0",
     "sinon": "6.0.1",
     "standard": "^12.0.1",
-    "standard-version": "^4.4.0",
+    "standard-version": "^5.0.0",
     "swagger-js-codegen": "^1.12.0",
     "typescript": "^2.6.1",
     "yargs": "^13.1.0"
