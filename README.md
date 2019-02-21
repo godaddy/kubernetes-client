@@ -169,6 +169,9 @@ specifications:
 * [Kubernetes API v1.8](docs/1.8.md)
 * [Kubernetes API v1.9](docs/1.9.md)
 * [Kubernetes API v1.10](docs/1.10.md)
+* [Kubernetes API v1.11](docs/1.11.md)
+* [Kubernetes API v1.12](docs/1.12.md)
+* [Kubernetes API v1.13](docs/1.13.md)
 
 ## TypeScript
 
