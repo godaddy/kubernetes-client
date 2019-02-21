@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.9.0"></a>
+# [6.9.0](https://github.com/godaddy/kubernetes-client/compare/6.8.3...6.9.0) (2019-02-21)
+
+
+### Features
+
+* **swagger:** add files for latest releases ([#415](https://github.com/godaddy/kubernetes-client/issues/415)) ([bfc28bc](https://github.com/godaddy/kubernetes-client/commit/bfc28bc))
+
+
+
 <a name="6.8.3"></a>
 ## [6.8.3](https://github.com/godaddy/kubernetes-client/compare/6.8.2...6.8.3) (2019-01-28)
 
