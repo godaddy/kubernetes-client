@@ -1,6 +1,7 @@
-## {{#jsName}}{{/jsName}}
+#### {{#jsName}}{{/jsName}}
 
-{{&summary}}
+{{&description}}
+{{#hasPathParameters}}
 
 ### Path
 
@@ -8,23 +9,32 @@
 | --------- | ----------- |
 {{#parameters}}
 {{#isPathParameter}}
-| `{{camelCaseName}}` | {{description}} |
+| `{{name}}` | {{description}} |
 {{/isPathParameter}}
 {{/parameters}}    
+{{/hasPathParameters}}
+{{#hasQueryParameters}}
 
-### Options
+### Query
 
 | Parameter | Description |
 | --------- | ----------- |
 | `qs` | Querystring object |
 {{#parameters}}
 {{#isQueryParameter}}
-| `qs.{{camelCaseName}}` | {{#markdownBreaks}}{{description}}{{/markdownBreaks}} |
+| `qs.{{name}}` | {{#markdownBreaks}}{{description}}{{/markdownBreaks}} |
 {{/isQueryParameter}}
 {{/parameters}}    
+{{/hasQueryParameters}}
+{{#hasBodyParameters}}
+
+### Body
+
+| Parameter | Description |
+| --------- | ----------- |
 {{#parameters}}
 {{#isBodyParameter}}
 | `body` | {{#markdownBreaks}}{{#schema}}{{$ref}}{{/schema}}{{/markdownBreaks}} |
 {{/isBodyParameter}}
 {{/parameters}}    
-
+{{/hasBodyParameters}}
