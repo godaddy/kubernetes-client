@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.10.0"></a>
+# [6.10.0](https://github.com/godaddy/kubernetes-client/compare/6.8.3...6.10.0) (2019-03-04)
+
+
+### Features
+
+* **swagger:** add files for latest releases ([#415](https://github.com/godaddy/kubernetes-client/issues/415)) ([bfc28bc](https://github.com/godaddy/kubernetes-client/commit/bfc28bc))
+* ability for a user to specify their own getNames function ([#424](https://github.com/godaddy/kubernetes-client/issues/424)) ([27ec13f](https://github.com/godaddy/kubernetes-client/commit/27ec13f)), closes [#418](https://github.com/godaddy/kubernetes-client/issues/418)
+
+
+
 <a name="6.9.0"></a>
 # [6.9.0](https://github.com/godaddy/kubernetes-client/compare/6.8.3...6.9.0) (2019-02-21)
 
