@@ -165,13 +165,13 @@ kubernetes-client supports `.delete`, `.get`, `.patch`, `.post`, and `.put`.
 kubernetes-client generates documentation for the included
 specifications:
 
-* [Kubernetes API v1.7](docs/1.7.md)
-* [Kubernetes API v1.8](docs/1.8.md)
-* [Kubernetes API v1.9](docs/1.9.md)
-* [Kubernetes API v1.10](docs/1.10.md)
-* [Kubernetes API v1.11](docs/1.11.md)
-* [Kubernetes API v1.12](docs/1.12.md)
-* [Kubernetes API v1.13](docs/1.13.md)
+* [Kubernetes API v1.7](docs/1.7/README.md)
+* [Kubernetes API v1.8](docs/1.8/README.md)
+* [Kubernetes API v1.9](docs/1.9/README.md)
+* [Kubernetes API v1.10](docs/1.10/README.md)
+* [Kubernetes API v1.11](docs/1.11/README.md)
+* [Kubernetes API v1.12](docs/1.12/README.md)
+* [Kubernetes API v1.13](docs/1.13/README.md)
 
 ## TypeScript
 
