@@ -216,6 +216,8 @@ const client = new Client({ config: config.fromKubeconfig() });
   [kubernetes-badges](https://github.com/silasbw/kubernetes-badges)
 * Create a deployment, patch a change, and rollback to the original version:
   [deployment-create-patch-rollback.js](./examples/deployment-create-patch-rollback.js)
+* Access [VerticalPodAutoscalers](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler):
+  [examples/vpas](./examples/vpas)
 
 ## Contributing
 
