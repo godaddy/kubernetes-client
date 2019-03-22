@@ -2,12 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-# [6.11.0](https://github.com/godaddy/kubernetes-client/compare/6.10.0...6.11.0) (2019-03-08)
-
-
-### Features
-
-* **request:** add the ability to make the request json option false ([#427](https://github.com/godaddy/kubernetes-client/issues/427)) ([68d8b20](https://github.com/godaddy/kubernetes-client/commit/68d8b20))
+## [6.11.1](https://github.com/godaddy/kubernetes-client/compare/6.11.0...6.11.1) (2019-03-22)
 
 
 
