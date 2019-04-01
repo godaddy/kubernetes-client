@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [6.11.1](https://github.com/godaddy/kubernetes-client/compare/6.11.0...6.11.1) (2019-03-22)
+# [6.12.0](https://github.com/godaddy/kubernetes-client/compare/6.11.1...6.12.0) (2019-04-01)
+
+
+### Features
+
+* **config:** expose the current namespace on the config object ([#436](https://github.com/godaddy/kubernetes-client/issues/436)) ([d7e0688](https://github.com/godaddy/kubernetes-client/commit/d7e0688))
 
 
 
