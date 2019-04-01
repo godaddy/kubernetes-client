@@ -39,7 +39,7 @@ async function main () {
     //
     // Get a JSON stream for Deployment events
     //
-    const stream = client.apis.apps.v1beta.watch.namespaces('default').deployments.getStream()
+    const stream = client.apis.apps.v1.watch.namespaces('default').deployments.getStream()
     const jsonStream = new JSONStream()
     stream.pipe(jsonStream)
     jsonStream.on('data', object => {
