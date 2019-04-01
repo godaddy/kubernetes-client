@@ -245,10 +245,10 @@ example, run the integration tests with the `minikube` context:
 $ CONTEXT=minikube npm run test-integration
 ```
 
-## More Documentation
+## References
 
-* [Kubernetes Reference Documentation](http://kubernetes.io/docs/reference/)
-* [Kubernetes Swagger Spec](http://kubernetes.io/kubernetes/third_party/swagger-ui/)
+* [An Intuitive Node.js Client for the Kubernetes API](https://godaddy.github.io/2018/04/10/an-intuitive-nodejs-client-for-the-kubernetes-api/)
+* [Kubernetes Reference Documentation](https://kubernetes.io/docs/reference/)
 
 ## License
 
