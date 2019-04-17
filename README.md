@@ -176,12 +176,12 @@ specifications:
 ## TypeScript
 
 kubernetes-client includes a typings declartion file for Kubernetes
-API 1.10 and a complimentry `Client1_10` class:
+API 1.13 and a complimentry `Client1_13` class:
 
 ```typescript
 import * as Api from 'kubernetes-client';
 
-const Client = Api.Client1_10;
+const Client = Api.Client1_13;
 const config = Api.config;
 const client = new Client({ config: config.fromKubeconfig() });
 ```
