@@ -186,6 +186,9 @@ const config = Api.config;
 const client = new Client({ config: config.fromKubeconfig() });
 ```
 
+When using TypeScript, kubernetes-client does not support dynamically
+generating a client via `.loadSpec()`.
+
 ## More examples
 
 [examples/](examples/) has snippets for using kubernetes-client:
