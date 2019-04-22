@@ -1,6 +1,6 @@
 import * as Api from 'kubernetes-client';
 
-const Client = Api.Client1_10;
+const Client = Api.Client1_13;
 const config = Api.config;
 
 const deploymentManifest = {

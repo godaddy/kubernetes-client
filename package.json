@@ -7,7 +7,7 @@
   "scripts": {
     "coverage": "nyc mocha 'lib/**/*.test.js'",
     "docs": "node scripts/docs.js --builtins",
-    "typings": "node scripts/typings.js --spec lib/specs/swagger-1.10.json.gz --output typings/index.d.ts",
+    "typings": "node scripts/typings.js --spec lib/specs/swagger-1.13.json.gz --output typings/index.d.ts",
     "lint": "standard --fix",
     "release": "standard-version --tag-prefix=''",
     "test": "standard && mocha 'lib/**/*.test.js' && npm run test-typings && npm run test-generated",
