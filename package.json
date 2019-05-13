@@ -31,7 +31,7 @@
   ],
   "dependencies": {
     "deepmerge": "^3.2.0",
-    "js-yaml": "^3.13.0",
+    "js-yaml": "^3.13.1",
     "openid-client": "^3.0.0",
     "qs": "^6.7.0",
     "request": "^2.88.0",
@@ -42,7 +42,7 @@
   "devDependencies": {
     "@types/node": "^12.0.0",
     "chai": "^4.1.2",
-    "mocha": "^6.0.2",
+    "mocha": "^6.1.4",
     "mustache": "^3.0.1",
     "nock": "^10.0.6",
     "nyc": "^14.0.0",
@@ -50,7 +50,7 @@
     "standard": "^12.0.1",
     "standard-version": "^6.0.1",
     "typescript": "^2.6.1",
-    "yargs": "^13.2.2"
+    "yargs": "^13.2.4"
   },
   "nyc": {
     "check-coverage": true,
