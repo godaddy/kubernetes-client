@@ -32,7 +32,7 @@
   "dependencies": {
     "deepmerge": "^3.2.0",
     "js-yaml": "^3.13.1",
-    "openid-client": "^3.0.0",
+    "openid-client": "^3.1.0",
     "qs": "^6.7.0",
     "request": "^2.88.0",
     "swagger-fluent": "^3.1.3",
