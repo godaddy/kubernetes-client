@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [7.0.1](https://github.com/godaddy/kubernetes-client/compare/7.0.0...7.0.1) (2019-05-07)
+
+
+
 # [7.0.0](https://github.com/godaddy/kubernetes-client/compare/6.12.1...7.0.0) (2019-04-23)
 
 
