@@ -1,6 +1,29 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [8.0.0](https://github.com/godaddy/kubernetes-client/compare/7.0.1...8.0.0) (2019-05-19)
+
+
+### Bug Fixes
+
+* **CRDs:** malformed watch paths for namespaced CRDs ([#470](https://github.com/godaddy/kubernetes-client/issues/470)) ([0652b14](https://github.com/godaddy/kubernetes-client/commit/0652b14)), closes [#468](https://github.com/godaddy/kubernetes-client/issues/468)
+* **package:** update openid-client to version 3.0.0 ([#459](https://github.com/godaddy/kubernetes-client/issues/459)) ([66d5b73](https://github.com/godaddy/kubernetes-client/commit/66d5b73))
+* **package:** update openid-client to version 3.1.0 ([#463](https://github.com/godaddy/kubernetes-client/issues/463)) ([2211ed2](https://github.com/godaddy/kubernetes-client/commit/2211ed2))
+* **package:** update ws to version 7.0.0 ([#453](https://github.com/godaddy/kubernetes-client/issues/453)) ([1d507c4](https://github.com/godaddy/kubernetes-client/commit/1d507c4))
+
+
+### chore
+
+* **support:** drop support for Node 6 ([#465](https://github.com/godaddy/kubernetes-client/issues/465)) ([523800d](https://github.com/godaddy/kubernetes-client/commit/523800d))
+
+
+### BREAKING CHANGES
+
+* **support:** this doesn't include any breaking changes, but our CI integrations
+will begin accepting code and using dependencies that are incompatible with Node 6.
+
+
 
 ## [7.0.1](https://github.com/godaddy/kubernetes-client/compare/7.0.0...7.0.1) (2019-05-07)
 
