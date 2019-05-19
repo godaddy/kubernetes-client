@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.1.0](https://github.com/godaddy/kubernetes-client/compare/8.0.0...8.1.0) (2019-05-19)
+
+
+### Features
+
+* **backends:** @kubernetes/client-node ([#394](https://github.com/godaddy/kubernetes-client/issues/394)) ([7faef3e](https://github.com/godaddy/kubernetes-client/commit/7faef3e))
+* **Client:** support passing `undefined` to `Client` ([#474](https://github.com/godaddy/kubernetes-client/issues/474)) ([1fd10c4](https://github.com/godaddy/kubernetes-client/commit/1fd10c4))
+
+
+### Tests
+
+* **update:** use  new config handling API ([#475](https://github.com/godaddy/kubernetes-client/issues/475)) ([669352b](https://github.com/godaddy/kubernetes-client/commit/669352b))
+
+
+
 ## [8.0.0](https://github.com/godaddy/kubernetes-client/compare/7.0.1...8.0.0) (2019-05-19)
 
 
