@@ -83,7 +83,7 @@ function main (args) {
   }
   const interfaces = []
 
-  const client = new Client({ spec, config: {} })
+  const client = new Client({ spec })
   walk(client, interfaces)
 
   const templateOptions = {
