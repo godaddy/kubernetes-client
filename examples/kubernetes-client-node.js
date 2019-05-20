@@ -5,7 +5,7 @@
 const k8s = require('@kubernetes/client-node')
 
 const Client = require('..').Client
-const ClientNodeBackend = require('../lib/backends/kubernetes-client-node')
+const ClientNodeBackend = require('../backends/kubernetes-client-node')
 
 const deploymentManifest = require('./nginx-deployment.json')
 
