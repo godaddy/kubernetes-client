@@ -38,7 +38,7 @@ function walk (component, interfaces) {
       properties.push({ name: child, type })
     })
   }
-  if (component.template) {
+  if (component.templated) {
     const type = walk(component('name'), interfaces)
     callable = { name: 'name', type }
   }
