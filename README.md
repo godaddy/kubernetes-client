@@ -192,6 +192,18 @@ Run the unit tests:
 npm test
 ```
 
+The integration tests use the `current-context` in your kubeconfig file. Run the integration tests:
+
+```
+npm run test-integration
+```
+
+Run integration tests with the `@kubernetes/client-node` backend:
+
+```
+KUBERNETES_CLIENT_BACKEND=client-node npm run test-integration
+```
+
 ## References
 
 * [An Intuitive Node.js Client for the Kubernetes API](https://godaddy.github.io/2018/04/10/an-intuitive-nodejs-client-for-the-kubernetes-api/)
