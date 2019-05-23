@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.1.2](https://github.com/godaddy/kubernetes-client/compare/8.1.1...8.1.2) (2019-05-23)
+
+
+### Bug Fixes
+
+* **auth-provider:** update auth-provider path ([#481](https://github.com/godaddy/kubernetes-client/issues/481)) ([5149309](https://github.com/godaddy/kubernetes-client/commit/5149309))
+
+
+### Tests
+
+* **integration:** add more integration tests ([#480](https://github.com/godaddy/kubernetes-client/issues/480)) ([1d3948a](https://github.com/godaddy/kubernetes-client/commit/1d3948a))
+* **integration:** add start of integration testing framework ([#477](https://github.com/godaddy/kubernetes-client/issues/477)) ([d9543a1](https://github.com/godaddy/kubernetes-client/commit/d9543a1))
+
+
+
 ### [8.1.1](https://github.com/godaddy/kubernetes-client/compare/8.1.0...8.1.1) (2019-05-20)
 
 
