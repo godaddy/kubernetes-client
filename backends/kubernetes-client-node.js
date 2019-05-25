@@ -23,6 +23,14 @@ class ClientNodeBackend {
     return this.apiClients[apiType]
   }
 
+  async getLogByteStream (options) {
+    throw new Error('getLogByteStream is not implemented')
+  }
+
+  async getWatchObjectStream (options) {
+    throw new Error('getWatchObjectStream is not implemented')
+  }
+
   http (options) {
     const pathItemObject = options.pathItemObject
     const operationObject = pathItemObject[options.method.toLowerCase()]

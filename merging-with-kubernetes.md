@@ -49,6 +49,27 @@ const config = require('kubernetes-client').config
 // New version
 const config = require('kubernetes-client/backends/request').config
 ```
+
+### `.getStream()`
+
+You can stream `watch` endpoints and `Pod` logs:
+
+```js
+// Depcrecated `watch`
+const events = client.api.v1.watch.namespaces(namespace).pods.getStream()
+
+// New version `watch` (notice the `await`!)
+const events = await client.api.v1.watch.namespaces(namespace).pods.getObjectStream()
+
+// Deprecated `Pod` logs
+const stream = client.api.v1.namespaces(namespace).pods(manifest.metadata.name).log.getStream()
+
+// new version `Pod` logs (notice the `await`!)
+const stream = await client.api.v1.namespaces(namespace).pods(manifest.metadata.name).log.getByteStream()
+```
+
+We are going to remove support for streaming other endpoints.
+
 ## Why are you doing this?
 
 Because it will improve the quality of both JavaScript clients and

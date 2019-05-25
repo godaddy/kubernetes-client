@@ -22,11 +22,11 @@ describe('test-integration/stream', () => {
     await client.api.v1.namespaces(namespace).pods.post({ body: manifest })
     await waitForPod({ client, namespace, name: manifest.metadata.name })
 
-    const stream = client.api.v1
+    const stream = await client.api.v1
       .namespaces(namespace)
       .pods(manifest.metadata.name)
       .log
-      .getStream()
+      .getByteStream()
 
     await new Promise((resolve, reject) => {
       stream.on('data', data => {
@@ -42,11 +42,11 @@ describe('test-integration/stream', () => {
     await client.api.v1.namespaces(namespace).pods.post({ body: manifest })
     await waitForPod({ client, namespace, name: manifest.metadata.name })
 
-    const stream = client.api.v1.watch.namespaces(namespace).pods.getStream()
+    const stream = await client.api.v1.watch.namespaces(namespace).pods.getObjectStream()
 
     await new Promise((resolve, reject) => {
       stream.on('data', data => {
-        stream.abort()
+        stream.destroy()
         resolve()
       })
       stream.on('error', err => {
