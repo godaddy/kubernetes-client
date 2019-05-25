@@ -15,7 +15,6 @@
             "singular": "verticalpodautoscaler"
         },
         "scope": "Namespaced",
-        "version": "v1beta2",
         "versions": [{
                 "name": "v1beta1",
                 "served": true,

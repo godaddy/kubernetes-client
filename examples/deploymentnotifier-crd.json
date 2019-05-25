@@ -2,8 +2,12 @@
   "kind": "CustomResourceDefinition", 
   "spec": {
     "scope": "Namespaced", 
-    "version": "v1", 
-    "group": "kubernetes-client.io", 
+    "versions": [{
+      "name": "v1",
+      "served": true,
+      "storage": true
+    }],
+    "group": "kubernetes-client.io",
     "names": {
       "shortNames": [
         "dn"
