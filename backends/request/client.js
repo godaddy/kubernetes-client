@@ -1,7 +1,9 @@
 'use strict'
 
-const request = require('request')
+const JSONStream = require('json-stream')
+const pump = require('pump')
 const qs = require('qs')
+const request = require('request')
 const urljoin = require('url-join')
 const WebSocket = require('ws')
 
@@ -147,6 +149,17 @@ class Request {
 
       return cb(null, { statusCode: res.statusCode, body: body })
     })
+  }
+
+  async getLogByteStream (options) {
+    return this.http(Object.assign({ stream: true }, options))
+  }
+
+  async getWatchObjectStream (options) {
+    const jsonStream = new JSONStream()
+    const stream = this.http(Object.assign({ stream: true }, options))
+    pump(stream, jsonStream)
+    return jsonStream
   }
 
   /**
