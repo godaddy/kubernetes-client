@@ -1,6 +1,7 @@
 'use strict'
 
 const pascalcase = require('pascalcase')
+const { Readable } = require('stream')
 
 //
 // https://github.com/kubernetes-client/javascript
@@ -28,7 +29,26 @@ class ClientNodeBackend {
   }
 
   async getWatchObjectStream (options) {
-    throw new Error('getWatchObjectStream is not implemented')
+    const watch = new this.client.Watch(this.kubeconfig)
+
+    const stream = new Readable({
+      objectMode: true,
+      read: () => { /* .watch callback pushes to stream below */ },
+      destroy: (err, cb) => {
+        req.destroy(err)
+        req.abort()
+        cb(err)
+      }
+    })
+
+    const req = watch.watch(
+      options.pathname,
+      Object.assign({}, options.qs, options.parameters),
+      (type, object) => stream.push({ type, object }),
+      err => stream.destroy(err)
+    )
+
+    return stream
   }
 
   http (options) {

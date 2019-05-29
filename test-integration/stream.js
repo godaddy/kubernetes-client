@@ -1,6 +1,7 @@
 /* eslint-env mocha */
 'use strict'
 
+const expect = require('chai').expect
 const fs = require('fs')
 const yaml = require('js-yaml')
 
@@ -44,14 +45,18 @@ describe('test-integration/stream', () => {
 
     const stream = await client.api.v1.watch.namespaces(namespace).pods.getObjectStream()
 
+    let gotData = false
     await new Promise((resolve, reject) => {
       stream.on('data', data => {
+        gotData = true
+        expect(['ADDED', 'DELETED', 'MODIFIED']).to.include(data.type)
+        expect(data.object).to.be.an('object')
         stream.destroy()
         resolve()
       })
       stream.on('error', err => {
-        stream.abort()
-        reject(err)
+        stream.destroy()
+        if (!gotData) reject(err)
       })
     })
   })
