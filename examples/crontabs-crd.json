@@ -2,8 +2,12 @@
   "kind": "CustomResourceDefinition", 
   "spec": {
     "scope": "Namespaced", 
-    "version": "v1", 
-    "group": "stable.example.com", 
+    "versions": [{
+      "name": "v1",
+      "served": true,
+      "storage": true
+    }],
+    "group": "stable.example.com",
     "names": {
       "shortNames": [
         "ct"
