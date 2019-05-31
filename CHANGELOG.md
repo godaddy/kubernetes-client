@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.2.0](https://github.com/godaddy/kubernetes-client/compare/8.1.3...8.2.0) (2019-05-31)
+
+
+### Bug Fixes
+
+* **package:** update @kubernetes/client-node to version 0.9.0 ([#487](https://github.com/godaddy/kubernetes-client/issues/487)) ([238fbb6](https://github.com/godaddy/kubernetes-client/commit/238fbb6))
+
+
+### Features
+
+* **client-node:** add support for watch streaming ([#486](https://github.com/godaddy/kubernetes-client/issues/486)) ([abdaa2a](https://github.com/godaddy/kubernetes-client/commit/abdaa2a))
+* **log:** node-client support for streaming logs ([#488](https://github.com/godaddy/kubernetes-client/issues/488)) ([8be6b5a](https://github.com/godaddy/kubernetes-client/commit/8be6b5a))
+
+
+
 ### [8.1.3](https://github.com/godaddy/kubernetes-client/compare/8.1.2...8.1.3) (2019-05-29)
 
 
