@@ -1,7 +1,7 @@
 'use strict'
 
 const pascalcase = require('pascalcase')
-const { Readable } = require('stream')
+const { PassThrough, Readable } = require('stream')
 
 //
 // https://github.com/kubernetes-client/javascript
@@ -24,8 +24,33 @@ class ClientNodeBackend {
     return this.apiClients[apiType]
   }
 
-  async getLogByteStream (options) {
-    throw new Error('getLogByteStream is not implemented')
+  getLogByteStream (options) {
+    const log = new this.client.Log(this.kubeconfig)
+    const qs = options.qs || options.parameters || {}
+    const containerName = qs.container
+    const stream = new PassThrough()
+
+    //
+    // node-client pipes to the log stream iff the apiserver returns 200. Assume
+    // that if the stream is readable, then node-client has attached the pipe
+    // and the call was successful.
+    //
+    // Otherwise, node-client calls the callback with an err.
+    //
+    // node-client also calls the callback when the connection terminates. We
+    // ignore that.
+    //
+    return new Promise((resolve, reject) => {
+      stream.once('readable', () => {
+        resolve(stream)
+      })
+      log.log(options.pathnameParameters.namespace,
+        options.pathnameParameters.name,
+        containerName,
+        stream,
+        err => { if (err) return reject(err) },
+        qs)
+    })
   }
 
   async getWatchObjectStream (options) {
