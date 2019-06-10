@@ -175,6 +175,17 @@ class Request {
   }
 
   /**
+   * @param {object} options - Options object
+   * @param {Stream} options.stdin - optional stdin Readable stream
+   * @param {Stream} options.stdout - optional stdout Writeable stream
+   * @param {Stream} options.stderr - optional stdout Writeable stream
+   * @returns {Promise} Promise resolving to command status
+   */
+  async getWebSocket (options) {
+    throw new Error('Request.getWebSocket not implemented')
+  }
+
+  /**
    * @typedef {object} ApiRequestOptions
    * @property {object} body - Request body
    * @property {object} headers - Headers object
