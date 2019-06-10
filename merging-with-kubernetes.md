@@ -1,12 +1,12 @@
-# Merging with `@kubernetes/node`
+# Merging with `@kubernetes/client-node`
 
 [`kubernetes-client`](https://github.com/godaddy/kubernetes-client) is
 merging with
-[`@kubernetes/node`](https://github.com/kubernetes-client/javascript). `kubernetes-client`
-will continue to be the "fluent" JavaScript bindings for the
-Kubernetes API and `@kubernetes/node` will be a lower-level set of API
+[`@kubernetes/client-node`](https://github.com/kubernetes-client/javascript). `kubernetes-client`
+will continue to be a "fluent" JavaScript bindings for the
+Kubernetes API and `@kubernetes/client-node` will be a lower-level set of API
 bindings. As part of this merging process `kubernetes-client` will
-adopt some of the `@kubernetes/node` APIs. Those changes,
+adopt some of the `@kubernetes/client-node` APIs. Those changes,
 unfortunately, will cause breaking changes to the `kubernetes-client`
 API. These breaking changes will be included in
 `kubernetes-client@9.0.0`.
