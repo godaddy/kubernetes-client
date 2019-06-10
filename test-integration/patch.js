@@ -24,20 +24,19 @@ describe('test-integration/patch', () => {
     await client.api.v1.namespaces(namespace).pods.post({ body: manifest })
 
     pod = await client.api.v1.namespaces(namespace).pods(name).get()
-    expect(pod.body.spec.containers[0].image).equals('busybox')
+    expect(pod.body.metadata.annotations).to.equal(undefined)
 
     await client.api.v1.namespaces(namespace).pods(name).patch({
       body: {
-        spec: {
-          containers: [{
-            name: 'busybox',
-            image: 'busybox:musl'
-          }]
+        metadata: {
+          annotations: {
+            'patch-test0': process.pid.toString()
+          }
         }
       }
     })
 
     pod = await client.api.v1.namespaces(namespace).pods(name).get()
-    expect(pod.body.spec.containers[0].image).equals('busybox:musl')
+    expect(pod.body.metadata.annotations['patch-test0']).equals(process.pid.toString())
   })
 })
