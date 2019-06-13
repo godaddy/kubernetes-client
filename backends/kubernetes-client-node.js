@@ -1,6 +1,6 @@
 'use strict'
 
-const pascalcase = require('pascalcase')
+const camelCase = require('camelcase')
 const { PassThrough, Readable } = require('stream')
 
 //
@@ -14,10 +14,7 @@ class ClientNodeBackend {
   }
 
   _getApiClient (tag) {
-    //
-    // API type is a snake_case CamelCase amalgamation. E.g., Core_v1Api
-    //
-    const apiType = tag.charAt(0).toUpperCase() + tag.slice(1) + 'Api'
+    const apiType = camelCase(tag, { pascalCase: true }) + 'Api'
     if (!(apiType in this.apiClients)) {
       this.apiClients[apiType] = this.kubeconfig.makeApiClient(this.client[apiType])
     }
@@ -91,7 +88,7 @@ class ClientNodeBackend {
     // Support older versions of the Swagger specifications by removing the tag
     // part.
     //
-    const method = operationObject.operationId.replace(pascalcase(tag), '')
+    const method = operationObject.operationId.replace(camelCase(tag, { pascalCase: true }), '')
 
     //
     // @kubernetes/client-node methods take parameters in the order the OpenAPI
