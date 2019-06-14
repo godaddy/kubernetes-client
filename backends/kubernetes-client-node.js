@@ -124,6 +124,12 @@ class ClientNodeBackend {
       return acc
     }, [])
 
+    const extraOptions = {}
+    if (options.headers) {
+      extraOptions.headers = options.headers
+    }
+    args.push(extraOptions)
+
     return apiClient[method].apply(apiClient, args)
       .then(res => {
         res.statusCode = res.response.statusCode
