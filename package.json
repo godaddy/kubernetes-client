@@ -32,7 +32,7 @@
     "typings"
   ],
   "dependencies": {
-    "@kubernetes/client-node": "0.10.0",
+    "@kubernetes/client-node": "0.10.1",
     "camelcase": "^5.3.1",
     "deepmerge": "^3.2.0",
     "depd": "^2.0.0",
