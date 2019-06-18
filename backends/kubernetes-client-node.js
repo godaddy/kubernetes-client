@@ -1,6 +1,7 @@
 'use strict'
 
 const camelCase = require('camelcase')
+const k8s = require('@kubernetes/client-node')
 const { PassThrough, Readable } = require('stream')
 
 //
@@ -8,7 +9,7 @@ const { PassThrough, Readable } = require('stream')
 //
 class ClientNodeBackend {
   constructor (options) {
-    this.client = options.client
+    this.client = options.client || k8s
     this.kubeconfig = options.kubeconfig
     this.apiClients = { }
   }
