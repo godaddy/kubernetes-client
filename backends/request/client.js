@@ -1,5 +1,7 @@
 'use strict'
 
+const { convertKubeconfig } = require('./config')
+const deprecate = require('depd')('kubernetes-client')
 const JSONStream = require('json-stream')
 const pump = require('pump')
 const qs = require('qs')
@@ -100,26 +102,36 @@ class Request {
    */
   constructor (options) {
     this.requestOptions = options.request || {}
-    this.requestOptions.qsStringifyOptions = { indices: false }
-    this.requestOptions.baseUrl = options.url
-    this.requestOptions.ca = options.ca
-    this.requestOptions.cert = options.cert
-    this.requestOptions.key = options.key
-    if ('insecureSkipTlsVerify' in options) {
-      this.requestOptions.strictSSL = !options.insecureSkipTlsVerify
+
+    let convertedOptions
+    if (!options.kubeconfig) {
+      deprecate('Request() without a .kubeconfig option, see ' +
+                'https://github.com/godaddy/kubernetes-client/blob/master/merging-with-kubernetes.md')
+      convertedOptions = options
+    } else {
+      convertedOptions = convertKubeconfig(options.kubeconfig)
     }
-    if ('timeout' in options) {
-      this.requestOptions.timeout = options.timeout
+
+    this.requestOptions.qsStringifyOptions = { indices: false }
+    this.requestOptions.baseUrl = convertedOptions.url
+    this.requestOptions.ca = convertedOptions.ca
+    this.requestOptions.cert = convertedOptions.cert
+    this.requestOptions.key = convertedOptions.key
+    if ('insecureSkipTlsVerify' in convertedOptions) {
+      this.requestOptions.strictSSL = !convertedOptions.insecureSkipTlsVerify
+    }
+    if ('timeout' in convertedOptions) {
+      this.requestOptions.timeout = convertedOptions.timeout
     }
 
     this.authProvider = {
       type: null
     }
-    if (options.auth) {
-      this.requestOptions.auth = options.auth
-      if (options.auth.provider) {
-        this.requestOptions.auth = options.auth.request
-        this.authProvider = options.auth.provider
+    if (convertedOptions.auth) {
+      this.requestOptions.auth = convertedOptions.auth
+      if (convertedOptions.auth.provider) {
+        this.requestOptions.auth = convertedOptions.auth.request
+        this.authProvider = convertedOptions.auth.provider
       }
     }
   }
