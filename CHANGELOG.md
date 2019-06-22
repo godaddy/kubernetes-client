@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.2.1](https://github.com/godaddy/kubernetes-client/compare/8.2.0...8.2.1) (2019-06-22)
+
+
+### Bug Fixes
+
+* **backend:** kubernetes-client-node backend support for patch ([#500](https://github.com/godaddy/kubernetes-client/issues/500)) ([43bb7fc](https://github.com/godaddy/kubernetes-client/commit/43bb7fc))
+* **client-node:** fixes to @kubernetes/client-node backend ([#498](https://github.com/godaddy/kubernetes-client/issues/498)) ([66e0328](https://github.com/godaddy/kubernetes-client/commit/66e0328))
+* **package:** update @kubernetes/client-node to version 0.10.0 ([#495](https://github.com/godaddy/kubernetes-client/issues/495)) ([eb83d4a](https://github.com/godaddy/kubernetes-client/commit/eb83d4a))
+* **package:** update @kubernetes/client-node to version 0.10.2 ([#503](https://github.com/godaddy/kubernetes-client/issues/503)) ([76dc3a7](https://github.com/godaddy/kubernetes-client/commit/76dc3a7))
+
+
+### Tests
+
+* **patch:** add integration test for `.patch` ([#492](https://github.com/godaddy/kubernetes-client/issues/492)) ([92d9729](https://github.com/godaddy/kubernetes-client/commit/92d9729))
+
+
+
 ## [8.2.0](https://github.com/godaddy/kubernetes-client/compare/8.1.3...8.2.0) (2019-05-31)
 
 
