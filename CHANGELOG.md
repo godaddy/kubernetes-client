@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [8.3.0](https://github.com/godaddy/kubernetes-client/compare/8.2.1...8.3.0) (2019-06-25)
+
+
+### Features
+
+* **KubeConfig:** switch to using `KubeConfig` for config handling ([#506](https://github.com/godaddy/kubernetes-client/issues/506)) ([cb94f02](https://github.com/godaddy/kubernetes-client/commit/cb94f02))
+
+
+
 ### [8.2.1](https://github.com/godaddy/kubernetes-client/compare/8.2.0...8.2.1) (2019-06-22)
 
 
