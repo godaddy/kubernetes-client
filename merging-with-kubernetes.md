@@ -70,6 +70,33 @@ const stream = await client.api.v1.namespaces(namespace).pods(manifest.metadata.
 
 We are going to remove support for streaming other endpoints.
 
+### `Request({ kubeconfig })`
+
+You must construct a `Request` backend with a
+[`@kubernetes/client-node` `KubeConfig`](https://github.com/kubernetes-client/javascript) object.
+
+```js
+// Deprecated loading from kubeconfig file
+const Request = require('kubernetes-client/backends/request')
+const requestOptions = Request.config.fromKubeconfig(Request.config.loadKubeconfig())
+const backend = new Request(requestOptions)
+
+// New version of loading from kubeconfig file
+const { KubeConfig } = require('kubernetes-client')
+const kubeconfig = new KubeConfig()
+kubeconfig.loadFromDefault()
+const backend = new Request({ kubeconfig })
+
+// Deprecated loading from in-cluster config
+const requestOptions = Request.config.fromKubeconfig(Request.config.getInCluster())
+const backend = new Request(requestOptions)
+
+// New reversion of loading from in-cluster config
+const kubeconfig = new KubeConfig()
+kubeconfig.loadFromCluster()
+const backend = new Request({ kubeconfig })
+```
+
 ## Why are you doing this?
 
 Because it will improve the quality of both JavaScript clients and

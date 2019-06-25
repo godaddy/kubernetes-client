@@ -24,8 +24,9 @@ the cluster's kubeconfig file and that cluster's API specification.
 
 To create the config required to make a client, you can either:
 
-let kubernetes-client load the file automatically through the `KUBECONFIG`
-env
+let kubernetes-client configure automatically by trying the `KUBECONFIG`
+environment variable first, then `~/.kube/config`, then an in-cluster
+service account, and lastly settling on a default proxy configuration:
 
 ```js
 const client = new Client({ version: '1.13' })
@@ -34,33 +35,41 @@ const client = new Client({ version: '1.13' })
 provide your own path to a file:
 
 ```js
+const { KubeConfig } = require('kubernetes-client')
+const kubeconfig = new KubeConfig()
+kubeconfig.loadFromFile('~/some/path')
 const Request = require('kubernetes-client/backends/request')
-const backend = new Request(Request.config.fromKubeconfig('~/some/path'))
+
+const backend = new Request({ kubeconfig })
 const client = new Client({ backend, version: '1.13' })
 ```
 
-provide a kubeconfig object from memory:
+provide a configuration object from memory:
 
 ```js
 // Should match the kubeconfig file format exactly
-const kubeconfig = {
-	apiVersion: 'v1',
-	clusters: [],
-	contexts: [],
-	'current-context': '',
-	kind: 'Config',
-	users: []
+const config = {
+  apiVersion: 'v1',
+  clusters: [],
+  contexts: [],
+  'current-context': '',
+  kind: 'Config',
+  users: []
 }
+const { KubeConfig } = require('kubernetes-client')
+const kubeconfig = new KubeConfig()
+kubeconfig.loadFromString(JSON.stringify(config))
+
 const Request = require('kubernetes-client/backends/request')
-const backend = new Request(Request.config.fromKubeconfig(kubeconfig))
+const backend = new Request({ kubeconfig })
 const client = new Client({ backend, version: '1.13' })
 ```
 
-and you can also specify the kubeconfig context by passing it as the
-second argument to `fromKubeconfig()`:
+and you can also specify the context by setting it in the `kubeconfig`
+object:
 
-```
-const config = Request.config.fromKubeconfig(null, 'dev')
+```js
+kubeconfig.setCurrentContext('dev')
 ```
 
 You can also elide the `.version` and pass an OpenAPI specification:

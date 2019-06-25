@@ -3,10 +3,7 @@
 'use strict'
 
 const k8s = require('@kubernetes/client-node')
-
 const Client = require('../').Client
-const Request = require('../backends/request')
-
 const ClientNodeBackend = require('../backends/kubernetes-client-node')
 
 async function getClient () {
@@ -17,8 +14,7 @@ async function getClient () {
     const client = new Client({ backend, version: '1.13' })
     return client
   } else {
-    const backend = new Request(Request.config.fromKubeconfig())
-    const client = new Client({ backend })
+    const client = new Client({})
     await client.loadSpec()
     return client
   }
