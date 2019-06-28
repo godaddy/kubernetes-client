@@ -32,10 +32,20 @@ module.exports = {
       const args = config['cmd-args'].split(' ')
       const cmdEnv = config['cmd-env']
 
-      const output = spawnSync(cmd, args, {
-        env: Object.assign({}, process.env, cmdEnv),
-        windowsHide: true
-      })
+      let output
+
+      if (process.platform === 'win32') {
+        output = spawnSync(cmd, args, {
+          env: Object.assign({}, process.env, cmdEnv),
+          windowsHide: true,
+          shell: true
+        })
+      } else {
+        output = spawnSync(cmd, args, {
+          env: Object.assign({}, process.env, cmdEnv),
+          windowsHide: true
+        })
+      }
 
       let result
       try {
