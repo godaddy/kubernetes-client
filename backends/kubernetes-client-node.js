@@ -122,8 +122,7 @@ class ClientNodeBackend {
       const name = operationParameter.name
       if (name in parameters) {
         acc.push(parameters[name])
-      }
-      else {
+      } else {
         acc.push(undefined)
       }
       return acc
