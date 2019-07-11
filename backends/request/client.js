@@ -179,7 +179,7 @@ class Request {
    * @param {Stream} options.stdin - optional stdin Readable stream
    * @param {Stream} options.stdout - optional stdout Writeable stream
    * @param {Stream} options.stderr - optional stdout Writeable stream
-   * @returns {Promise} Promise resolving to Kubernetes V1 Status object
+   * @returns {Promise} Promise resolving to a Kubernetes V1 Status object and a WebSocket
    */
   async getWebSocket (options) {
     throw new Error('Request.getWebSocket not implemented')
