@@ -120,8 +120,12 @@ class ClientNodeBackend {
       options.parameters)
     const args = orderedParameterObjects.reduce((acc, operationParameter) => {
       const name = operationParameter.name
-      if (name in parameters) acc.push(parameters[name])
-      else acc.push(undefined)
+      if (name in parameters) {
+        acc.push(parameters[name])
+      }
+      else {
+        acc.push(undefined)
+      }
       return acc
     }, [])
 
