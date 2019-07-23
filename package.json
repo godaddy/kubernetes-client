@@ -13,7 +13,9 @@
     "test": "standard && mocha 'lib/**/*.test.js' 'backends/**/*.test.js' && npm run test-typings && npm run test-generated",
     "test-generated": "scripts/test-generated.sh",
     "test-integration": "mocha test-integration/ --timeout 30000",
-    "test-typings": "tsc --project ./typings"
+    "test-typings": "tsc --project ./typings",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": "godaddy/kubernetes-client",
   "keywords": [
@@ -44,7 +46,8 @@
     "request": "^2.88.0",
     "swagger-fluent": "^3.2.1",
     "url-join": "^4.0.0",
-    "ws": "^7.0.0"
+    "ws": "^7.0.0",
+    "snyk": "^1.198.0"
   },
   "devDependencies": {
     "@types/node": "^12.0.0",
@@ -63,5 +66,6 @@
     "check-coverage": true,
     "lines": 80,
     "functions": 70
-  }
+  },
+  "snyk": true
 }
