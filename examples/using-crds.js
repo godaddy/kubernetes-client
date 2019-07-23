@@ -2,14 +2,13 @@
 //
 // Use a Custom Resource Definition to extend the Kubernetes API and the client.
 //
-const Client = require('kubernetes-client').Client
-const config = require('kubernetes-client').config
+const Client = require('..').Client
 
 const crd = require('./crontabs-crd.json')
 
 async function main () {
   try {
-    const client = new Client({ config: config.fromKubeconfig(), version: '1.9' })
+    const client = new Client({ version: '1.9' })
 
     //
     // Create the CRD with the Kubernetes API
