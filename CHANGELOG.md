@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.3.3](https://github.com/godaddy/kubernetes-client/compare/8.3.2...8.3.3) (2019-07-23)
+
+
+### Bug Fixes
+
+* **getObjectStream:** for CRDs ([#524](https://github.com/godaddy/kubernetes-client/issues/524)) ([d0b8ecf](https://github.com/godaddy/kubernetes-client/commit/d0b8ecf))
+
+
+
 ### [8.3.2](https://github.com/godaddy/kubernetes-client/compare/8.3.1...8.3.2) (2019-07-23)
 
 
