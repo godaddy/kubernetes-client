@@ -1,4 +1,4 @@
-import * as Api from 'kubernetes-client';
+import Api = require('./');
 
 const Client = Api.Client1_13;
 const config = Api.config;

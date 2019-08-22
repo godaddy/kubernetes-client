@@ -1,4 +1,4 @@
-  interface {{tsName}} {
+interface {{tsName}} {
     // Path templating
   {{#callable}}
     ({{name}}: string): {{type}}
@@ -12,4 +12,4 @@
     {{method}}(options ?: {{parameterType}}): {{returnType}}
   {{/calls}}
     addCustomResourceDefinition(schema: object): void
-  }
+}
