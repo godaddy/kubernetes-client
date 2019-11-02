@@ -42,7 +42,7 @@
     "pump": "^3.0.0",
     "qs": "^6.7.0",
     "request": "^2.88.0",
-    "swagger-fluent": "^3.2.1",
+    "swagger-fluent": "^4.0.0",
     "url-join": "^4.0.0",
     "ws": "^7.0.0"
   },
