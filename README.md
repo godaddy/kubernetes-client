@@ -144,11 +144,10 @@ kubernetes-client includes a typings declartion file for Kubernetes
 API 1.13 and a complimentry `Client1_13` class:
 
 ```typescript
-import * as Api from 'kubernetes-client';
+import ApiClient from 'kubernetes-client';
 
-const Client = Api.Client1_13;
-const config = Api.config;
-const client = new Client({ config: config.fromKubeconfig() });
+const Client = ApiClient.Client1_13;
+const client = new Client({ version: '1.13' });
 ```
 
 When using TypeScript, kubernetes-client does not support dynamically
