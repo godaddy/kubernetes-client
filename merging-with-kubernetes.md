@@ -29,7 +29,7 @@ const client = new Client({ config: config.fromKubeconfig(), version: '1.14' })
 const client = new Client({ version: '1.14' })
 
 // Depcrecated
-const config = { /* custom config /* }
+const config = { /* custom config */ }
 const client = new Client({ config, version: '1.14' })
 
 // New version
