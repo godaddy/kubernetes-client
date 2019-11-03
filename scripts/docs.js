@@ -16,7 +16,7 @@ function getOperationGroup (operation) {
     watch: 'read',
     watchlist: 'read',
 
-    'delete': 'write',
+    delete: 'write',
     deletecollection: 'write',
     patch: 'write',
     post: 'write',
