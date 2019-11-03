@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [8.3.5](https://github.com/godaddy/kubernetes-client/compare/8.3.4...8.3.5) (2019-11-03)
+
+
+### Bug Fixes
+
+* **pod-exec:** fix for 403 throws ([#543](https://github.com/godaddy/kubernetes-client/issues/543)) ([88c43d8](https://github.com/godaddy/kubernetes-client/commit/88c43d8))
+
 ### [8.3.4](https://github.com/godaddy/kubernetes-client/compare/8.3.3...8.3.4) (2019-08-22)
 
 ### [8.3.3](https://github.com/godaddy/kubernetes-client/compare/8.3.2...8.3.3) (2019-07-23)
