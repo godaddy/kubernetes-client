@@ -144,7 +144,7 @@ kubernetes-client includes a typings declartion file for Kubernetes
 API 1.13 and a complimentry `Client1_13` class:
 
 ```typescript
-import ApiClient from 'kubernetes-client';
+import * as ApiClient from 'kubernetes-client';
 
 const Client = ApiClient.Client1_13;
 const client = new Client({ version: '1.13' });
