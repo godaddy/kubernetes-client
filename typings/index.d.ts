@@ -5715,6 +5715,7 @@ export interface ApiV1NamespacesNamePodsNameLog {
            // Calls
            get(options ?: any): any
            getStream(options ?: any): any
+           getByteStream(options ?: any): any
            addCustomResourceDefinition(schema: object): void
        }
 
