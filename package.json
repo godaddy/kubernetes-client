@@ -1,6 +1,6 @@
 {
   "name": "kubernetes-client",
-  "version": "8.3.5",
+  "version": "8.3.6",
   "description": "Simplified Kubernetes API client.",
   "main": "lib/index.js",
   "types": "./typings/index.d.ts",
@@ -32,7 +32,7 @@
     "typings"
   ],
   "dependencies": {
-    "@kubernetes/client-node": "0.11.0",
+    "@kubernetes/client-node": "0.10.2",
     "camelcase": "^5.3.1",
     "deepmerge": "^4.2.2",
     "depd": "^2.0.0",
