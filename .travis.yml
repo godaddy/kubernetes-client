@@ -4,9 +4,11 @@ matrix:
   fast_finish: true
   include:
     - node_js: "12"
+    - node_js: "10"
 # https://github.com/greenkeeperio/greenkeeper-lockfile#npm
 before_install:
 - npm install -g greenkeeper-lockfile
-before_script: greenkeeper-lockfile-update
-after_script: greenkeeper-lockfile-upload
 install: npm install
+before_script: greenkeeper-lockfile-update
+script: if [[ $(node -v) = ^v10.*$ ]]; then npm test-10; else npm test; fi
+after_script: greenkeeper-lockfile-upload
