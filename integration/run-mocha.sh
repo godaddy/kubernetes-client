@@ -14,11 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-KIND_VERBOSITY_LEVEL=1
+KIND_LOGGING="--quiet"
 
 if ! [ -z "$DEBUG" ]; then
-	set -x
-  KIND_VERBOSITY_LEVEL=999
+    set -x
+    KIND_LOGGING="--verbosity=4"
 fi
 
 set -o errexit
@@ -39,19 +39,27 @@ export KUBECONFIG="$(pwd)/integration/.kubeconfig.integration"
 kind --version || $(echo -e "${RED}Please install kind before running e2e tests${NC}"; exit 1)
 
 if [ "$CREATE" = "yes" ]; then
-    echo -e "${BGREEN} creating Kubernetes cluster with kind${NC}"
+    echo -e "${BGREEN}Creating Kubernetes cluster with kind${NC}"
     kind create cluster \
-         --verbosity=${KIND_VERBOSITY_LEVEL} \
+         ${KIND_LOGGING} \
          --name ${KIND_CLUSTER_NAME} \
          --config ${DIR}/kind.yaml \
          --image "kindest/node:${K8S_VERSION}"
 fi
 
+docker pull busybox
+kind load docker-image --name ${KIND_CLUSTER_NAME} busybox
+
+until [ "$(kubectl get nodes | grep -c 'NotReady')" = "0" ]; do
+    echo -e "${BGREEN}Waiting for Kind nodes...${NC}"
+    sleep 5
+done
+
 function cleanup {
     if [ "$CLEANUP" = "yes" ]; then
         set +e
         kind delete cluster \
-             --verbosity=${KIND_VERBOSITY_LEVEL} \
+             ${KIND_LOGGING} \
              --name ${KIND_CLUSTER_NAME}
     fi
 }
