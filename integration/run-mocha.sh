@@ -14,11 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-KIND_VERBOSITY_LEVEL=1
+KIND_VERBOSITY_LEVEL=0
 
 if ! [ -z "$DEBUG" ]; then
-	set -x
-  KIND_VERBOSITY_LEVEL=999
+    set -x
+    KIND_VERBOSITY_LEVEL=1
 fi
 
 set -o errexit
