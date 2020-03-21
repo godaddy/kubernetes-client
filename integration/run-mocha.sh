@@ -14,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-KIND_VERBOSITY_LEVEL=0
 KIND_LOGGING="--quiet"
 
 if ! [ -z "$DEBUG" ]; then
@@ -61,7 +60,6 @@ function cleanup {
         set +e
         kind delete cluster \
              ${KIND_LOGGING} \
-             --verbosity=${KIND_VERBOSITY_LEVEL} \
              --name ${KIND_CLUSTER_NAME}
     fi
 }
