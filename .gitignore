@@ -9,3 +9,6 @@ yarn-error.log
 
 # IntelliJ project files
 .idea
+
+# Integration testing
+integration/.kubeconfig.integration
