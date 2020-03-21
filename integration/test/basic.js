@@ -21,7 +21,7 @@ describe('test-integration/basic', () => {
   it('creates and deletes Namespaces', async () => { })
 
   it('gets Pod logs', async () => {
-    const manifest = yaml.safeLoad(fs.readFileSync('./test-integration/busybox-pod.yaml'))
+    const manifest = yaml.safeLoad(fs.readFileSync('./integration/test/busybox-pod.yaml'))
     const client = await env.getClient()
     await client.api.v1.namespaces(namespace).pods.post({ body: manifest })
     await waitForPod({ client, namespace, name: manifest.metadata.name })
