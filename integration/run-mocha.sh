@@ -65,4 +65,9 @@ until [ "$(kubectl get nodes | grep -c 'NotReady')" = "0" ]; do
     sleep 5
 done
 
+until kubectl get secret | grep -q ^default-token-; do
+    echo -e "${BGREEN}Waiting for default-token...${NC}"
+    sleep 3
+done
+
 mocha "$@"
