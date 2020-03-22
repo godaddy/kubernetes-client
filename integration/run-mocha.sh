@@ -47,14 +47,6 @@ if [ "$CREATE" = "yes" ]; then
          --image "kindest/node:${K8S_VERSION}"
 fi
 
-docker pull busybox
-kind load docker-image --name ${KIND_CLUSTER_NAME} busybox
-
-until [ "$(kubectl get nodes | grep -c 'NotReady')" = "0" ]; do
-    echo -e "${BGREEN}Waiting for Kind nodes...${NC}"
-    sleep 5
-done
-
 function cleanup {
     if [ "$CLEANUP" = "yes" ]; then
         set +e
@@ -64,5 +56,13 @@ function cleanup {
     fi
 }
 trap cleanup EXIT
+
+docker pull busybox
+kind load docker-image --name ${KIND_CLUSTER_NAME} busybox
+
+until [ "$(kubectl get nodes | grep -c 'NotReady')" = "0" ]; do
+    echo -e "${BGREEN}Waiting for Kind nodes...${NC}"
+    sleep 5
+done
 
 mocha "$@"
