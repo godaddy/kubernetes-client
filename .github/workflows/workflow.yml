@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         node: [ '12', '10' ]
-    name: Node ${{ matrix.node }}
+    name: Node ${{ matrix.node }} tests
     steps:
       - uses: actions/checkout@v2
       - name: Setup node
@@ -17,3 +17,14 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm install
       - run: if [[ $(node -v) =~ v10.*$ ]]; then npm run test-10; else npm run test; fi
+  test-integration:
+    runs-on: ubuntu-latest
+    name: Kind integration tests
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm install
+      - run: npm run test-integration
