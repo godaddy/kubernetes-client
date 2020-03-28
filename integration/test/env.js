@@ -3,8 +3,8 @@
 'use strict'
 
 const k8s = require('@kubernetes/client-node')
-const Client = require('../').Client
-const ClientNodeBackend = require('../backends/kubernetes-client-node')
+const Client = require('../../').Client
+const ClientNodeBackend = require('../../backends/kubernetes-client-node')
 
 async function getClient () {
   if (process.env.KUBERNETES_CLIENT_BACKEND === 'client-node') {
