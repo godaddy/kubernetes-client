@@ -54,7 +54,7 @@
     "mustache": "4.0.1",
     "nock": "12.0.3",
     "nyc": "15.0.1",
-    "sinon": "9.0.1",
+    "sinon": "9.0.2",
     "standard": "14.3.3",
     "standard-version": "7.1.0",
     "typescript": "3.8.3",
