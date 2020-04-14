@@ -41,7 +41,7 @@
     "json-stream": "^1.0.0",
     "openid-client": "^3.14.0",
     "pump": "^3.0.0",
-    "qs": "^6.9.0",
+    "qs": "^6.9.2",
     "request": "^2.88.2",
     "swagger-fluent": "^5.0.1",
     "url-join": "^4.0.1",
