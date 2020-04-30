@@ -8,7 +8,7 @@ const deploymentManifest = require('./nginx-deployment.json')
 
 async function main () {
   try {
-    const client = new Client({ version: '1.9' })
+    const client = new Client({ version: '1.13' })
 
     //
     // Get all the Namespaces.

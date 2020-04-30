@@ -8,7 +8,7 @@ const crd = require('./crontabs-crd.json')
 
 async function main () {
   try {
-    const client = new Client({ version: '1.9' })
+    const client = new Client({ version: '1.13' })
 
     //
     // Create the CRD with the Kubernetes API

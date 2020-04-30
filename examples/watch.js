@@ -29,7 +29,7 @@ async function triggerEvents (client) {
 
 async function main () {
   try {
-    const client = new Client({ config: config.fromKubeconfig(), version: '1.9' })
+    const client = new Client({ config: config.fromKubeconfig(), version: '1.13' })
 
     //
     // Clean up our cluster and get ready to trigger events.
