@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0](https://github.com/godaddy/kubernetes-client/compare/8.3.7...9.0.0) (2020-05-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* Kubernetes is at 1.18 and there's little value in maintaining
+support for ancient versions.
+
+* remove support for 1.7, 1.8, and 1.9 ([#622](https://github.com/godaddy/kubernetes-client/issues/622)) ([de189a6](https://github.com/godaddy/kubernetes-client/commit/de189a65fcf7cc5c3d711c7508e8beacbea4d444))
+
 ### [8.3.7](https://github.com/godaddy/kubernetes-client/compare/8.3.6...8.3.7) (2020-04-09)
 
 
