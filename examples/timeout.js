@@ -13,7 +13,7 @@ async function main () {
     const timeout = 30000
     const client = new Client({
       config: Object.assign(config.fromKubeconfig(), { timeout }),
-      version: '1.9'
+      version: '1.13'
     })
 
     //

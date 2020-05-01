@@ -17,7 +17,7 @@ const JSONStream = require('json-stream')
 const namespace = 'default'
 const deployment = 'coalmine'
 
-const client = new Client({ config: config.fromKubeconfig(), version: '1.9' })
+const client = new Client({ config: config.fromKubeconfig(), version: '1.13' })
 
 function watchPod (pod) {
   const podClient = client.api.v1.namespaces(namespace).pods(pod)

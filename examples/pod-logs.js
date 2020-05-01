@@ -6,7 +6,7 @@ const config = require('kubernetes-client').config
 
 async function main () {
   try {
-    const client = new Client({ config: config.fromKubeconfig(), version: '1.9' })
+    const client = new Client({ config: config.fromKubeconfig(), version: '1.13' })
 
     // Pod with single container
     let logs = await client.api.v1.namespaces('namespace_name').pods('pod_name').log.get()
