@@ -219,6 +219,10 @@ class Request {
       headers: options.headers
     }, this.requestOptions)
 
+    if (options.timeout) {
+      requestOptions.timeout = options.timeout
+    }
+    
     if (options.noAuth) {
       delete requestOptions.auth
     }
