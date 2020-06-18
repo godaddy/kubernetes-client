@@ -176,7 +176,7 @@ class Request {
   async getWatchObjectStream (options) {
     const jsonStream = new JSONStream()
     const stream = this.http(Object.assign({ stream: true }, options))
-    pump(stream, jsonStream)
+    pump(stream, jsonStream, (err) => {if (err !== undefined) {throw err} })
     return jsonStream
   }
 
