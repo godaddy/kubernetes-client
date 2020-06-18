@@ -5786,6 +5786,7 @@ export interface ApisAdmissionregistration_k8s_ioV1beta1WatchValidatingwebhookco
            // Calls
            get(options ?: any): any
            getStream(options ?: any): any
+           getByteStream(options ?: any): any
            addCustomResourceDefinition(schema: object): void
        }
 
