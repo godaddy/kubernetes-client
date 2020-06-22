@@ -16,7 +16,7 @@ module.exports = {
             client_id: config['client-id'],
             client_secret: config['client-secret']
           })
-          
+
           client[custom.clock_tolerance] = 10
 
           return client.refresh(config['refresh-token'])
