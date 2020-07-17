@@ -125,6 +125,7 @@ class Request {
     this.requestOptions.key = convertedOptions.key
     if ('insecureSkipTlsVerify' in convertedOptions) {
       this.requestOptions.strictSSL = !convertedOptions.insecureSkipTlsVerify
+      this.requestOptions.rejectUnauthorized = this.requestOptions.strictSSL
     }
     if ('timeout' in convertedOptions) {
       this.requestOptions.timeout = convertedOptions.timeout
