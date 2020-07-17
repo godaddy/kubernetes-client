@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [9.0.0](https://github.com/godaddy/kubernetes-client/compare/8.3.7...9.0.0) (2020-05-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* Kubernetes is at 1.18 and there's little value in maintaining
+support for ancient versions.
+
+* remove support for 1.7, 1.8, and 1.9 ([#622](https://github.com/godaddy/kubernetes-client/issues/622)) ([de189a6](https://github.com/godaddy/kubernetes-client/commit/de189a65fcf7cc5c3d711c7508e8beacbea4d444))
+
+### [8.3.7](https://github.com/godaddy/kubernetes-client/compare/8.3.6...8.3.7) (2020-04-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency camelcase to v6 ([#608](https://github.com/godaddy/kubernetes-client/issues/608)) ([0ed7ef8](https://github.com/godaddy/kubernetes-client/commit/0ed7ef8bc7c597659071ba7f6dd6201489b51ed9))
+* **deps:** update dependency swagger-fluent to v5 ([#610](https://github.com/godaddy/kubernetes-client/issues/610)) ([0c0156e](https://github.com/godaddy/kubernetes-client/commit/0c0156e66b22aa4cc39c0e74574d7f28b2a0e999))
+
 ### [8.3.6](https://github.com/godaddy/kubernetes-client/compare/8.3.5...8.3.6) (2019-11-21)
 
 ### [8.3.5](https://github.com/godaddy/kubernetes-client/compare/8.3.4...8.3.5) (2019-11-03)

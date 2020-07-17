@@ -11,7 +11,7 @@ const deploymentManifest = {
 
 async function main0() {
   try {
-    const client = new Client({ config: config.fromKubeconfig(), version: '1.9' })
+    const client = new Client({ config: config.fromKubeconfig(), version: '1.13' })
     const namespaces = await client.api.v1.namespaces.get();
 
     //
@@ -103,7 +103,7 @@ async function main1() {
 
 async function main2() {
   try {
-    const client = new Client({ config: config.fromKubeconfig(), version: '1.9' });
+    const client = new Client({ config: config.fromKubeconfig(), version: '1.13' });
     const create = await client.apis.apps.v1.ns('default').deploy.post({ body: deploymentManifest });
     console.log('Result: ', create);
   } catch (err) {
