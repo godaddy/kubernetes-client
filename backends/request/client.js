@@ -18,25 +18,20 @@ const WebSocket = require('ws')
 function refreshAuth (type, config) {
   return new Promise((resolve, reject) => {
     const provider = require(`./auth-providers/${type}.js`)
-    provider.refresh(config)
-      .then(result => {
+    provider
+      .refresh(config)
+      .then((result) => {
         const auth = {
           bearer: result
         }
 
         return resolve(auth)
       })
-      .catch(err => reject(err))
+      .catch((err) => reject(err))
   })
 }
 
-const execChannels = [
-  'stdin',
-  'stdout',
-  'stderr',
-  'error',
-  'resize'
-]
+const execChannels = ['stdin', 'stdout', 'stderr', 'error', 'resize']
 
 /**
  * Determine whether a failed Kubernetes API response is asking for an upgrade
@@ -48,9 +43,11 @@ const execChannels = [
  */
 
 function isUpgradeRequired (body) {
-  return body.status === 'Failure' &&
+  return (
+    body.status === 'Failure' &&
     body.code === 400 &&
     body.message === 'Upgrade request required'
+  )
 }
 
 /**
@@ -83,12 +80,14 @@ function upgradeRequest (options, cb) {
     cb(err, messages)
   })
 
-  ws.on('close', (code, reason) => cb(null, {
-    messages,
-    body: messages.map(({ message }) => message).join(''),
-    code,
-    reason
-  }))
+  ws.on('close', (code, reason) =>
+    cb(null, {
+      messages,
+      body: messages.map(({ message }) => message).join(''),
+      code,
+      reason
+    })
+  )
 
   return ws
 }
@@ -111,8 +110,10 @@ class Request {
 
     let convertedOptions
     if (!options.kubeconfig) {
-      deprecate('Request() without a .kubeconfig option, see ' +
-                'https://github.com/godaddy/kubernetes-client/blob/master/merging-with-kubernetes.md')
+      deprecate(
+        'Request() without a .kubeconfig option, see ' +
+        'https://github.com/godaddy/kubernetes-client/blob/master/merging-with-kubernetes.md'
+      )
       convertedOptions = options
     } else {
       convertedOptions = convertKubeconfig(options.kubeconfig)
@@ -154,7 +155,7 @@ class Request {
       // Refresh auth if 401 or 403
       if ((res.statusCode === 401 || res.statusCode === 403) && auth.type) {
         return refreshAuth(auth.type, auth.config)
-          .then(newAuth => {
+          .then((newAuth) => {
             this.requestOptions.auth = newAuth
             options.auth = newAuth
             return request(options, (err, res, body) => {
@@ -162,7 +163,7 @@ class Request {
               return cb(null, { statusCode: res.statusCode, body })
             })
           })
-          .catch(err => cb(err))
+          .catch((err) => cb(err))
       }
 
       return cb(null, { statusCode: res.statusCode, body: body })
@@ -209,14 +210,17 @@ class Request {
    */
   http (options) {
     const uri = options.pathname
-    const requestOptions = Object.assign({
-      method: options.method,
-      uri,
-      body: options.body,
-      json: 'json' in options ? Boolean(options.json) : true,
-      qs: options.parameters || options.qs,
-      headers: options.headers
-    }, this.requestOptions)
+    const requestOptions = Object.assign(
+      {
+        method: options.method,
+        uri,
+        body: options.body,
+        json: 'json' in options ? Boolean(options.json) : true,
+        qs: options.parameters || options.qs,
+        headers: options.headers
+      },
+      this.requestOptions
+    )
 
     if (options.noAuth) {
       delete requestOptions.auth
