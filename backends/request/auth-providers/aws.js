@@ -48,7 +48,6 @@ module.exports = {
         val = Base64.encodeURI(val);
         val = val.replace(/=+$/, "");
         val = `k8s-aws-v1.${val}`;
-        console.log(val);
         resolve(val);
       });
     });
