@@ -93,7 +93,6 @@ function convertKubeconfig(kubeconfig) {
       if (user.exec.args) {
         args = user.exec.args.join(" ");
       }
-      console.log(user.exec);
       if (user.exec.command && user.exec.command == "aws") {
         auth = {
           provider: {
