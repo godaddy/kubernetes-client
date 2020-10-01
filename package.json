@@ -34,9 +34,11 @@
   ],
   "dependencies": {
     "@kubernetes/client-node": "0.10.2",
+    "aws4": "^1.10.1",
     "camelcase": "^6.0.0",
     "deepmerge": "^4.2.2",
     "depd": "^2.0.0",
+    "js-base64": "^3.5.2",
     "js-yaml": "^3.13.1",
     "json-stream": "^1.0.0",
     "openid-client": "^3.14.0",
