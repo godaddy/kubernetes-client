@@ -54,7 +54,10 @@ module.exports = {
         return reject(new Error('Failed to run cmd.'))
       }
 
-      const token = getProperty(config['token-key'].replace(/[{}]+/g, ''), result)
+      const token = getProperty(
+        config['token-key'].replace(/[{}]+/g, ''),
+        result
+      )
 
       return resolve(token)
     })

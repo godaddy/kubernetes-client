@@ -7,7 +7,9 @@ const path = require('path')
 const yaml = require('js-yaml')
 const merge = require('deepmerge')
 
-const root = process.env.KUBERNETES_CLIENT_SERVICEACCOUNT_ROOT || '/var/run/secrets/kubernetes.io/serviceaccount/'
+const root =
+  process.env.KUBERNETES_CLIENT_SERVICEACCOUNT_ROOT ||
+  '/var/run/secrets/kubernetes.io/serviceaccount/'
 const caPath = path.join(root, 'ca.crt')
 const tokenPath = path.join(root, 'token')
 const namespacePath = path.join(root, 'namespace')
@@ -83,7 +85,7 @@ function convertKubeconfig (kubeconfig) {
     if (user.exec) {
       const env = {}
       if (user.exec.env) {
-        user.exec.env.forEach(variable => {
+        user.exec.env.forEach((variable) => {
           env[variable.name] = variable.value
         })
       }
@@ -91,14 +93,25 @@ function convertKubeconfig (kubeconfig) {
       if (user.exec.args) {
         args = user.exec.args.join(' ')
       }
-      auth = {
-        provider: {
-          type: 'cmd',
-          config: {
-            'cmd-args': args,
-            'cmd-path': user.exec.command,
-            'token-key': 'status.token',
-            'cmd-env': env
+      if (user.exec.command && user.exec.command === 'aws') {
+        auth = {
+          provider: {
+            type: 'aws',
+            config: {
+              'cmd-args': args
+            }
+          }
+        }
+      } else {
+        auth = {
+          provider: {
+            type: 'cmd',
+            config: {
+              'cmd-args': args,
+              'cmd-path': user.exec.command,
+              'token-key': 'status.token',
+              'cmd-env': env
+            }
           }
         }
       }
@@ -128,25 +141,27 @@ function defaultConfigPaths () {
     const delimiter = process.platform === 'win32' ? ';' : ':'
     return process.env.KUBECONFIG.split(delimiter)
   }
-  const homeDir = process.env[(process.platform === 'win32') ? 'USERPROFILE' : 'HOME']
+  const homeDir =
+    process.env[process.platform === 'win32' ? 'USERPROFILE' : 'HOME']
   return [path.join(homeDir, '.kube', 'config')]
 }
 
 /**
-* Returns with in cluster config
-* Based on: https://github.com/kubernetes/client-go/blob/124670e99da15091e13916f0ad4b2b2df2a39cd5/rest/config.go#L274
-* and http://kubernetes.io/docs/user-guide/accessing-the-cluster/#accessing-the-api-from-a-pod
-*
-* @function getInCluster
-* @returns {Object} { url, cert, auth, namespace }
-*/
+ * Returns with in cluster config
+ * Based on: https://github.com/kubernetes/client-go/blob/124670e99da15091e13916f0ad4b2b2df2a39cd5/rest/config.go#L274
+ * and http://kubernetes.io/docs/user-guide/accessing-the-cluster/#accessing-the-api-from-a-pod
+ *
+ * @function getInCluster
+ * @returns {Object} { url, cert, auth, namespace }
+ */
 function getInCluster () {
   const host = process.env.KUBERNETES_SERVICE_HOST
   const port = process.env.KUBERNETES_SERVICE_PORT
   if (!host || !port) {
     throw new TypeError(
       'Unable to load in-cluster configuration, KUBERNETES_SERVICE_HOST' +
-      ' and KUBERNETES_SERVICE_PORT must be defined')
+      ' and KUBERNETES_SERVICE_PORT must be defined'
+    )
   }
 
   const ca = fs.readFileSync(caPath, 'utf8')
@@ -163,7 +178,8 @@ function getInCluster () {
 
 module.exports.getInCluster = deprecate.function(
   getInCluster,
-  'getInCluster see https://github.com/godaddy/kubernetes-client/blob/master/merging-with-kubernetes.md#request-kubeconfig-')
+  'getInCluster see https://github.com/godaddy/kubernetes-client/blob/master/merging-with-kubernetes.md#request-kubeconfig-'
+)
 
 //
 // Accept a manually specified current-context to take precedence over
@@ -180,12 +196,12 @@ function fromKubeconfig (kubeconfig, current) {
   }
 
   current = current || kubeconfig['current-context']
-  const context = kubeconfig.contexts
-    .find(item => item.name === current).context
-  const cluster = kubeconfig.clusters
-    .find(item => item.name === context.cluster).cluster
-  const userConfig = kubeconfig.users
-    .find(user => user.name === context.user)
+  const context = kubeconfig.contexts.find((item) => item.name === current)
+    .context
+  const cluster = kubeconfig.clusters.find(
+    (item) => item.name === context.cluster
+  ).cluster
+  const userConfig = kubeconfig.users.find((user) => user.name === context.user)
   const user = userConfig ? userConfig.user : null
   const namespace = context.namespace
 
@@ -195,7 +211,10 @@ function fromKubeconfig (kubeconfig, current) {
     if (cluster['certificate-authority']) {
       ca = fs.readFileSync(path.normalize(cluster['certificate-authority']))
     } else if (cluster['certificate-authority-data']) {
-      ca = Buffer.from(cluster['certificate-authority-data'], 'base64').toString()
+      ca = Buffer.from(
+        cluster['certificate-authority-data'],
+        'base64'
+      ).toString()
     }
 
     if (cluster['insecure-skip-tls-verify']) {
@@ -257,7 +276,7 @@ function fromKubeconfig (kubeconfig, current) {
     if (user.exec) {
       const env = {}
       if (user.exec.env) {
-        user.exec.env.forEach(variable => {
+        user.exec.env.forEach((variable) => {
           env[variable.name] = variable.value
         })
       }
@@ -296,25 +315,41 @@ function fromKubeconfig (kubeconfig, current) {
 
 module.exports.fromKubeconfig = deprecate.function(
   fromKubeconfig,
-  'fromKubeconfig see https://github.com/godaddy/kubernetes-client/blob/master/merging-with-kubernetes.md#request-kubeconfig-')
+  'fromKubeconfig see https://github.com/godaddy/kubernetes-client/blob/master/merging-with-kubernetes.md#request-kubeconfig-'
+)
 
 function mapCertificates (cfgPath, config) {
   const configDir = path.dirname(cfgPath)
 
   if (config.clusters) {
-    config.clusters.filter(cluster => cluster.cluster['certificate-authority']).forEach(cluster => {
-      cluster.cluster['certificate-authority'] = path.resolve(configDir, cluster.cluster['certificate-authority'])
-    })
+    config.clusters
+      .filter((cluster) => cluster.cluster['certificate-authority'])
+      .forEach((cluster) => {
+        cluster.cluster['certificate-authority'] = path.resolve(
+          configDir,
+          cluster.cluster['certificate-authority']
+        )
+      })
   }
 
   if (config.users) {
-    config.users.filter(user => user.user['client-certificate']).forEach(user => {
-      user.user['client-certificate'] = path.resolve(configDir, user.user['client-certificate'])
-    })
+    config.users
+      .filter((user) => user.user['client-certificate'])
+      .forEach((user) => {
+        user.user['client-certificate'] = path.resolve(
+          configDir,
+          user.user['client-certificate']
+        )
+      })
 
-    config.users.filter(user => user.user['client-key']).forEach(user => {
-      user.user['client-key'] = path.resolve(configDir, user.user['client-key'])
-    })
+    config.users
+      .filter((user) => user.user['client-key'])
+      .forEach((user) => {
+        user.user['client-key'] = path.resolve(
+          configDir,
+          user.user['client-key']
+        )
+      })
   }
 
   return config
@@ -331,7 +366,7 @@ function loadKubeconfig (cfgPath) {
     cfgPaths = [cfgPath]
   }
 
-  const configs = cfgPaths.map(cfgPath => {
+  const configs = cfgPaths.map((cfgPath) => {
     const config = yaml.safeLoad(fs.readFileSync(cfgPath))
     return mapCertificates(cfgPath, config)
   })
@@ -341,4 +376,5 @@ function loadKubeconfig (cfgPath) {
 
 module.exports.loadKubeconfig = deprecate.function(
   loadKubeconfig,
-  'loadKubeconfig see https://github.com/godaddy/kubernetes-client/blob/master/merging-with-kubernetes.md#request-kubeconfig-')
+  'loadKubeconfig see https://github.com/godaddy/kubernetes-client/blob/master/merging-with-kubernetes.md#request-kubeconfig-'
+)
