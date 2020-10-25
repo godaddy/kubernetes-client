@@ -78,6 +78,7 @@ function main (args) {
   }
   const spec = JSON.parse(raw)
   let clientSuffix = ''
+  spec.info.version = args.spec.match(/swagger-(.*).json.gz/)[1]
   if (spec.info.version) {
     clientSuffix = spec.info.version.replace(/v/, '').split('.').slice(0, 2).join('_')
   }

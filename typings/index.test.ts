@@ -1,6 +1,6 @@
 import Api = require('./');
 
-const Client = Api.Client1_13;
+const Client = Api.Client1_16;
 const config = Api.config;
 
 const deploymentManifest = {
@@ -11,7 +11,7 @@ const deploymentManifest = {
 
 async function main0() {
   try {
-    const client = new Client({ config: config.fromKubeconfig(), version: '1.13' })
+    const client = new Client({ config: config.fromKubeconfig(), version: '1.16' })
     const namespaces = await client.api.v1.namespaces.get();
 
     //

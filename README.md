@@ -134,17 +134,23 @@ specifications:
 * [Kubernetes API v1.11](docs/1.11/README.md)
 * [Kubernetes API v1.12](docs/1.12/README.md)
 * [Kubernetes API v1.13](docs/1.13/README.md)
+* [Kubernetes API v1.14](docs/1.14/README.md)
+* [Kubernetes API v1.15](docs/1.15/README.md)
+* [Kubernetes API v1.16](docs/1.16/README.md)
+* [Kubernetes API v1.17](docs/1.17/README.md)
+* [Kubernetes API v1.18](docs/1.18/README.md)
+* [Kubernetes API v1.19](docs/1.19/README.md)
 
 ## TypeScript
 
 kubernetes-client includes a typings declartion file for Kubernetes
-API 1.13 and a complimentry `Client1_13` class:
+API 1.16 and a complimentry `Client1_16` class:
 
 ```typescript
 import * as ApiClient from 'kubernetes-client';
 
 const Client = ApiClient.Client1_13;
-const client = new Client({ version: '1.13' });
+const client = new Client({ version: '1.16' });
 ```
 
 When using TypeScript, kubernetes-client does not support dynamically

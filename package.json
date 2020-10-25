@@ -7,7 +7,7 @@
   "scripts": {
     "coverage": "nyc mocha 'lib/**/*.test.js'",
     "docs": "node scripts/docs.js --builtins",
-    "typings": "node scripts/typings.js --spec lib/specs/swagger-1.13.json.gz --output typings/index.d.ts",
+    "typings": "node scripts/typings.js --spec lib/specs/swagger-1.16.json.gz --output typings/index.d.ts",
     "lint": "standard --fix",
     "release": "standard-version --tag-prefix=''",
     "test": "standard && mocha 'lib/**/*.test.js' 'backends/**/*.test.js' && npm run test-typings && npm run test-generated",
@@ -33,7 +33,7 @@
     "typings"
   ],
   "dependencies": {
-    "@kubernetes/client-node": "0.10.2",
+    "@kubernetes/client-node": "0.12.3",
     "camelcase": "^6.0.0",
     "deepmerge": "^4.2.2",
     "depd": "^2.0.0",
