@@ -5,7 +5,7 @@
 
 ## read
 
-  ### apis.scheduling.k8s.io.v1.watch.priorityclasses.get
+  ### apis.scheduling.k8s.io.v1beta1.watch.priorityclasses.get
 
   watch individual changes to a list of PriorityClass. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -24,7 +24,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.scheduling.k8s.io.v1.priorityclasses.get
+  ### apis.scheduling.k8s.io.v1beta1.priorityclasses.get
 
   list or watch objects of kind PriorityClass
 
@@ -81,7 +81,7 @@
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
   | `qs.pretty` | If &#39;true&#39;, then the output is pretty printed. |
 
-  ### apis.scheduling.k8s.io.v1beta1.watch.priorityclasses.get
+  ### apis.scheduling.k8s.io.v1.watch.priorityclasses.get
 
   watch individual changes to a list of PriorityClass. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -100,7 +100,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.scheduling.k8s.io.v1beta1.priorityclasses.get
+  ### apis.scheduling.k8s.io.v1.priorityclasses.get
 
   list or watch objects of kind PriorityClass
 
@@ -121,7 +121,7 @@
 
 ## write
 
-  ### apis.scheduling.k8s.io.v1.priorityclasses.delete
+  ### apis.scheduling.k8s.io.v1beta1.priorityclasses.delete
 
   delete collection of PriorityClass
 
@@ -150,7 +150,7 @@
   | --------- | ----------- |
   | `body` | #&#x2F;definitions&#x2F;io.k8s.apimachinery.pkg.apis.meta.v1.DeleteOptions |
 
-  ### apis.scheduling.k8s.io.v1.priorityclasses.post
+  ### apis.scheduling.k8s.io.v1beta1.priorityclasses.post
 
   create a PriorityClass
 
@@ -167,7 +167,7 @@
 
   | Parameter | Description |
   | --------- | ----------- |
-  | `body` | #&#x2F;definitions&#x2F;io.k8s.api.scheduling.v1.PriorityClass |
+  | `body` | #&#x2F;definitions&#x2F;io.k8s.api.scheduling.v1beta1.PriorityClass |
 
   ### apis.scheduling.k8s.io.v1alpha1.priorityclasses.delete
 
@@ -217,7 +217,7 @@
   | --------- | ----------- |
   | `body` | #&#x2F;definitions&#x2F;io.k8s.api.scheduling.v1alpha1.PriorityClass |
 
-  ### apis.scheduling.k8s.io.v1beta1.priorityclasses.delete
+  ### apis.scheduling.k8s.io.v1.priorityclasses.delete
 
   delete collection of PriorityClass
 
@@ -246,7 +246,7 @@
   | --------- | ----------- |
   | `body` | #&#x2F;definitions&#x2F;io.k8s.apimachinery.pkg.apis.meta.v1.DeleteOptions |
 
-  ### apis.scheduling.k8s.io.v1beta1.priorityclasses.post
+  ### apis.scheduling.k8s.io.v1.priorityclasses.post
 
   create a PriorityClass
 
@@ -263,5 +263,5 @@
 
   | Parameter | Description |
   | --------- | ----------- |
-  | `body` | #&#x2F;definitions&#x2F;io.k8s.api.scheduling.v1beta1.PriorityClass |
+  | `body` | #&#x2F;definitions&#x2F;io.k8s.api.scheduling.v1.PriorityClass |
 

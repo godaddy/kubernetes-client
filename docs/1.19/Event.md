@@ -4,7 +4,7 @@
 
 ## read
 
-  ### api.v1.watch.events.get
+  ### apis.events.k8s.io.v1beta1.watch.events.get
 
   watch individual changes to a list of Event. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -24,7 +24,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### api.v1.events.get
+  ### apis.events.k8s.io.v1beta1.events.get
 
   list or watch objects of kind Event
 
@@ -84,7 +84,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.events.k8s.io.v1beta1.watch.events.get
+  ### api.v1.watch.events.get
 
   watch individual changes to a list of Event. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -104,7 +104,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.events.k8s.io.v1beta1.events.get
+  ### api.v1.events.get
 
   list or watch objects of kind Event
 

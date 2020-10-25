@@ -4,7 +4,7 @@
 
 ## read
 
-  ### apis.apps.v1.watch.controllerrevisions.get
+  ### apis.apps.v1beta2.watch.controllerrevisions.get
 
   watch individual changes to a list of ControllerRevision
 
@@ -23,7 +23,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.apps.v1.controllerrevisions.get
+  ### apis.apps.v1beta2.controllerrevisions.get
 
   list or watch objects of kind ControllerRevision
 
@@ -80,7 +80,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.apps.v1beta2.watch.controllerrevisions.get
+  ### apis.apps.v1.watch.controllerrevisions.get
 
   watch individual changes to a list of ControllerRevision
 
@@ -99,7 +99,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.apps.v1beta2.controllerrevisions.get
+  ### apis.apps.v1.controllerrevisions.get
 
   list or watch objects of kind ControllerRevision
 

@@ -4,13 +4,65 @@
 
 ## misc
 
-  ### api.v1.get
+  ### apis.extensions.v1beta1.get
 
   get available resources
 
-  ### api.get
+  ### apis.extensions.get
 
-  get available API versions
+  get information of a group
+
+  ### apis.autoscaling.v2beta1.get
+
+  get available resources
+
+  ### apis.autoscaling.v1.get
+
+  get available resources
+
+  ### apis.autoscaling.v2beta2.get
+
+  get available resources
+
+  ### apis.autoscaling.get
+
+  get information of a group
+
+  ### apis.rbac.authorization.k8s.io.v1beta1.get
+
+  get available resources
+
+  ### apis.rbac.authorization.k8s.io.v1alpha1.get
+
+  get available resources
+
+  ### apis.rbac.authorization.k8s.io.v1.get
+
+  get available resources
+
+  ### apis.rbac.authorization.k8s.io.get
+
+  get information of a group
+
+  ### apis.policy.v1beta1.get
+
+  get available resources
+
+  ### apis.policy.get
+
+  get information of a group
+
+  ### apis.networking.k8s.io.v1beta1.get
+
+  get available resources
+
+  ### apis.networking.k8s.io.v1.get
+
+  get available resources
+
+  ### apis.networking.k8s.io.get
+
+  get information of a group
 
   ### apis.apps.v1.get
 
@@ -28,47 +80,11 @@
 
   get information of a group
 
-  ### apis.autoscaling.v1.get
+  ### apis.settings.k8s.io.v1alpha1.get
 
   get available resources
 
-  ### apis.autoscaling.v2beta1.get
-
-  get available resources
-
-  ### apis.autoscaling.v2beta2.get
-
-  get available resources
-
-  ### apis.autoscaling.get
-
-  get information of a group
-
-  ### apis.batch.v1.get
-
-  get available resources
-
-  ### apis.batch.v1beta1.get
-
-  get available resources
-
-  ### apis.batch.v2alpha1.get
-
-  get available resources
-
-  ### apis.batch.get
-
-  get information of a group
-
-  ### apis.coordination.k8s.io.v1.get
-
-  get available resources
-
-  ### apis.coordination.k8s.io.v1beta1.get
-
-  get available resources
-
-  ### apis.coordination.k8s.io.get
+  ### apis.settings.k8s.io.get
 
   get information of a group
 
@@ -80,55 +96,59 @@
 
   get information of a group
 
-  ### apis.extensions.v1beta1.get
+  ### apis.coordination.k8s.io.v1beta1.get
 
   get available resources
 
-  ### apis.extensions.get
+  ### apis.coordination.k8s.io.v1.get
+
+  get available resources
+
+  ### apis.coordination.k8s.io.get
 
   get information of a group
 
-  ### apis.networking.k8s.io.v1.get
+  ### apis.batch.v2alpha1.get
 
   get available resources
 
-  ### apis.networking.k8s.io.v1beta1.get
+  ### apis.batch.v1beta1.get
 
   get available resources
 
-  ### apis.networking.k8s.io.get
+  ### apis.batch.v1.get
+
+  get available resources
+
+  ### apis.batch.get
 
   get information of a group
 
-  ### apis.policy.v1beta1.get
+  ### apis.node.k8s.io.v1beta1.get
 
   get available resources
 
-  ### apis.policy.get
+  ### apis.node.k8s.io.v1alpha1.get
+
+  get available resources
+
+  ### apis.node.k8s.io.get
 
   get information of a group
 
-  ### apis.rbac.authorization.k8s.io.v1.get
+  ### apis.storage.k8s.io.v1beta1.get
 
   get available resources
 
-  ### apis.rbac.authorization.k8s.io.v1alpha1.get
+  ### apis.storage.k8s.io.v1alpha1.get
 
   get available resources
 
-  ### apis.rbac.authorization.k8s.io.v1beta1.get
+  ### apis.storage.k8s.io.v1.get
 
   get available resources
 
-  ### apis.rbac.authorization.k8s.io.get
-
-  get information of a group
-
-  ### apis.settings.k8s.io.v1alpha1.get
-
-  get available resources
-
-  ### apis.settings.k8s.io.get
+  ### apis.storage.k8s.io.get
 
   get information of a group
 
@@ -137,6 +157,22 @@
   get available resources
 
   ### apis.admissionregistration.k8s.io.get
+
+  get information of a group
+
+  ### apis.scheduling.k8s.io.v1alpha1.get
+
+  get available resources
+
+  ### apis.scheduling.k8s.io.v1.get
+
+  get available resources
+
+  ### apis.scheduling.k8s.io.v1beta1.get
+
+  get available resources
+
+  ### apis.scheduling.k8s.io.get
 
   get information of a group
 
@@ -160,6 +196,14 @@
 
   get information of a group
 
+  ### apis.certificates.k8s.io.v1beta1.get
+
+  get available resources
+
+  ### apis.certificates.k8s.io.get
+
+  get information of a group
+
   ### apis.auditregistration.k8s.io.v1alpha1.get
 
   get available resources
@@ -180,63 +224,11 @@
 
   get information of a group
 
-  ### apis.certificates.k8s.io.v1beta1.get
+  ### apis.authentication.k8s.io.v1beta1.get
 
   get available resources
-
-  ### apis.certificates.k8s.io.get
-
-  get information of a group
-
-  ### apis.node.k8s.io.v1alpha1.get
-
-  get available resources
-
-  ### apis.node.k8s.io.v1beta1.get
-
-  get available resources
-
-  ### apis.node.k8s.io.get
-
-  get information of a group
-
-  ### apis.scheduling.k8s.io.v1.get
-
-  get available resources
-
-  ### apis.scheduling.k8s.io.v1alpha1.get
-
-  get available resources
-
-  ### apis.scheduling.k8s.io.v1beta1.get
-
-  get available resources
-
-  ### apis.scheduling.k8s.io.get
-
-  get information of a group
-
-  ### apis.storage.k8s.io.v1.get
-
-  get available resources
-
-  ### apis.storage.k8s.io.v1alpha1.get
-
-  get available resources
-
-  ### apis.storage.k8s.io.v1beta1.get
-
-  get available resources
-
-  ### apis.storage.k8s.io.get
-
-  get information of a group
 
   ### apis.authentication.k8s.io.v1.get
-
-  get available resources
-
-  ### apis.authentication.k8s.io.v1beta1.get
 
   get available resources
 
@@ -245,6 +237,14 @@
   get information of a group
 
   ### apis.get
+
+  get available API versions
+
+  ### api.v1.get
+
+  get available resources
+
+  ### api.get
 
   get available API versions
 

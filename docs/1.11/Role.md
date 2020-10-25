@@ -4,7 +4,7 @@
 
 ## read
 
-  ### apis.rbac.authorization.k8s.io.v1.watch.roles.get
+  ### apis.rbac.authorization.k8s.io.v1beta1.watch.roles.get
 
   watch individual changes to a list of Role
 
@@ -23,7 +23,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.rbac.authorization.k8s.io.v1.roles.get
+  ### apis.rbac.authorization.k8s.io.v1beta1.roles.get
 
   list or watch objects of kind Role
 
@@ -80,7 +80,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.rbac.authorization.k8s.io.v1beta1.watch.roles.get
+  ### apis.rbac.authorization.k8s.io.v1.watch.roles.get
 
   watch individual changes to a list of Role
 
@@ -99,7 +99,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.rbac.authorization.k8s.io.v1beta1.roles.get
+  ### apis.rbac.authorization.k8s.io.v1.roles.get
 
   list or watch objects of kind Role
 

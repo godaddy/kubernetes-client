@@ -4,7 +4,7 @@
 
 ## read
 
-  ### apis.apps.v1.watch.replicasets.get
+  ### apis.extensions.v1beta1.watch.replicasets.get
 
   watch individual changes to a list of ReplicaSet. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -23,7 +23,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.apps.v1.replicasets.get
+  ### apis.extensions.v1beta1.replicasets.get
 
   list or watch objects of kind ReplicaSet
 
@@ -80,7 +80,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.extensions.v1beta1.watch.replicasets.get
+  ### apis.apps.v1.watch.replicasets.get
 
   watch individual changes to a list of ReplicaSet. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -99,7 +99,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.extensions.v1beta1.replicasets.get
+  ### apis.apps.v1.replicasets.get
 
   list or watch objects of kind ReplicaSet
 
