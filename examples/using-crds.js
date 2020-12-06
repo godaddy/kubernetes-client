@@ -2,7 +2,7 @@
 //
 // Use a Custom Resource Definition to extend the Kubernetes API and the client.
 //
-const Client = require('..').Client
+const Client = require('kubernetes-client').Client
 
 const crd = require('./crontabs-crd.json')
 
