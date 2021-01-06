@@ -37,7 +37,7 @@
     "camelcase": "^6.0.0",
     "deepmerge": "^4.2.2",
     "depd": "^2.0.0",
-    "js-yaml": "^3.13.1",
+    "js-yaml": "^4.0.0",
     "json-stream": "^1.0.0",
     "openid-client": "^3.14.0",
     "pump": "^3.0.0",
