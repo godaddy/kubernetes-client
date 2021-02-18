@@ -332,7 +332,7 @@ function loadKubeconfig (cfgPath) {
   }
 
   const configs = cfgPaths.map(cfgPath => {
-    const config = yaml.safeLoad(fs.readFileSync(cfgPath))
+    const config = yaml.load(fs.readFileSync(cfgPath))
     return mapCertificates(cfgPath, config)
   })
 

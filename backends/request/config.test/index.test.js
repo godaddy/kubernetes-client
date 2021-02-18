@@ -140,7 +140,7 @@ describe('Config', () => {
       kubeconfig.makePathsAbsolute('/.kube')
 
       const fsReadFileSync = sandbox.stub(fs, 'readFileSync')
-      const yamlSafeLoad = sandbox.stub(yaml, 'safeLoad')
+      const yamlSafeLoad = sandbox.stub(yaml, 'load')
 
       fsReadFileSync
         .withArgs(sinon.match(/config$/))

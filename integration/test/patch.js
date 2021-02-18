@@ -18,7 +18,7 @@ describe('test-integration/patch', () => {
 
   it('patches a pod', async () => {
     let pod
-    const manifest = yaml.safeLoad(fs.readFileSync('./integration/test/busybox-pod.yaml'))
+    const manifest = yaml.load(fs.readFileSync('./integration/test/busybox-pod.yaml'))
     const name = manifest.metadata.name
     const client = await env.getClient()
     await client.api.v1.namespaces(namespace).pods.post({ body: manifest })

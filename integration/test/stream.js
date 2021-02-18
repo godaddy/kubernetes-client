@@ -18,7 +18,7 @@ describe('test-integration/stream', () => {
   })
 
   it('streams Pod logs', async () => {
-    const manifest = yaml.safeLoad(fs.readFileSync('./integration/test/busybox-pod.yaml'))
+    const manifest = yaml.load(fs.readFileSync('./integration/test/busybox-pod.yaml'))
     const client = await env.getClient()
     await client.api.v1.namespaces(namespace).pods.post({ body: manifest })
     await waitForPod({ client, namespace, name: manifest.metadata.name })
@@ -38,7 +38,7 @@ describe('test-integration/stream', () => {
   })
 
   it('watches Pod events', async () => {
-    const manifest = yaml.safeLoad(fs.readFileSync('./integration/test/busybox-pod.yaml'))
+    const manifest = yaml.load(fs.readFileSync('./integration/test/busybox-pod.yaml'))
     const client = await env.getClient()
     await client.api.v1.namespaces(namespace).pods.post({ body: manifest })
     await waitForPod({ client, namespace, name: manifest.metadata.name })
