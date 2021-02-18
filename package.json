@@ -35,21 +35,16 @@
   "dependencies": {
     "@kubernetes/client-node": "0.13.2",
     "camelcase": "^6.2.0",
-    "deepmerge": "^4.2.2",
     "depd": "^2.0.0",
     "js-yaml": "^4.0.0",
-    "json-stream": "^1.0.0",
     "openid-client": "^4.4.0",
-    "pump": "^3.0.0",
-    "qs": "^6.9.6",
-    "request": "^2.88.2",
-    "swagger-fluent": "^5.0.3",
-    "url-join": "^4.0.1",
-    "ws": "^7.4.3"
+    "swagger-fluent": "^5.0.3"
   },
   "devDependencies": {
     "@types/node": "14.14.28",
     "chai": "4.3.0",
+    "deepmerge": "^4.2.2",
+    "json-stream": "^1.0.0",
     "mocha": "8.3.0",
     "mustache": "4.1.0",
     "nock": "13.0.7",
@@ -58,7 +53,12 @@
     "standard": "16.0.3",
     "standard-version": "9.1.1",
     "typescript": "4.1.5",
-    "yargs": "16.2.0"
+    "yargs": "16.2.0",
+    "pump": "^3.0.0",
+    "qs": "^6.9.6",
+    "request": "^2.88.2",
+    "url-join": "^4.0.1",
+    "ws": "^7.4.3"
   },
   "nyc": {
     "check-coverage": true,

@@ -107,6 +107,7 @@ class Request {
    *   on the server's certificate.
    */
   constructor (options) {
+    console.warn('Request is deprecated, as is this backend implementation.  It remains in place only for test purposes and should not be used in production')
     this.requestOptions = options.request || {}
 
     let convertedOptions
