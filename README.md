@@ -29,7 +29,7 @@ environment variable first, then `~/.kube/config`, then an in-cluster
 service account, and lastly settling on a default proxy configuration:
 
 ```js
-const client = new Client({ version: '1.13' })
+const client = new Client({ version: '1.17' })
 ```
 
 provide your own path to a file:
@@ -41,7 +41,7 @@ kubeconfig.loadFromFile('~/some/path')
 const Request = require('kubernetes-client/backends/request')
 
 const backend = new Request({ kubeconfig })
-const client = new Client({ backend, version: '1.13' })
+const client = new Client({ backend, version: '1.17' })
 ```
 
 provide a configuration object from memory:
@@ -62,7 +62,7 @@ kubeconfig.loadFromString(JSON.stringify(config))
 
 const Request = require('kubernetes-client/backends/request')
 const backend = new Request({ kubeconfig })
-const client = new Client({ backend, version: '1.13' })
+const client = new Client({ backend, version: '1.17' })
 ```
 
 and you can also specify the context by setting it in the `kubeconfig`
@@ -144,13 +144,13 @@ specifications:
 ## TypeScript
 
 kubernetes-client includes a typings declartion file for Kubernetes
-API 1.16 and a complimentry `Client1_16` class:
+API 1.17 and a complimentry `Client1_17` class:
 
 ```typescript
 import * as ApiClient from 'kubernetes-client';
 
-const Client = ApiClient.Client1_13;
-const client = new Client({ version: '1.16' });
+const Client = ApiClient.Client1_17;
+const client = new Client({ version: '1.17' });
 ```
 
 When using TypeScript, kubernetes-client does not support dynamically
