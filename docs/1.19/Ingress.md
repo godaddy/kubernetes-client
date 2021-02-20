@@ -4,7 +4,7 @@
 
 ## read
 
-  ### apis.networking.k8s.io.v1beta1.watch.ingresses.get
+  ### apis.extensions.v1beta1.watch.ingresses.get
 
   watch individual changes to a list of Ingress. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -24,7 +24,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.networking.k8s.io.v1beta1.ingresses.get
+  ### apis.extensions.v1beta1.ingresses.get
 
   list or watch objects of kind Ingress
 
@@ -84,7 +84,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.extensions.v1beta1.watch.ingresses.get
+  ### apis.networking.k8s.io.v1beta1.watch.ingresses.get
 
   watch individual changes to a list of Ingress. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -104,7 +104,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.extensions.v1beta1.ingresses.get
+  ### apis.networking.k8s.io.v1beta1.ingresses.get
 
   list or watch objects of kind Ingress
 

@@ -4,7 +4,7 @@
 
 ## read
 
-  ### apis.apps.v1beta2.watch.statefulsets.get
+  ### apis.apps.v1.watch.statefulsets.get
 
   watch individual changes to a list of StatefulSet
 
@@ -23,7 +23,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.apps.v1beta2.statefulsets.get
+  ### apis.apps.v1.statefulsets.get
 
   list or watch objects of kind StatefulSet
 
@@ -80,7 +80,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.apps.v1.watch.statefulsets.get
+  ### apis.apps.v1beta2.watch.statefulsets.get
 
   watch individual changes to a list of StatefulSet
 
@@ -99,7 +99,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.apps.v1.statefulsets.get
+  ### apis.apps.v1beta2.statefulsets.get
 
   list or watch objects of kind StatefulSet
 

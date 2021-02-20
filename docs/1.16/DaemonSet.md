@@ -4,7 +4,7 @@
 
 ## read
 
-  ### apis.extensions.v1beta1.watch.daemonsets.get
+  ### apis.apps.v1.watch.daemonsets.get
 
   watch individual changes to a list of DaemonSet. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -23,7 +23,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.extensions.v1beta1.daemonsets.get
+  ### apis.apps.v1.daemonsets.get
 
   list or watch objects of kind DaemonSet
 
@@ -80,7 +80,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.apps.v1.watch.daemonsets.get
+  ### apis.extensions.v1beta1.watch.daemonsets.get
 
   watch individual changes to a list of DaemonSet. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -99,7 +99,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.apps.v1.daemonsets.get
+  ### apis.extensions.v1beta1.daemonsets.get
 
   list or watch objects of kind DaemonSet
 

@@ -5,7 +5,7 @@
 
 ## read
 
-  ### apis.rbac.authorization.k8s.io.v1beta1.watch.clusterrolebindings.get
+  ### apis.rbac.authorization.k8s.io.v1.watch.clusterrolebindings.get
 
   watch individual changes to a list of ClusterRoleBinding
 
@@ -24,7 +24,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.rbac.authorization.k8s.io.v1beta1.clusterrolebindings.get
+  ### apis.rbac.authorization.k8s.io.v1.clusterrolebindings.get
 
   list or watch objects of kind ClusterRoleBinding
 
@@ -81,7 +81,7 @@
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
   | `qs.pretty` | If &#39;true&#39;, then the output is pretty printed. |
 
-  ### apis.rbac.authorization.k8s.io.v1.watch.clusterrolebindings.get
+  ### apis.rbac.authorization.k8s.io.v1beta1.watch.clusterrolebindings.get
 
   watch individual changes to a list of ClusterRoleBinding
 
@@ -100,7 +100,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.rbac.authorization.k8s.io.v1.clusterrolebindings.get
+  ### apis.rbac.authorization.k8s.io.v1beta1.clusterrolebindings.get
 
   list or watch objects of kind ClusterRoleBinding
 
@@ -121,7 +121,7 @@
 
 ## write
 
-  ### apis.rbac.authorization.k8s.io.v1beta1.clusterrolebindings.delete
+  ### apis.rbac.authorization.k8s.io.v1.clusterrolebindings.delete
 
   delete collection of ClusterRoleBinding
 
@@ -140,7 +140,7 @@
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
   | `qs.pretty` | If &#39;true&#39;, then the output is pretty printed. |
 
-  ### apis.rbac.authorization.k8s.io.v1beta1.clusterrolebindings.post
+  ### apis.rbac.authorization.k8s.io.v1.clusterrolebindings.post
 
   create a ClusterRoleBinding
 
@@ -155,7 +155,7 @@
 
   | Parameter | Description |
   | --------- | ----------- |
-  | `body` | #&#x2F;definitions&#x2F;io.k8s.api.rbac.v1beta1.ClusterRoleBinding |
+  | `body` | #&#x2F;definitions&#x2F;io.k8s.api.rbac.v1.ClusterRoleBinding |
 
   ### apis.rbac.authorization.k8s.io.v1alpha1.clusterrolebindings.delete
 
@@ -193,7 +193,7 @@
   | --------- | ----------- |
   | `body` | #&#x2F;definitions&#x2F;io.k8s.api.rbac.v1alpha1.ClusterRoleBinding |
 
-  ### apis.rbac.authorization.k8s.io.v1.clusterrolebindings.delete
+  ### apis.rbac.authorization.k8s.io.v1beta1.clusterrolebindings.delete
 
   delete collection of ClusterRoleBinding
 
@@ -212,7 +212,7 @@
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
   | `qs.pretty` | If &#39;true&#39;, then the output is pretty printed. |
 
-  ### apis.rbac.authorization.k8s.io.v1.clusterrolebindings.post
+  ### apis.rbac.authorization.k8s.io.v1beta1.clusterrolebindings.post
 
   create a ClusterRoleBinding
 
@@ -227,5 +227,5 @@
 
   | Parameter | Description |
   | --------- | ----------- |
-  | `body` | #&#x2F;definitions&#x2F;io.k8s.api.rbac.v1.ClusterRoleBinding |
+  | `body` | #&#x2F;definitions&#x2F;io.k8s.api.rbac.v1beta1.ClusterRoleBinding |
 

@@ -4,7 +4,7 @@
 
 ## read
 
-  ### apis.autoscaling.v2beta2.watch.horizontalpodautoscalers.get
+  ### apis.autoscaling.v1.watch.horizontalpodautoscalers.get
 
   watch individual changes to a list of HorizontalPodAutoscaler. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -24,7 +24,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.autoscaling.v2beta2.horizontalpodautoscalers.get
+  ### apis.autoscaling.v1.horizontalpodautoscalers.get
 
   list or watch objects of kind HorizontalPodAutoscaler
 
@@ -84,7 +84,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.autoscaling.v1.watch.horizontalpodautoscalers.get
+  ### apis.autoscaling.v2beta2.watch.horizontalpodautoscalers.get
 
   watch individual changes to a list of HorizontalPodAutoscaler. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -104,7 +104,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.autoscaling.v1.horizontalpodautoscalers.get
+  ### apis.autoscaling.v2beta2.horizontalpodautoscalers.get
 
   list or watch objects of kind HorizontalPodAutoscaler
 

@@ -111,7 +111,7 @@ const argv = require('yargs')
   .usage('Usage: $0 [options]')
   .option('spec', {
     alias: 's',
-    default: './lib/specs/swagger-1.13.json.gz',
+    default: './lib/specs/swagger-1.17.json.gz',
     describe: 'Swagger / OpenAPI specification'
   })
   .option('output', {

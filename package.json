@@ -49,16 +49,16 @@
     "mustache": "4.1.0",
     "nock": "13.0.7",
     "nyc": "15.1.0",
+    "pump": "^3.0.0",
+    "qs": "^6.9.6",
+    "request": "^2.88.2",
     "sinon": "9.2.4",
     "standard": "16.0.3",
     "standard-version": "9.1.1",
     "typescript": "4.1.5",
-    "yargs": "16.2.0",
-    "pump": "^3.0.0",
-    "qs": "^6.9.6",
-    "request": "^2.88.2",
     "url-join": "^4.0.1",
-    "ws": "^7.4.3"
+    "ws": "^7.4.3",
+    "yargs": "16.2.0"
   },
   "nyc": {
     "check-coverage": true,

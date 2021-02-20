@@ -4,7 +4,7 @@
 
 ## read
 
-  ### apis.rbac.authorization.k8s.io.v1beta1.watch.rolebindings.get
+  ### apis.rbac.authorization.k8s.io.v1.watch.rolebindings.get
 
   watch individual changes to a list of RoleBinding. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -23,7 +23,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.rbac.authorization.k8s.io.v1beta1.rolebindings.get
+  ### apis.rbac.authorization.k8s.io.v1.rolebindings.get
 
   list or watch objects of kind RoleBinding
 
@@ -80,7 +80,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.rbac.authorization.k8s.io.v1.watch.rolebindings.get
+  ### apis.rbac.authorization.k8s.io.v1beta1.watch.rolebindings.get
 
   watch individual changes to a list of RoleBinding. deprecated: use the 'watch' parameter with a list operation instead.
 
@@ -99,7 +99,7 @@
   | `qs.timeoutSeconds` | Timeout for the list&#x2F;watch call. This limits the duration of the call, regardless of any activity or inactivity. |
   | `qs.watch` | Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion. |
 
-  ### apis.rbac.authorization.k8s.io.v1.rolebindings.get
+  ### apis.rbac.authorization.k8s.io.v1beta1.rolebindings.get
 
   list or watch objects of kind RoleBinding
 
