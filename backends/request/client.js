@@ -67,7 +67,7 @@ function upgradeRequest (options, cb) {
   // Passing authorization header
   options.headers = {
     ...options.headers,
-    authorization: `Bearer ${options.auth.bearer}`
+    authorization: `Bearer ${options.auth?.bearer}`
   }
   const ws = new WebSocket(wsUrl, protocol, options)
 
