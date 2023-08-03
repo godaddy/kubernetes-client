@@ -1,6 +1,5 @@
 # kubernetes-client
 
-[![Join Slack](https://img.shields.io/badge/Join%20us%20on-Slack-e01563.svg)](https://godaddy-oss-slack.herokuapp.com/)
 [![Build Status][build]](https://travis-ci.org/godaddy/kubernetes-client) [![Greenkeeper badge][greenkeeper]](https://greenkeeper.io/)
 
 [greenkeeper]: https://badges.greenkeeper.io/godaddy/kubernetes-client.svg
